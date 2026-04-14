@@ -103,3 +103,5 @@ Tokens expire after 90 days. Research outputs are saved to `docs/colosseum/`.
 
 - [Colosseum Hackathon](https://colosseum.com/hackathon)
 - [Colosseum Copilot Docs](https://docs.colosseum.com/copilot)
+
+Testando o projeto para o Hacka
