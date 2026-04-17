@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGA — Brand Guidelines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ──────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Design tokens ──────────────────────────────────────────────── */
+    :root {
+      --font-display: 'Geist', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+
+      /* Investidor (default / guide canvas) */
+      --canvas:     #0E0F11;
+      --surface:    #16181C;
+      --surface-2:  #1E2126;
+      --surface-3:  #252830;
+      --border:     #2A2D33;
+      --text:       #F0F0EE;
+      --text-2:     #8A8F99;
+      --text-3:     #555B66;
+      --accent:     #E8A020;
+      --accent-dim: #9E6A10;
+      --success:    #3DAB72;
+      --error:      #C94040;
+    }
+
+    /* ── Base ───────────────────────────────────────────────────────── */
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--canvas);
+      color: var(--text);
+      line-height: 1.5;
+      /* Architectural grid texture */
+      background-image:
+        linear-gradient(to right,  rgba(240,240,238,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(240,240,238,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      min-height: 100vh;
+    }
+
+    /* ── Typography utilities ────────────────────────────────────────── */
+    .font-display { font-family: var(--font-display); font-weight: 700; }
+    .font-body    { font-family: var(--font-body); }
+    .font-mono    { font-family: var(--font-mono); font-feature-settings: "tnum" 1; font-variant-numeric: tabular-nums; }
+
+    .text-2xs   { font-size: 0.6875rem; line-height: 1rem;     letter-spacing: 0.03em; }
+    .text-xs    { font-size: 0.75rem;   line-height: 1.125rem; letter-spacing: 0.01em; }
+    .text-sm    { font-size: 0.8125rem; line-height: 1.25rem;  letter-spacing: 0.01em; }
+    .text-bsm   { font-size: 0.875rem;  line-height: 1.25rem; }
+    .text-base  { font-size: 1rem;      line-height: 1.5rem; }
+    .text-lg    { font-size: 1.125rem;  line-height: 1.75rem; }
+    .text-xl    { font-size: 1.25rem;   line-height: 1.75rem; }
+    .text-2xl   { font-size: 1.5rem;    line-height: 2rem;    letter-spacing: -0.01em; }
+    .text-3xl   { font-size: 1.75rem;   line-height: 2rem;    letter-spacing: -0.01em; }
+    .text-4xl   { font-size: 2.25rem;   line-height: 2.5rem;  letter-spacing: -0.02em; }
+    .text-5xl   { font-size: clamp(2.25rem, 1.544rem + 1.127vw, 3rem); line-height: 1.083; letter-spacing: -0.02em; }
+    .text-6xl   { font-size: clamp(3rem, 2.056rem + 1.502vw, 4rem);   line-height: 1.0625; letter-spacing: -0.03em; }
+
+    /* ── Color utilities ─────────────────────────────────────────────── */
+    .color-text   { color: var(--text); }
+    .color-text-2 { color: var(--text-2); }
+    .color-text-3 { color: var(--text-3); }
+    .color-accent { color: var(--accent); }
+    .color-success { color: var(--success); }
+    .color-error   { color: var(--error); }
+
+    /* ── Layout ──────────────────────────────────────────────────────── */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 48px;
+    }
+
+    /* ── Navigation ──────────────────────────────────────────────────── */
+    nav {
+      background-color: var(--canvas);
+      border-bottom: 1px solid var(--border);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-image:
+        linear-gradient(to right,  rgba(240,240,238,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(240,240,238,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .nav-items {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-items a {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color 150ms ease-out;
+    }
+
+    .nav-items a:hover { color: var(--text); }
+    .nav-items a.active {
+      color: var(--text);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+    }
+
+    .nav-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .live-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent);
+      border-radius: 0;
+      animation: tga-pulse 2s linear infinite;
+    }
+
+    @keyframes tga-pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    .live-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-2);
+      font-feature-settings: "tnum" 1;
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 120px 0 96px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 2.056rem + 1.502vw, 4rem);
+      line-height: 1.0625;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .hero-title span { color: var(--accent); }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      color: var(--text-2);
+      max-width: 600px;
+      line-height: 1.75rem;
+      margin-bottom: 48px;
+    }
+
+    .hero-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-3);
+      font-feature-settings: "tnum" 1;
+    }
+
+    /* ── Three-layer hierarchy demo ──────────────────────────────────── */
+    .hierarchy-demo {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+      max-width: 480px;
+    }
+
+    .hierarchy-declaration {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 2rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .hierarchy-explanation {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-2);
+      margin-bottom: 16px;
+    }
+
+    .hierarchy-evidence {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-3);
+      font-feature-settings: "tnum" 1;
+      font-variant-numeric: tabular-nums;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    .hierarchy-layer-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-feature-settings: "tnum" 1;
+    }
+
+    /* ── Color System ────────────────────────────────────────────────── */
+    .front-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .front-tab {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-2);
+      padding: 12px 24px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 150ms ease-out, border-color 150ms ease-out;
+      font-feature-settings: "tnum" 1;
+      letter-spacing: 0.03em;
+    }
+
+    .front-tab.active {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+
+    .front-tab:hover { color: var(--text); }
+
+    .color-panel { display: none; }
+    .color-panel.active { display: block; }
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .swatch {
+      background: var(--canvas);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .swatch-color {
+      height: 64px;
+      width: 100%;
+    }
+
+    .swatch-info {
+      background: var(--surface);
+      padding: 12px;
+    }
+
+    .swatch-role {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text);
+      font-feature-settings: "tnum" 1;
+    }
+
+    .swatch-usage {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--text-2);
+      margin-top: 4px;
+    }
+
+    /* ── Typography Scale ────────────────────────────────────────────── */
+    .type-scale-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 200px;
+      gap: 24px;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-scale-row:first-child { border-top: 1px solid var(--border); }
+
+    .type-token {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-feature-settings: "tnum" 1;
+    }
+
+    .type-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-3);
+      font-feature-settings: "tnum" 1;
+      text-align: right;
+    }
+
+    /* ── Components ──────────────────────────────────────────────────── */
+    .component-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) { .component-grid { grid-template-columns: 1fr; } }
+
+    .component-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) { .component-grid-3 { grid-template-columns: 1fr; } }
+
+    .front-label {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      margin-bottom: 16px;
+      font-feature-settings: 'tnum' 1;
+    }
+    .front-label.accent { color: var(--accent); }
+
+    /* Geometric shapes */
+    .geo-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .geo-block {
+      background: #0E0F11;
+      border: 1px solid var(--border);
+      width: 96px;
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .geo-block.light { background: #F7F6F3; border-color: #D8D5D0; }
+    .geo-label {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.08em;
+      color: var(--text-2);
+      text-align: center;
+    }
+
+    /* Icon grid */
+    .icon-row {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border: 1px solid var(--border);
+    }
+    .icon-cell {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      gap: 4px;
+      cursor: default;
+    }
+    .icon-cell:hover { background: var(--surface); }
+    .icon-cell-label {
+      font-family: var(--font-mono);
+      font-size: 0.4375rem;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    .component-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+    }
+
+    .component-block.light-bg {
+      background: #F7F6F3;
+      background-image: none;
+    }
+
+    .component-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .component-label.dark-label { color: #C47E10; }
+
+    /* ── Investidor Card ─────────────────────────────────────────────── */
+    .inv-card {
+      background: #16181C;
+      border: 1px solid #2A2D33;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .inv-card-label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #8A8F99;
+      margin-bottom: 8px;
+    }
+
+    .inv-card-value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      letter-spacing: -0.02em;
+      color: #F0F0EE;
+      margin-bottom: 4px;
+    }
+
+    .inv-card-sub {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: #555B66;
+      font-feature-settings: "tnum" 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── Imobiliárias Contract Card ──────────────────────────────────── */
+    .imob-card {
+      background: #FFFFFF;
+      border: 1px solid #D9D7D2;
+      border-radius: 10px;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .imob-card-stripe {
+      height: 4px;
+      width: 100%;
+    }
+
+    .imob-card-body { padding: 20px 24px 24px; }
+
+    .imob-property {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: #1A1A1A;
+      margin-bottom: 4px;
+    }
+
+    .imob-tenant {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: #6B6860;
+      margin-bottom: 16px;
+    }
+
+    .imob-amount {
+      font-family: var(--font-mono);
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1A1A1A;
+      font-feature-settings: "tnum" 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── Buttons ─────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.875rem;
+      border-radius: 10px;
+      transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+      text-decoration: none;
+      padding: 0 20px;
+    }
+
+    .btn-inv-primary {
+      font-family: var(--font-body);
+      height: 40px;
+      border: 1px solid #E8A020;
+      background: transparent;
+      color: #E8A020;
+    }
+
+    .btn-inv-primary:hover {
+      background: #E8A020;
+      color: #0E0F11;
+    }
+
+    .btn-inv-secondary {
+      font-family: var(--font-body);
+      height: 40px;
+      border: 1px solid #2A2D33;
+      background: transparent;
+      color: #8A8F99;
+    }
+
+    .btn-inv-secondary:hover {
+      border-color: #E8A020;
+      color: #F0F0EE;
+    }
+
+    .btn-imob-primary {
+      font-family: var(--font-body);
+      height: 48px;
+      border: 1px solid #C47E10;
+      background: #C47E10;
+      color: #1A1A1A;
+    }
+
+    .btn-imob-primary:hover { background: #9E6A10; }
+
+    .btn-imob-secondary {
+      font-family: var(--font-body);
+      height: 48px;
+      border: 1px solid #C47E10;
+      background: transparent;
+      color: #C47E10;
+    }
+
+    .btn-imob-secondary:hover { background: #FFF0D4; }
+
+    .btn-terminal {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      height: auto;
+      padding: 8px 16px;
+      border: 1px solid #E8A020;
+      background: transparent;
+      color: #E8A020;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .btn-terminal:hover { border-color: #B87010; color: #B87010; }
+
+    .btn-terminal-reject {
+      border-color: #C94040;
+      color: #C94040;
+    }
+
+    .btn-terminal-reject:hover { border-color: #8B4A2A; color: #8B4A2A; }
+
+    /* ── Badges ──────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-square {
+      width: 6px;
+      height: 6px;
+      border-radius: 0;
+      flex-shrink: 0;
+    }
+
+    .badge-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .badge-label.dark-text { color: #6B6860; }
+
+    /* ── Input ───────────────────────────────────────────────────────── */
+    .input-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .input-label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.8125rem;
+      color: #8A8F99;
+    }
+
+    .input-label.light { color: #6B6860; }
+
+    .input-field {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: #F0F0EE;
+      background: transparent;
+      border: 1px solid #2A2D33;
+      border-radius: 10px;
+      padding: 10px 12px;
+      width: 100%;
+      outline: none;
+      transition: border-color 150ms ease-out;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .input-field::placeholder { color: #555B66; }
+    .input-field:focus { border-color: #E8A020; }
+
+    .input-field.light {
+      font-family: var(--font-body);
+      color: #1A1A1A;
+      background: #FFFFFF;
+      border-color: #D9D7D2;
+    }
+
+    .input-field.light::placeholder { color: #9E9C98; }
+    .input-field.light:focus { border-color: #C47E10; }
+
+    /* ── Terminal block ──────────────────────────────────────────────── */
+    .terminal-block {
+      background: #0A0B0D;
+      border: 1px solid #2A2D33;
+      padding: 0;
+      overflow: hidden;
+      /* Scanline texture */
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0px, transparent 2px,
+          rgba(232,228,220,0.025) 2px, rgba(232,228,220,0.025) 3px
+        );
+      background-size: 100% 3px;
+    }
+
+    .terminal-header {
+      background: #111316;
+      border-bottom: 1px solid #2A2D33;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-image: none;
+    }
+
+    .terminal-header-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #E8E4DC;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .terminal-body { padding: 16px; }
+
+    .terminal-line {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      font-feature-settings: "tnum" 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .t-dim    { color: #4A4844; }
+    .t-ghost  { color: #4A4844; }
+    .t-label  { color: #7A7870; }
+    .t-text   { color: #E8E4DC; }
+    .t-amber  { color: #E8A020; }
+    .t-copper { color: #B87010; }
+    .t-green  { color: #3DAB72; }
+    .t-red    { color: #C94040; }
+    .t-warn   { color: #D4781A; }
+
+    /* ── Constraint list ─────────────────────────────────────────────── */
+    .constraint-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) { .constraint-grid { grid-template-columns: 1fr; } }
+
+    .constraint-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+    }
+
+    .constraint-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      font-feature-settings: "tnum" 1;
+    }
+
+    .constraint-title.never { color: #C94040; }
+    .constraint-title.always { color: #3DAB72; }
+
+    .constraint-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .constraint-list li {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--text-2);
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      line-height: 1.5;
+    }
+
+    .constraint-list li::before {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .constraint-list.never li::before { content: "—"; color: #C94040; }
+    .constraint-list.always li::before { content: "+"; color: #3DAB72; }
+
+    /* ── Logo symbol exploration ────────────────────────────────────── */
+    .logo-symbol-section {
+      margin-top: 40px;
+    }
+
+    .logo-symbol-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .logo-symbol-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .logo-symbol-block {
+      background: #0E0F11;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      gap: 20px;
+    }
+
+    .logo-symbol-block.light-sym { background: #F7F6F3; }
+
+    .symbol-concept-name {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-2);
+      text-align: center;
+    }
+
+    .logo-symbol-block.light-sym .symbol-concept-name { color: #6B6860; }
+
+    .symbol-concept-tag {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-align: center;
+    }
+
+    .logo-symbol-block.light-sym .symbol-concept-tag { color: #9E9C98; }
+
+    /* ── Inline icon utility ─────────────────────────────────────────── */
+    .icon-inline {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      color: inherit;
+    }
+
+    /* ── Logo section ────────────────────────────────────────────────── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 48px 40px;
+      gap: 16px;
+    }
+
+    .logo-block-dark { background: #0E0F11; }
+    .logo-block-light { background: #F7F6F3; }
+    .logo-block-terminal { background: #0A0B0D; }
+
+    .logo-wordmark {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-monogram {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: -0.06em;
+    }
+
+    .logo-meta {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .logo-block-dark  .logo-meta { color: #555B66; }
+    .logo-block-light .logo-meta { color: #9E9C98; }
+    .logo-block-terminal .logo-meta { color: #4A4844; }
+
+    .logo-rule-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-rule {
+      width: 1px;
+      height: 1.6em;
+      background: #E8A020;
+      flex-shrink: 0;
+    }
+
+    /* ── Spacing utilities ───────────────────────────────────────────── */
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-32 { margin-top: 32px; }
+    .mt-40 { margin-top: 40px; }
+    .mb-8  { margin-bottom: 8px; }
+    .mb-16 { margin-bottom: 16px; }
+    .mb-24 { margin-bottom: 24px; }
+    .mb-32 { margin-bottom: 32px; }
+    .mb-40 { margin-bottom: 40px; }
+
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .gap-8  { gap: 8px; }
+    .gap-12 { gap: 12px; }
+    .gap-16 { gap: 16px; }
+    .gap-24 { gap: 24px; }
+    .gap-32 { gap: 32px; }
+
+    /* ── Divider ─────────────────────────────────────────────────────── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+    /* ── Surface demo ────────────────────────────────────────────────── */
+    .surface-stack {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .surface-swatch {
+      flex: 1;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .surface-hex {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-feature-settings: "tnum" 1;
+    }
+
+    .surface-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-3);
+      font-feature-settings: "tnum" 1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">tga</a>
+    <ul class="nav-items">
+      <li><a href="#overview" class="active">Overview</a></li>
+      <li><a href="#color">Color</a></li>
+      <li><a href="#typography">Tipografia</a></li>
+      <li><a href="#components">Componentes</a></li>
+      <li><a href="#constraints">Restrições</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span class="live-label">BRAND v1.0</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="page-wrap">
+  <div class="hero" id="overview">
+    <p class="hero-eyebrow">Token de Garantia de Aluguel · Brand Guidelines · 2026-04-14</p>
+    <h1 class="hero-title">Precisão antes<br>de <span>decoração.</span></h1>
+    <p class="hero-sub">
+      TGA opera em três fronts: Dashboard Investidor, Dashboard Imobiliárias, e Terminal de operação.
+      Um sistema de identidade. Uma gramática visual. Três resoluções da mesma amber.
+    </p>
+    <p class="hero-meta">System strategy: generate · Tech: Next.js + Tailwind v4 + shadcn/ui · Preset overrides: 9</p>
+  </div>
+</div>
+
+<!-- Brand Overview -->
+<div class="page-wrap">
+  <section>
+    <p class="section-label">01 · Visão Geral</p>
+    <h2 class="section-title">Precision Brutalism</h2>
+
+    <div class="component-grid">
+      <div>
+        <p class="font-body text-base color-text-2" style="margin-bottom:24px; line-height:1.75rem;">
+          O Brutalism é honesto com o que é. Exposição estrutural — a grade visível, as superfícies em camadas,
+          a tipografia com peso exagerado. Formas geométricas repetidas como módulos de construção.
+          Estrutura e textura pesada. Concreto. Monumental. Imponente.
+        </p>
+        <p class="font-body text-base color-text-2" style="margin-bottom:24px; line-height:1.75rem;">
+          Autenticidade e precisão: cada elemento existe porque carrega informação.
+          Grids aparentes. O âmbar é escasso — menos de 5% dos pixels em qualquer tela.
+          A profundidade nasce do empilhamento de superfícies.
+        </p>
+        <div style="display:flex; gap:16px; margin-top:32px;">
+          <button class="btn btn-inv-primary">Visualizar Sistema</button>
+          <button class="btn btn-inv-secondary">Ver Código</button>
+        </div>
+      </div>
+
+      <div>
+        <!-- Three-layer hierarchy demo -->
+        <p class="font-mono text-xs color-accent" style="letter-spacing:0.06em; text-transform:uppercase; margin-bottom:12px; font-feature-settings:'tnum' 1;">Hierarquia de três camadas</p>
+        <div class="hierarchy-demo">
+          <div style="margin-bottom:20px;">
+            <p class="hierarchy-layer-label">Camada 1 — Declaração · Geist Bold</p>
+            <p class="hierarchy-declaration">Pagamento realizado</p>
+          </div>
+          <div style="margin-bottom:20px;">
+            <p class="hierarchy-layer-label">Camada 2 — Explicação · Inter</p>
+            <p class="hierarchy-explanation">Transferido para sua conta</p>
+          </div>
+          <div>
+            <p class="hierarchy-layer-label">Camada 3 — Evidência · JetBrains Mono</p>
+            <p class="hierarchy-evidence">R$2.847,00 · 18h22 · 4h37m</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Surface stacking demo -->
+    <div style="margin-top:56px;">
+      <p class="font-mono text-xs color-accent" style="letter-spacing:0.06em; text-transform:uppercase; margin-bottom:12px; font-feature-settings:'tnum' 1;">Empilhamento de superfícies (sem sombras)</p>
+      <div class="surface-stack">
+        <div class="surface-swatch" style="background:#0E0F11;">
+          <span class="surface-hex" style="color:#555B66;">#0E0F11</span>
+          <span class="surface-label" style="color:#555B66;">Canvas</span>
+        </div>
+        <div class="surface-swatch" style="background:#16181C;">
+          <span class="surface-hex" style="color:#8A8F99;">#16181C</span>
+          <span class="surface-label" style="color:#8A8F99;">Surface 1</span>
+        </div>
+        <div class="surface-swatch" style="background:#1E2126;">
+          <span class="surface-hex" style="color:#8A8F99;">#1E2126</span>
+          <span class="surface-label" style="color:#8A8F99;">Surface 2</span>
+        </div>
+        <div class="surface-swatch" style="background:#252830;">
+          <span class="surface-hex" style="color:#8A8F99;">#252830</span>
+          <span class="surface-label" style="color:#8A8F99;">Surface 3</span>
+        </div>
+        <div class="surface-swatch" style="background:#2A2D33;">
+          <span class="surface-hex" style="color:#F0F0EE;">#2A2D33</span>
+          <span class="surface-label" style="color:#8A8F99;">Border</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Logo -->
+<div class="page-wrap">
+  <section>
+    <p class="section-label">02 · Logo</p>
+    <h2 class="section-title">Três direções</h2>
+
+    <div class="logo-grid">
+      <!-- Direction 1 dark -->
+      <div class="logo-block logo-block-dark">
+        <div>
+          <span class="logo-wordmark" style="color:#E8A020;">tga</span>
+        </div>
+        <p class="logo-meta">Direção 1 · Wordmark · Escuro</p>
+      </div>
+      <!-- Direction 1 light -->
+      <div class="logo-block logo-block-light">
+        <div>
+          <span class="logo-wordmark" style="color:#C47E10;">tga</span>
+        </div>
+        <p class="logo-meta" style="color:#9E9C98;">Direção 1 · Wordmark · Claro</p>
+      </div>
+      <!-- Direction 2 -->
+      <div class="logo-block logo-block-dark">
+        <div class="logo-rule-block">
+          <div class="logo-rule"></div>
+          <span class="logo-wordmark" style="color:#E8A020;">tga</span>
+        </div>
+        <p class="logo-meta">Direção 2 · Marca Estrutural · Formal</p>
+      </div>
+      <!-- Direction 3 -->
+      <div class="logo-block logo-block-terminal">
+        <div>
+          <span class="logo-monogram" style="color:#E8A020;">TGA</span>
+        </div>
+        <p class="logo-meta">Direção 3 · Monograma · Investidor/Terminal</p>
+      </div>
+    </div>
+
+    <div style="background:var(--surface); border:1px solid var(--border); padding:24px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+      <div>
+        <p class="font-mono text-xs color-accent mb-8" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">Tracking</p>
+        <p class="font-body text-sm color-text-2">Dir 1: <span class="font-mono" style="color:var(--text); font-feature-settings:'tnum' 1;">-0.03em</span></p>
+        <p class="font-body text-sm color-text-2 mt-8">Dir 3: <span class="font-mono" style="color:var(--text); font-feature-settings:'tnum' 1;">-0.06em</span></p>
+      </div>
+      <div>
+        <p class="font-mono text-xs color-accent mb-8" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">Espaço mínimo</p>
+        <p class="font-body text-sm color-text-2">1× cap height todos os lados</p>
+      </div>
+      <div>
+        <p class="font-mono text-xs color-accent mb-8" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">Tamanho mínimo</p>
+        <p class="font-body text-sm color-text-2">48px width / 16px ícone</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- Color System -->
+<div class="page-wrap">
+  <section id="color">
+    <p class="section-label">03 · Sistema de Cor</p>
+    <h2 class="section-title">Três fronts, uma identidade</h2>
+
+    <div class="front-tabs">
+      <button class="front-tab active" onclick="switchPanel('investidor', this)">Dashboard Investidor</button>
+      <button class="front-tab" onclick="switchPanel('imobiliarias', this)">Dashboard Imobiliárias</button>
+      <button class="front-tab" onclick="switchPanel('terminal', this)">Terminal</button>
+    </div>
+
+    <!-- Investidor panel -->
+    <div class="color-panel active" id="panel-investidor">
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#0E0F11;"></div>
+          <div class="swatch-info" style="background:#16181C;">
+            <p class="swatch-role">Canvas</p>
+            <p class="swatch-hex">#0E0F11</p>
+            <p class="swatch-usage">oklch(0.104 0.005 270) · Page canvas</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#16181C;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Surface 1</p>
+            <p class="swatch-hex">#16181C</p>
+            <p class="swatch-usage">Card backgrounds</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#1E2126;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Surface 2</p>
+            <p class="swatch-hex">#1E2126</p>
+            <p class="swatch-usage">Elevated states, modals</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#2A2D33; border-top:1px solid #3A3D43;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Border</p>
+            <p class="swatch-hex">#2A2D33</p>
+            <p class="swatch-usage">1px structural borders</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#F0F0EE;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Foreground Primary</p>
+            <p class="swatch-hex">#F0F0EE</p>
+            <p class="swatch-usage">16.9:1 AAA ✓</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8A8F99;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Foreground Secondary</p>
+            <p class="swatch-hex">#8A8F99</p>
+            <p class="swatch-usage">6.0:1 AA ✓ · Labels</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#E8A020;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Accent (Amber)</p>
+            <p class="swatch-hex">#E8A020</p>
+            <p class="swatch-usage">8.8:1 AAA ✓ · CTAs, logo, active</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#3DAB72;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Success</p>
+            <p class="swatch-hex">#3DAB72</p>
+            <p class="swatch-usage">6.7:1 AA ✓ · Pagamento confirmado</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#C94040;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Error</p>
+            <p class="swatch-hex">#C94040</p>
+            <p class="swatch-usage">3.9:1 ⚠ · Bold ≥14px only</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imobiliárias panel -->
+    <div class="color-panel" id="panel-imobiliarias">
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#F7F6F3; border:1px solid #D9D7D2;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Canvas</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#F7F6F3</p>
+            <p class="swatch-usage" style="color:#6B6860;">Page canvas</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FFFFFF; border:1px solid #D9D7D2;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Surface 1</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#FFFFFF</p>
+            <p class="swatch-usage" style="color:#6B6860;">Card backgrounds</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#EEEDEA;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Surface 2</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#EEEDEA</p>
+            <p class="swatch-usage" style="color:#6B6860;">Grouped content</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FFF8EE;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Surface Active</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#FFF8EE</p>
+            <p class="swatch-usage" style="color:#6B6860;">Inadimplência bg</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#1A1A1A;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Foreground Primary</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#1A1A1A</p>
+            <p class="swatch-usage" style="color:#6B6860;">16.1:1 AAA ✓</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#C47E10;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Accent (Amber)</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#C47E10</p>
+            <p class="swatch-usage" style="color:#6B6860;">3.1:1 ⚠ · Use #1A1A1A text</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#2E8B5A;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Trust (Paid)</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#2E8B5A</p>
+            <p class="swatch-usage" style="color:#6B6860;">3.9:1 ⚠ · Semi-bold 600 min</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#B83232;"></div>
+          <div class="swatch-info" style="background:#FFFFFF;">
+            <p class="swatch-role" style="color:#9E9C98;">Alert</p>
+            <p class="swatch-hex" style="color:#1A1A1A;">#B83232</p>
+            <p class="swatch-usage" style="color:#6B6860;">Inadimplência</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terminal panel -->
+    <div class="color-panel" id="panel-terminal">
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#0A0B0D;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Canvas</p>
+            <p class="swatch-hex">#0A0B0D</p>
+            <p class="swatch-usage">Terminal canvas</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#111316;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Surface 1</p>
+            <p class="swatch-hex">#111316</p>
+            <p class="swatch-usage">Panel backgrounds</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#E8E4DC;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Foreground Primary</p>
+            <p class="swatch-hex">#E8E4DC</p>
+            <p class="swatch-usage">Primary mono text</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#E8A020;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Accent (Amber)</p>
+            <p class="swatch-hex">#E8A020</p>
+            <p class="swatch-usage">Active status · NOT green</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#B87010;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Accent Warm (Copper)</p>
+            <p class="swatch-hex">#B87010</p>
+            <p class="swatch-usage">Secondary indicators</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8B4A2A;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Accent Sienna</p>
+            <p class="swatch-hex">#8B4A2A</p>
+            <p class="swatch-usage">Third-tier status</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#3DAB72;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Confirmed</p>
+            <p class="swatch-hex">#3DAB72</p>
+            <p class="swatch-usage">Liquidation confirmed · NOT #22C55E</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#D4781A;"></div>
+          <div class="swatch-info" style="background:#111316;">
+            <p class="swatch-role">Warning</p>
+            <p class="swatch-hex">#D4781A</p>
+            <p class="swatch-usage">Pending review</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#111316; border:1px solid #2A2D33; padding:4px 16px; font-family:var(--font-mono); font-size:0.75rem; color:#C94040; font-feature-settings:'tnum' 1; letter-spacing:0.04em;">
+        BANIDO: #22C55E (ANSI green) — proibido em todos os fronts, especialmente Terminal
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Typography -->
+<div class="page-wrap">
+  <section id="typography">
+    <p class="section-label">04 · Tipografia</p>
+    <h2 class="section-title">Sistema de três tipos</h2>
+
+    <div class="component-grid" style="margin-bottom:56px;">
+      <div style="background:var(--surface); border:1px solid var(--border); padding:32px;">
+        <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">DISPLAY — Geist Bold 700</p>
+        <p style="font-family:var(--font-display); font-weight:700; font-size:2.25rem; color:var(--text); letter-spacing:-0.02em; line-height:1.2;">Declaração</p>
+        <p class="font-body text-sm color-text-3 mt-16">Peso 700 exclusivo. Hero, títulos de seção, status declarations.</p>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); padding:32px;">
+        <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">BODY — Inter 400/500/600</p>
+        <p style="font-family:var(--font-body); font-size:1rem; color:var(--text); line-height:1.75rem;">Explicação e contexto. UI, navegação, legendas. Nunca dados numéricos.</p>
+        <p class="font-body text-sm color-text-3 mt-16">Pesos 400, 500, 600 apenas.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--surface); border:1px solid var(--border); padding:32px; margin-bottom:56px;">
+      <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">MONO — JetBrains Mono 400/500 · tabular-nums obrigatório</p>
+      <p style="font-family:var(--font-mono); font-size:0.8125rem; color:var(--text); font-feature-settings:'tnum' 1; font-variant-numeric:tabular-nums; line-height:1.75rem;">
+        R$ 2.847,00 · Hash: 0x4a2f...8e91 · 2026-04-14T18:22:37Z · ID: TGA-0042
+      </p>
+      <p class="font-mono text-sm color-text-3 mt-16" style="font-feature-settings:'tnum' 1;">font-feature-settings: "tnum" 1 — obrigatório em todos os números. Sem exceção.</p>
+    </div>
+
+    <!-- Type scale -->
+    <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1;">Escala tipográfica · Major Third 1.250 · Base 16px</p>
+
+    <div class="type-scale-row">
+      <span class="type-token">text-2xs</span>
+      <span style="font-size:0.6875rem; color:var(--text-2);">11px — Metadados, sub-valores, timestamps</span>
+      <span class="type-meta">0.6875rem · 1rem · +0.03em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-token">text-xs</span>
+      <span style="font-size:0.75rem; color:var(--text-2);">12px — Nav counter, wallet, micro-labels</span>
+      <span class="type-meta">0.75rem · 1.125rem · +0.01em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-token">text-sm</span>
+      <span style="font-size:0.8125rem; color:var(--text);">13px — Dados tabulares, terminal, badges</span>
+      <span class="type-meta">0.8125rem · 1.25rem · +0.01em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-token">text-base</span>
+      <span style="font-size:1rem; color:var(--text);">16px — Corpo de texto principal</span>
+      <span class="type-meta">1rem · 1.5rem · 0em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-token">text-xl</span>
+      <span style="font-family:var(--font-display); font-weight:700; font-size:1.25rem; color:var(--text);">20px — Subtítulos, card headers</span>
+      <span class="type-meta">1.25rem · 1.75rem · 0em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-token">text-4xl</span>
+      <span style="font-family:var(--font-display); font-weight:700; font-size:2.25rem; color:var(--text); letter-spacing:-0.02em;">36px — Valores de card, KPIs</span>
+      <span class="type-meta">2.25rem · 2.5rem · -0.02em</span>
+    </div>
+    <div class="type-scale-row">
+      <span class="type-token">text-6xl</span>
+      <span style="font-family:var(--font-display); font-weight:700; font-size:clamp(3rem,2.056rem + 1.502vw,4rem); color:var(--text); letter-spacing:-0.03em;">Hero</span>
+      <span class="type-meta">64px fluid · -0.03em</span>
+    </div>
+  </section>
+</div>
+
+<!-- Components -->
+<div class="page-wrap">
+  <section id="components">
+    <p class="section-label">05 · Componentes</p>
+    <h2 class="section-title">Três fronts, uma gramática</h2>
+
+    <!-- Front key -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:48px;">
+      <div style="border-left:2px solid #E8A020; padding:12px 16px; background:var(--surface);">
+        <p class="front-label accent">Dashboard Investidor</p>
+        <p style="font-family:var(--font-body); font-size:0.8125rem; color:var(--text-2); line-height:1.55;">Escuro · Precision Brutalism · yield, NAV, contratos, protocolo onchain</p>
+      </div>
+      <div style="border-left:2px solid #C47E10; padding:12px 16px; background:#F7F6F3;">
+        <p class="front-label" style="color:#6B6860;">Dashboard Imobiliárias</p>
+        <p style="font-family:var(--font-body); font-size:0.8125rem; color:#6B6860; line-height:1.55;">Claro · Structured Warmth · imóveis, contratos, pagamentos, inadimplência</p>
+      </div>
+      <div style="border-left:2px solid #E8A020; padding:12px 16px; background:var(--surface);">
+        <p class="front-label accent">Terminal · Protocolo</p>
+        <p style="font-family:var(--font-body); font-size:0.8125rem; color:var(--text-2); line-height:1.55;">Gestão interna · qualquer membro da equipe · operações, aprovações, auditoria</p>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <p class="font-mono text-xs color-accent mb-24" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Cards</p>
+    <div class="component-grid-3 mb-40">
+      <!-- Investidor card -->
+      <div class="component-block">
+        <p class="component-label">Dashboard Investidor — Escuro</p>
+        <div class="inv-card">
+          <p class="inv-card-label">Saldo Disponível</p>
+          <p class="inv-card-value">R$48.200</p>
+          <p class="inv-card-sub">Atualizado · 18:22:37 · +2.4% 30d</p>
+        </div>
+        <div style="margin-top:16px;" class="inv-card">
+          <p class="inv-card-label" style="display:flex; align-items:center; gap:6px;">
+            <span class="icon-inline"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 12L6 8L9 11L14 4" stroke="#8A8F99" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Contratos Ativos
+          </p>
+          <p class="inv-card-value" style="font-size:1.75rem;">142</p>
+          <p class="inv-card-sub">TGA-0001 → TGA-0142 · 3 em default</p>
+        </div>
+      </div>
+
+      <!-- Imobiliárias cards -->
+      <div class="component-block light-bg">
+        <p class="component-label dark-label">Dashboard Imobiliárias — Claro</p>
+        <!-- Active contract -->
+        <div class="imob-card mb-16">
+          <div class="imob-card-stripe" style="background:#C47E10;"></div>
+          <div class="imob-card-body">
+            <p class="imob-property" style="display:flex; align-items:center; gap:6px;">
+              <span class="icon-inline"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 7L8 2L14 7V14H10V10H6V14H2V7Z" stroke="#9E9C98" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Imóvel A · Residencial
+            </p>
+            <p class="imob-tenant">Inquilino · Vencimento: dia 5</p>
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <p class="imob-amount">R$2.847,00</p>
+              <div class="badge">
+                <div class="badge-square" style="background:#C47E10;"></div>
+                <span class="badge-label dark-text">ATIVO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Paid contract -->
+        <div class="imob-card mb-16">
+          <div class="imob-card-stripe" style="background:#2E8B5A;"></div>
+          <div class="imob-card-body">
+            <p class="imob-property" style="display:flex; align-items:center; gap:6px;">
+              <span class="icon-inline"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 7L8 2L14 7V14H10V10H6V14H2V7Z" stroke="#9E9C98" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Imóvel B · Comercial
+            </p>
+            <p class="imob-tenant">Inquilino · Pago em 18h22</p>
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <p style="font-family:var(--font-display); font-weight:700; font-size:1.5rem; color:#2E8B5A; font-feature-settings:'tnum' 1; font-variant-numeric:tabular-nums;">R$3.200,00</p>
+              <div class="badge">
+                <div class="badge-square" style="background:#2E8B5A;"></div>
+                <span class="badge-label dark-text">PAGO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Default contract -->
+        <div class="imob-card" style="background:#FFF8EE;">
+          <div class="imob-card-stripe" style="background:#B83232;"></div>
+          <div class="imob-card-body">
+            <p class="imob-property" style="display:flex; align-items:center; gap:6px;">
+              <span class="icon-inline"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 7L8 2L14 7V14H10V10H6V14H2V7Z" stroke="#9E9C98" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Imóvel C · Residencial
+            </p>
+            <p class="imob-tenant">Inquilino · 12 dias em atraso</p>
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <p class="imob-amount" style="color:#B83232;">R$1.650,00</p>
+              <div class="badge">
+                <div class="badge-square" style="background:#B83232;"></div>
+                <span class="badge-label dark-text">EM_DEFAULT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal card — mixed register -->
+      <div class="component-block" style="background:#16181C; border:1px solid #2A2D33; padding:20px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #2A2D33; padding-bottom:12px;">
+          <span style="font-family:var(--font-body); font-size:0.8125rem; font-weight:500; color:#F0F0EE;">Contrato TGA-0042</span>
+          <div class="live-indicator">
+            <div class="live-dot"></div>
+            <span class="live-label">ATIVO</span>
+          </div>
+        </div>
+        <!-- Structured rows — Inter labels + Mono values -->
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Valor</span>
+            <span style="font-family:var(--font-mono); font-size:0.875rem; color:#F0F0EE; font-feature-settings:'tnum' 1;">R$2.847,00</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Status</span>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:#3DAB72; font-feature-settings:'tnum' 1;">LIQUIDADO</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Tempo de execução</span>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:#D4781A; font-feature-settings:'tnum' 1;">4h37m</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Bloco</span>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:#8A8F99; font-feature-settings:'tnum' 1;">#284.091.447</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid #2A2D33; padding-top:12px; display:flex; gap:8px;">
+          <button class="btn btn-terminal" style="flex:1;">[ APROVAR ]</button>
+          <button class="btn btn-terminal btn-terminal-reject" style="flex:1;">[ REJEITAR ]</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons — 3 fronts -->
+    <p class="font-mono text-xs color-accent mb-24" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Botões</p>
+    <div class="component-grid-3 mb-40">
+      <div class="component-block">
+        <p class="front-label accent">Dashboard Investidor</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <button class="btn btn-inv-primary">Conectar Carteira</button>
+          <button class="btn btn-inv-secondary">Ver Contratos</button>
+        </div>
+      </div>
+      <div class="component-block light-bg">
+        <p class="front-label" style="color:#6B6860;">Dashboard Imobiliárias</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <button class="btn btn-imob-primary">Emitir Contrato</button>
+          <button class="btn btn-imob-secondary">Ver Histórico</button>
+        </div>
+      </div>
+      <div class="component-block" style="padding:0; background:transparent; border:none;">
+        <p class="front-label" style="color:#6B7A6B; padding:16px 16px 0;">Terminal</p>
+        <div class="terminal-block" style="margin-top:0;">
+          <div class="terminal-body" style="padding:16px;">
+            <div style="display:flex; gap:12px; flex-direction:column;">
+              <button class="btn btn-terminal">[ APROVAR ]</button>
+              <button class="btn btn-terminal btn-terminal-reject">[ REJEITAR ]</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges & Inputs -->
+    <p class="font-mono text-xs color-accent mb-24" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Badges & Inputs</p>
+    <div class="component-grid mb-40">
+      <div class="component-block">
+        <p class="component-label">Status markers</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="badge"><div class="badge-square" style="background:#3DAB72;"></div><span class="badge-label">ATIVO</span></div>
+          <div class="badge"><div class="badge-square" style="background:#C94040;"></div><span class="badge-label">EM_DEFAULT</span></div>
+          <div class="badge"><div class="badge-square" style="background:#E8A020;"></div><span class="badge-label">LIQUIDADO</span></div>
+          <div class="badge"><div class="badge-square" style="background:#D4781A;"></div><span class="badge-label">PENDENTE_REVISÃO</span></div>
+        </div>
+      </div>
+      <div class="component-block">
+        <p class="component-label">Inputs</p>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="input-group">
+            <label class="input-label">ID do Contrato</label>
+            <input type="text" class="input-field" placeholder="TGA-0001" value="TGA-0042">
+          </div>
+          <div class="input-group">
+            <label class="input-label">Valor (BRL)</label>
+            <input type="text" class="input-field" placeholder="0.00" value="2.847,00">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Geometric shapes — brutalist vocabulary -->
+    <p class="font-mono text-xs color-accent mb-24" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Formas Geométricas — vocabulário brutalista</p>
+    <div class="geo-grid mb-40">
+
+      <!-- Martelo — autoridade, contrato -->
+      <div>
+        <div class="geo-block">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(-38, 32, 36)">
+              <rect x="6" y="10" width="52" height="13" fill="#E8A020"/>
+              <rect x="6" y="27" width="52" height="9" fill="#E8A020"/>
+              <rect x="28" y="36" width="8" height="26" fill="#E8A020"/>
+            </g>
+            <rect x="6" y="55" width="52" height="7" fill="#E8A020"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Autoridade</p>
+      </div>
+
+      <!-- Raio — velocidade, protocolo -->
+      <div>
+        <div class="geo-block">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="42,6 20,36 31,36 22,58 46,26 35,26" fill="#E8A020"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Velocidade</p>
+      </div>
+
+      <!-- Escudo — proteção, garantia -->
+      <div>
+        <div class="geo-block">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,10 54,10 54,40 32,58 10,40" fill="#E8A020"/>
+            <polygon points="10,10 54,10 54,40 32,58" fill="#C47E10"/>
+            <line x1="10" y1="10" x2="54" y2="58" stroke="#0E0F11" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Garantia</p>
+      </div>
+
+      <!-- Edifício — instituição, propriedade -->
+      <div>
+        <div class="geo-block">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="6,28 32,10 58,28" fill="#E8A020"/>
+            <rect x="6" y="27" width="52" height="24" fill="#E8A020"/>
+            <rect x="12" y="31" width="9" height="20" fill="#0E0F11"/>
+            <rect x="27" y="31" width="10" height="20" fill="#0E0F11"/>
+            <rect x="43" y="31" width="9" height="20" fill="#0E0F11"/>
+            <rect x="2" y="51" width="60" height="6" fill="#E8A020"/>
+            <rect x="0" y="57" width="64" height="6" fill="#E8A020"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Instituição</p>
+      </div>
+
+      <!-- Versões light dos mesmos -->
+      <div>
+        <div class="geo-block light">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(-38, 32, 36)">
+              <rect x="6" y="10" width="52" height="13" fill="#C47E10"/>
+              <rect x="6" y="27" width="52" height="9" fill="#C47E10"/>
+              <rect x="28" y="36" width="8" height="26" fill="#C47E10"/>
+            </g>
+            <rect x="6" y="55" width="52" height="7" fill="#C47E10"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Claro</p>
+      </div>
+      <div>
+        <div class="geo-block light">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="42,6 20,36 31,36 22,58 46,26 35,26" fill="#C47E10"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Claro</p>
+      </div>
+      <div>
+        <div class="geo-block light">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,10 54,10 54,40 32,58 10,40" fill="#C47E10"/>
+            <line x1="10" y1="10" x2="54" y2="58" stroke="#F7F6F3" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Claro</p>
+      </div>
+      <div>
+        <div class="geo-block light">
+          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="6,28 32,10 58,28" fill="#C47E10"/>
+            <rect x="6" y="27" width="52" height="24" fill="#C47E10"/>
+            <rect x="12" y="31" width="9" height="20" fill="#F7F6F3"/>
+            <rect x="27" y="31" width="10" height="20" fill="#F7F6F3"/>
+            <rect x="43" y="31" width="9" height="20" fill="#F7F6F3"/>
+            <rect x="2" y="51" width="60" height="6" fill="#C47E10"/>
+            <rect x="0" y="57" width="64" height="6" fill="#C47E10"/>
+          </svg>
+        </div>
+        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Claro</p>
+      </div>
+
+    </div>
+
+    <!-- Iconografia — Phosphor Icons -->
+    <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Iconografia — @phosphor-icons/react · weight="light"</p>
+    <div style="margin-bottom:8px;">
+      <p class="font-mono text-xs color-text-3" style="font-feature-settings:'tnum' 1; margin-bottom:16px;">Traço 1.5px · sem preenchimento · sem âmbar · tamanho 16–24px</p>
+      <div class="icon-row" style="display:inline-flex; flex-wrap:wrap;">
+        <!-- House -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V10.5z"/><path d="M9 21V12h6v9"/></svg>
+          <span class="icon-cell-label">House</span>
+        </div>
+        <!-- Chart line -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 8 12 12 15 20 6"/><line x1="3" y1="21" x2="21" y2="21"/></svg>
+          <span class="icon-cell-label">ChartLine</span>
+        </div>
+        <!-- ArrowRight -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+          <span class="icon-cell-label">ArrowRight</span>
+        </div>
+        <!-- CheckCircle -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3DAB72" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg>
+          <span class="icon-cell-label">CheckCircle</span>
+        </div>
+        <!-- Warning -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C94040" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span class="icon-cell-label">Warning</span>
+        </div>
+        <!-- FileText -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+          <span class="icon-cell-label">FileText</span>
+        </div>
+        <!-- Bell -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="icon-cell-label">Bell</span>
+        </div>
+        <!-- X -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8F99" stroke-width="1.25" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span class="icon-cell-label">X</span>
+        </div>
+        <!-- ChevronDown -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8F99" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <span class="icon-cell-label">ChevronDown</span>
+        </div>
+        <!-- User -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span class="icon-cell-label">User</span>
+        </div>
+        <!-- Clock -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F0F0EE" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+          <span class="icon-cell-label">Clock</span>
+        </div>
+        <!-- CopySimple -->
+        <div class="icon-cell">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8F99" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12"/><path d="M16 8V4H4v12h4"/></svg>
+          <span class="icon-cell-label">Copy</span>
+        </div>
+      </div>
+    </div>
+    <p class="font-mono" style="font-size:0.625rem; color:var(--text-3); margin-top:8px; margin-bottom:48px; font-feature-settings:'tnum' 1;">Nunca: fill, cor âmbar, containers circulares/arredondados, weight diferente de light</p>
+
+    <!-- Live animation demo -->
+    <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Animação pulse — única animação ambiente do sistema</p>
+    <div style="background:var(--surface); border:1px solid var(--border); padding:24px; display:flex; align-items:center; gap:24px;">
+      <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span class="live-label">SISTEMA ATIVO</span>
+      </div>
+      <span class="font-mono text-xs color-text-3" style="font-feature-settings:'tnum' 1;">opacity: 1 → 0.4 → 1 · 2s linear infinite · sem transform · sem box-shadow</span>
+    </div>
+  </section>
+</div>
+
+<!-- Constraints -->
+<div class="page-wrap">
+  <section id="constraints">
+    <p class="section-label">06 · Restrições</p>
+    <h2 class="section-title">Nunca / Sempre</h2>
+
+    <div class="constraint-grid">
+      <div class="constraint-block">
+        <p class="constraint-title never">Nunca — proibido em todos os fronts</p>
+        <ul class="constraint-list never">
+          <li>Gradientes como preenchimento de superfície</li>
+          <li>Drop shadows (box-shadow em qualquer elemento)</li>
+          <li>Border-radius diferente de 0px (cards, botões, inputs, badges, modais)</li>
+          <li>Glass / backdrop-filter: blur()</li>
+          <li>#22C55E verde ANSI em qualquer front</li>
+          <li>Ícones coloridos em âmbar</li>
+          <li>Fotografia no produto Dashboard Investidor</li>
+          <li>Jargão blockchain no Dashboard Imobiliárias</li>
+          <li>text-shadow / phosphor glow</li>
+          <li>scale() ou translate em hover/active</li>
+          <li>#000000 preto puro como background</li>
+          <li>Orbs ou bloom decorativo</li>
+          <li>Badges pill/arredondados</li>
+          <li>Inter dentro de panes do Terminal</li>
+          <li>Âmbar em mais de 5% dos pixels da tela</li>
+        </ul>
+      </div>
+
+      <div class="constraint-block">
+        <p class="constraint-title always">Sempre — obrigatório sem exceção</p>
+        <ul class="constraint-list always">
+          <li>border-radius: 0px em todos os elementos</li>
+          <li>JetBrains Mono com font-feature-settings: "tnum" 1 em todos os números</li>
+          <li>Hierarquia de três camadas em toda tela (Geist / Inter / Mono)</li>
+          <li>Empilhamento de superfícies para profundidade</li>
+          <li>Success/error cores apenas semânticas, nunca decorativas</li>
+          <li>#1A1A1A como texto em botão âmbar no Imobiliárias (5.3:1 AA)</li>
+          <li>Inter Semi-bold 600 com #2E8B5A em fundo claro</li>
+          <li>Labels bold ≥14px com #C94040 em fundo escuro</li>
+          <li>Phosphor Icons em weight="light" apenas</li>
+          <li>1px solid borders — nunca 2px decorativo</li>
+          <li>Grid de 8px como unidade base de espaçamento</li>
+          <li>Espaço mínimo de 1× cap height ao redor do logo</li>
+          <li>Transições apenas em: color, background-color, border-color, opacity</li>
+          <li>Âmbar escasso: menos de 5% dos pixels em fronts escuros</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">tga</span>
+    <p class="footer-meta">Token de Garantia de Aluguel · Brand Guidelines v1.0 · 2026-04-14 · Precision Brutalism</p>
+  </div>
+</footer>
+
+<script>
+  function switchPanel(frontId, btn) {
+    // Hide all panels
+    document.querySelectorAll('.color-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.front-tab').forEach(t => t.classList.remove('active'));
+    // Show selected
+    document.getElementById('panel-' + frontId).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
