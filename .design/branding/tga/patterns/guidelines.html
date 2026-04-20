@@ -412,32 +412,6 @@
     }
     .front-label.accent { color: var(--accent); }
 
-    /* Geometric shapes */
-    .geo-grid {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .geo-block {
-      background: #0E0F11;
-      border: 1px solid var(--border);
-      width: 96px;
-      height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .geo-block.light { background: #F7F6F3; border-color: #D8D5D0; }
-    .geo-label {
-      font-family: var(--font-mono);
-      font-size: 0.5625rem;
-      letter-spacing: 0.08em;
-      color: var(--text-2);
-      text-align: center;
-    }
-
     /* Icon grid */
     .icon-row {
       display: flex;
@@ -1330,8 +1304,8 @@
       <li><a href="#color">Color</a></li>
       <li><a href="#typography">Typography</a></li>
       <li><a href="#components">Components</a></li>
+      <li><a href="#visual-elements">Visual Elements</a></li>
       <li><a href="#constraints">Constraints</a></li>
-      <li><a href="#photography">Photography</a></li>
     </ul>
     <div class="nav-right">
       <div class="live-indicator">
@@ -1983,110 +1957,6 @@
       </div>
     </div>
 
-    <!-- Geometric shapes — brutalist vocabulary -->
-    <p class="font-mono text-xs color-accent mb-24" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Geometric Shapes — brutalist vocabulary</p>
-    <div class="geo-grid mb-40">
-
-      <!-- Martelo — autoridade, contrato -->
-      <div>
-        <div class="geo-block">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <g transform="rotate(-38, 32, 36)">
-              <rect x="6" y="10" width="52" height="13" fill="#E8A020"/>
-              <rect x="6" y="27" width="52" height="9" fill="#E8A020"/>
-              <rect x="28" y="36" width="8" height="26" fill="#E8A020"/>
-            </g>
-            <rect x="6" y="55" width="52" height="7" fill="#E8A020"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Authority</p>
-      </div>
-
-      <!-- Lightning — speed, protocol -->
-      <div>
-        <div class="geo-block">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="42,6 20,36 31,36 22,58 46,26 35,26" fill="#E8A020"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Speed</p>
-      </div>
-
-      <!-- Shield — protection, guarantee -->
-      <div>
-        <div class="geo-block">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="10,10 54,10 54,40 32,58 10,40" fill="#E8A020"/>
-            <polygon points="10,10 54,10 54,40 32,58" fill="#C47E10"/>
-            <line x1="10" y1="10" x2="54" y2="58" stroke="#0E0F11" stroke-width="3.5"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Guarantee</p>
-      </div>
-
-      <!-- Building — institution, property -->
-      <div>
-        <div class="geo-block">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="6,28 32,10 58,28" fill="#E8A020"/>
-            <rect x="6" y="27" width="52" height="24" fill="#E8A020"/>
-            <rect x="12" y="31" width="9" height="20" fill="#0E0F11"/>
-            <rect x="27" y="31" width="10" height="20" fill="#0E0F11"/>
-            <rect x="43" y="31" width="9" height="20" fill="#0E0F11"/>
-            <rect x="2" y="51" width="60" height="6" fill="#E8A020"/>
-            <rect x="0" y="57" width="64" height="6" fill="#E8A020"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Institution</p>
-      </div>
-
-      <!-- Light versions -->
-      <div>
-        <div class="geo-block light">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <g transform="rotate(-38, 32, 36)">
-              <rect x="6" y="10" width="52" height="13" fill="#C47E10"/>
-              <rect x="6" y="27" width="52" height="9" fill="#C47E10"/>
-              <rect x="28" y="36" width="8" height="26" fill="#C47E10"/>
-            </g>
-            <rect x="6" y="55" width="52" height="7" fill="#C47E10"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Light</p>
-      </div>
-      <div>
-        <div class="geo-block light">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="42,6 20,36 31,36 22,58 46,26 35,26" fill="#C47E10"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Light</p>
-      </div>
-      <div>
-        <div class="geo-block light">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="10,10 54,10 54,40 32,58 10,40" fill="#C47E10"/>
-            <line x1="10" y1="10" x2="54" y2="58" stroke="#F7F6F3" stroke-width="3.5"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Light</p>
-      </div>
-      <div>
-        <div class="geo-block light">
-          <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="6,28 32,10 58,28" fill="#C47E10"/>
-            <rect x="6" y="27" width="52" height="24" fill="#C47E10"/>
-            <rect x="12" y="31" width="9" height="20" fill="#F7F6F3"/>
-            <rect x="27" y="31" width="10" height="20" fill="#F7F6F3"/>
-            <rect x="43" y="31" width="9" height="20" fill="#F7F6F3"/>
-            <rect x="2" y="51" width="60" height="6" fill="#C47E10"/>
-            <rect x="0" y="57" width="64" height="6" fill="#C47E10"/>
-          </svg>
-        </div>
-        <p class="geo-label" style="margin-top:6px; color:var(--text-2);">Light</p>
-      </div>
-
-    </div>
 
     <!-- Iconografia — Phosphor Icons -->
     <p class="font-mono text-xs color-accent mb-16" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Iconografia — @phosphor-icons/react · weight="light"</p>
@@ -2169,61 +2039,10 @@
   </section>
 </div>
 
-<!-- Constraints -->
+<!-- Visual Elements -->
 <div class="page-wrap">
-  <section id="constraints">
-    <p class="section-label">06 · Constraints</p>
-    <h2 class="section-title">Never / Always</h2>
-
-    <div class="constraint-grid">
-      <div class="constraint-block">
-        <p class="constraint-title never">Never — forbidden across all fronts</p>
-        <ul class="constraint-list never">
-          <li>Gradients as surface fill</li>
-          <li>Drop shadows (box-shadow on any element)</li>
-          <li>Border-radius other than 0px (cards, buttons, inputs, badges, modals)</li>
-          <li>Glass / backdrop-filter: blur()</li>
-          <li>#22C55E ANSI green on any front</li>
-          <li>Amber-colored icons</li>
-          <li>Photography inside the Investor Dashboard product</li>
-          <li>Blockchain jargon in the Real Estate Dashboard</li>
-          <li>text-shadow / phosphor glow</li>
-          <li>scale() or translate on hover/active</li>
-          <li>#000000 pure black as background</li>
-          <li>Decorative orbs or bloom</li>
-          <li>Pill/rounded badges</li>
-          <li>Inter inside Terminal panes</li>
-          <li>Amber on more than 5% of screen pixels</li>
-        </ul>
-      </div>
-
-      <div class="constraint-block">
-        <p class="constraint-title always">Always — required without exception</p>
-        <ul class="constraint-list always">
-          <li>border-radius: 0px on all elements</li>
-          <li>JetBrains Mono with font-feature-settings: "tnum" 1 on all numbers</li>
-          <li>Three-layer hierarchy on every screen (Geist / Inter / Mono)</li>
-          <li>Surface stacking for depth</li>
-          <li>Success/error colors semantic only, never decorative</li>
-          <li>#1A1A1A as text on amber button in Real Estate (5.3:1 AA)</li>
-          <li>Inter Semi-bold 600 with #2E8B5A on light backgrounds</li>
-          <li>Bold labels ≥14px with #C94040 on dark backgrounds</li>
-          <li>Phosphor Icons at weight="light" only</li>
-          <li>1px solid borders — never 2px decorative</li>
-          <li>8px grid as base spacing unit</li>
-          <li>Minimum 1× cap height clear space around logo</li>
-          <li>Transitions on: color, background-color, border-color, opacity only</li>
-          <li>Amber scarce: less than 5% of pixels on dark fronts</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- Fotografia -->
-<div class="page-wrap">
-  <section id="photography">
-    <p class="section-label">07 · Photography</p>
+  <section id="visual-elements">
+    <p class="section-label">06 · Visual Elements</p>
     <h2 class="section-title">Architecture as argument.</h2>
 
     <!-- Principle -->
@@ -2487,6 +2306,57 @@
       </div>
     </div>
 
+  </section>
+</div>
+
+<!-- Constraints -->
+<div class="page-wrap">
+  <section id="constraints">
+    <p class="section-label">07 · Constraints</p>
+    <h2 class="section-title">Never / Always</h2>
+
+    <div class="constraint-grid">
+      <div class="constraint-block">
+        <p class="constraint-title never">Never — forbidden across all fronts</p>
+        <ul class="constraint-list never">
+          <li>Gradients as surface fill</li>
+          <li>Drop shadows (box-shadow on any element)</li>
+          <li>Border-radius other than 0px (cards, buttons, inputs, badges, modals)</li>
+          <li>Glass / backdrop-filter: blur()</li>
+          <li>#22C55E ANSI green on any front</li>
+          <li>Amber-colored icons</li>
+          <li>Photography inside the Investor Dashboard product</li>
+          <li>Blockchain jargon in the Real Estate Dashboard</li>
+          <li>text-shadow / phosphor glow</li>
+          <li>scale() or translate on hover/active</li>
+          <li>#000000 pure black as background</li>
+          <li>Decorative orbs or bloom</li>
+          <li>Pill/rounded badges</li>
+          <li>Inter inside Terminal panes</li>
+          <li>Amber on more than 5% of screen pixels</li>
+        </ul>
+      </div>
+
+      <div class="constraint-block">
+        <p class="constraint-title always">Always — required without exception</p>
+        <ul class="constraint-list always">
+          <li>border-radius: 0px on all elements</li>
+          <li>JetBrains Mono with font-feature-settings: "tnum" 1 on all numbers</li>
+          <li>Three-layer hierarchy on every screen (Geist / Inter / Mono)</li>
+          <li>Surface stacking for depth</li>
+          <li>Success/error colors semantic only, never decorative</li>
+          <li>#1A1A1A as text on amber button in Real Estate (5.3:1 AA)</li>
+          <li>Inter Semi-bold 600 with #2E8B5A on light backgrounds</li>
+          <li>Bold labels ≥14px with #C94040 on dark backgrounds</li>
+          <li>Phosphor Icons at weight="light" only</li>
+          <li>1px solid borders — never 2px decorative</li>
+          <li>8px grid as base spacing unit</li>
+          <li>Minimum 1× cap height clear space around logo</li>
+          <li>Transitions on: color, background-color, border-color, opacity only</li>
+          <li>Amber scarce: less than 5% of pixels on dark fronts</li>
+        </ul>
+      </div>
+    </div>
   </section>
 </div>
 
