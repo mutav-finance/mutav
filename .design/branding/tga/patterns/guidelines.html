@@ -29,7 +29,9 @@
       --accent:     #E8A020;
       --accent-dim: #9E6A10;
       --success:    #3DAB72;
+      --warning:    #D4781A;
       --error:      #C94040;
+      --error-dim:  #8B2C2C;
     }
 
     /* ── Base ───────────────────────────────────────────────────────── */
@@ -605,20 +607,21 @@
       font-size: 0.8125rem;
       height: auto;
       padding: 8px 16px;
-      border: 1px solid #E8A020;
+      border: 1px solid var(--accent);
       background: transparent;
-      color: #E8A020;
+      color: var(--accent);
       font-feature-settings: "tnum" 1;
+      white-space: nowrap;
     }
 
-    .btn-terminal:hover { border-color: #B87010; color: #B87010; }
+    .btn-terminal:hover { border-color: var(--accent-dim); color: var(--accent-dim); }
 
     .btn-terminal-reject {
-      border-color: #C94040;
-      color: #C94040;
+      border-color: var(--error);
+      color: var(--error);
     }
 
-    .btn-terminal-reject:hover { border-color: #8B4A2A; color: #8B4A2A; }
+    .btn-terminal-reject:hover { border-color: var(--error-dim); color: var(--error-dim); }
 
     /* ── Badges ──────────────────────────────────────────────────────── */
     .badge {
@@ -683,10 +686,10 @@
     .input-field.light::placeholder { color: #9E9C98; }
     .input-field.light:focus { border-color: #C47E10; }
 
-    /* ── Terminal block ──────────────────────────────────────────────── */
+    /* ── Operator (terminal/log) block — Investor palette ─────────────── */
     .terminal-block {
-      background: #0A0B0D;
-      border: 1px solid #2A2D33;
+      background: var(--canvas);
+      border: 1px solid var(--border);
       padding: 0;
       overflow: hidden;
       /* Scanline texture */
@@ -694,14 +697,14 @@
         repeating-linear-gradient(
           to bottom,
           transparent 0px, transparent 2px,
-          rgba(232,228,220,0.025) 2px, rgba(232,228,220,0.025) 3px
+          rgba(240,240,238,0.025) 2px, rgba(240,240,238,0.025) 3px
         );
       background-size: 100% 3px;
     }
 
     .terminal-header {
-      background: #111316;
-      border-bottom: 1px solid #2A2D33;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
       padding: 12px 16px;
       display: flex;
       align-items: center;
@@ -713,7 +716,7 @@
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.75rem;
-      color: #E8E4DC;
+      color: var(--text);
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -728,15 +731,15 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .t-dim    { color: #4A4844; }
-    .t-ghost  { color: #4A4844; }
-    .t-label  { color: #7A7870; }
-    .t-text   { color: #E8E4DC; }
-    .t-amber  { color: #E8A020; }
-    .t-copper { color: #B87010; }
-    .t-green  { color: #3DAB72; }
-    .t-red    { color: #C94040; }
-    .t-warn   { color: #D4781A; }
+    .t-dim    { color: var(--text-3); }
+    .t-ghost  { color: var(--text-3); }
+    .t-label  { color: var(--text-2); }
+    .t-text   { color: var(--text); }
+    .t-amber  { color: var(--accent); }
+    .t-copper { color: var(--accent-dim); }
+    .t-green  { color: var(--success); }
+    .t-red    { color: var(--error); }
+    .t-warn   { color: var(--warning); }
 
     /* ── Constraint list ─────────────────────────────────────────────── */
     .constraint-grid {
@@ -877,9 +880,9 @@
       gap: 16px;
     }
 
-    .logo-block-dark { background: #0E0F11; }
+    .logo-block-dark { background: var(--canvas); }
     .logo-block-light { background: #F7F6F3; }
-    .logo-block-terminal { background: #0A0B0D; }
+    .logo-block-terminal { background: var(--canvas); }
 
     .logo-wordmark {
       font-family: var(--font-display);
@@ -903,9 +906,9 @@
       font-feature-settings: "tnum" 1;
     }
 
-    .logo-block-dark  .logo-meta { color: #555B66; }
+    .logo-block-dark  .logo-meta { color: var(--text-3); }
     .logo-block-light .logo-meta { color: #9E9C98; }
-    .logo-block-terminal .logo-meta { color: #4A4844; }
+    .logo-block-terminal .logo-meta { color: var(--text-3); }
 
     .logo-rule-block {
       display: flex;
@@ -1322,8 +1325,8 @@
     <p class="hero-eyebrow">Token de Garantia de Aluguel · Brand Guidelines · 2026-04-14</p>
     <h1 class="hero-title">Precision before<br><span>decoration.</span></h1>
     <p class="hero-sub">
-      TGA operates across three fronts: Investor Dashboard, Real Estate Dashboard, and Operations Terminal.
-      One identity system. One visual grammar. Three resolutions of the same amber.
+      TGA operates across two fronts: Investor Dashboard and Real Estate Dashboard.
+      Operations runs as a mode inside the Investor surface — same palette, same grammar, additional operator UX.
     </p>
     <p class="hero-meta">System strategy: generate · Tech: Next.js + Tailwind v4 + shadcn/ui · Preset overrides: 9</p>
   </div>
@@ -1436,7 +1439,7 @@
         <div>
           <span class="logo-monogram" style="color:#E8A020;">TGA</span>
         </div>
-        <p class="logo-meta">Direction 3 · Monogram · Investor/Terminal</p>
+        <p class="logo-meta">Direction 3 · Monogram · Investor/Operations</p>
       </div>
     </div>
 
@@ -1463,12 +1466,11 @@
 <div class="page-wrap">
   <section id="color">
     <p class="section-label">03 · Color System</p>
-    <h2 class="section-title">Three fronts, one identity</h2>
+    <h2 class="section-title">Two fronts, one identity</h2>
 
     <div class="front-tabs">
-      <button class="front-tab active" onclick="switchPanel('investidor', this)">Investor Dashboard</button>
+      <button class="front-tab active" onclick="switchPanel('investidor', this)">Investor Dashboard · Operations</button>
       <button class="front-tab" onclick="switchPanel('imobiliarias', this)">Real Estate Dashboard</button>
-      <button class="front-tab" onclick="switchPanel('terminal', this)">Terminal</button>
     </div>
 
     <!-- Investidor panel -->
@@ -1539,6 +1541,14 @@
           </div>
         </div>
         <div class="swatch">
+          <div class="swatch-color" style="background:#D4781A;"></div>
+          <div class="swatch-info">
+            <p class="swatch-role">Warning</p>
+            <p class="swatch-hex">#D4781A</p>
+            <p class="swatch-usage">Pending review · Operations status</p>
+          </div>
+        </div>
+        <div class="swatch">
           <div class="swatch-color" style="background:#C94040;"></div>
           <div class="swatch-info">
             <p class="swatch-role">Error</p>
@@ -1547,6 +1557,11 @@
           </div>
         </div>
       </div>
+
+      <p class="font-body text-sm color-text-3" style="margin-top:24px; line-height:1.6;">
+        Operations runs on the Investor palette. The same tokens carry through — canvas, surface, accent, success, warning, error.
+        Operator-specific UX (scanline panes, mixed-register rows, mono action buttons) lives in section 05.
+      </p>
     </div>
 
     <!-- Imobiliárias panel -->
@@ -1619,78 +1634,8 @@
       </div>
     </div>
 
-    <!-- Terminal panel -->
-    <div class="color-panel" id="panel-terminal">
-      <div class="swatch-grid">
-        <div class="swatch">
-          <div class="swatch-color" style="background:#0A0B0D;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Canvas</p>
-            <p class="swatch-hex">#0A0B0D</p>
-            <p class="swatch-usage">Terminal canvas</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#111316;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Surface 1</p>
-            <p class="swatch-hex">#111316</p>
-            <p class="swatch-usage">Panel backgrounds</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#E8E4DC;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Foreground Primary</p>
-            <p class="swatch-hex">#E8E4DC</p>
-            <p class="swatch-usage">Primary mono text</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#E8A020;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Accent (Amber)</p>
-            <p class="swatch-hex">#E8A020</p>
-            <p class="swatch-usage">Active status · NOT green</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#B87010;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Accent Warm (Copper)</p>
-            <p class="swatch-hex">#B87010</p>
-            <p class="swatch-usage">Secondary indicators</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#8B4A2A;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Accent Sienna</p>
-            <p class="swatch-hex">#8B4A2A</p>
-            <p class="swatch-usage">Third-tier status</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#3DAB72;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Confirmed</p>
-            <p class="swatch-hex">#3DAB72</p>
-            <p class="swatch-usage">Liquidation confirmed · NOT #22C55E</p>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#D4781A;"></div>
-          <div class="swatch-info" style="background:#111316;">
-            <p class="swatch-role">Warning</p>
-            <p class="swatch-hex">#D4781A</p>
-            <p class="swatch-usage">Pending review</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#111316; border:1px solid #2A2D33; padding:4px 16px; font-family:var(--font-mono); font-size:0.75rem; color:#C94040; font-feature-settings:'tnum' 1; letter-spacing:0.04em;">
-        BANNED: #22C55E (ANSI green) — forbidden across all fronts, especially Terminal
-      </div>
+    <div style="margin-top:32px; background:var(--surface); border:1px solid var(--border); padding:8px 16px; font-family:var(--font-mono); font-size:0.75rem; color:var(--error); font-feature-settings:'tnum' 1; letter-spacing:0.04em;">
+      BANNED: #22C55E (ANSI green) — forbidden across both fronts, especially in operator panes
     </div>
   </section>
 </div>
@@ -1767,7 +1712,7 @@
 <div class="page-wrap">
   <section id="components">
     <p class="section-label">05 · Components</p>
-    <h2 class="section-title">Three fronts, one grammar</h2>
+    <h2 class="section-title">Two fronts, one grammar</h2>
 
     <!-- Front key -->
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:48px;">
@@ -1780,8 +1725,8 @@
         <p style="font-family:var(--font-body); font-size:0.8125rem; color:#6B6860; line-height:1.55;">Light · Structured Warmth · properties, contracts, payments, defaults</p>
       </div>
       <div style="border-left:2px solid #E8A020; padding:12px 16px; background:var(--surface);">
-        <p class="front-label accent">Terminal · Protocol</p>
-        <p style="font-family:var(--font-body); font-size:0.8125rem; color:var(--text-2); line-height:1.55;">Internal ops · any team member · operations, approvals, audit</p>
+        <p class="front-label accent">Operations · Investor mode</p>
+        <p style="font-family:var(--font-body); font-size:0.8125rem; color:var(--text-2); line-height:1.55;">Internal ops · same palette as Investor · operator UX: scanline panes, mixed-register rows, mono actions</p>
       </div>
     </div>
 
@@ -1865,42 +1810,45 @@
         </div>
       </div>
 
-      <!-- Terminal card — mixed register -->
-      <div class="component-block" style="background:#16181C; border:1px solid #2A2D33; padding:20px; display:flex; flex-direction:column; gap:16px;">
-        <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #2A2D33; padding-bottom:12px;">
-          <span style="font-family:var(--font-body); font-size:0.8125rem; font-weight:500; color:#F0F0EE;">Contract TGA-0042</span>
-          <div class="live-indicator">
-            <div class="live-dot"></div>
-            <span class="live-label">ACTIVE</span>
+      <!-- Operations card — mixed register, Investor palette -->
+      <div class="component-block">
+        <p class="component-label">Operations — Investor mode</p>
+        <div style="background:var(--surface); border:1px solid var(--border); padding:20px; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:12px;">
+            <span style="font-family:var(--font-body); font-size:0.8125rem; font-weight:500; color:var(--text);">Contract TGA-0042</span>
+            <div class="live-indicator">
+              <div class="live-dot"></div>
+              <span class="live-label">ACTIVE</span>
+            </div>
           </div>
-        </div>
-        <!-- Structured rows — Inter labels + Mono values -->
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Value</span>
-            <span style="font-family:var(--font-mono); font-size:0.875rem; color:#F0F0EE; font-feature-settings:'tnum' 1;">R$2.847,00</span>
+          <!-- Structured rows — Inter labels + Mono values -->
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--text-2);">Value</span>
+              <span style="font-family:var(--font-mono); font-size:0.875rem; color:var(--text); font-feature-settings:'tnum' 1;">R$2.847,00</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--text-2);">Status</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--success); font-feature-settings:'tnum' 1;">LIQUIDATED</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--text-2);">Execution time</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--warning); font-feature-settings:'tnum' 1;">4h37m</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--text-2);">Block</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-2); font-feature-settings:'tnum' 1;">#284.091.447</span>
+            </div>
           </div>
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Status</span>
-            <span style="font-family:var(--font-mono); font-size:0.75rem; color:#3DAB72; font-feature-settings:'tnum' 1;">LIQUIDATED</span>
+          <div style="border-top:1px solid var(--border); padding-top:12px; display:flex; gap:8px;">
+            <button class="btn btn-terminal" style="flex:1;">APPROVE</button>
+            <button class="btn btn-terminal btn-terminal-reject" style="flex:1;">REJECT</button>
           </div>
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Execution time</span>
-            <span style="font-family:var(--font-mono); font-size:0.75rem; color:#D4781A; font-feature-settings:'tnum' 1;">4h37m</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-family:var(--font-body); font-size:0.75rem; color:#8A8F99;">Block</span>
-            <span style="font-family:var(--font-mono); font-size:0.75rem; color:#8A8F99; font-feature-settings:'tnum' 1;">#284.091.447</span>
-          </div>
-        </div>
-        <div style="border-top:1px solid #2A2D33; padding-top:12px; display:flex; gap:8px;">
-          <button class="btn btn-terminal" style="flex:1;">[ APPROVE ]</button>
-          <button class="btn btn-terminal btn-terminal-reject" style="flex:1;">[ REJECT ]</button>
         </div>
       </div>
     </div>
 
-    <!-- Buttons — 3 fronts -->
+    <!-- Buttons — Investor / Real Estate / Operations -->
     <p class="font-mono text-xs color-accent mb-24" style="letter-spacing:0.06em; font-feature-settings:'tnum' 1; text-transform:uppercase;">Buttons</p>
     <div class="component-grid-3 mb-40">
       <div class="component-block">
@@ -1918,12 +1866,12 @@
         </div>
       </div>
       <div class="component-block" style="padding:0; background:transparent; border:none;">
-        <p class="front-label" style="color:#6B7A6B; padding:16px 16px 0;">Terminal</p>
+        <p class="front-label accent" style="padding:16px 16px 0;">Operations · Investor mode</p>
         <div class="terminal-block" style="margin-top:0;">
           <div class="terminal-body" style="padding:16px;">
             <div style="display:flex; gap:12px; flex-direction:column;">
-              <button class="btn btn-terminal">[ APPROVE ]</button>
-              <button class="btn btn-terminal btn-terminal-reject">[ REJECT ]</button>
+              <button class="btn btn-terminal">APPROVE</button>
+              <button class="btn btn-terminal btn-terminal-reject">REJECT</button>
             </div>
           </div>
         </div>
@@ -2332,7 +2280,7 @@
           <li>#000000 pure black as background</li>
           <li>Decorative orbs or bloom</li>
           <li>Pill/rounded badges</li>
-          <li>Inter inside Terminal panes</li>
+          <li>Inter inside terminal/log panes (mono only — structured rows are a separate pattern)</li>
           <li>Amber on more than 5% of screen pixels</li>
         </ul>
       </div>
