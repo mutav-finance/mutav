@@ -57,7 +57,7 @@ Once approved, the PR author merges. Use **squash merge** to keep `main` history
 - TypeScript: run `prettier` and `eslint`
 - Tests must pass — CI will block the merge if they don't
 
-## Agent Skills
+## Adding skills
 
 Coding-agent skills are vendored at `.claude/skills/` so every contributor gets them via `git pull` — no per-machine `npx` install needed. To add a new skill:
 
@@ -67,7 +67,7 @@ git add .claude/skills/<skill-name> skills-lock.json
 git commit -m "chore: add <skill-name> skill"
 ```
 
-Then update the **Agent Skills** section of `README.md` with a setup + usage block (mirror the Colosseum / ETHGlobal entries) and open a PR.
+Then update `README.md` with a setup + usage block — drop it under the existing **Blockchain Research & Strategy Skills** section if it fits that category, or add a new section heading for a different category (e.g. *Frontend & Codegen Skills*) and mirror the same per-skill structure.
 
 Always install with `--agent claude-code` and run from the repo root so the skill lands project-scoped — never user-global.
 

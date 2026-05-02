@@ -57,9 +57,9 @@ git config core.hooksPath .githooks
 
 > *Jurados: aceite o convite da org `tga-protocol` no GitHub. Vocês terão acesso de leitura para navegar código, issues e PRs.*
 
-## Agent Skills
+## Blockchain Research & Strategy Skills
 
-Two coding-agent research skills ship in this repo at `.claude/skills/` — they're available as soon as you `git pull` and open Claude Code in the project. No separate install needed.
+Two coding-agent research skills ship in this repo at `.claude/skills/` — they're available as soon as you `git pull` and open Claude Code in the project. No separate install needed. Both serve research and strategy use cases (ecosystem benchmarking, builder lookup, sponsor scouting), not codegen.
 
 ### Colosseum Copilot
 
