@@ -57,6 +57,20 @@ Once approved, the PR author merges. Use **squash merge** to keep `main` history
 - TypeScript: run `prettier` and `eslint`
 - Tests must pass — CI will block the merge if they don't
 
+## Agent Skills
+
+Coding-agent skills are vendored at `.claude/skills/` so every contributor gets them via `git pull` — no per-machine `npx` install needed. To add a new skill:
+
+```bash
+npx skills add <org>/<repo> --agent claude-code --skill '*' -y
+git add .claude/skills/<skill-name> skills-lock.json
+git commit -m "chore: add <skill-name> skill"
+```
+
+Then update the **Agent Skills** section of `README.md` with a setup + usage block (mirror the Colosseum / ETHGlobal entries) and open a PR.
+
+Always install with `--agent claude-code` and run from the repo root so the skill lands project-scoped — never user-global.
+
 ## Questions
 
 Open an issue or ping the team directly.

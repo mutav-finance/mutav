@@ -57,49 +57,63 @@ git config core.hooksPath .githooks
 
 > *Jurados: aceite o convite da org `tga-protocol` no GitHub. Vocês terão acesso de leitura para navegar código, issues e PRs.*
 
-## Colosseum Copilot Setup
+## Agent Skills
 
-Copilot gives the team access to 5,400+ hackathon projects, 84,000+ archive documents, and ecosystem data to benchmark SGR against the Solana landscape.
+Two coding-agent research skills ship in this repo at `.claude/skills/` — they're available as soon as you `git pull` and open Claude Code in the project. No separate install needed.
 
-**1. Get a Personal Access Token**
+### Colosseum Copilot
 
-Log in to [arena.colosseum.org/copilot](https://arena.colosseum.org/copilot) and generate a PAT. It's shown once — copy it immediately.
+5,400+ Solana hackathon projects, 84,000+ archive documents, and ecosystem data. Use to benchmark SGR against the Solana landscape, vet ideas, or research builders.
 
-**2. Set environment variables**
+**Setup**
+
+1. Generate a PAT at [arena.colosseum.org/copilot](https://arena.colosseum.org/copilot) — shown once, copy it immediately.
+2. Add to your shell profile (`.zshrc`, `.bashrc`):
+
+   ```bash
+   export COLOSSEUM_COPILOT_API_BASE="https://copilot.colosseum.com/api/v1"
+   export COLOSSEUM_COPILOT_PAT="your-token-here"
+   ```
+
+3. Verify:
+
+   ```bash
+   curl "$COLOSSEUM_COPILOT_API_BASE/status" \
+     -H "Authorization: Bearer $COLOSSEUM_COPILOT_PAT"
+   ```
+
+   Expected: `{ "authenticated": true, "expiresAt": "...", "scope": "..." }`
+
+**Usage**
+
+Ask conversational research questions, e.g. *"What Solana hackathon projects have worked on rent default insurance?"*. Prefix with *"vet this idea"* or *"deep dive"* to trigger the full 8-step research workflow. Tokens expire after 90 days. Research outputs are saved to `docs/colosseum/`.
+
+### ETHGlobal Skills
+
+17,180 ETHGlobal hackathon projects, sponsor bounty docs, and prize winners. Use to scout EVM ecosystem precedents and sponsor opportunities.
+
+**Setup**
+
+No token needed — the API allows 10 free requests per minute. Beyond that, requests return HTTP 402 and require **$0.05 USDC on Base mainnet** per request. To pay automatically, install [AgentCash](https://docs.agentcash.com) and fund it with a small balance.
+
+**Usage**
+
+Append `use ethglobal-skills` to a prompt, e.g. *"find past projects on lending markets — use ethglobal-skills"*. The skill won't activate without that explicit invocation.
+
+### Updating skills
+
+Both skills are pinned in `skills-lock.json` at the repo root. To pull a newer version:
 
 ```bash
-export COLOSSEUM_COPILOT_API_BASE="https://copilot.colosseum.com/api/v1"
-export COLOSSEUM_COPILOT_PAT="your-token-here"
+npx skills update colosseum-copilot --project
+npx skills update ethglobal-skills --project
 ```
 
-Add these to your shell profile (`.zshrc`, `.bashrc`) so they persist.
-
-**3. Install the skill**
-
-```bash
-npx skills add ColosseumOrg/colosseum-copilot
-```
-
-**4. Verify the connection**
-
-```bash
-curl "$COLOSSEUM_COPILOT_API_BASE/status" \
-  -H "Authorization: Bearer $COLOSSEUM_COPILOT_PAT"
-```
-
-Expected: `{ "authenticated": true, "expiresAt": "...", "scope": "..." }`
-
-**5. Run a query**
-
-```
-What Solana hackathon projects have worked on rent default insurance?
-```
-
-For deep analysis: prefix with "vet this idea" or "deep dive" to trigger the full 8-step research workflow.
-
-Tokens expire after 90 days. Research outputs are saved to `docs/colosseum/`.
+Commit the updated files and `skills-lock.json`.
 
 ## Links
 
 - [Colosseum Hackathon](https://colosseum.com/hackathon)
 - [Colosseum Copilot Docs](https://docs.colosseum.com/copilot)
+- [ETHGlobal Skills repo](https://github.com/ethglobal-skills/repo)
+- [AgentCash docs](https://docs.agentcash.com)
