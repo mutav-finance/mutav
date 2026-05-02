@@ -5,6 +5,7 @@ SGR (Sistema de Garantia Registrada) — strategy, brand, docs, and shared specs
 Part of the [tga-protocol](https://github.com/tga-protocol) org.
 
 ## Sibling repos
+- `brand` — canonical brand artifacts; vendored into each consumer's `.design/branding/tga/`
 - `sgr-solana` — Solana/Anchor smart contracts (Colosseum Frontier hackathon)
 - `sgr-stellar` — Stellar/Soroban smart contracts (NearX acceleration)
 - `sgr-app` — Next.js dashboard for managing rental guarantees
@@ -18,3 +19,6 @@ Part of the [tga-protocol](https://github.com/tga-protocol) org.
 
 ## Branch workflow
 Feature branches → squash merge PRs to main. `main` is protected.
+
+## Brand artifacts
+Shared brand lives in the sibling `brand/` repo and is vendored into `.design/branding/tga/` here. To refine brand: `cd ../brand && claude`, run `/gsp-brand-*`, commit, then `bun brand:export` from `brand/` and review the resulting diffs in each consumer. To audit alignment: `cd ../brand && bun brand:audit`.
