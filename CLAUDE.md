@@ -12,8 +12,7 @@ Part of the [tga-protocol](https://github.com/tga-protocol) org.
 
 ## Resources
 - **Colosseum Dev Resources:** https://colosseum.com/frontier/resources
-- **Colosseum Copilot Token:** https://arena.colosseum.org/copilot
-- **Colosseum Copilot Docs:** https://docs.colosseum.com/copilot
+- **Colosseum Copilot Skill:** installed at `.claude/skills/colosseum-copilot/`. Solana/crypto startup research — builder history, investor theses, market signals. Token at https://arena.colosseum.org/copilot, docs at https://docs.colosseum.com/copilot.
 - **ETHGlobal Skills:** https://github.com/ethglobal-skills/repo — installed at `.claude/skills/ethglobal-skills/`. Searches 17,180 hackathon projects, sponsor bounties, and prize winners. Append `use ethglobal-skills` to invoke. Free under 10 req/min, then $0.05 USDC on Base.
 - **The Grid Docs:** https://docs.thegrid.id
 - **The Grid Explorer:** https://raw.githubusercontent.com/The-Grid-Data/Explorer/main/README.md
