@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "title": "tga — aluguel garantido, do jeito que deveria funcionar",
+    "description": "TGA — protocolo de garantia locatícia. Quando o inquilino atrasa, o repasse é automático. Sem formulário, sem fila.",
+    "ogTitle": "tga — aluguel garantido, do jeito que deveria funcionar",
+    "ogDescription": "Protocolo de garantia locatícia. Liquidação automatizada, registro verificável."
+  },
+  "skipLink": "pular para o conteúdo",
+  "nav": {
+    "logoLabel": "tga — início",
+    "liveLabel": "protocolo ativo",
+    "languageLabel": "Idioma"
+  },
+  "hero": {
+    "kicker": "começamos pela garantia",
+    "kickerIndex": "01",
+    "kickerTotal": "04",
+    "h1Line1": "Aluguel garantido,",
+    "h1Line2": "do jeito que deveria",
+    "h1Line3": "funcionar.",
+    "subhead": "Quando o inquilino atrasa, você recebe. Sem formulário, sem fila, sem intermediário que decide quando pagar. O protocolo executa o repasse automaticamente — e cada repasse fica registrado, público e verificável.",
+    "manifesto": "O protocolo que não falha quando o mercado falha."
+  },
+  "gap": {
+    "kicker": "o problema",
+    "h2": "Quem aluga, e quem investe, paga pela mesma falha.",
+    "items": [
+      {
+        "label": "Tempo",
+        "headline": "O repasse pode esperar 60 dias.",
+        "body": "O aluguel não pode. Famílias inteiras pagam o financiamento contando com o aluguel que não chega."
+      },
+      {
+        "label": "Opacidade",
+        "headline": "Garantia que ninguém audita.",
+        "body": "As garantidoras tradicionais não publicam histórico de repasses. Quando quebram, ninguém vê chegando."
+      },
+      {
+        "label": "Fragilidade",
+        "headline": "Quando uma garantidora cai, milhares de contratos caem juntos.",
+        "body": "O mercado de garantia locatícia precisa parar de depender de um único player não quebrar."
+      }
+    ]
+  },
+  "vision": {
+    "kicker": "o caminho — sem datas, sem promessas",
+    "h2": "Começamos pela garantia. O aluguel inteiro vem depois.",
+    "phases": [
+      {
+        "n": "01",
+        "label": "Agora",
+        "title": "Garantia locatícia",
+        "body": "Repasse automático ao proprietário em caso de inadimplência. Liquidação programada, registro público."
+      },
+      {
+        "n": "02",
+        "label": "Próximo",
+        "title": "Score de reputação onchain",
+        "body": "Histórico de pagamentos como reputação verificável — para inquilinos, proprietários e imobiliárias."
+      },
+      {
+        "n": "03",
+        "label": "Depois",
+        "title": "TGA — exposição programável",
+        "body": "Investidores acessam o spread do mercado de locação com NAV verificável e log de liquidações onchain."
+      },
+      {
+        "n": "04",
+        "label": "Horizonte",
+        "title": "Pagamentos e fundos programáveis",
+        "body": "Otimizar o que mais trava o mercado de locação — transações, pagamentos, custódia de fundos. Onde fizer sentido."
+      }
+    ]
+  },
+  "bifurcation": {
+    "kicker": "qual lado é o seu?",
+    "h2Line1": "Diga quem você é.",
+    "h2Line2": "Avisamos quando estiver pronto.",
+    "cards": [
+      {
+        "n": "01",
+        "label": "Imobiliária / Proprietário",
+        "subjectLabel": "imobiliária ou proprietário",
+        "body": "Você aluga, gerencia ou tem imóveis. Quer garantia que cumpre.",
+        "aria": "Saltar para a inscrição de proprietários e imobiliárias",
+        "cta": "continuar abaixo ↓"
+      },
+      {
+        "n": "02",
+        "label": "Investidor",
+        "subjectLabel": "investidor",
+        "body": "Você opera no Solana ou DeFi. Quer yield real com colateral verificável.",
+        "aria": "Saltar para a inscrição de investidores",
+        "cta": "continuar abaixo ↓"
+      }
+    ]
+  },
+  "proprietario": {
+    "kickerIndex": "→ 01",
+    "kicker": "proprietário ou imobiliária",
+    "h2": "Você não fica esperando.",
+    "items": [
+      "Quando o inquilino atrasa, você recebe.",
+      "Sem formulário. Sem fila. Sem ligar para uma central.",
+      "O dinheiro cai na conta cadastrada — automaticamente."
+    ],
+    "dignity": "Vamos te avisar quando estiver pronto. Não vamos te encher.",
+    "consent": "Ao entrar na lista, você consente com o uso do seu e-mail para receber novidades sobre a TGA. Pode sair quando quiser — basta responder qualquer e-mail com \"sair\"."
+  },
+  "investidor": {
+    "kickerIndex": "→ 02",
+    "kicker": "investidor",
+    "h2Line1": "Yield real. Colateral verificável.",
+    "h2Line2": "Mercado brasileiro, onchain.",
+    "items": [
+      "Exposição ao spread de garantias locatícias brasileiras — especificidade que pool genérico não tem.",
+      "Liquidação programática registrada onchain. Audit report e código abertos.",
+      "Founders nomeados. Não é projeto anônimo."
+    ],
+    "verifyCta": "[ verifique a arquitetura → github.com/tga-protocol ]",
+    "tagline": "Não confie. Verifique."
+  },
+  "team": {
+    "kicker": "quem está construindo",
+    "h2": "Não é projeto anônimo.",
+    "founders": [
+      {
+        "initial": "D",
+        "name": "Draau",
+        "role": "Engenharia de protocolo. Solana / Anchor.",
+        "track": "5+ anos em Web3.",
+        "githubLabel": "Draau no GitHub"
+      },
+      {
+        "initial": "J",
+        "name": "jubs",
+        "role": "Design engineering. Frontend / sistemas.",
+        "track": "Colosseum Frontier 2026.",
+        "githubLabel": "jubs no GitHub"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Aluguel garantido, do jeito que deveria funcionar.",
+    "subtitle": "Protocolo de garantia locatícia construído na Solana.",
+    "navLabel": "Rodapé",
+    "columns": [
+      {
+        "label": "Protocolo",
+        "links": [
+          { "label": "github.com/tga-protocol", "href": "https://github.com/tga-protocol" },
+          { "label": "white paper", "href": "https://github.com/tga-protocol/sgr" }
+        ]
+      },
+      {
+        "label": "Builders",
+        "links": [
+          { "label": "Draau", "href": "https://github.com/draaujpeg" },
+          { "label": "jubs", "href": "https://github.com/hoffms" }
+        ]
+      },
+      {
+        "label": "Colosseum",
+        "links": [
+          { "label": "copilot", "href": "https://arena.colosseum.org/copilot" },
+          { "label": "frontier", "href": "https://colosseum.com/frontier/resources" }
+        ]
+      },
+      {
+        "label": "Legal",
+        "links": [
+          { "label": "privacidade", "href": "/privacidade" },
+          { "label": "termos", "href": "/termos" }
+        ]
+      }
+    ],
+    "copyright": "© {year} tga — token de garantia de aluguel."
+  },
+  "waitlist": {
+    "emailLabel": "Seu e-mail",
+    "emailPlaceholder": "voce@exemplo.com",
+    "submitting": "enviando…",
+    "buttonLabel": {
+      "proprietario": "[ avise-me ]",
+      "investidor": "[ entrar na lista ]"
+    },
+    "success": {
+      "proprietario": "recebido — você está na lista de proprietários. Vamos te avisar quando estiver pronto.",
+      "investidor": "recebido — você está na lista de investidores. Acompanhe o build no github.com/tga-protocol."
+    },
+    "error": {
+      "INVALID": {
+        "proprietario": "E-mail inválido. Verifique e tente de novo.",
+        "investidor": "E-mail inválido. Verifique o formato."
+      },
+      "DUPLICATE": {
+        "proprietario": "Esse e-mail já está na lista. Vamos te avisar quando estiver pronto.",
+        "investidor": "Já está na lista. Confira o histórico no GitHub."
+      },
+      "RATE_LIMITED": {
+        "proprietario": "Muitas tentativas. Tente novamente em alguns minutos.",
+        "investidor": "Rate-limited. Tente em alguns minutos."
+      },
+      "SERVER_ERROR": {
+        "proprietario": "Não foi possível salvar. Tente novamente.",
+        "investidor": "Falha no servidor. Tente novamente."
+      }
+    }
+  }
+}

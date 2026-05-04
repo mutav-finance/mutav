@@ -1,0 +1,28 @@
+{
+  "version": "0.7.4",
+  "project_type": "design",
+  "project": {
+    "name": "landing",
+    "label": "TGA Landing Page",
+    "created": "2026-05-02"
+  },
+  "brand": {
+    "ref": "tga",
+    "path": "../../branding/tga"
+  },
+  "implementation_target": "shadcn",
+  "design_scope": "screens",
+  "codebase_type": "greenfield",
+  "tech_stack": {
+    "framework": "next-15",
+    "styling": "tailwind-v4",
+    "components": "shadcn-ui",
+    "fonts": "next/font/google + fontsource-variable"
+  },
+  "primary_front": "investidor",
+  "secondary_front": "imobiliarias",
+  "audiences": ["investor", "imobiliaria_proprietario"],
+  "languages": ["pt-BR", "en"],
+  "primary_language": "pt-BR",
+  "gsp_version": "0.7.2"
+}
