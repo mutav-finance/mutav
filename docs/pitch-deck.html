@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TGA — Tokenização de Garantia de Aluguel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --canvas:  #0E0F11;
+  --s1:      #16181C;
+  --s2:      #1E2126;
+  --s3:      #252830;
+  --border:  #2A2D33;
+  --text:    #F0F0EE;
+  --text2:   #8A8F99;
+  --text3:   #555B66;
+  --accent:  #E8A020;
+  --ok:      #3DAB72;
+  --err:     #C94040;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--canvas);color:var(--text);font-family:'Inter',system-ui,sans-serif}
+
+/* deck */
+.deck{position:relative;width:100vw;height:100vh}
+.slide{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  padding:56px 72px 80px;opacity:0;pointer-events:none;
+  transition:opacity 150ms ease-out;overflow:hidden;
+}
+.slide.active{opacity:1;pointer-events:all}
+.slide::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.slide>*{position:relative;z-index:1}
+
+/* fixed chrome */
+.wordmark{
+  position:fixed;top:32px;left:72px;z-index:200;
+  font-family:'Geist',system-ui,sans-serif;font-weight:700;
+  font-size:28px;color:var(--accent);letter-spacing:-0.04em;
+}
+.counter{
+  position:fixed;top:36px;right:72px;z-index:200;
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--text3);letter-spacing:0.05em;
+}
+.nav{
+  position:fixed;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:24px;z-index:200;
+}
+.nav-btn{
+  background:none;border:1px solid var(--border);color:var(--text3);
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  padding:8px 20px;cursor:pointer;letter-spacing:0.05em;
+  transition:color 150ms ease-out,border-color 150ms ease-out;
+}
+.nav-btn:hover{color:var(--text);border-color:var(--text2)}
+.nav-btn:disabled{opacity:0.3;cursor:default}
+.dots{display:flex;gap:8px;align-items:center}
+.dot{width:6px;height:6px;background:var(--border);cursor:pointer;transition:background 150ms ease-out}
+.dot.active{background:var(--accent)}
+
+/* type */
+.label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text2);letter-spacing:0.12em;text-transform:uppercase}
+h1,h2,h3{font-family:'Geist',system-ui,sans-serif;font-weight:700;letter-spacing:-0.04em;line-height:1.05;color:var(--text)}
+h1{font-size:72px}
+h2{font-size:44px}
+h3{font-size:24px}
+p{font-size:15px;line-height:1.6;color:var(--text2)}
+.mono{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3)}
+.amber{color:var(--accent)}
+strong{color:var(--text);font-weight:600}
+
+/* surfaces */
+.card{background:var(--s1);border:1px solid var(--border);padding:24px}
+.card2{background:var(--s2);border:1px solid var(--border);padding:24px}
+
+/* layout */
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.col6040{display:grid;grid-template-columns:60fr 40fr;gap:40px}
+.divider{height:1px;background:var(--border);margin:20px 0}
+.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt24{margin-top:24px}
+.flex1{flex:1}
+
+/* stats bar */
+.stats-bar{display:flex;background:var(--s1);border:1px solid var(--border)}
+.stat{flex:1;padding:20px 24px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:36px;color:var(--text);letter-spacing:-0.04em;line-height:1}
+.stat-l{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:0.1em;margin-top:6px}
+
+/* table */
+table{width:100%;border-collapse:collapse}
+th{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;text-align:left;padding:8px 14px;border-bottom:1px solid var(--border);font-weight:400}
+td{padding:10px 14px;color:var(--text2);border-bottom:1px solid var(--border);vertical-align:top;font-size:13px;line-height:1.5}
+td:first-child{color:var(--text);font-weight:500}
+tr:last-child td{border-bottom:none}
+
+/* flow */
+.flow{display:flex;background:var(--s1);border:1px solid var(--border)}
+.flow-step{flex:1;padding:20px 22px;border-right:1px solid var(--border)}
+.flow-step:last-child{border-right:none}
+.flow-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em}
+.flow-title{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);margin-top:6px;letter-spacing:-0.02em}
+.flow-body{font-size:13px;color:var(--text2);margin-top:8px;line-height:1.55}
+
+/* quote */
+.quote{background:var(--s1);border:1px solid var(--border);border-left:2px solid var(--accent);padding:14px 20px;font-size:14px;color:var(--text2);line-height:1.6}
+
+/* pulse */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.pulse{display:inline-block;width:6px;height:6px;background:var(--accent);animation:pulse 2s linear infinite;vertical-align:middle;margin-right:8px;flex-shrink:0}
+
+/* slide header */
+.slide-header{display:flex;align-items:baseline;gap:16px;margin-bottom:28px}
+.slide-header h2{font-size:40px}
+
+/* problem block */
+.prob{background:var(--s1);border:1px solid var(--border);padding:26px;display:flex;flex-direction:column;gap:10px}
+.prob-n{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.1em}
+.prob-t{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);letter-spacing:-0.02em;line-height:1.1}
+.prob-b{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* big number */
+.bign{font-family:'Geist',system-ui,sans-serif;font-weight:700;letter-spacing:-0.04em;line-height:1}
+
+/* gtm */
+.phase-tag{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);padding:6px 12px;margin-bottom:20px}
+.phase-on{color:var(--accent);border-color:var(--accent)}
+.gtm-block{background:var(--s1);border:1px solid var(--border);padding:22px}
+.gtm-t{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:17px;color:var(--text);letter-spacing:-0.02em;margin-bottom:12px}
+.gtm-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.gtm-list li{font-size:13px;color:var(--text2);line-height:1.5;padding-left:16px;position:relative}
+.gtm-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:10px;top:3px}
+
+/* team */
+.team-card{background:var(--s1);border:1px solid var(--border);padding:28px}
+.team-name{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:22px;color:var(--text);letter-spacing:-0.02em}
+.team-role{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+.team-bio{font-size:13px;color:var(--text2);line-height:1.6;margin-top:14px}
+</style>
+</head>
+<body>
+
+<div class="wordmark">tga</div>
+<div class="counter" id="counter">01 / 10</div>
+
+<nav class="nav">
+  <button class="nav-btn" id="prev" onclick="go(-1)">← PREV</button>
+  <div class="dots" id="dots"></div>
+  <button class="nav-btn" id="next" onclick="go(1)">NEXT →</button>
+</nav>
+
+<div class="deck">
+
+<!-- SLIDE 1 · COVER -->
+<div class="slide active">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;">
+    <span class="label" style="display:flex;align-items:center;"><span class="pulse"></span>PROTOCOLO DE INFRAESTRUTURA ONCHAIN</span>
+    <h1 style="font-size:76px;max-width:820px;letter-spacing:-0.05em;">
+      Tokenização de<br>Garantia de<br><span class="amber">Aluguel</span>
+    </h1>
+    <p style="font-size:17px;max-width:520px;">
+      Infraestrutura onchain que conecta capital global ao mercado brasileiro de garantias locatícias.
+    </p>
+    <div class="divider" style="max-width:520px;margin:4px 0"></div>
+    <div style="display:flex;gap:48px;">
+      <div>
+        <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Mercado</div>
+        <div class="bign" style="font-size:22px;color:var(--text);margin-top:4px;">R$ 300M/ano</div>
+      </div>
+      <div>
+        <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Aluguel BR</div>
+        <div class="bign" style="font-size:22px;color:var(--text);margin-top:4px;">46,5M pessoas</div>
+      </div>
+      <div>
+        <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Modelo</div>
+        <div class="bign" style="font-size:22px;color:var(--text);margin-top:4px;">NAV Apreciável</div>
+      </div>
+    </div>
+  </div>
+  <div class="mono" style="color:var(--text3);">2026 · Confidencial · Draau & Julia</div>
+</div>
+
+<!-- SLIDE 2 · MERCADO -->
+<div class="slide">
+  <div class="slide-header"><span class="label">01</span><h2>Mercado</h2></div>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-n">46,5M</div><div class="stat-l">brasileiros pagam aluguel (2024)</div></div>
+    <div class="stat"><div class="stat-n amber">R$ 110B</div><div class="stat-l">setor imobiliário / ano</div></div>
+    <div class="stat"><div class="stat-n">R$ 1,29B</div><div class="stat-l">prêmios seguro-fiança (jan–nov 2024)</div></div>
+    <div class="stat"><div class="stat-n">R$ 300M</div><div class="stat-l">garantias digitais em 2025</div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="cols2" style="flex:1;align-items:start;">
+    <div class="card" style="display:flex;flex-direction:column;gap:14px;height:100%;">
+      <span class="label">Concentração de mercado</span>
+      <p style="font-size:13px;">O mercado de garantias locatícias é dominado por poucos players com capital próprio. Quando um deles falha, toda a cadeia é impactada.</p>
+      <div class="divider" style="margin:4px 0"></div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div>
+          <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:15px;color:var(--text);letter-spacing:-0.02em;">CredPago / Grupo Loft</div>
+          <div class="mono" style="margin-top:2px;">R$ 40B em ativos · 16k imobiliárias · adquirida por bilhão</div>
+        </div>
+        <div>
+          <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:15px;color:var(--text);letter-spacing:-0.02em;">BTG Pactual</div>
+          <div class="mono" style="margin-top:2px;">Lucro bilionário em menos de 2 anos no setor</div>
+        </div>
+        <div>
+          <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:15px;color:var(--text);letter-spacing:-0.02em;">Loft — R$ 100M em tech (2026)</div>
+          <div class="mono" style="margin-top:2px;">Foco: inovação em garantias locatícias</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;height:100%;">
+      <div class="card" style="flex:1;">
+        <span class="label">Eventos recentes — falhas sistêmicas</span>
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;">
+          <div>
+            <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:14px;color:var(--err);">QuintoCred — encerrado (2025)</div>
+            <div class="prob-b" style="font-size:12px;margin-top:3px;">45 mil contratos afetados · 3 mil imobiliárias impactadas</div>
+          </div>
+          <div class="divider" style="margin:2px 0"></div>
+          <div>
+            <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:14px;color:var(--err);">CredPago — inadimplência (2025)</div>
+            <div class="prob-b" style="font-size:12px;margin-top:3px;">Atrasos em pagamentos · falhas em infraestrutura de repasse</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">Um mercado bilionário, crescendo, e ainda inacessível para investidores externos.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 · PROBLEMA -->
+<div class="slide">
+  <div class="slide-header"><span class="label">02</span><h2>Problema</h2></div>
+  <p style="font-size:17px;color:var(--text);font-weight:500;margin-bottom:28px;letter-spacing:-0.01em;">Um mercado fechado e estruturalmente frágil.</p>
+  <div class="cols3" style="flex:1;">
+    <div class="prob">
+      <span class="prob-n">01</span>
+      <div class="prob-t">Capital concentrado,<br>risco sistêmico</div>
+      <div class="prob-b">Garantidoras operam com capital próprio, sem participação externa. Quando uma falha — como QuintoCred e CredPago em 2025 — não há mecanismo coletivo de absorção. O risco fica preso em poucos players.</div>
+    </div>
+    <div class="prob">
+      <span class="prob-n">02</span>
+      <div class="prob-t">Custo alto,<br>liquidação lenta</div>
+      <div class="prob-b">Inquilinos pagam <strong>10–15% ao ano</strong> em taxas. Proprietários esperam <strong>até 60 dias</strong> para receber em inadimplência, dependentes de processos manuais sem previsibilidade.</div>
+      <div style="margin-top:auto;padding-top:16px;display:flex;gap:28px;">
+        <div><div class="bign" style="font-size:36px;color:var(--err);">60d</div><div class="mono" style="margin-top:4px;">repasse atual</div></div>
+        <div><div class="bign" style="font-size:36px;color:var(--err);">15%</div><div class="mono" style="margin-top:4px;">taxa máx/ano</div></div>
+      </div>
+    </div>
+    <div class="prob">
+      <span class="prob-n">03</span>
+      <div class="prob-t">Mercado inacessível<br>a investidores</div>
+      <div class="prob-b">Um setor que movimenta <strong>mais de R$ 1 bilhão em prêmios anuais</strong> permanece fechado a pessoas físicas e ao ecossistema cripto. Nenhum mecanismo existe para participação externa.</div>
+      <div style="margin-top:auto;padding-top:16px;">
+        <div class="bign" style="font-size:36px;color:var(--text3);">R$ 0</div>
+        <div class="mono" style="margin-top:4px;">capital externo no mercado</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 · SOLUÇÃO — O PRODUTO -->
+<div class="slide">
+  <div class="slide-header"><span class="label">03 · A</span><h2>Solução — O Produto</h2></div>
+  <div class="col6040" style="flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div>
+        <span class="label">O que é o TGA</span>
+        <p class="mt12" style="font-size:14px;"><strong>TGA</strong> é um protocolo de infraestrutura onchain que transforma o mercado brasileiro de garantias locatícias em um ativo de rendimento real acessível globalmente.</p>
+        <p class="mt12" style="font-size:14px;">Opera em duas frentes simultâneas: <strong>B2B</strong> — integra imobiliárias com infraestrutura de registro e liquidação automática; <strong>B2C</strong> — emite o token TGA com NAV apreciável para investidores.</p>
+      </div>
+      <div class="divider" style="margin:4px 0"></div>
+      <div>
+        <span class="label">Para quem é</span>
+        <div class="mt12">
+          <table>
+            <thead><tr><th>Perfil</th><th>Proposta de valor</th></tr></thead>
+            <tbody>
+              <tr><td>Investidor cripto-nativo</td><td>Exposição a RWA com yield real; NAV apreciável; integração onchain</td></tr>
+              <tr><td>Investidor institucional</td><td>Fundo estruturado com lastro verificável e auditoria pública</td></tr>
+              <tr><td>Imobiliárias</td><td>Automação de garantias + remuneração de 2% por contrato</td></tr>
+              <tr><td>Proprietários</td><td>Repasse automático em horas, não em meses</td></tr>
+              <tr><td>Inquilinos</td><td>Acesso facilitado; processo mais simples e acessível</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card" style="border-left:2px solid var(--accent);">
+        <span class="label">Posicionamento</span>
+        <div class="mt16" style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:19px;color:var(--text);letter-spacing:-0.02em;line-height:1.2;">O único protocolo onchain com exposição direta ao mercado brasileiro de garantias locatícias.</div>
+        <div class="divider"></div>
+        <p style="font-size:13px;">Não compete com imobiliárias — opera como a camada de infraestrutura que as conecta ao capital global.</p>
+      </div>
+      <div class="card2">
+        <span class="label">Analogia</span>
+        <p class="mt12" style="font-size:13px;">Pense no TGA como <strong>OnRe</strong> — reinseguro tokenizado — mas o ativo subjacente é o mercado brasileiro de garantias locatícias, com lastro verificável onchain via SGR.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 · SOLUÇÃO — COMO FUNCIONA -->
+<div class="slide">
+  <div class="slide-header"><span class="label">03 · B</span><h2>Solução — Como Funciona</h2></div>
+  <div style="display:flex;flex-direction:column;gap:18px;flex:1;">
+    <div>
+      <span class="label">Fluxo do investidor</span>
+      <div class="flow mt12">
+        <div class="flow-step">
+          <div class="flow-tag">01 · Entrada</div>
+          <div class="flow-title">Mint</div>
+          <div class="flow-body">Investidor deposita stablecoin → protocolo calcula NAV atual do TGA SA → emite tokens TGA proporcionais</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-tag">02 · Rendimento</div>
+          <div class="flow-title">Yield</div>
+          <div class="flow-body">Taxas dos contratos ativos + yield do colateral em stablecoins → NAV sobe continuamente</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-tag">03 · Saída</div>
+          <div class="flow-title">Redeem</div>
+          <div class="flow-body">Investidor deposita TGA → entra em fila onchain → recebe stablecoin ao NAV vigente no momento da execução</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin:2px 0"></div>
+    <div>
+      <span class="label">Estrutura do fundo — TGA SA (Segregated Account)</span>
+      <div class="mt12" style="display:flex;gap:20px;flex:1;">
+        <div class="card" style="flex:1;">
+          <div class="bign" style="font-size:44px;color:var(--accent);">80%</div>
+          <div class="stat-l mt8">Camada Ativa</div>
+          <p class="mt12" style="font-size:13px;">Alocada em contratos de garantia registrados via SGR. Cada contrato gera receita que retorna ao fundo e eleva o NAV.</p>
+        </div>
+        <div class="card" style="flex:1;">
+          <div class="bign" style="font-size:44px;color:var(--text2);">20%</div>
+          <div class="stat-l mt8">Camada de Liquidez</div>
+          <p class="mt12" style="font-size:13px;">Mantida em stablecoins gerando yield passivo. Buffer para resgates sem comprometer a operação ativa.</p>
+        </div>
+        <div class="card" style="flex:1;border-left:2px solid var(--accent);">
+          <div class="mono" style="color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;">NAV Apreciável</div>
+          <p class="mt12" style="font-size:13px;">O retorno não é distribuído — é incorporado ao fundo. Quanto mais contratos ativos, maior o NAV. O investidor captura o crescimento via valorização do token.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 · SOLUÇÃO — INFRAESTRUTURA -->
+<div class="slide">
+  <div class="slide-header"><span class="label">03 · C</span><h2>Solução — Infraestrutura</h2></div>
+  <div class="cols2" style="flex:1;">
+    <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:baseline;gap:12px;">
+        <span class="label amber">SGR</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);letter-spacing:-0.02em;">Sistema de Garantia Registrada</div>
+      </div>
+      <p style="font-size:13px;">Cada contrato de garantia é registrado onchain via smart contracts. A imobiliária acessa via dashboard e registra o contrato — que passa a existir como um <strong>registro imutável na blockchain</strong>, com hash criptográfico verificável.</p>
+      <div class="divider"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Lastro do fundo verificável em tempo real</div>
+        <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Sem exposição de dados sensíveis</div>
+        <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Auditável publicamente por qualquer participante</div>
+      </div>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:baseline;gap:12px;">
+        <span class="label amber">CLP</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);letter-spacing:-0.02em;">Camada de Liquidação Programável</div>
+      </div>
+      <p style="font-size:13px;">Quando há inadimplência, uma integração offchain aciona o smart contract responsável, que valida as condições e <strong>executa a liquidação automaticamente</strong>. O repasse vai direto à imobiliária para repasse ao proprietário.</p>
+      <div class="divider"></div>
+      <div style="display:flex;gap:32px;align-items:center;">
+        <div>
+          <div class="bign" style="font-size:44px;color:var(--err);">60d</div>
+          <div class="mono" style="margin-top:4px;">modelo atual</div>
+        </div>
+        <div style="color:var(--text3);font-size:24px;">→</div>
+        <div>
+          <div class="bign" style="font-size:44px;color:var(--ok);">horas</div>
+          <div class="mono" style="margin-top:4px;">com TGA</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="mono">A separação entre lógica e estado na blockchain permite processamento paralelo de múltiplos contratos simultaneamente.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 · MODELO DE NEGÓCIO -->
+<div class="slide">
+  <div class="slide-header"><span class="label">04</span><h2>Modelo de Negócio</h2></div>
+  <div class="col6040" style="flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div>
+        <span class="label">Posicionamento</span>
+        <p class="mt12" style="font-size:14px;">Modelo <strong>B2B2C</strong>: frente B2B integra imobiliárias como fornecedora de infraestrutura de garantias; frente B2C opera como protocolo de tokenização de fundo RWA.</p>
+      </div>
+      <div>
+        <span class="label">Fontes de Receita</span>
+        <div class="mt12">
+          <table>
+            <thead><tr><th>Mecanismo</th><th>Descrição</th></tr></thead>
+            <tbody>
+              <tr><td>Spread nas taxas</td><td>Diferença entre a taxa cobrada do inquilino e o % destinado ao fundo</td></tr>
+              <tr><td>Taxa de gestão</td><td>Fee sobre o AUM do TGA SA</td></tr>
+              <tr><td>Taxa de resgate</td><td>Cobrada sobre o valor retirado na saída do investidor</td></tr>
+              <tr><td>Apreciação do NAV</td><td>Retorno incorporado ao fundo via taxas + yield do colateral</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card" style="border-left:2px solid var(--accent);">
+        <span class="label">Projeção Conservadora</span>
+        <div class="mt16" style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Mercado base</div>
+            <div class="bign" style="font-size:26px;color:var(--text);margin-top:4px;">R$ 300M/ano</div>
+          </div>
+          <div class="divider" style="margin:0"></div>
+          <div>
+            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Penetração inicial</div>
+            <div class="bign" style="font-size:26px;color:var(--text);margin-top:4px;">20% do mercado</div>
+          </div>
+          <div class="divider" style="margin:0"></div>
+          <div>
+            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Spread aplicado</div>
+            <div class="bign" style="font-size:26px;color:var(--text);margin-top:4px;">2%</div>
+          </div>
+          <div class="divider" style="margin:0"></div>
+          <div>
+            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Receita estimada (fase 1)</div>
+            <div class="bign" style="font-size:40px;color:var(--accent);margin-top:4px;">R$ 1,2M/ano</div>
+          </div>
+        </div>
+      </div>
+      <div class="mono" style="color:var(--text3);">Não considera taxa de gestão, resgate ou apreciação do NAV.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8 · GTM FASE 1 -->
+<div class="slide">
+  <div class="slide-header"><span class="label">05</span><h2>Go to Market</h2></div>
+  <div class="phase-tag phase-on"><span class="pulse"></span>FASE 1 — PILOTO</div>
+  <div class="cols2" style="flex:1;align-items:start;gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="gtm-block">
+        <div class="gtm-t">Imobiliárias — entrada via rede existente</div>
+        <ul class="gtm-list">
+          <li>Acesso via rede de <strong>+30 anos de experiência</strong> no mercado de locações no Sul do Brasil</li>
+          <li>Onboarding manual com suporte próximo — imobiliárias selecionadas</li>
+          <li>Proposta: automação operacional + <strong>remuneração de 2%</strong> sobre contratos</li>
+          <li>Crescimento por indicação entre imobiliárias</li>
+        </ul>
+      </div>
+      <div class="gtm-block">
+        <div class="gtm-t">Proprietários & Inquilinos</div>
+        <ul class="gtm-list">
+          <li>Adquiridos via imobiliárias parceiras — sem abordagem direta inicial</li>
+          <li>Proprietários: repasse em dias, não em meses — benefício imediato</li>
+          <li>Inquilinos: processo mais simples e potencialmente mais barato</li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="gtm-block">
+        <div class="gtm-t">Investidores — cripto-nativos globais</div>
+        <ul class="gtm-list">
+          <li>Canal principal: <strong>X (Twitter)</strong> — marketing orgânico + network estratégico</li>
+          <li>Perfil: cripto-nativos com interesse em RWA e yield real</li>
+          <li>Narrativa: único protocolo onchain com exposição ao mercado brasileiro de garantias</li>
+          <li>Piloto como prova pública: contratos onchain, NAV verificável</li>
+        </ul>
+      </div>
+      <div class="quote">Fase piloto roda B2B e B2C em paralelo. Imobiliárias geram o lastro; investidores capitalizam o fundo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9 · GTM FASE 2 -->
+<div class="slide">
+  <div class="slide-header"><span class="label">05</span><h2>Go to Market</h2></div>
+  <div class="phase-tag"><span style="display:inline-block;width:6px;height:6px;background:var(--text3);margin-right:8px;vertical-align:middle;"></span>FASE 2 — EXPANSÃO (PÓS-PILOTO)</div>
+  <div class="cols3" style="flex:1;align-items:start;">
+    <div class="gtm-block" style="height:100%;">
+      <div class="gtm-t">Imobiliárias</div>
+      <ul class="gtm-list">
+        <li>Cold outreach para novas praças</li>
+        <li>Campanhas regionais para gestores de imobiliárias</li>
+        <li>Argumento: menos burocracia, mais previsibilidade, receita adicional</li>
+        <li>Base piloto como referência de adoção</li>
+      </ul>
+    </div>
+    <div class="gtm-block" style="height:100%;">
+      <div class="gtm-t">Investidores</div>
+      <ul class="gtm-list">
+        <li>TGA como colateral em protocolos onchain</li>
+        <li>Abertura para investidores institucionais com KYC</li>
+        <li>Crescimento orgânico de AUM via apreciação do NAV</li>
+        <li>Expansão de narrativa: RWA brasileiro com track record público</li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card" style="border-left:2px solid var(--accent);">
+        <span class="label">Flywheel</span>
+        <div class="mt16" style="display:flex;flex-direction:column;gap:10px;">
+          <div class="mono" style="color:var(--text2);">↑ Contratos via imobiliárias</div>
+          <div class="mono" style="color:var(--accent);">→ Lastro do fundo cresce</div>
+          <div class="mono" style="color:var(--text2);">→ NAV sobe</div>
+          <div class="mono" style="color:var(--accent);">→ Mais investidores entram</div>
+          <div class="mono" style="color:var(--text2);">→ Mais capital disponível</div>
+          <div class="mono" style="color:var(--accent);">→ Mais contratos cobertos</div>
+        </div>
+      </div>
+      <div class="quote">O crescimento do fundo é função direta do crescimento da base de imobiliárias parceiras.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10 · EQUIPE -->
+<div class="slide">
+  <div class="slide-header"><span class="label">06</span><h2>Equipe</h2></div>
+  <div class="cols2" style="gap:24px;">
+    <div class="team-card">
+      <div class="team-name">Matheus "Draau" de Pauli</div>
+      <div class="team-role">Project Manager · Web3 Builder</div>
+      <div class="team-bio">+5 anos construindo produtos que conectam tecnologia, marca e mercado. Coordenação de equipes multidisciplinares e soluções em blockchain. Cofundador da comunidade No Bloco — inserção de profissionais criativos no ecossistema Web3.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Julia Hoffmann Buratto</div>
+      <div class="team-role">Design Engineer · Arquiteta UFSC</div>
+      <div class="team-bio">Fundadora da jubs.studio. Em 2023 lançou a Chainless — de zero a 5.000 usuários, hoje ultrapassa 30.000 e segue operando. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em fintech e Web3.</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="card2">
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div style="flex:1;">
+        <span class="label">Rede Estratégica</span>
+        <p class="mt8" style="font-size:13px;">Acesso ao mercado imobiliário via conexões com profissionais com <strong>+30 anos de experiência em locações</strong> no Sul do Brasil — facilitando validação, primeiros pilotos e imobiliárias early adopters.</p>
+      </div>
+      <div style="width:1px;height:56px;background:var(--border);flex-shrink:0;"></div>
+      <div style="white-space:nowrap;">
+        <span class="label">Próximas contratações</span>
+        <div class="mt8" style="display:flex;flex-direction:column;gap:6px;">
+          <div class="mono" style="color:var(--text2);">→ Dev Rust / Smart Contracts</div>
+          <div class="mono" style="color:var(--text2);">→ Jurídico Imobiliário</div>
+          <div class="mono" style="color:var(--text2);">→ DeFi Specialist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let cur = 0;
+const dotsEl = document.getElementById('dots');
+const counterEl = document.getElementById('counter');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+slides.forEach((_,i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i===0?' active':'');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+});
+
+function goTo(n) {
+  slides[cur].classList.remove('active');
+  dotsEl.children[cur].classList.remove('active');
+  cur = Math.max(0, Math.min(total-1, n));
+  slides[cur].classList.add('active');
+  dotsEl.children[cur].classList.add('active');
+  counterEl.textContent = String(cur+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+  prevBtn.disabled = cur === 0;
+  nextBtn.disabled = cur === total-1;
+}
+
+function go(d) { goTo(cur+d); }
+
+document.addEventListener('keydown', e => {
+  if (e.key==='ArrowRight'||e.key==='ArrowDown') go(1);
+  if (e.key==='ArrowLeft'||e.key==='ArrowUp') go(-1);
+});
+
+goTo(0);
+</script>
+</body>
+</html>
