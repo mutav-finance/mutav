@@ -49,39 +49,54 @@ Um setor que movimenta **bilhôes em prêmios anuais** permanece fechado a pesso
 
 ## 03 · Solução
 
-### TGA: uma infraestrutura onchain que abre o mercado de garantias locatícias
+### O que é o TGA
 
-O TGA é um ativo digital que representa participação colateralizada no **TGA SA (Segregated Account)** — estrutura onde o capital dos investidores fica segregado do protocolo e alocado exclusivamente na cobertura de garantias locatícias.
+**TGA (Tokenização de Garantia de Aluguel)** é um protocolo de infraestrutura onchain que transforma o mercado brasileiro de garantias locatícias em um ativo de rendimento real acessível globalmente.
 
-**Como funciona:**
+O protocolo opera em duas frentes simultâneas:
 
-| Etapa | Descrição |
+- **B2B — para o mercado tradicional:** integra imobiliárias e garantidoras, oferecendo infraestrutura onchain para registro, gestão e liquidação automática de contratos de garantia. Substitui processos manuais sem alterar a dinâmica comercial existente.
+- **B2C — para investidores:** emite o token **TGA**, ativo digital que representa participação colateralizada no **TGA SA (Segregated Account)** — estrutura onde o capital dos investidores fica segregado do protocolo e alocado exclusivamente na cobertura de garantias locatícias.
+
+### Para quem é
+
+| Perfil | Proposta |
 |---|---|
-| **Entrada (Mint)** | Investidor deposita stablecoin → protocolo calcula NAV → emite TGA proporcional |
-| **Rendimento (Yield)** | Taxas pagas pelos inquilinos + yield do colateral em stablecoins → NAV sobe |
-| **Saída (Redeem)** | Investidor entra em fila onchain → recebe stablecoin ao NAV vigente |
+| **Investidor cripto-nativo** | Exposição a RWA com yield real; diversificação em ativo imobiliário brasileiro |
+| **Investidor institucional** | Fundo estruturado com lastro verificável onchain e auditoria pública |
+| **Imobiliárias** | Automação de garantias, eficiência operacional, remuneração de 2% por contrato |
+| **Proprietários** | Repasse automático em horas, não em meses — sem formulário, sem fila |
+| **Inquilinos** | Acesso facilitado ao aluguel; processo mais simples e potencialmente mais barato |
+
+### Posicionamento
+
+> O único protocolo onchain com exposição direta ao mercado brasileiro de garantias locatícias. Não compete com imobiliárias — opera como a camada de infraestrutura que as conecta ao capital global.
+
+---
+
+### Como funciona — fluxo do investidor
+
+**Modelo de NAV apreciável:** o retorno não é distribuído — é incorporado ao fundo. Taxas dos contratos ativos + yield do colateral elevam continuamente o valor de cada token.
+
+| Etapa | Mecânica |
+|---|---|
+| **Entrada (Mint)** | Investidor deposita stablecoin → protocolo calcula NAV atual do TGA SA → emite tokens TGA proporcionais |
+| **Rendimento (Yield)** | Taxas pagas pelos inquilinos nos contratos ativos + yield do colateral em stablecoins → NAV sobe diariamente |
+| **Saída (Redeem)** | Investidor deposita TGA no contrato → entra em fila onchain → recebe stablecoin ao NAV vigente no momento da execução |
 
 **Estrutura do fundo:**
-- **80%** alocado na cobertura de contratos de garantia registrados via SGR
-- **20%** mantido em stablecoins — buffer de liquidez para resgates
+- **80% camada ativa** — alocada em contratos de garantia registrados via SGR; cada contrato gera receita que retorna ao fundo
+- **20% camada de liquidez** — mantida em stablecoins, gerando yield passivo e servindo como buffer para resgates
 
-**Modelo de NAV apreciável:** o retorno não é distribuído — é incorporado ao fundo. Quanto mais contratos ativos, maior o NAV. O investidor captura o crescimento por meio da valorização do token.
+---
 
-### A infraestrutura por trás do TGA
+### Como funciona — infraestrutura técnica
 
-**SGR (Sistema de Garantia Registrada):** cada contrato de garantia é registrado onchain via dashboard da imobiliária, tornando o lastro do fundo verificável em tempo real.
+**SGR (Sistema de Garantia Registrada)**
+Cada contrato de garantia é registrado onchain via smart contracts. A imobiliária acessa via dashboard e registra o contrato — que passa a existir como um registro imutável na blockchain, com hash criptográfico verificável. O lastro do fundo é auditável publicamente em tempo real, sem exposição de dados sensíveis.
 
-**Camada de Liquidação Programável:** inadimplência detectada dispara liquidação automática. Reduz o tempo de repasse de até 60 dias para horas.
-
-### Benefícios por stakeholder
-
-| Stakeholder | Benefício |
-|---|---|
-| **Investidor cripto-nativo** | Exposição a RWA com rendimento real; NAV apreciável; integração DeFi |
-| **Investidor institucional** | Acesso a ativo estruturado com auditoria onchain |
-| **Imobiliárias** | Eficiência operacional, automação de garantias, remuneração de 2% |
-| **Proprietários** | Repasse mais rápido em caso de inadimplência; maior previsibilidade |
-| **Inquilinos** | Acesso facilitado ao aluguel; condições potencialmente mais acessíveis |
+**Camada de Liquidação Programável**
+Quando há inadimplência, uma integração offchain aciona o smart contract responsável, que valida as condições do contrato e executa a liquidação automaticamente. O repasse é direcionado à imobiliária, que realiza o repasse ao proprietário. Reduz o tempo de execução de até 60 dias para horas. A arquitetura blockchain — separação entre lógica e estado — permite processamento paralelo de múltiplos contratos simultaneamente.
 
 ---
 
@@ -123,7 +138,7 @@ O protocolo se posiciona em um modelo B2B2C, com frente B2B relacionado a imobil
 
 - Canal principal: **X (Twitter)** — marketing orgânico + network estratégico
 - Perfil: crypto-nativos com interesse em RWA e diversificação de renda em yield real
-- Narrativa: "O único protocolo na Solana com exposição ao mercado brasileiro de garantias"
+- Narrativa: "O único protocolo onchain com exposição ao mercado brasileiro de garantias locatícias"
 - Fase piloto como prova pública: contratos onchain, NAV verificável
 
 ---
