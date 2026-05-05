@@ -167,4 +167,3 @@ Fundadora da jubs.studio. Em 2023 lançou a Chainless, levando o produto de zero
 
 ### Rede Estratégica
 Acesso direto ao mercado imobiliário via conexões com profissionais com **+30 anos de experiência em locações** — facilitando validação, primeiros pilotos e acesso a imobiliárias early adopters.
-
