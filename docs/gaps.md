@@ -5,6 +5,48 @@ Não editar o whitepaper antes de consolidar todas as fontes.
 
 ---
 
+## Decisões de Produto — Pendências
+
+Perguntas ainda sem resposta. Bloqueiam definições técnicas finais antes do whitepaper.
+
+---
+
+### GAP 1 — Fórmula do NAV
+
+**1.3** Qual é a fórmula base do NAV? Duas opções principais:
+- `NAV = total_assets / tokens_emitidos` — baseado no valor real dos ativos a cada atualização
+- `NAV = base_price × (1 + annual_rate × elapsed_days / 365)` — taxa fixa acumulada (modelo OnRe)
+
+*Definido: calculado onchain, atualizado diariamente.*
+
+---
+
+### GAP 3 — Yield da Camada de Liquidez
+
+**3.1** A camada de liquidez em stablecoins (USDC/USDT) ficará parada ou alocada em protocolo de yield passivo (ex: Kamino, Marginfi)? Qual parceiro e qual APY esperado?
+
+*Definido: stablecoins USDC/USDT aceitas; percentual fixo da camada ativa removido do whitepaper.*
+
+---
+
+### GAP 6 — Custódia e Estrutura Legal
+
+**6.2** Multisig confirmado para operações críticas — quantos signatários e quem são (ex: 2/3 founders + advisor)?
+
+**6.3** A TGA SA terá veículo legal formal (FIDC, offshore, LLC) ou opera como protocolo puro na fase inicial? Esta é a maior exposição regulatória identificada.
+
+---
+
+### GAP 7 — Oráculos
+
+**7.1** O cálculo do NAV onchain precisará de algum preço ou taxa externa (yield do colateral, taxa de câmbio BRL/USD)? Se sim, qual oráculo: Pyth, Switchboard ou Chainlink?
+
+---
+
+*Respondido em: 2026-05-06*
+
+---
+
 ## Referência 1: OnRe (https://docs.onre.finance)
 
 **O que é:** Reinsegurador licenciado em Bermuda que tokeniza exposição ao mercado de resseguros P&C ($800B/ano). Token ONyc = cota de fundo com NAV apreciável. Modelo estrutural idêntico ao TGA.

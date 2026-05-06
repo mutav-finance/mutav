@@ -65,10 +65,12 @@ O investidor deposita stablecoin no protocolo, que calcula automaticamente o NAV
 
 O rendimento total do fundo é sustentado por **taxas pagas pelos inquilinos**, associadas aos contratos de garantia ativos, e **yield do colateral em stablecoins**, enquanto o capital permanece ocioso. Esse fluxo combinado é continuamente reintegrado ao fundo, elevando o valor total sob gestão e refletindo diretamente na apreciação do NAV ao longo do tempo.
 
-O fundo é dividido em duas camadas:
+O capital do TGA SA é estruturado em duas camadas:
 
-- **Camada ativa:** alocada na cobertura de contratos de garantia registrados via SGR. Cada contrato gera receita por meio de taxas pagas pelos inquilinos, que retornam ao fundo e elevam o NAV.
-- **Camada de liquidez:** mantida em stablecoins, gerando rendimento passivo e funcionando como buffer para resgates.
+- **Camada ativa:** alocada na cobertura de contratos de garantia registrados. Este capital está comprometido com os contratos vigentes e não está disponível para resgates imediatos, é mantido em stablecoins gerando yield enquanto cobre as garantias ativas.
+- **Camada de liquidez:** mantida em stablecoins (USDC e USDT), gerando rendimento passivo e funcionando como buffer primário para atender resgates dentro do cap semanal.
+
+O protocolo aceita depósitos em **USDC e USDT**.
 
 **Saída (Redeem):**
 
@@ -81,6 +83,61 @@ O fundo mantém uma reserva de liquidez dedicada para atender solicitações de 
 Pedidos que excedam a liquidez disponível permanecem em uma fila on-chain, com total transparência de posição e continuidade de rendimento até sua execução.
 
 Além disso, é aplicada uma taxa de resgate sobre o valor retirado.
+
+---
+
+### Infraestrutura Técnica
+
+#### Cálculo e Atualização do NAV
+
+O Net Asset Value do TGA SA é calculado puramente onchain, executado diretamente no smart contract sem dependência de serviços externos ou feeds de dados offchain. Qualquer participante pode verificar e reproduzir o cálculo de forma independente. O NAV é atualizado diariamente, refletindo as variações do fundo: entrada de taxas de garantia, pagamentos processados, resgates executados e rendimento gerado pelo colateral.
+
+O valor de cada token TGA é determinado pela razão entre o total de ativos sob gestão e a quantidade de tokens em circulação:
+
+```
+NAV = total_assets / tokens_emitidos
+```
+
+**Depósito de novo investidor:** quando um investidor deposita stablecoins, o protocolo calcula o NAV vigente e emite a quantidade proporcional de tokens TGA. O aporte aumenta simultaneamente o total de ativos e o número de tokens na mesma proporção — o NAV permanece inalterado. Um novo investidor não financia a saída de outros nem dilui quem já está no fundo: ele entra ao preço justo e passa a ter participação proporcional ao valor depositado.
+
+**Entrada de fees e yield:** as taxas pagas pelos inquilinos e o rendimento do colateral em stablecoins entram no fundo sem a criação de novos tokens. O total de ativos cresce enquanto o número de tokens permanece o mesmo — o NAV sobe. O retorno é distribuído automaticamente entre todos os holders proporcionalmente à sua posição, sem nenhuma ação necessária da parte deles.
+
+**Inadimplência:** quando o protocolo executa uma garantia, ativos saem do fundo sem que nenhum token seja criado ou destruído. O total de ativos cai, o número de tokens permanece o mesmo — o NAV recua proporcionalmente. O impacto é distribuído entre todos os investidores, refletindo o risco coletivo do fundo.
+
+**Resgate de investidor:** para sair, o investidor deposita seus tokens TGA no contrato. O protocolo queima exatamente a quantidade de tokens correspondente ao valor resgatado ao NAV vigente e devolve o equivalente em stablecoins. Ativos e tokens saem na mesma proporção — o NAV dos demais holders não é afetado. É aplicada uma taxa de resgate de 0,25% sobre o valor retirado.
+
+**Risco para o investidor:** o modelo não expõe investidores a risco entre si — não existe vantagem estrutural de entrada ou saída que extraia valor de outros participantes. O risco é coletivo e sistêmico: se a taxa de inadimplência subir de forma crônica e acima da receita de fees por tempo suficiente, o NAV pode recuar abaixo do preço de entrada de um investidor, resultando em perda de capital. O cap semanal de 2,5% do NAV e a camada de liquidez dedicada existem para dar tempo ao fundo de absorver choques sem comprometer a operação. Fora esse cenário extremo, o único risco operacional para o investidor é aguardar a fila de resgate — período durante o qual ele continua acumulando rendimento sobre sua posição.
+
+#### Mecanismo de Resgate
+
+O resgate de tokens TGA segue um modelo estruturado para preservar a integridade do fundo:
+
+- **KYC obrigatório:** o resgate exige verificação de identidade. Não há período mínimo de lockup — qualquer investidor com KYC aprovado pode solicitar resgate a qualquer momento.
+- **Cap semanal de 2,5% do NAV:** o protocolo limita saídas a 2,5% do valor total do fundo por semana. Pedidos que excedam esse limite entram em fila onchain e são processados na semana seguinte, em ordem de submissão.
+- **Taxa de resgate de 0,25%:** cobrada sobre o valor retirado no momento da execução.
+- **Preço de execução:** o NAV aplicado é o vigente no momento em que o pedido é processado pela fila, não o do momento da submissão.
+
+Pedidos em fila continuam acumulando rendimento proporcional à posição enquanto aguardam execução.
+
+#### Liquidação Programável — Fluxo de Inadimplência
+
+O acionamento de garantia em caso de inadimplência segue um processo híbrido, com detecção pela imobiliária e execução onchain:
+
+1. A imobiliária identifica a inadimplência e notifica o protocolo via dashboard, fornecendo os dados necessários para validação.
+2. O backend aciona o smart contract, que verifica automaticamente as condições do contrato — prazo, valores, histórico de pagamentos.
+3. O contrato retorna pré-aprovação ou recusa. Em caso de recusa, a imobiliária recebe orientações sobre o que regularizar.
+4. Pedidos pré-aprovados passam por auditoria interna da equipe TGA para validação final.
+5. Após aprovação, a liquidação é executada onchain e o repasse é direcionado à imobiliária para transferência ao proprietário.
+
+A meta de SLA é de **10 dias** entre a notificação e a execução final — reduzindo o processo atual de até 60 dias do mercado tradicional.
+
+#### Custódia
+
+O capital dos investidores é custodiado de forma **non-custodial** — os fundos ficam nos smart contracts onchain, sem intermediário com acesso aos ativos. Operações administrativas críticas são protegidas por **multisig**, com signatários a serem definidos antes do lançamento.
+
+#### Mercado Secundário
+
+O mercado secundário para o token TGA — pool de liquidez em DEX para saída fora da fila de resgate — é uma feature planejada para fase posterior ao lançamento inicial. No MVP, a única via de saída é o resgate via fila onchain.
 
 ---
 
