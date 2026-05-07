@@ -1,208 +1,198 @@
 # TGA — Gaps & Reference Analysis
 
-Documento de trabalho. Acumula pontos identificados na comparação com protocolos de referência.
-Não editar o whitepaper antes de consolidar todas as fontes.
+Working document. Accumulates points identified by comparing against reference protocols.
+Do not edit the whitepaper before consolidating all sources.
 
 ---
 
-## Decisões de Produto — Pendências
+## Product Decisions — Open Items
 
-Perguntas ainda sem resposta. Bloqueiam definições técnicas finais antes do whitepaper.
-
----
-
-### GAP 1 — Fórmula do NAV
-
-**1.3** Qual é a fórmula base do NAV? Duas opções principais:
-- `NAV = total_assets / tokens_emitidos` — baseado no valor real dos ativos a cada atualização
-- `NAV = base_price × (1 + annual_rate × elapsed_days / 365)` — taxa fixa acumulada (modelo OnRe)
-
-*Definido: calculado onchain, atualizado diariamente.*
+Questions still unanswered. They block final technical definitions before the whitepaper.
 
 ---
 
-### GAP 3 — Yield da Camada de Liquidez
+### GAP 3 — Liquidity Layer Yield
 
-**3.1** A camada de liquidez em stablecoins (USDC/USDT) ficará parada ou alocada em protocolo de yield passivo (ex: Kamino, Marginfi)? Qual parceiro e qual APY esperado?
+**3.1** Will the stablecoin liquidity layer (USDC/USDT) sit idle or be allocated to a passive yield protocol (e.g. Kamino, Marginfi)? Which partner and what expected APY?
 
-*Definido: stablecoins USDC/USDT aceitas; percentual fixo da camada ativa removido do whitepaper.*
-
----
-
-### GAP 6 — Custódia e Estrutura Legal
-
-**6.2** Multisig confirmado para operações críticas — quantos signatários e quem são (ex: 2/3 founders + advisor)?
-
-**6.3** A TGA SA terá veículo legal formal (FIDC, offshore, LLC) ou opera como protocolo puro na fase inicial? Esta é a maior exposição regulatória identificada.
+*Resolved: USDC/USDT stablecoins accepted; fixed percentage of the active layer removed from whitepaper.*
 
 ---
 
-### GAP 7 — Oráculos
+### GAP 6 — Custody and Legal Structure
 
-**7.1** O cálculo do NAV onchain precisará de algum preço ou taxa externa (yield do colateral, taxa de câmbio BRL/USD)? Se sim, qual oráculo: Pyth, Switchboard ou Chainlink?
+**6.2** Multisig confirmed for critical operations — how many signers and who are they (e.g. 2/3 founders + advisor)?
 
----
-
-*Respondido em: 2026-05-06*
+**6.3** Will TGA SA have a formal legal vehicle (FIDC, offshore, LLC) or operate as a pure protocol in the initial phase? This is the largest regulatory exposure identified.
 
 ---
 
-## Referência 1: OnRe (https://docs.onre.finance)
+### GAP 7 — Oracles
 
-**O que é:** Reinsegurador licenciado em Bermuda que tokeniza exposição ao mercado de resseguros P&C ($800B/ano). Token ONyc = cota de fundo com NAV apreciável. Modelo estrutural idêntico ao TGA.
+**7.1** Will the onchain NAV calculation need any external price or rate (collateral yield, BRL/USD exchange rate)? If so, which oracle: Pyth, Switchboard, or Chainlink?
+
+---
+
+*Resolved on: 2026-05-06*
+
+---
+
+## Reference 1: OnRe (https://docs.onre.finance)
+
+**What it is:** Bermuda-licensed reinsurer that tokenizes exposure to the P&C reinsurance market ($800B/year). ONyc token = fund share with appreciating NAV. Structurally identical model to TGA.
 
 ---
 
 ### On-Ramp
 
-| Dimensão | OnRe | TGA (gap) |
+| Dimension | OnRe | TGA (gap) |
 |---|---|---|
-| Acesso retail | Permissionless, sem KYC, sem mínimo | Não definido |
-| Acesso institucional | KYC/KYB + accredited investor check | Não definido |
-| Ativos aceitos | USDC, USDG, USDT | "stablecoin" — vago |
-| Custódia no mint | Non-custodial, self-custody | Não especificado |
-| Taxa de entrada | Zero (só fee de rede) | Não definido |
+| Retail access | Permissionless, no KYC, no minimum | Not defined |
+| Institutional access | KYC/KYB + accredited investor check | Not defined |
+| Accepted assets | USDC, USDG, USDT | "stablecoin" — vague |
+| Custody on mint | Non-custodial, self-custody | Not specified |
+| Entry fee | Zero (network fee only) | Not defined |
 
-**Ação:** Definir dois fluxos de acesso (retail permissionless / institucional com KYC) e listar stablecoins aceitas.
+**Action:** Define two access flows (retail permissionless / institutional with KYC) and list accepted stablecoins.
 
 ---
 
 ### Off-Ramp
 
-| Dimensão | OnRe | TGA (gap) |
+| Dimension | OnRe | TGA (gap) |
 |---|---|---|
-| Mercado primário | Fila onchain, execução semanal | Fila mencionada, sem detalhes |
-| Cap semanal | **2.5% do NAV** | Não definido |
-| Taxa de resgate | **0.25% (25 bps)** | "taxa de resgate" sem valor |
-| Preço de execução | NAV no momento da execução, não da submissão | Não especificado |
-| Mercado secundário | Orca, Raydium, Kamino, Jupiter (24/7) | Ausente — só mencionado como DeFi futuro |
-| Reserva de liquidez | **15% do capital** | 20% sem cap semanal |
+| Primary market | Onchain queue, weekly execution | Queue mentioned, no details |
+| Weekly cap | **2.5% of NAV** | Not defined |
+| Redemption fee | **0.25% (25 bps)** | "redemption fee" without a value |
+| Execution price | NAV at time of execution, not submission | Not specified |
+| Secondary market | Orca, Raydium, Kamino, Jupiter (24/7) | Absent — only mentioned as future DeFi |
+| Liquidity reserve | **15% of capital** | 20% without weekly cap |
 
-**Ação:** Definir cap semanal (ex: 2%), taxa de resgate em bps, e especificar mercado secundário (pool TGA/USDC em Orca ou Raydium).
+**Action:** Define weekly cap (e.g. 2%), redemption fee in bps, and specify secondary market (TGA/USDC pool on Orca or Raydium).
 
 ---
 
 ### Money Flow
 
-**OnRe (fluxo completo):**
+**OnRe (full flow):**
 ```
-Investidor deposita USDC
+Investor deposits USDC
   → Minting contract
   → ONyc SA (Segregated Account, Bermuda)
-    → 85% deployed: reinsurance programs + colateral
-      → Prêmios pagos upfront pelas cedentes
-      → Colateral: T-bills 3m + sUSDe + syrupUSDC + USCC
-    → 15% reserva de liquidez (USDC/USDG para resgates)
-  → Retorno: prêmios ganhos diariamente + yield do colateral → NAV sobe
-  → Resgate: NAV no momento da execução − 0.25%
+    → 85% deployed: reinsurance programs + collateral
+      → Premiums paid upfront by cedents
+      → Collateral: 3m T-bills + sUSDe + syrupUSDC + USCC
+    → 15% liquidity reserve (USDC/USDG for redemptions)
+  → Return: premiums earned daily + collateral yield → NAV rises
+  → Redemption: NAV at time of execution − 0.25%
 ```
 
-**Gaps TGA:**
-- Timing do prêmio: quando e como a taxa do inquilino entra no fundo — não descrito
-- Composição do colateral: TGA diz "stablecoins"; precisa especificar cada ativo e justificativa
-- Custódia: nenhum parceiro de custódia mencionado (OnRe usa Coinbase Prime + Squads multisig)
+**TGA gaps:**
+- Premium timing: when and how the tenant fee enters the fund — not described
+- Collateral composition: TGA says "stablecoins"; needs to specify each asset and rationale
+- Custody: no custody partner mentioned (OnRe uses Coinbase Prime + Squads multisig)
 
 ---
 
-### Definições Técnicas
+### Technical Definitions
 
-| Elemento | OnRe | TGA (gap) |
+| Element | OnRe | TGA (gap) |
 |---|---|---|
-| Fórmula do NAV | Onchain: base price × annual rate × time | "NAV apreciável" — sem fórmula |
-| Atualização do NAV | Diária, onchain, sem serviço offchain | Não especificado |
-| Programa Solana | Endereço público listado | Anchor programs mencionados vagamente |
-| Auditoria | Quantstamp (Jan 2026) | Nenhuma |
-| Oráculos | Pyth + Chainlink (para integradores DeFi) | Não mencionado |
-| Custódia | Coinbase Prime + Squads multisig | Não mencionado |
-| Trigger de liquidação | Notificação offchain, settlement onchain | "Integrações offchain" — vago |
+| NAV formula | Onchain: base price × annual rate × time | "Appreciating NAV" — no formula |
+| NAV update | Daily, onchain, no offchain service | Not specified |
+| Solana program | Public address listed | Anchor programs mentioned vaguely |
+| Audit | Quantstamp (Jan 2026) | None |
+| Oracles | Pyth + Chainlink (for DeFi integrators) | Not mentioned |
+| Custody | Coinbase Prime + Squads multisig | Not mentioned |
+| Liquidation trigger | Offchain notification, onchain settlement | "Offchain integrations" — vague |
 
 ---
 
-### Estratégias de Estruturação
+### Structuring Strategies
 
-| Elemento | Descrição | Aplicação TGA |
+| Element | Description | TGA Application |
 |---|---|---|
-| Segregated Account legal | Bermuda SAC Act — cada programa tem anel jurídico separado | Equivalente BR: FIDC ou estrutura offshore. TGA SA não tem veículo legal definido — maior gap regulatório |
-| Cap de resgate com número | 2.5%/semana do NAV | Adotar número concreto (ex: 2%/semana) |
-| Colateral explicitado | Lista cada ativo com justificativa de risco/liquidez/yield | Especificar: USDC base + Kamino/Marginfi yield + eventual T-bill tokenizado |
-| Mercado secundário | Pool DEX para saída 24/7 sem comprometer fundo | Pool TGA/USDC em Orca ou Raydium |
-| NAV onchain puro | Sem dependência de serviço offchain para calcular NAV | Definir fórmula antes do hackathon |
-| Buyback mechanism | Protocolo recompra ONyc no DEX quando desvia do NAV | Mecanismo simples para manter peg e gerar demanda |
+| Segregated Account legal | Bermuda SAC Act — each program has a separate legal ring | BR equivalent: FIDC or offshore structure. TGA SA has no defined legal vehicle — largest regulatory gap |
+| Redemption cap with a number | 2.5%/week of NAV | Adopt a concrete number (e.g. 2%/week) |
+| Explicit collateral | Lists each asset with risk/liquidity/yield rationale | Specify: USDC base + Kamino/Marginfi yield + eventual tokenized T-bill |
+| Secondary market | DEX pool for 24/7 exit without compromising the fund | TGA/USDC pool on Orca or Raydium |
+| Pure onchain NAV | No offchain service dependency to calculate NAV | Define formula before the hackathon |
+| Buyback mechanism | Protocol buys back ONyc on DEX when it deviates from NAV | Simple mechanism to maintain peg and generate demand |
 
 ---
 
-### Vantagens TGA sobre OnRe
+### TGA Advantages Over OnRe
 
-| Vantagem | Argumento |
+| Advantage | Argument |
 |---|---|
-| Mercado específico e defensável | Garantias locatícias BR é nicho; OnRe compete em $800B com gigantes |
-| Risco mais previsível | Inadimplência de aluguel é mais estável que catástrofes climáticas globais |
-| Originação própria via SGR | OnRe depende de cedentes externas; TGA controla o fluxo end-to-end |
-| Narrativa de impacto social | 46.5M brasileiros pagando aluguel — história que resseguro não tem |
+| Specific and defensible market | Brazilian rental guarantees is a niche; OnRe competes in $800B against giants |
+| More predictable risk | Rental default is more stable than global climate catastrophes |
+| Proprietary origination via SGR | OnRe depends on external cedents; TGA controls the end-to-end flow |
+| Social impact narrative | 46.5M Brazilians paying rent — a story that reinsurance doesn't have |
 
 ---
 
-## Referência 2: BENJI — Franklin Templeton (FOBXX)
+## Reference 2: BENJI — Franklin Templeton (FOBXX)
 
-**O que é:** Franklin OnChain U.S. Government Money Fund — primeiro fundo mútuo registrado nos EUA a usar blockchain pública como sistema oficial de registro. Cada token BENJI = 1 cota do fundo. Roda na Stellar.
+**What it is:** Franklin OnChain U.S. Government Money Fund — the first U.S.-registered mutual fund to use a public blockchain as its official record system. Each BENJI token = 1 fund share. Runs on Stellar.
 
-**Números (abril 2026):** $650M AUM individual · $1.98B AUM suite · $211M volume P2P · +140% crescimento de investidores após abertura P2P ao retail (maio 2025).
+**Numbers (April 2026):** $650M individual AUM · $1.98B suite AUM · $211M P2P volume · +140% investor growth after P2P retail opening (May 2025).
 
 ---
 
-### Estrutura
+### Structure
 
 ```
-Instituição Financeira
-  → Tokeniza fundo FOBXX na Stellar
-  → Cada token BENJI = 1 cota
-  → Investidor acessa via app (retail) ou portal institucional
-  → Yield distribuído diariamente onchain (365 dias, fins de semana incluídos)
-  → Accrual intraday proporcional ao segundo em transferências P2P
+Financial Institution
+  → Tokenizes FOBXX fund on Stellar
+  → Each BENJI token = 1 share
+  → Investor accesses via app (retail) or institutional portal
+  → Yield distributed daily onchain (365 days, weekends included)
+  → Intraday accrual proportional to the second in P2P transfers
 ```
 
-**Regulação:** Fundo mútuo SEC (não é produto DeFi — é TradFi tokenizado). Blockchain é o sistema de registro oficial, não um espelho ou wrapper. Expansão: UCITS Luxembourg (2024), retail Singapore (2025).
+**Regulation:** SEC mutual fund (not a DeFi product — it's tokenized TradFi). Blockchain is the official record system, not a mirror or wrapper. Expansion: UCITS Luxembourg (2024), retail Singapore (2025).
 
 ---
 
-### Comparativo com TGA
+### Comparison with TGA
 
-| Dimensão | BENJI | TGA (gap) |
+| Dimension | BENJI | TGA (gap) |
 |---|---|---|
-| Natureza | Fundo mútuo TradFi tokenizado | Protocolo DeFi nativo |
-| Regulação | SEC (EUA) | CVM (BR) — não definido |
-| Ativo subjacente | U.S. Treasury / gov obligations | Garantias locatícias BR |
-| Blockchain como registro oficial | Sim — sistema primário | Sim via SGR — mas não comunicado assim |
-| Yield | Distribuído diariamente onchain | Incorporado ao NAV — sem cadência definida |
-| Acesso retail | App mobile | Wallet Solana — sem app definido |
-| Acesso institucional | Portal web separado | Não diferenciado no whitepaper |
-| P2P transferability | Sim (retail desde maio 2025) | Não mencionado |
-| Atualização do NAV | Diária, onchain | Não especificado |
+| Nature | Tokenized TradFi mutual fund | Native DeFi protocol |
+| Regulation | SEC (USA) | CVM (BR) — not defined |
+| Underlying asset | U.S. Treasury / gov obligations | Brazilian rental guarantees |
+| Blockchain as official record | Yes — primary system | Yes via SGR — but not communicated that way |
+| Yield | Distributed daily onchain | Built into NAV — no defined cadence |
+| Retail access | Mobile app | Solana wallet — no app defined |
+| Institutional access | Separate web portal | Not differentiated in whitepaper |
+| P2P transferability | Yes (retail since May 2025) | Not mentioned |
+| NAV update | Daily, onchain | Not specified |
 
 ---
 
-### Aprendizados para TGA
+### Learnings for TGA
 
-| Ponto | Descrição |
+| Point | Description |
 |---|---|
-| Blockchain como registro, não camada | BENJI posiciona blockchain como sistema primário. TGA faz o mesmo via SGR — precisa comunicar dessa forma: o protocolo **é** a infraestrutura |
-| Separação retail / institucional | App mobile (retail) + portal web (institucional) para o mesmo fundo. TGA tem isso no design brief mas não no whitepaper |
-| P2P transferability = crescimento | Abertura P2P ao retail gerou +140% em investidores. Token TGA transferível P2P + pool DEX = mesmo vetor |
-| NAV diário como trust signal | Yield todo dia, inclusive fins de semana. Para TGA: atualização diária do NAV onchain é trust signal crítico — não mencionado no whitepaper |
+| Blockchain as record, not layer | BENJI positions blockchain as the primary system. TGA does the same via SGR — needs to communicate it that way: the protocol **is** the infrastructure |
+| Retail / institutional separation | Mobile app (retail) + web portal (institutional) for the same fund. TGA has this in the design brief but not in the whitepaper |
+| P2P transferability = growth | Opening P2P to retail generated +140% in investors. Transferable TGA token + DEX pool = same vector |
+| Daily NAV as trust signal | Yield every day, including weekends. For TGA: daily onchain NAV update is a critical trust signal — not mentioned in the whitepaper |
 
 ---
 
-## Gaps Transversais (independentes de referência)
+## Cross-Cutting Gaps (independent of reference)
 
-Identificados via JURY.md baseline (score 2.25/5, 2026-04-10):
+Identified via JURY.md baseline (score 2.25/5, 2026-04-10):
 
-- **Regulatory:** TGA SA não tem veículo legal definido. Pooling capital + emissão de token + NAV apreciável = provável jurisdição CVM. Não mencionado em lugar nenhum.
-- **Unit economics:** penetração de 20% completamente sem defesa. Sem claims rate assumption, sem pool size modeling, sem yield assumption explícito no colateral.
-- **User discovery:** nenhuma entrevista com imobiliária, proprietário ou inquilino documentada.
-- **Competitive landscape:** nenhum posicionamento contra RWA protocols (Centrifuge, Goldfinch, Maple, Ondo).
-- **Trigger de liquidação:** "via integrações offchain" — mecanismo não descrito.
-- **Equipe técnica:** nenhum dev Rust/Anchor identificado para um hackathon Solana.
+- **Regulatory:** TGA SA has no defined legal vehicle. Pooling capital + token issuance + appreciating NAV = likely CVM jurisdiction. Not mentioned anywhere.
+- **Unit economics:** 20% penetration completely without defense. No claims rate assumption, no pool size modeling, no explicit yield assumption on the collateral.
+- **User discovery:** no interview with a real estate agency, landlord, or tenant documented.
+- **Competitive landscape:** no positioning against RWA protocols (Centrifuge, Goldfinch, Maple, Ondo).
+- **Liquidation trigger:** "via offchain integrations" — mechanism not described.
+- **Technical team:** no Rust/Anchor dev identified for a Solana hackathon.
 
 ---
 
-*Última atualização: 2026-05-04 — fonte: OnRe docs + JURY.md baseline*
+*Last updated: 2026-05-04 — source: OnRe docs + JURY.md baseline*
