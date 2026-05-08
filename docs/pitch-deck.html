@@ -299,6 +299,7 @@ tr:last-child td{border-bottom:none}
         <div style="display:flex;flex-direction:column;gap:7px;">
           <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Agency → Smart Contract → Protocol</div>
           <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Each tenant/landlord contract registered onchain</div>
+          <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Non-custodial — funds on smart contracts, multisig admin</div>
         </div>
       </div>
 
@@ -454,7 +455,7 @@ tr:last-child td{border-bottom:none}
         <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">More efficient rental guarantees for landlords, with dynamic rates for tenants</div>
       </div>
       <div style="flex:1;padding:16px;border:1px solid var(--border);border-top:2px solid #4A90D9;background:var(--s1);text-align:center;">
-        <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">More practical system with reduced operational costs</div>
+        <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">Default settlement: <strong>60 days → 10 days</strong> via automated onchain execution</div>
       </div>
 
     </div>
@@ -490,6 +491,26 @@ tr:last-child td{border-bottom:none}
         <div style="border-left:2px solid var(--accent);padding:12px 16px;background:var(--s1);">
           <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px;">NAV appreciation</div>
           <div style="font-size:12px;color:var(--text2);">Returns built into the fund via fees + collateral yield</div>
+        </div>
+      </div>
+      <div class="divider" style="margin:12px 0 10px;"></div>
+      <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:16px;align-items:start;">
+        <div>
+          <span class="label">NAV Mechanics</span>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-top:8px;">
+            <div class="mono" style="font-size:11px;display:flex;align-items:flex-start;gap:8px;"><span style="color:var(--ok);flex-shrink:0;">✓</span> New deposits don't dilute existing holders — everyone enters at current NAV</div>
+            <div class="mono" style="font-size:11px;display:flex;align-items:flex-start;gap:8px;"><span style="color:var(--ok);flex-shrink:0;">✓</span> Fees & yield accrue automatically to all holders, no action required</div>
+            <div class="mono" style="font-size:11px;display:flex;align-items:flex-start;gap:8px;"><span style="color:var(--ok);flex-shrink:0;">✓</span> Default impact distributed proportionally — risk is collective</div>
+          </div>
+        </div>
+        <div style="background:var(--border);height:100%;"></div>
+        <div>
+          <span class="label">Fund Structure</span>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-top:8px;">
+            <div class="mono" style="font-size:11px;display:flex;align-items:flex-start;gap:8px;"><span style="color:var(--ok);flex-shrink:0;">✓</span> KYC required — no minimum lockup period</div>
+            <div class="mono" style="font-size:11px;display:flex;align-items:flex-start;gap:8px;"><span style="color:var(--ok);flex-shrink:0;">✓</span> 2.5% weekly redemption cap · onchain queue</div>
+            <div class="mono" style="font-size:11px;display:flex;align-items:flex-start;gap:8px;"><span style="color:var(--ok);flex-shrink:0;">✓</span> Queue positions continue accruing yield while waiting</div>
+          </div>
         </div>
       </div>
     </div>
