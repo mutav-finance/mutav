@@ -283,7 +283,80 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- SLIDE 5 · SOLUTION — HOW IT WORKS -->
+<!-- SLIDE 5 · HOW IT WORKS — RISK ENGINE -->
+<div class="slide">
+  <div class="slide-header"><h2>How It Works</h2></div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0;">
+
+    <div style="display:grid;grid-template-columns:1fr 48px 1fr 48px 1fr;align-items:stretch;">
+
+      <!-- STEP 1: Agency -->
+      <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+        <span class="label" style="color:var(--accent);">01 — Agencies</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.02em;color:var(--text);">Smart Contract via Dashboard</div>
+        <p style="font-size:13px;">Each real estate agency connects to the SGR protocol via the dashboard and receives a <strong>dedicated smart contract</strong>. Tenant and landlord contracts are registered inside it.</p>
+        <div class="divider"></div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Agency → Smart Contract → Protocol</div>
+          <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Each tenant/landlord contract registered onchain</div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div style="display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--text3);">→</div>
+
+      <!-- STEP 2: Risk Engine -->
+      <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+        <span class="label" style="color:var(--accent);">02 — Risk Engine</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.02em;color:var(--text);">Scoring & Fund Grouping</div>
+        <p style="font-size:13px;">Each individual contract is assigned a <strong>risk score</strong>. The agency's risk level is the weighted average of all active contracts. The protocol groups agencies into funds by risk tier — enabling granular risk management at scale.</p>
+        <div class="divider"></div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--err);flex-shrink:0;"></div>
+            <span class="mono">High risk fund — agencies with elevated default history</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+            <span class="mono">Medium risk fund — mixed portfolio agencies</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--ok);flex-shrink:0;"></div>
+            <span class="mono">Low risk fund — consistent performing agencies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div style="display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--text3);">→</div>
+
+      <!-- STEP 3: Investor -->
+      <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+        <span class="label" style="color:var(--accent);">03 — Investor</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.02em;color:var(--text);">Capital Allocation via Dashboard</div>
+        <p style="font-size:13px;">The investor accesses the dashboard, browses available funds, and allocates capital freely. The protocol handles risk management at the protocol level; the investor controls their own exposure and return profile.</p>
+        <div class="divider"></div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--err);flex-shrink:0;"></div><span class="mono">High risk</span></div>
+            <span class="mono" style="color:var(--err);">↑ Higher return</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div><span class="mono">Medium risk</span></div>
+            <span class="mono" style="color:var(--accent);">→ Balanced return</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--ok);flex-shrink:0;"></div><span class="mono">Low risk</span></div>
+            <span class="mono" style="color:var(--ok);">↓ Stable return</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 · SOLUTION — HOW IT WORKS (FLOW) -->
 <div class="slide">
   <div class="slide-header"><h2>How It Works</h2></div>
   <div style="display:flex;flex-direction:column;flex:1;justify-content:center;gap:0;">
@@ -389,47 +462,6 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- SLIDE 6 · SOLUTION — INFRASTRUCTURE -->
-<div class="slide">
-  <div class="slide-header"><h2>Solution — Infrastructure</h2></div>
-  <div class="cols2" style="flex:1;">
-    <div class="card" style="display:flex;flex-direction:column;gap:14px;">
-      <div style="display:flex;align-items:baseline;gap:12px;">
-        <span class="label amber">SGR</span>
-        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);letter-spacing:-0.02em;">Registered Guarantee System</div>
-      </div>
-      <p style="font-size:13px;">Each guarantee contract is registered onchain via smart contracts. The agency accesses it via dashboard and registers the contract — which then exists as an <strong>immutable record on the blockchain</strong>, with a verifiable cryptographic hash.</p>
-      <div class="divider"></div>
-      <div style="display:flex;flex-direction:column;gap:8px;">
-        <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Fund collateral verifiable in real time</div>
-        <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> No sensitive data exposure</div>
-        <div class="mono" style="display:flex;align-items:center;gap:8px;"><span style="color:var(--ok);">✓</span> Publicly auditable by any participant</div>
-      </div>
-    </div>
-    <div class="card" style="display:flex;flex-direction:column;gap:14px;">
-      <div style="display:flex;align-items:baseline;gap:12px;">
-        <span class="label amber">CLP</span>
-        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);letter-spacing:-0.02em;">Programmable Settlement Layer</div>
-      </div>
-      <p style="font-size:13px;">When there's a default, an offchain integration triggers the responsible smart contract, which validates the conditions and <strong>automatically executes settlement</strong>. The payment goes directly to the agency for forwarding to the landlord.</p>
-      <div class="divider"></div>
-      <div style="display:flex;gap:32px;align-items:center;">
-        <div>
-          <div class="bign" style="font-size:44px;color:var(--err);">60d</div>
-          <div class="mono" style="margin-top:4px;">current model</div>
-        </div>
-        <div style="color:var(--text3);font-size:24px;">→</div>
-        <div>
-          <div class="bign" style="font-size:44px;color:var(--ok);">hours</div>
-          <div class="mono" style="margin-top:4px;">with TGA</div>
-        </div>
-      </div>
-      <div class="divider"></div>
-      <div class="mono">The separation between logic and state on the blockchain allows parallel processing of multiple contracts simultaneously.</div>
-    </div>
-  </div>
-</div>
-
 <!-- SLIDE 7 · BUSINESS MODEL -->
 <div class="slide">
   <div class="slide-header"><h2>Business Model</h2></div>
@@ -501,16 +533,16 @@ tr:last-child td{border-bottom:none}
 <!-- SLIDE 8 · GTM -->
 <div class="slide">
   <div class="slide-header"><h2>Go to Market</h2></div>
-  <div class="cols3" style="flex:1;align-items:start;gap:20px;">
+  <div class="cols2" style="flex:1;align-items:start;gap:28px;">
 
     <!-- PILOT CARD -->
-    <div class="gtm-block">
+    <div class="gtm-block" style="height:100%;">
       <div class="phase-tag phase-on" style="position:static;display:inline-flex;margin-bottom:14px;"><span class="pulse"></span>PHASE 1 — PILOT</div>
       <div class="gtm-t" style="margin-bottom:10px;">Real estate agencies</div>
       <ul class="gtm-list">
-        <li>Target: <strong>15–20 agencies</strong> — northern RS and SC coast</li>
+        <li>Target: <strong>20–30 agencies</strong> — northern RS and SC coast</li>
         <li>Entry via network with <strong>30+ years of experience</strong> in the rental market</li>
-        <li>Pitch: operational automation + <strong>2% fee</strong> on contracts</li>
+        <li>Pitch: operational automation + <strong>2% fee</strong> on contracts and better conditions for tenants and landlords</li>
         <li>Landlords and Tenants acquired via partner agencies</li>
       </ul>
       <div class="divider"></div>
@@ -524,7 +556,7 @@ tr:last-child td{border-bottom:none}
     </div>
 
     <!-- EXPANSION CARD -->
-    <div class="gtm-block">
+    <div class="gtm-block" style="height:100%;">
       <div class="phase-tag" style="position:static;display:inline-flex;margin-bottom:14px;"><span style="display:inline-block;width:6px;height:6px;background:var(--text3);border-radius:50%;margin-right:8px;vertical-align:middle;"></span>PHASE 2 — EXPANSION</div>
       <div class="gtm-t" style="margin-bottom:6px;">Transition criteria</div>
       <div class="mono" style="color:var(--text2);font-size:11px;margin-bottom:12px;">Active contracts + AUM threshold + sustained operation</div>
@@ -537,30 +569,10 @@ tr:last-child td{border-bottom:none}
       <div class="divider"></div>
       <div class="gtm-t" style="margin-bottom:10px;">Investors</div>
       <ul class="gtm-list">
-        <li>TGA as collateral in onchain protocols (DeFi integration)</li>
+        <li>MUTAV as collateral in onchain protocols (DeFi integration)</li>
         <li>Opening to institutional investors with KYC</li>
-        <li>Brazilian RWA with a verifiable public track record</li>
+        <li>Narrative: Brazil has more than 74,000 active real estate agencies and 650,000 registered real estate brokers, forming one of the largest real estate distribution networks in the world, with massive untapped potential for scalable growth and market penetration.</li>
       </ul>
-    </div>
-
-    <!-- FLYWHEEL CARD -->
-    <div class="card" style="border-left:2px solid var(--accent);height:100%;display:flex;flex-direction:column;">
-      <span class="label">Flywheel</span>
-      <div class="mt16" style="display:flex;flex-direction:column;gap:12px;flex:1;">
-        <div class="mono" style="color:var(--text2);">↑ Contracts via agencies</div>
-        <div class="mono" style="color:var(--accent);">→ Fund collateral grows</div>
-        <div class="mono" style="color:var(--text2);">→ NAV rises</div>
-        <div class="mono" style="color:var(--accent);">→ More investors come in</div>
-        <div class="mono" style="color:var(--text2);">→ More capital available</div>
-        <div class="mono" style="color:var(--accent);">→ More contracts covered</div>
-      </div>
-      <div class="divider"></div>
-      <div class="mono" style="font-size:10px;color:var(--text3);margin-bottom:10px;">Cold start solved by</div>
-      <ul class="gtm-list" style="margin-bottom:14px;">
-        <li>Seed capital via hackathon prizes + CMJ</li>
-        <li>First contracts via 30-year agency network</li>
-      </ul>
-      <div class="quote">B2B and B2C run in parallel. Agencies generate the collateral; investors capitalize the fund.</div>
     </div>
 
   </div>
