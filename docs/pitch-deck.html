@@ -77,7 +77,7 @@ h1{font-size:72px}
 h2{font-size:44px}
 h3{font-size:24px}
 p{font-size:15px;line-height:1.6;color:var(--text2)}
-.mono{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3)}
+.mono{font-family:'Inter',sans-serif;font-size:12px;color:var(--text3)}
 .amber{color:var(--accent)}
 strong{color:var(--text);font-weight:600}
 
@@ -146,8 +146,9 @@ tr:last-child td{border-bottom:none}
 .gtm-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:10px;top:3px}
 
 /* team */
-.team-card{background:var(--s1);border:1px solid var(--border);padding:28px}
-.team-name{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:22px;color:var(--text);letter-spacing:-0.02em}
+.team-card{background:var(--s1);border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;}
+.team-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;margin-bottom:14px;flex-shrink:0;border:2px solid var(--border);}
+.team-name{font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--text);letter-spacing:-0.02em}
 .team-role{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
 .team-bio{font-size:13px;color:var(--text2);line-height:1.6;margin-top:14px}
 </style>
@@ -254,88 +255,137 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- SLIDE 4 · SOLUTION — THE PRODUCT -->
+<!-- SLIDE 4 · WHAT IS TGA -->
 <div class="slide">
-  <div class="slide-header"><h2>Solution — The Product</h2></div>
-  <div class="col6040" style="flex:1;align-items:start;">
-    <div style="display:flex;flex-direction:column;gap:18px;">
-      <div>
-        <span class="label">What is TGA</span>
-        <p class="mt12" style="font-size:14px;"><strong>TGA</strong> is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset accessible globally.</p>
-        <p class="mt12" style="font-size:14px;">It operates on two simultaneous fronts: <strong>B2B</strong> — integrates real estate agencies with automated registration and settlement infrastructure; <strong>B2C</strong> — issues the TGA token with an appreciating NAV for investors.</p>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;text-align:center;">
+    <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:80px;color:var(--accent);letter-spacing:-0.05em;line-height:1;">MUTAV</div>
+    <p style="font-size:15px;max-width:580px;color:var(--text2);line-height:1.6;">
+      is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset accessible globally.
+    </p>
+    <p style="font-size:15px;color:var(--text);font-weight:500;margin-top:8px;">
+      It operates on two simultaneous fronts:
+    </p>
+    <div class="cols2" style="width:100%;max-width:880px;margin-top:4px;">
+      <div class="card" style="border-left:2px solid var(--accent);text-align:left;">
+        <span class="label">B2B</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:28px;color:var(--text);letter-spacing:-0.03em;margin-top:10px;line-height:1.1;">Rent Guarantee</div>
+        <p style="font-size:13px;margin-top:14px;line-height:1.65;">Acts as a rental guarantee layer in partnership with real estate agencies, acquiring new rental guarantee contracts and onboarding them into the protocol.</p>
       </div>
-      <div class="divider" style="margin:4px 0"></div>
-      <div>
-        <span class="label">Who it's for</span>
-        <div class="mt12">
-          <table>
-            <thead><tr><th>Profile</th><th>Value Proposition</th></tr></thead>
-            <tbody>
-              <tr><td>Crypto-native investor</td><td>RWA exposure with real yield; appreciating NAV; onchain integration</td></tr>
-              <tr><td>Institutional investor</td><td>Structured fund with verifiable collateral and public audit</td></tr>
-              <tr><td>Real estate agencies</td><td>Guarantee automation + 2% fee per contract</td></tr>
-              <tr><td>Landlords</td><td>Automatic settlement in hours, not months</td></tr>
-              <tr><td>Tenants</td><td>Easier access; simpler and more affordable process</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card" style="border-left:2px solid var(--accent);text-align:left;">
+        <span class="label">B2C</span>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:28px;color:var(--text);letter-spacing:-0.03em;margin-top:10px;line-height:1.1;">Crypto Investors</div>
+        <p style="font-size:13px;margin-top:14px;line-height:1.65;">Tokenized RWA fund providing the crypto ecosystem with access to rental guarantee contract premiums.</p>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div class="card" style="border-left:2px solid var(--accent);">
-        <span class="label">Positioning</span>
-        <div class="mt16" style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:19px;color:var(--text);letter-spacing:-0.02em;line-height:1.2;">The only onchain protocol with direct exposure to the Brazilian rental guarantee market.</div>
-        <div class="divider"></div>
-        <p style="font-size:13px;">Doesn't compete with real estate agencies — operates as the infrastructure layer connecting them to global capital.</p>
-      </div>
+    <div class="mono" style="margin-top:16px;color:var(--text);text-transform:uppercase;letter-spacing:0.1em;font-size:11px;font-weight:700;line-height:1.6;">
+      The only onchain protocol with direct exposure<br>to the Brazilian rental guarantee market.
     </div>
   </div>
 </div>
 
 <!-- SLIDE 5 · SOLUTION — HOW IT WORKS -->
 <div class="slide">
-  <div class="slide-header"><h2>Solution — How It Works</h2></div>
-  <div style="display:flex;flex-direction:column;gap:18px;flex:1;">
-    <div>
-      <span class="label">Investor flow</span>
-      <div class="flow mt12">
-        <div class="flow-step">
-          <div class="flow-tag">01 · Entry</div>
-          <div class="flow-title">Mint</div>
-          <div class="flow-body">Investor deposits stablecoin → protocol calculates current TGA SA NAV → issues proportional TGA tokens</div>
-        </div>
-        <div class="flow-step">
-          <div class="flow-tag">02 · Yield</div>
-          <div class="flow-title">Yield</div>
-          <div class="flow-body">Fees from active contracts + stablecoin collateral yield → NAV rises continuously</div>
-        </div>
-        <div class="flow-step">
-          <div class="flow-tag">03 · Exit</div>
-          <div class="flow-title">Redeem</div>
-          <div class="flow-body">Investor deposits TGA → enters onchain queue → receives stablecoin at NAV at the time of execution</div>
-        </div>
+  <div class="slide-header"><h2>How It Works</h2></div>
+  <div style="display:flex;flex-direction:column;flex:1;justify-content:center;gap:0;">
+
+    <!-- SUBTITLES ROW -->
+    <div style="display:flex;margin-bottom:14px;">
+      <div style="flex:0 0 24%;text-align:center;">
+        <span class="label" style="font-size:9px;color:var(--ok);letter-spacing:0.1em;">B2C OPERATIONS</span>
+      </div>
+      <div style="flex:1;"></div>
+      <div style="flex:0 0 24%;text-align:center;">
+        <span class="label" style="font-size:9px;color:#4A90D9;letter-spacing:0.1em;">B2B OPERATIONS</span>
       </div>
     </div>
-    <div class="divider" style="margin:2px 0"></div>
-    <div>
-      <span class="label">Fund structure — TGA SA (Segregated Account)</span>
-      <div class="mt12" style="display:flex;gap:20px;flex:1;">
-        <div class="card" style="flex:1;">
-          <div class="bign" style="font-size:44px;color:var(--accent);">80%</div>
-          <div class="stat-l mt8">Active Layer</div>
-          <p class="mt12" style="font-size:13px;">Allocated to guarantee contracts registered via SGR. Each contract generates revenue that returns to the fund and raises the NAV.</p>
+
+    <!-- TOP ROW: horizontal hub -->
+    <div style="display:flex;align-items:center;justify-content:center;">
+
+      <!-- Investor Front -->
+      <div style="padding:14px 16px;border:1px solid var(--border);background:var(--s1);text-align:center;min-width:118px;">
+        <div class="label" style="font-size:9px;color:var(--text3);">Front</div>
+        <div class="mono" style="margin-top:5px;font-size:11px;color:var(--text2);line-height:1.45;">Crypto Investor</div>
+      </div>
+      <div style="width:56px;text-align:center;color:var(--text3);flex-shrink:0;font-size:18px;">→</div>
+
+      <!-- Investor Dashboard -->
+      <div style="padding:14px 18px;border:1px solid var(--ok);background:var(--s2);text-align:center;min-width:140px;">
+        <div class="label" style="font-size:9px;color:var(--ok);">Dashboard</div>
+        <div class="mono" style="margin-top:5px;font-size:12px;color:var(--text);line-height:1.45;">Investor<br>Dashboard</div>
+      </div>
+      <div style="width:56px;text-align:center;color:var(--text3);flex-shrink:0;font-size:20px;">⇄</div>
+
+      <!-- TGA Protocol (central) -->
+      <div style="padding:26px 48px;border:2px solid var(--accent);background:var(--s2);text-align:center;min-width:200px;align-self:center;">
+        <div class="label" style="font-size:9px;color:var(--accent);">Protocol</div>
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:22px;color:var(--text);margin-top:8px;letter-spacing:-0.03em;line-height:1.2;">MUTAV</div>
+      </div>
+      <div style="width:56px;text-align:center;color:var(--text3);flex-shrink:0;font-size:20px;">⇄</div>
+
+      <!-- Agency Dashboard -->
+      <div style="padding:14px 18px;border:1px solid #4A90D9;background:var(--s2);text-align:center;min-width:140px;">
+        <div class="label" style="font-size:9px;color:#4A90D9;">Dashboard</div>
+        <div class="mono" style="margin-top:5px;font-size:12px;color:var(--text);line-height:1.45;">Agency<br>Dashboard</div>
+      </div>
+      <div style="width:56px;text-align:center;color:var(--text3);flex-shrink:0;font-size:18px;">←</div>
+
+      <!-- Agency Front -->
+      <div style="padding:14px 16px;border:1px solid var(--border);background:var(--s1);text-align:center;min-width:118px;">
+        <div class="label" style="font-size:9px;color:var(--text3);">Front</div>
+        <div class="mono" style="margin-top:5px;font-size:11px;color:var(--text2);line-height:1.45;">Rental Agency</div>
+      </div>
+
+      <!-- Tenant & Landlord -->
+      <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;">
+        <div style="display:flex;align-items:center;">
+          <div style="width:56px;text-align:center;color:var(--text3);flex-shrink:0;font-size:18px;">←</div>
+          <div style="padding:10px 16px;border:1px solid var(--border);background:var(--s1);text-align:center;min-width:110px;">
+            <div class="mono" style="font-size:11px;color:var(--text2);line-height:1.45;">Tenant</div>
+          </div>
         </div>
-        <div class="card" style="flex:1;">
-          <div class="bign" style="font-size:44px;color:var(--text2);">20%</div>
-          <div class="stat-l mt8">Liquidity Layer</div>
-          <p class="mt12" style="font-size:13px;">Held in stablecoins generating passive yield. Buffer for redemptions without compromising active operations.</p>
-        </div>
-        <div class="card" style="flex:1;border-left:2px solid var(--accent);">
-          <div class="mono" style="color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;">Appreciating NAV</div>
-          <p class="mt12" style="font-size:13px;">Returns aren't distributed — they're built into the fund. More active contracts means a higher NAV. Investors capture growth through token appreciation.</p>
+        <div style="display:flex;align-items:center;">
+          <div style="width:56px;text-align:center;color:var(--text3);flex-shrink:0;font-size:18px;">←</div>
+          <div style="padding:10px 16px;border:1px solid var(--border);background:var(--s1);text-align:center;min-width:110px;">
+            <div class="mono" style="font-size:11px;color:var(--text2);line-height:1.45;">Landlord</div>
+          </div>
         </div>
       </div>
+
     </div>
+
+    <!-- SVG CONNECTOR: bracket lines — stems at center of each group -->
+    <svg viewBox="0 0 1000 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block;">
+      <!-- Green bracket: stem at center of cards 1+2 (~24%), branches to ~12% and ~37% -->
+      <line x1="243" y1="0"  x2="243" y2="40" stroke="#3DAB72" stroke-width="1.5"/>
+      <line x1="120" y1="40" x2="370" y2="40" stroke="#3DAB72" stroke-width="1.5"/>
+      <line x1="120" y1="40" x2="120" y2="80" stroke="#3DAB72" stroke-width="1.5"/>
+      <line x1="370" y1="40" x2="370" y2="80" stroke="#3DAB72" stroke-width="1.5"/>
+      <!-- Blue bracket: stem at center of cards 3+4 (~75%), branches to ~63% and ~88% -->
+      <line x1="757" y1="0"  x2="757" y2="40" stroke="#4A90D9" stroke-width="1.5"/>
+      <line x1="630" y1="40" x2="880" y2="40" stroke="#4A90D9" stroke-width="1.5"/>
+      <line x1="630" y1="40" x2="630" y2="80" stroke="#4A90D9" stroke-width="1.5"/>
+      <line x1="880" y1="40" x2="880" y2="80" stroke="#4A90D9" stroke-width="1.5"/>
+    </svg>
+
+    <!-- BOTTOM ROW: 4 modules -->
+    <div style="display:flex;justify-content:center;gap:32px;">
+
+      <div style="flex:1;padding:16px;border:1px solid var(--border);border-top:2px solid var(--ok);background:var(--s1);text-align:center;">
+        <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">Access to RWA funds in the Brazilian real estate market</div>
+      </div>
+      <div style="flex:1;padding:16px;border:1px solid var(--border);border-top:2px solid var(--ok);background:var(--s1);text-align:center;">
+        <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">Access to a previously closed billion-dollar market</div>
+      </div>
+      <div style="flex:1;padding:16px;border:1px solid var(--border);border-top:2px solid #4A90D9;background:var(--s1);text-align:center;">
+        <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">More efficient rental guarantees for landlords, with dynamic rates for tenants</div>
+      </div>
+      <div style="flex:1;padding:16px;border:1px solid var(--border);border-top:2px solid #4A90D9;background:var(--s1);text-align:center;">
+        <div class="mono" style="font-size:11px;color:var(--text);line-height:1.5;">More practical system with reduced operational costs</div>
+      </div>
+
+    </div>
+
   </div>
 </div>
 
@@ -383,120 +433,121 @@ tr:last-child td{border-bottom:none}
 <!-- SLIDE 7 · BUSINESS MODEL -->
 <div class="slide">
   <div class="slide-header"><h2>Business Model</h2></div>
-  <div class="col6040" style="flex:1;align-items:start;">
-    <div style="display:flex;flex-direction:column;gap:18px;">
+  <div class="col6040" style="flex:1;align-items:start;gap:32px;">
+
+    <!-- LEFT: positioning + revenue stream cards -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
       <div>
         <span class="label">Positioning</span>
-        <p class="mt12" style="font-size:14px;"><strong>B2B2C</strong> model: the B2B side integrates real estate agencies as a guarantee infrastructure provider; the B2C side operates as an RWA fund tokenization protocol.</p>
+        <p class="mt8" style="font-size:13px;"><strong>B2B2C</strong> model: the B2B side integrates real estate agencies as a guarantee infrastructure provider; the B2C side operates as an RWA fund tokenization protocol.</p>
       </div>
-      <div>
-        <span class="label">Revenue Streams</span>
-        <div class="mt12">
-          <table>
-            <thead><tr><th>Mechanism</th><th>Description</th></tr></thead>
-            <tbody>
-              <tr><td>Fee spread</td><td>Difference between the fee charged to the tenant and the % allocated to the fund</td></tr>
-              <tr><td>Management fee</td><td>Fee on TGA SA AUM</td></tr>
-              <tr><td>Redemption fee</td><td>Charged on the amount withdrawn at investor exit</td></tr>
-              <tr><td>NAV appreciation</td><td>Returns built into the fund via fees + collateral yield</td></tr>
-            </tbody>
-          </table>
+      <span class="label amber">Revenue Streams</span>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="border-left:2px solid var(--accent);padding:12px 16px;background:var(--s1);">
+          <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px;">Fee spread</div>
+          <div style="font-size:12px;color:var(--text2);">20% fee charged to the tenant — spread allocated to the fund</div>
+        </div>
+        <div style="border-left:2px solid var(--accent);padding:12px 16px;background:var(--s1);">
+          <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px;">Management fee</div>
+          <div style="font-size:12px;color:var(--text2);">Fee on MUTAV SA AUM (Assets Under Management)</div>
+        </div>
+        <div style="border-left:2px solid var(--accent);padding:12px 16px;background:var(--s1);">
+          <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px;">Redemption fee</div>
+          <div style="font-size:12px;color:var(--text2);">0.25% charged on the amount withdrawn at investor exit</div>
+        </div>
+        <div style="border-left:2px solid var(--accent);padding:12px 16px;background:var(--s1);">
+          <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px;">NAV appreciation</div>
+          <div style="font-size:12px;color:var(--text2);">Returns built into the fund via fees + collateral yield</div>
         </div>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div class="card" style="border-left:2px solid var(--accent);">
-        <span class="label">Conservative Projection</span>
-        <div class="mt16" style="display:flex;flex-direction:column;gap:14px;">
-          <div>
-            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Base market</div>
-            <div class="bign" style="font-size:26px;color:var(--text);margin-top:4px;">R$ 300M/year</div>
-          </div>
-          <div class="divider" style="margin:0"></div>
-          <div>
-            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Initial penetration</div>
-            <div class="bign" style="font-size:26px;color:var(--text);margin-top:4px;">20% of market</div>
-          </div>
-          <div class="divider" style="margin:0"></div>
-          <div>
-            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Applied spread</div>
-            <div class="bign" style="font-size:26px;color:var(--text);margin-top:4px;">2%</div>
-          </div>
-          <div class="divider" style="margin:0"></div>
-          <div>
-            <div class="mono" style="text-transform:uppercase;letter-spacing:0.1em;">Estimated revenue (phase 1)</div>
-            <div class="bign" style="font-size:40px;color:var(--accent);margin-top:4px;">R$ 1.2M/year</div>
-          </div>
+
+    <!-- RIGHT: conservative projection -->
+    <div style="display:flex;flex-direction:column;justify-content:center;background:var(--s1);border:1px solid var(--border);border-left:2px solid var(--accent);padding:32px 28px;gap:0;">
+      <div class="label amber" style="margin-bottom:20px;text-align:center;">Conservative Projection</div>
+
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:48px;color:var(--text);letter-spacing:-0.03em;line-height:1;">R$ 300M</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px;">base market · Brazil</div>
+      </div>
+
+      <div style="height:2px;background:var(--accent);opacity:0.4;margin-bottom:20px;"></div>
+
+      <div style="display:flex;justify-content:space-around;text-align:center;margin-bottom:20px;">
+        <div>
+          <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:32px;color:var(--text);letter-spacing:-0.03em;">20%</div>
+          <div style="font-size:10px;color:var(--text2);margin-top:4px;">initial market penetration</div>
+        </div>
+        <div style="width:1px;background:var(--border);"></div>
+        <div>
+          <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:32px;color:var(--text);letter-spacing:-0.03em;">2%</div>
+          <div style="font-size:10px;color:var(--text2);margin-top:4px;">applied spread</div>
         </div>
       </div>
-      <div class="mono" style="color:var(--text3);">Excludes management fee, redemption fee, or NAV appreciation.</div>
+
+      <div style="height:2px;background:var(--accent);opacity:0.4;margin-bottom:20px;"></div>
+
+      <div style="text-align:center;">
+        <div style="font-family:'Geist',system-ui,sans-serif;font-weight:700;font-size:44px;color:var(--accent);letter-spacing:-0.03em;line-height:1;">R$ 1.2M/year</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:6px;">estimated revenue · phase 1</div>
+      </div>
+
+      <div style="font-size:10px;color:var(--text3);margin-top:24px;text-align:center;">Excludes management fee, redemption fee, or NAV appreciation.</div>
     </div>
+
   </div>
 </div>
 
-<!-- SLIDE 8 · GTM PHASE 1 -->
+<!-- SLIDE 8 · GTM (MERGED) -->
 <div class="slide">
   <div class="slide-header"><h2>Go to Market</h2></div>
-  <div class="phase-tag phase-on"><span class="pulse"></span>PHASE 1 — PILOT</div>
-  <div class="cols2" style="flex:1;align-items:start;gap:24px;">
-    <div style="display:flex;flex-direction:column;gap:16px;">
+  <div class="cols3" style="flex:1;align-items:start;gap:20px;">
+
+    <!-- AGENCIES -->
+    <div style="display:flex;flex-direction:column;gap:12px;">
       <div class="gtm-block">
-        <div class="gtm-t">Real estate agencies — entry via existing network</div>
+        <div class="phase-tag phase-on" style="position:static;margin-bottom:10px;font-size:8px;padding:4px 10px;display:inline-flex;"><span class="pulse"></span>PHASE 1 — PILOT</div>
+        <div class="gtm-t">Real estate agencies</div>
         <ul class="gtm-list">
-          <li>Access via a network with <strong>30+ years of experience</strong> in the rental market in Southern Brazil</li>
-          <li>Manual onboarding with close support — selected agencies</li>
+          <li>Entry via network with <strong>30+ years of experience</strong> in Southern Brazil</li>
           <li>Pitch: operational automation + <strong>2% fee</strong> on contracts</li>
-          <li>Growth by referral between agencies</li>
+          <li>Landlords and Tenants acquired via partner agencies</li>
         </ul>
       </div>
       <div class="gtm-block">
-        <div class="gtm-t">Landlords & Tenants</div>
+        <div class="phase-tag" style="position:static;margin-bottom:10px;font-size:8px;padding:4px 10px;display:inline-flex;"><span style="display:inline-block;width:5px;height:5px;background:var(--text3);margin-right:6px;vertical-align:middle;border-radius:50%;"></span>PHASE 2 — EXPANSION</div>
+        <div class="gtm-t">Scale</div>
         <ul class="gtm-list">
-          <li>Acquired via partner agencies — no direct outreach initially</li>
-          <li>Landlords: settlement in days, not months — immediate benefit</li>
-          <li>Tenants: simpler process and potentially cheaper</li>
+          <li>Cold outreach to new markets</li>
+          <li>Pilot base as adoption reference</li>
         </ul>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
+
+    <!-- INVESTORS -->
+    <div style="display:flex;flex-direction:column;gap:12px;">
       <div class="gtm-block">
-        <div class="gtm-t">Investors — global crypto-natives</div>
+        <div class="phase-tag phase-on" style="position:static;margin-bottom:10px;font-size:8px;padding:4px 10px;display:inline-flex;"><span class="pulse"></span>PHASE 1 — PILOT</div>
+        <div class="gtm-t">Investors — crypto-natives</div>
         <ul class="gtm-list">
-          <li>Main channel: <strong>X (Twitter)</strong> — organic marketing + strategic network</li>
-          <li>Profile: crypto-natives interested in RWA and real yield</li>
+          <li>Main channel: <strong>X (Twitter)</strong> — organic + strategic network</li>
           <li>Narrative: the only onchain protocol with exposure to the Brazilian guarantee market</li>
           <li>Pilot as public proof: onchain contracts, verifiable NAV</li>
         </ul>
       </div>
-      <div class="quote">The pilot phase runs B2B and B2C in parallel. Agencies generate the collateral; investors capitalize the fund.</div>
+      <div class="gtm-block">
+        <div class="phase-tag" style="position:static;margin-bottom:10px;font-size:8px;padding:4px 10px;display:inline-flex;"><span style="display:inline-block;width:5px;height:5px;background:var(--text3);margin-right:6px;vertical-align:middle;border-radius:50%;"></span>PHASE 2 — EXPANSION</div>
+        <div class="gtm-t">Scale</div>
+        <ul class="gtm-list">
+          <li>TGA as collateral in onchain protocols (DeFi)</li>
+          <li>Institutional investors with KYC</li>
+          <li>Brazilian RWA with a public track record</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- SLIDE 9 · GTM PHASE 2 -->
-<div class="slide">
-  <div class="slide-header"><h2>Go to Market</h2></div>
-  <div class="phase-tag"><span style="display:inline-block;width:6px;height:6px;background:var(--text3);margin-right:8px;vertical-align:middle;"></span>PHASE 2 — EXPANSION (POST-PILOT)</div>
-  <div class="cols3" style="flex:1;align-items:start;">
-    <div class="gtm-block" style="height:100%;">
-      <div class="gtm-t">Real estate agencies</div>
-      <ul class="gtm-list">
-        <li>Cold outreach to new markets</li>
-        <li>Regional campaigns targeting agency managers</li>
-        <li>Pitch: less bureaucracy, more predictability, additional revenue</li>
-        <li>Pilot base as adoption reference</li>
-      </ul>
-    </div>
-    <div class="gtm-block" style="height:100%;">
-      <div class="gtm-t">Investors</div>
-      <ul class="gtm-list">
-        <li>TGA as collateral in onchain protocols</li>
-        <li>Opening to institutional investors with KYC</li>
-        <li>Organic AUM growth via NAV appreciation</li>
-        <li>Narrative expansion: Brazilian RWA with a public track record</li>
-      </ul>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
+    <!-- FLYWHEEL -->
+    <div style="display:flex;flex-direction:column;gap:12px;">
       <div class="card" style="border-left:2px solid var(--accent);">
         <span class="label">Flywheel</span>
         <div class="mt16" style="display:flex;flex-direction:column;gap:10px;">
@@ -508,43 +559,51 @@ tr:last-child td{border-bottom:none}
           <div class="mono" style="color:var(--accent);">→ More contracts covered</div>
         </div>
       </div>
-      <div class="quote">Fund growth is a direct function of growing the partner agency base.</div>
+      <div class="quote">B2B and B2C run in parallel. Agencies generate the collateral; investors capitalize the fund.</div>
     </div>
+
   </div>
 </div>
 
 <!-- SLIDE 10 · TEAM -->
 <div class="slide">
   <div class="slide-header"><h2>Team</h2></div>
-  <div class="cols2" style="gap:24px;">
+  <div class="cols3" style="gap:20px;flex:1;align-items:stretch;">
     <div class="team-card">
-      <div class="team-name">Matheus "Draau" de Pauli</div>
-      <div class="team-role">Project Manager · Web3 Builder</div>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
+        <img class="team-photo" src="img/matheus.jpg" alt="Matheus de Pauli" style="margin-bottom:0;flex-shrink:0;">
+        <div>
+          <div class="team-name">Matheus "Draau" de Pauli</div>
+          <div class="team-role">Project Manager · Web3 Builder</div>
+        </div>
+      </div>
       <div class="team-bio">5+ years building products that connect technology, brand, and market. Multidisciplinary team coordination and blockchain solutions. Co-founder of No Bloco — inserting creative professionals into the Web3 ecosystem.</div>
     </div>
     <div class="team-card">
-      <div class="team-name">Julia Hoffmann Buratto</div>
-      <div class="team-role">Design Engineer · UFSC Architect</div>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
+        <img class="team-photo" src="img/julia.png" alt="Julia Hoffmann Buratto" style="margin-bottom:0;flex-shrink:0;">
+        <div>
+          <div class="team-name">Julia Hoffmann Buratto</div>
+          <div class="team-role">Design Engineer · UFSC Architect</div>
+        </div>
+      </div>
       <div class="team-bio">Founder of jubs.studio. In 2023 launched Chainless — from zero to 5,000 users, now past 30,000 and still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3.</div>
+    </div>
+    <div class="team-card">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
+        <img class="team-photo" src="img/lucas.jpg" alt="Lucas Oliveira" style="margin-bottom:0;flex-shrink:0;">
+        <div>
+          <div class="team-name">Lucas Oliveira</div>
+          <div class="team-role">Cryptographer · Senior Blockchain Engineer</div>
+        </div>
+      </div>
+      <div class="team-bio">5+ years in blockchain product development — design, architecture, security auditing, and mainnet deployment. Head of Education at Nearx, leading Web3 and AI education in Latin America. Former Blockchain Engineer at Clearsale. Mathematics degree, Berkeley Blockchain certification.</div>
     </div>
   </div>
   <div class="divider"></div>
   <div class="card2">
-    <div style="display:flex;align-items:center;gap:32px;">
-      <div style="flex:1;">
-        <span class="label">Strategic Network</span>
-        <p class="mt8" style="font-size:13px;">Access to the real estate market through connections with professionals with <strong>30+ years of rental experience</strong> in Southern Brazil — enabling validation, first pilots, and early adopter agencies.</p>
-      </div>
-      <div style="width:1px;height:56px;background:var(--border);flex-shrink:0;"></div>
-      <div style="white-space:nowrap;">
-        <span class="label">Next hires</span>
-        <div class="mt8" style="display:flex;flex-direction:column;gap:6px;">
-          <div class="mono" style="color:var(--text2);">→ Rust Dev / Smart Contracts</div>
-          <div class="mono" style="color:var(--text2);">→ Real Estate Legal</div>
-          <div class="mono" style="color:var(--text2);">→ DeFi Specialist</div>
-        </div>
-      </div>
-    </div>
+    <span class="label amber">Strategic Network</span>
+    <p class="mt8" style="font-size:13px;">Access to the real estate market through connections with professionals with <strong>30+ years of rental experience</strong> in Southern Brazil — enabling validation, first pilots, and early adopter agencies.</p>
   </div>
 </div>
 
