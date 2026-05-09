@@ -1,170 +1,187 @@
-# TGA — Pitch Deck
+# MUTAV — Pitch Deck
 
 ---
 
 ## Cover
 
-**Tokenização de Garantia de Aluguel**
-Infraestrutura descentralizada para o mercado de garantias locatícias,
-conectando capital global a um setor bilionário no Brasil.
+**Rental Guarantee Tokenization**
+Onchain infrastructure connecting global capital to the Brazilian rental guarantee market.
+
+> REAL ASSET · REAL YIELD
 
 ---
 
-## 01 · Mercado
+## 01 · Market — A High-Volume Market Inaccessible to Crypto Investors
 
-### O mercado de locação no Brasil
-
-- **46,5M** brasileiros pagam aluguel — recorde histórico (2024)
-- **R$ 110B** movimentados pelo setor imobiliário por ano
-- **R$ 1,29B** em prêmios de seguro-fiança (jan–nov 2024)
-- **R$ 300M** mercado de garantias digitais em 2025 — em expansão
-
-### O mercado de garantias é dominado por poucos players
-
-- **CredPago / Grupo Loft** — maior player, R$ 40B em ativos sob gestão no pico
-- **Loft** prevê investir R$ 100M em tecnologia em 2026, com foco em garantias locatícias
-- **BTG Pactual** teve lucro bilionário em menos de 2 anos investindo em CredPago
-
-> Um mercado bilionário, crescendo, e ainda inacessível para investidores externos.
-
----
-
-## 02 · Problema
-
-**Um mercado fechado e estruturalmente frágil**
-
-### 1 — Capital concentrado, risco sistêmico
-
-Garantidoras operam com capital próprio, sem participação externa. Quando uma falha, como QuintoCred e CredPago em 2025, afetando 45 mil contratos, não há mecanismo coletivo de absorção. O risco fica preso em poucos players.
-
-### 2 — Custo alto, liquidação lenta
-
-Inquilinos pagam **10–15% ao mês** em taxas de garantia. Proprietários esperam **até 60 dias** para receber em caso de inadimplência, dependentes de processos manuais e burocráticos sem previsibilidade.
-
-### 3 — Mercado inacessível a investidores
-
-Um setor que movimenta **bilhôes em prêmios anuais** permanece fechado a pessoas físicas e ao ecossistema cripto. Nenhum mecanismo existe para participação externa no retorno gerado pelas garantias.
-
----
-
-## 03 · Solução
-
-### O que é o TGA
-
-**TGA (Tokenização de Garantia de Aluguel)** é um protocolo de infraestrutura onchain que transforma o mercado brasileiro de garantias locatícias em um ativo de rendimento real acessível globalmente.
-
-O protocolo opera em duas frentes simultâneas:
-
-- **B2B — para o mercado tradicional:** integra imobiliárias e garantidoras, oferecendo infraestrutura onchain para registro, gestão e liquidação automática de contratos de garantia. Substitui processos manuais sem alterar a dinâmica comercial existente.
-- **B2C — para investidores:** emite o token **TGA**, ativo digital que representa participação colateralizada no **TGA SA (Segregated Account)** — estrutura onde o capital dos investidores fica segregado do protocolo e alocado exclusivamente na cobertura de garantias locatícias.
-
-### Para quem é
-
-| Perfil | Proposta |
+| Metric | Value |
 |---|---|
-| **Investidor cripto-nativo** | Exposição a RWA com yield real; diversificação em ativo imobiliário brasileiro |
-| **Investidor institucional** | Fundo estruturado com lastro verificável onchain e auditoria pública |
-| **Imobiliárias** | Automação de garantias, eficiência operacional, remuneração de 2% por contrato |
-| **Proprietários** | Repasse automático em horas, não em meses — sem formulário, sem fila |
-| **Inquilinos** | Acesso facilitado ao aluguel; processo mais simples e potencialmente mais barato |
+| Brazilians paying rent (2024) | **46.5M** |
+| Real estate sector / year | **R$ 110B** |
+| Rental insurance premiums (Jan–Nov 2024) | **R$ 1.29B** |
+| Digital guarantees market (2025) | **R$ 300M** |
 
-### Posicionamento
+### Market concentration
 
-> O único protocolo onchain com exposição direta ao mercado brasileiro de garantias locatícias. Não compete com imobiliárias — opera como a camada de infraestrutura que as conecta ao capital global.
+The rental guarantee market is dominated by a few players with their own capital. When one fails, the entire chain is affected.
+
+- **QuintoCred — shut down (2025):** 45,000 contracts affected · 3,000 real estate agencies impacted
+- **CredPago — default (2025):** Payment delays · settlement infrastructure failures
+
+### Recent events
+
+- **CredPago / Grupo Loft** — R$ 40B in assets · 16k agencies · acquired for a billion
+- **BTG Pactual** — Billion-dollar profit in under 2 years in the sector
+- **Loft — R$ 100M in tech (2026)** — Focus: rental guarantee innovation
 
 ---
 
-### Como funciona — fluxo do investidor
+## 02 · Problem
 
-**Modelo de NAV apreciável:** o retorno não é distribuído — é incorporado ao fundo. Taxas dos contratos ativos + yield do colateral elevam continuamente o valor de cada token.
+### 01 — Concentrated capital, systemic risk
 
-| Etapa | Mecânica |
+Guarantors operate with their own capital, no outside participation. When one fails — like QuintoCred and CredPago in 2025 — there's no collective absorption mechanism. The risk stays trapped in a few players.
+
+### 02 — High cost, slow settlement
+
+Tenants pay **10–15% per year** in fees. Landlords wait **up to 60 days** to receive payment on defaults, dependent on manual processes with no predictability.
+
+### 03 — Market inaccessible to investors
+
+A sector moving **over R$ 1 billion in annual premiums** remains closed to individuals and the crypto ecosystem. No mechanism exists for outside participation.
+
+---
+
+## 03 · What is MUTAV
+
+MUTAV is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset accessible globally.
+
+It operates on two simultaneous fronts:
+
+| Front | Description |
 |---|---|
-| **Entrada (Mint)** | Investidor deposita stablecoin → protocolo calcula NAV atual do TGA SA → emite tokens TGA proporcionais |
-| **Rendimento (Yield)** | Taxas pagas pelos inquilinos nos contratos ativos + yield do colateral em stablecoins → NAV sobe diariamente |
-| **Saída (Redeem)** | Investidor deposita TGA no contrato → entra em fila onchain → recebe stablecoin ao NAV vigente no momento da execução |
+| **B2B — Rent Guarantee** | Acts as a rental guarantee layer in partnership with real estate agencies, acquiring new rental guarantee contracts and onboarding them into the protocol. |
+| **B2C — Crypto Investors** | Tokenized RWA fund providing the crypto ecosystem with access to rental guarantee contract premiums. |
 
-**Estrutura do fundo:**
-- **80% camada ativa** — alocada em contratos de garantia registrados via SGR; cada contrato gera receita que retorna ao fundo
-- **20% camada de liquidez** — mantida em stablecoins, gerando yield passivo e servindo como buffer para resgates
+> The only onchain protocol with direct exposure to the Brazilian rental guarantee market.
 
 ---
 
-### Como funciona — infraestrutura técnica
+## 04 · How It Works — Risk Engine
 
-**SGR (Sistema de Garantia Registrada)**
-Cada contrato de garantia é registrado onchain via smart contracts. A imobiliária acessa via dashboard e registra o contrato — que passa a existir como um registro imutável na blockchain, com hash criptográfico verificável. O lastro do fundo é auditável publicamente em tempo real, sem exposição de dados sensíveis.
+### 01 — Agencies: Smart Contract via Dashboard
 
-**Camada de Liquidação Programável**
-Quando há inadimplência, uma integração offchain aciona o smart contract responsável, que valida as condições do contrato e executa a liquidação automaticamente. O repasse é direcionado à imobiliária, que realiza o repasse ao proprietário. Reduz o tempo de execução de até 60 dias para horas. A arquitetura blockchain — separação entre lógica e estado — permite processamento paralelo de múltiplos contratos simultaneamente.
+Each real estate agency connects to the SGR protocol via the dashboard and receives a **dedicated smart contract**. Tenant and landlord contracts are registered inside it.
 
----
+- Agency → Smart Contract → Protocol
+- Each tenant/landlord contract registered onchain
 
-## 04 · Modelo de Negócio
+### 02 — Risk Engine: Scoring & Fund Grouping
 
-O protocolo se posiciona em um modelo B2B2C, com frente B2B relacionado a imobiliarias e atuando no mercado tradicional como uma fornecedora de garantias locaticias e B2C como um protocolo de tokenização de fundo de investimento em RWA, assim o projeto captura valor por quatro mecanismos:
+Each individual contract is assigned a **risk score**. The agency's risk level is the weighted average of all active contracts. The protocol groups agencies into funds by risk tier — enabling granular risk management at scale.
 
-| Fonte de Receita | Descrição |
+| Fund | Profile |
 |---|---|
-| **Spread nas taxas** | Diferença entre a taxa cobrada do inquilino e o % destinado ao fundo |
-| **Taxa de gestão** | Fee sobre o AUM do TGA SA | Metas de geração de yield 
-| **Taxa de resgate** | Cobrada sobre o valor retirado na saída do investidor |
-| **Apreciação do NAV** | Retorno incorporado ao fundo via taxas + yield do colateral |
+| 🔴 High risk fund | Agencies with elevated default history |
+| 🟡 Medium risk fund | Mixed portfolio agencies |
+| 🟢 Low risk fund | Consistent performing agencies |
 
-### Projeção conservadora
+### 03 — Investor: Capital Allocation via Dashboard
 
-- Mercado de garantias digitais no Brasil: **R$ 300M/ano (2025)**
-- Penetração inicial estimada: **20%** do mercado
-- Spread de **2%** sobre o volume intermediado
+The investor accesses the dashboard, browses available funds, and allocates capital freely. The protocol handles risk management at the protocol level; the investor controls their own exposure and return profile.
 
-> **R$ 1,2M/ano** em receita estimada na fase inicial — projeção conservadora baseada exclusivamente no spread de taxas, sem considerar taxa de gestão, resgate ou apreciação do NAV.
-
----
-
-## 05 · Go to Market
-
-### Fase 1 — Piloto (B2B)
-
-**Imobiliárias — porta de entrada via rede existente**
-
-- Acesso às primeiras imobiliárias via rede de **30 anos de experiência no mercado de locações no sul do Brasil**
-- Onboarding manual, suporte próximo, piloto com imobiliárias selecionadas
-- Proposta de valor: automação operacional + **remuneração de 2%** sobre contratos intermediados
-- Crescimento: indicação entre imobiliárias ("seu parceiro já usa")
-- Proprietários: repasse em dias, não em meses — benefício imediato e mensurável
-- Inquilinos: processo de garantia mais simples e potencialmente mais barato
-
-**Investidores — crypto-nativos globais, paralelo ao piloto**
-
-- Canal principal: **X (Twitter)** — marketing orgânico + network estratégico
-- Perfil: crypto-nativos com interesse em RWA e diversificação de renda em yield real
-- Narrativa: "O único protocolo onchain com exposição ao mercado brasileiro de garantias locatícias"
-- Fase piloto como prova pública: contratos onchain, NAV verificável
+| Risk | Return |
+|---|---|
+| High risk | ↑ Higher return |
+| Medium risk | → Balanced return |
+| Low risk | ↓ Stable return |
 
 ---
 
-### Fase 2 — Expansão (pós-piloto)
+## 05 · How It Works — Flow
 
-**Imobiliárias**
-- Cold outreach estruturado para novas praças
-- Campanhas de marketing regionais direcionadas ao público-alvo (gestores de imobiliárias)
-- Facilidade operacional como argumento: menos burocracia, mais previsibilidade, receita adicional
+### B2C Operations (Investor side)
 
-**Investidores**
-- Integração com protocolos DeFi — TGA como colateral
-- Abertura para investidores institucionais
-- Crescimento orgânico de AUM via apreciação do NAV e aumento de contratos ativos
+Crypto Investor → **Investor Dashboard** ⇄ **MUTAV Protocol**
+
+### B2B Operations (Agency side)
+
+**MUTAV Protocol** ⇄ **Agency Dashboard** ← Rental Agency ← Tenant / Landlord
+
+### Benefits
+
+| B2C | B2B |
+|---|---|
+| Access to RWA funds in the Brazilian real estate market | More efficient rental guarantees for landlords, with dynamic rates for tenants |
+| Access to a previously closed billion-dollar market | More practical system with reduced operational costs |
 
 ---
 
-## 06 · Equipe
+## 06 · Business Model
+
+**B2B2C model:** the B2B side integrates real estate agencies as a guarantee infrastructure provider; the B2C side operates as an RWA fund tokenization protocol.
+
+### Revenue Streams
+
+| Stream | Description |
+|---|---|
+| **Fee spread** | 20% fee charged to the tenant — spread allocated to the fund |
+| **Management fee** | Fee on MUTAV SA AUM (Assets Under Management) |
+| **Redemption fee** | 0.25% charged on the amount withdrawn at investor exit |
+| **NAV appreciation** | Returns built into the fund via fees + collateral yield |
+
+### Conservative Projection
+
+- Base market (Brazil): **R$ 300M/year**
+- Initial market penetration: **20%**
+- Applied spread: **2%**
+
+> **R$ 1.2M/year** estimated revenue — phase 1.
+> Excludes management fee, redemption fee, or NAV appreciation.
+
+---
+
+## 07 · Go to Market
+
+### Phase 1 — Pilot
+
+**Real estate agencies**
+- Target: **20–30 agencies** — northern RS and SC coast
+- Entry via network with **30+ years of experience** in the rental market
+- Pitch: operational automation + **2% fee** on contracts and better conditions for tenants and landlords
+- Landlords and Tenants acquired via partner agencies
+
+**Investors — crypto-natives**
+- Ticket: **$1K–$10K** retail crypto-native
+- Seed capital: hackathon prizes + CMJ investment + founders network
+- Channel: **X (Twitter)** — organic reach + strategic network
+- Narrative: the only onchain protocol with exposure to the Brazilian guarantee market
+
+### Phase 2 — Expansion
+
+**Transition criteria:** Active contracts + AUM threshold + sustained operation
+
+**Real estate agencies**
+- Cold outreach to new markets beyond the pilot region
+- Pilot track record as adoption proof for new agencies
+- Less bureaucracy, more predictability, additional revenue stream
+
+**Investors**
+- MUTAV as collateral in onchain protocols (DeFi integration)
+- Opening to institutional investors with KYC
+- Narrative: Brazil has more than 74,000 active real estate agencies and 650,000 registered real estate brokers, forming one of the largest real estate distribution networks in the world, with massive untapped potential for scalable growth and market penetration.
+
+---
+
+## 08 · Team
 
 ### Matheus "Draau" de Pauli — Project Manager · Web3 Builder
-+5 anos construindo produtos que conectam tecnologia, marca e mercado. Experiência em coordenação de equipes multidisciplinares e desenvolvimento de soluções em blockchain. Cofundador da comunidade No Bloco — inserção de profissionais criativos no ecossistema Web3.
+5+ years building products that connect technology, brand, and market. Multidisciplinary team coordination and blockchain solutions. Co-founder of No Bloco — inserting creative professionals into the Web3 ecosystem.
 
-### Julia Hoffmann Buratto — Design Engineer · Arquiteta (UFSC)
-Fundadora da jubs.studio. Em 2023 lançou a Chainless, levando o produto de zero a 5.000 usuários — hoje ultrapassa 30.000 usuários e segue operando. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em fintech e Web3.
+### Julia Hoffmann Buratto — Design Engineer · UFSC Architect
+Founder of jubs.studio. In 2023 launched Chainless — from zero to 5,000 users, now past 30,000 and still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3.
 
-### Rede Estratégica
-Acesso direto ao mercado imobiliário via conexões com profissionais com **+30 anos de experiência em locações** — facilitando validação, primeiros pilotos e acesso a imobiliárias early adopters.
+### Lucas Oliveira — Cryptographer · Senior Blockchain Engineer
+5+ years in blockchain product development — design, architecture, security auditing, and mainnet deployment. Head of Education at Nearx, leading Web3 and AI education in Latin America. Former Blockchain Engineer at Clearsale. Mathematics degree, Berkeley Blockchain certification.
 
+### Strategic Network
+Access to the real estate market through connections with professionals with **30+ years of rental experience** in Southern Brazil — enabling validation, first pilots, and early adopter agencies.
