@@ -5,7 +5,7 @@
 ## Cover
 
 **Rental Guarantee Tokenization**
-Onchain infrastructure connecting global capital to the Brazilian rental guarantee market.
+Turning Brazilian rental guarantees into a real-yield onchain asset. Real contracts. Real yield.
 
 > REAL ASSET · REAL YIELD
 
@@ -53,7 +53,7 @@ A sector moving **over R$ 1 billion in annual premiums** remains closed to indiv
 
 ## 03 · What is MUTAV
 
-MUTAV is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset accessible globally.
+MUTAV is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset.
 
 It operates on two simultaneous fronts:
 
@@ -70,7 +70,7 @@ It operates on two simultaneous fronts:
 
 ### 01 — Agencies: Smart Contract via Dashboard
 
-Each real estate agency connects to the SGR protocol via the dashboard and receives a **dedicated smart contract**. Tenant and landlord contracts are registered inside it.
+Each real estate agency connects to the protocol via the dashboard and receives a **dedicated smart contract**. Tenant and landlord contracts are registered inside it.
 
 - Agency → Smart Contract → Protocol
 - Each tenant/landlord contract registered onchain

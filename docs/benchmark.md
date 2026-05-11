@@ -13,7 +13,7 @@ As of 2026-04-06. Source: Colosseum Copilot API.
 | RentChain | Cypherpunk | Sep '25 | USDC rent payments + PDA escrow | None |
 | Rentify | Radar | Sep '24 | NFT property verification | None |
 
-## SGR Differentiation
+## MUTAV Differentiation
 
 None of the existing projects address:
 - **Garantias locatícias** as a specific financial/legal instrument
