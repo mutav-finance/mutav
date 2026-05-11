@@ -6,9 +6,9 @@
 
 O mercado locação de imóveis no Brasil movimenta bilhões anualmente, sustentado por um ecossistema imobiliário amplo, com milhões de contratos ativos e crescente demanda por soluções que substituam o fiador tradicional. Apesar da relevância, esse mercado ainda opera com baixa eficiência, processos manuais e concentração de capital em poucos players, limitando acesso, transparência e inovação.
 
-A MUTAV surge como resposta a esse cenário, aplicando infraestrutura blockchain para transformar a forma como garantias são estruturadas, financiadas e executadas. Ao conectar capital global a um mercado local pouco explorado do ponto de vista financeiro, o modelo reduz fricções operacionais, melhora a gestão de risco e cria uma nova classe de ativo baseada em fluxo real da economia.
+A MUTAV surge como resposta a esse cenário, aplicando infraestrutura blockchain para transformar a forma como garantias são estruturadas, financiadas e executadas. Ao conectar infraestrutura onchain a um mercado local pouco explorado do ponto de vista financeiro, o modelo reduz fricções operacionais, melhora a gestão de risco e cria uma nova classe de ativo baseada em fluxo real da economia.
 
-A MUTAV funciona como uma **infraestrutura descentralizada de garantia locatícia**, abrindo acesso a um mercado bilionário hoje concentrado em poucos participantes e criando as bases para uma camada financeira mais eficiente, transparente e escalável.
+A MUTAV funciona como uma **infraestrutura onchain de garantia locatícia**, abrindo acesso a um mercado bilionário hoje concentrado em poucos participantes e criando as bases para uma camada financeira mais eficiente, transparente e escalável.
 
 Alguns dados ilustram a dimensão e potencial desse mercado:
 
@@ -43,7 +43,7 @@ A MUTAV resolve esses pontos simultaneamente.
 
 ## 3. Solução Proposta
 
-A MUTAV propõe a abertura e descentralização do mercado de garantias locatícias, permitindo que qualquer pessoa participe de um setor historicamente restrito a poucos players. Por meio da tokenização, o capital que sustenta essas garantias deixa de ser concentrado e passa a ser distribuído entre investidores, criando um modelo mais transparente, acessível e eficiente, onde o público pode obter exposição direta a um mercado bilionário antes inacessível.
+A MUTAV propõe a abertura do mercado de garantias locatícias, permitindo que qualquer pessoa participe de um setor historicamente restrito a poucos players. Por meio da tokenização, o capital que sustenta essas garantias deixa de ser concentrado e passa a ser distribuído entre investidores, criando um modelo mais transparente, acessível e eficiente, onde o público pode obter exposição direta a um mercado bilionário antes inacessível.
 
 A MUTAV é implementada como um ativo digital emitido que representa participação colateralizada no **MUTAV SA (Segregated Account)**, uma estrutura de custódia onde os recursos dos investidores permanecem segregados do protocolo e destinados exclusivamente à cobertura de garantias locatícias. Ao participar, o investidor deposita stablecoin e recebe MUTAV proporcional ao NAV (Net Asset Value) do fundo, mantendo exposição direta ao desempenho do mercado sem necessidade de intermediação ou gestão ativa.
 
@@ -129,8 +129,6 @@ O acionamento de garantia em caso de inadimplência segue um processo híbrido, 
 4. Pedidos pré-aprovados passam por auditoria interna da equipe MUTAV para validação final.
 5. Após aprovação, a liquidação é executada onchain e o repasse é direcionado à imobiliária para transferência ao proprietário.
 
-A meta de SLA é de **10 dias** entre a notificação e a execução final — reduzindo o processo atual de até 60 dias do mercado tradicional.
-
 #### Custódia
 
 O capital dos investidores é custodiado de forma **non-custodial** — os fundos ficam nos smart contracts onchain, sem intermediário com acesso aos ativos. Operações administrativas críticas são protegidas por **multisig**, com signatários a serem definidos antes do lançamento.
@@ -191,7 +189,7 @@ O sistema cria um ciclo onde capital, eficiência e acesso são distribuídos de
 
 A MUTAV opera como uma **infraestrutura híbrida B2B + B2C** para o mercado de garantias locatícias. No lado B2B, o protocolo se integra a imobiliárias e operadores do setor, que são responsáveis pela originação dos contratos, onboarding de inquilinos e registro das garantias. No lado B2C, investidores acessam diretamente o sistema ao aportar capital em stablecoins e receber tokens MUTAV, passando a financiar as garantias.
 
-O objetivo central é transformar um mercado fechado em um sistema **aberto, descentralizado e mais eficiente**, onde o risco é distribuído e o capital é alocado de forma programável. A implementação ocorre com imobiliárias utilizando a infraestrutura para registrar contratos e acionar garantias, enquanto o fundo on-chain fornece liquidez e cobertura para essas operações.
+O objetivo central é transformar um mercado fechado em um sistema **aberto e mais eficiente**, onde o risco é distribuído e o capital é alocado de forma programável. A implementação ocorre com imobiliárias utilizando a infraestrutura para registrar contratos e acionar garantias, enquanto o fundo on-chain fornece liquidez e cobertura para essas operações.
 
 O fluxo econômico é sustentado por receitas reais do sistema: as **taxas pagas pelos inquilinos** nos contratos de garantia e o **rendimento do colateral em stablecoins**. Esses retornos são incorporados ao fundo, gerando valorização da MUTAV.
 
