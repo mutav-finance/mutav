@@ -1,6 +1,6 @@
-# Whitepaper — MUTAV Protocol
+# Whitepaper — MUTAV 
 
-# Tokenização de Garantia de Aluguel — MUTAV
+# MUTAV - Tokenização de Garantia de Aluguel 
 
 ## 1. Visão Geral
 
@@ -53,7 +53,7 @@ O modelo é baseado em um **NAV apreciável**, no qual o retorno não é distrib
 
 O funcionamento da MUTAV segue um modelo estruturado baseado em mecanismos já consolidados em protocolos on-chain, como no mercado de reinsurance, validando sua robustez.
 
-Essa estrutura é sustentada por uma infraestrutura própria que garante transparência, execução automatizada e confiabilidade operacional. O **SGR (Sistema de Garantia Registrada)** permite que todos os contratos de garantia sejam registrados on-chain por meio da dashboard da imobiliaria, tornando o lastro do fundo verificável em tempo real. Complementarmente, a **Camada de Liquidação Programável** automatiza a execução de inadimplências e a atualização do NAV, eliminando processos manuais e reduzindo o tempo de liquidação.
+Essa estrutura é sustentada por uma infraestrutura que garante transparência, execução automatizada e confiabilidade operacional. Isso permite que todos os contratos de garantia sejam registrados on-chain por meio da dashboard da imobiliaria, tornando o lastro do fundo verificável em tempo real. Complementarmente, a automatização da execução de inadimplências e a atualização do NAV, eliminando processos manuais e reduzindo o tempo de liquidação.
 
 A partir dessa base, o fluxo operacional se divide em três etapas principais: entrada de capital, geração de rendimento e saída.
 
@@ -146,7 +146,7 @@ O mercado secundário para o token MUTAV — pool de liquidez em DEX para saída
 A gestão de risco é um elemento central da MUTAV, operacionalizada por meio de um sistema de scoring em dois níveis que permite agrupar imobiliárias em fundos distintos por perfil de risco.
 
 **Nível 1 — Scoring individual por contrato:**
-Cada contrato de garantia registrado no SGR recebe uma pontuação de risco calculada com base em dados do inquilino, histórico de pagamentos e perfil do imóvel. Esse score determina o risco individual de inadimplência do contrato.
+Cada contrato de garantia registrado recebe uma pontuação de risco calculada com base em dados do inquilino, histórico de pagamentos e perfil do imóvel. Esse score determina o risco individual de inadimplência do contrato.
 
 **Nível 2 — Score da imobiliária:**
 O nível de risco de cada imobiliária é a média ponderada dos scores de seus contratos ativos. Imobiliárias com histórico de inadimplência elevada têm score mais alto; imobiliárias com portfólio consistente mantêm score baixo.
@@ -189,7 +189,7 @@ O sistema cria um ciclo onde capital, eficiência e acesso são distribuídos de
 
 ## 4. Modelo de Negócio
 
-A MUTAV opera como uma **infraestrutura híbrida B2B + B2C** para o mercado de garantias locatícias. No lado B2B, o protocolo se integra a imobiliárias e operadores do setor, que são responsáveis pela originação dos contratos, onboarding de inquilinos e registro das garantias via SGR. No lado B2C, investidores acessam diretamente o sistema ao aportar capital em stablecoins e receber tokens MUTAV, passando a financiar as garantias.
+A MUTAV opera como uma **infraestrutura híbrida B2B + B2C** para o mercado de garantias locatícias. No lado B2B, o protocolo se integra a imobiliárias e operadores do setor, que são responsáveis pela originação dos contratos, onboarding de inquilinos e registro das garantias. No lado B2C, investidores acessam diretamente o sistema ao aportar capital em stablecoins e receber tokens MUTAV, passando a financiar as garantias.
 
 O objetivo central é transformar um mercado fechado em um sistema **aberto, descentralizado e mais eficiente**, onde o risco é distribuído e o capital é alocado de forma programável. A implementação ocorre com imobiliárias utilizando a infraestrutura para registrar contratos e acionar garantias, enquanto o fundo on-chain fornece liquidez e cobertura para essas operações.
 

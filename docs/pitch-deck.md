@@ -70,7 +70,7 @@ It operates on two simultaneous fronts:
 
 ### 01 — Agencies: Smart Contract via Dashboard
 
-Each real estate agency connects to the SGR protocol via the dashboard and receives a **dedicated smart contract**. Tenant and landlord contracts are registered inside it.
+Each real estate agency connects to the protocol via the dashboard and receives a **dedicated smart contract**. Tenant and landlord contracts are registered inside it.
 
 - Agency → Smart Contract → Protocol
 - Each tenant/landlord contract registered onchain
