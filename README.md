@@ -37,11 +37,11 @@ git config core.hooksPath .githooks
 
 ### For Judges
 
-1. Accept the GitHub org invitation from `tga-protocol`
+1. Accept the GitHub org invitation from `mutav-finane`
 2. You'll have read access to all repos linked to the `judges` team
 3. Browse code, issues, and PRs — no write access
 
-> *Jurados: aceite o convite da org `tga-protocol` no GitHub. Vocês terão acesso de leitura para navegar código, issues e PRs.*
+> *Jurados: aceite o convite da org `mutav-finance` no GitHub. Vocês terão acesso de leitura para navegar código, issues e PRs.*
 
 ## Blockchain Research & Strategy Skills
 
