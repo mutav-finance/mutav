@@ -35,7 +35,7 @@ What works and must be preserved through build and beyond. A critique without re
 
 10. **Proprietário copy is jargon-audited at the word level.** Forbidden vocabulary (`wallet`, `onchain`, `liquidação`, `transparência` as marketing) is absent. Approved vocabulary (`inquilino`, `atrasa`, `formulário`, `conta cadastrada`) is present. Outcome-first sentences (*"Quando o inquilino atrasa, você recebe."*). The brand's hardest constraint — "no jargon in proprietário copy" — is held. Preserve and protect through build with a copy-lock document.
 
-11. **Investidor copy trades reassurance for verifiability.** The page doesn't tell Ana to trust it; it links her to `github.com/tga-protocol`. The verifiability link (`[ verifique a arquitetura → ]`) is the trust mechanic. Preserve.
+11. **Investidor copy trades reassurance for verifiability.** The page doesn't tell Ana to trust it; it links her to `github.com/mutav-finance`. The verifiability link (`[ verifique a arquitetura → ]`) is the trust mechanic. Preserve.
 
 12. **Anti-celebration confirmation copy.** *"recebido — joao@imobiliaria.com.br — você está na lista de proprietários."* — Mono register, no exclamation marks, no auto-redirect, no "Welcome aboard! 🎉." Confident, dignified, on-voice. Preserve as the exact string format.
 

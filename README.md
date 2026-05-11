@@ -37,7 +37,7 @@ git config core.hooksPath .githooks
 
 ### For Judges
 
-1. Accept the GitHub org invitation from `mutav-finane`
+1. Accept the GitHub org invitation from `mutav-finance`
 2. You'll have read access to all repos linked to the `judges` team
 3. Browse code, issues, and PRs — no write access
 

@@ -63,7 +63,7 @@ Primary:
 - Email waitlist with audience self-tag (`proprietario` | `investidor`) — so future comms can be segmented
 
 Secondary:
-- GitHub link (the build is open — `tga-protocol` org)
+- GitHub link (the build is open — `mutav-finance` org)
 - Twitter/X follow (founders + protocol)
 - Telegram or Discord community link (TBD — confirm at design time)
 
@@ -71,7 +71,7 @@ No log-in. No wallet connect. No dashboard route from this page.
 
 ## Out of scope
 
-- Dashboards (Investidor / Imobiliárias / Terminal) — live in `sgr-app`
+- Dashboards (Investidor / Imobiliárias / Terminal) — live in `mutav-app`
 - Documentation site — separate project
 - Pitch deck — separate project
 - Authentication / wallet connect flows
@@ -81,7 +81,7 @@ No log-in. No wallet connect. No dashboard route from this page.
 
 ## Tech & deployment
 
-- Next.js 15 (App Router) — greenfield, likely a new `sgr-landing` repo (TBD at scaffold time)
+- Next.js 15 (App Router) — greenfield, likely a new `mutav-landing` repo (TBD at scaffold time)
 - Tailwind v4 with `@theme` populated from brand `tga.yml` tokens
 - shadcn/ui as primitive base — overridden to TGA spec (0px radius, surface stacking, no shadows)
 - Phosphor Icons (light weight)
@@ -127,7 +127,7 @@ The brand has an existing visual exploration that locks the aesthetic — *Sover
 
 ## Open questions (resolve before/during design)
 
-- **Hostname / repo location** — new `sgr-landing` vs route inside an existing repo
+- **Hostname / repo location** — new `mutav-landing` vs route inside an existing repo
 - **Waitlist backend** — Resend transactional? ConvertKit? Vercel KV + cron? Telegram-only and skip email?
 - **Languages at launch** — ship pt-BR + en together, or pt-BR first and en in a follow-up?
 - **Founder photography** — do we have shoot-quality photos of Draau and jubs, or do we ship with a designed alternative (initials, mono portraits, etc.)?

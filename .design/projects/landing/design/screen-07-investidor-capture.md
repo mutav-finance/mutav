@@ -3,7 +3,7 @@
 
 ## Purpose
 
-The dark surface where Ana commits. Three sentences, technical register — *mecânica + transparência onchain + arquitetura*. Verifiability as invitation, not as defense. The form is followed by a single mono link to GitHub: `[ verifique a arquitetura → github.com/tga-protocol ]`. The trust mechanic is the link to the code, not a paragraph.
+The dark surface where Ana commits. Three sentences, technical register — *mecânica + transparência onchain + arquitetura*. Verifiability as invitation, not as defense. The form is followed by a single mono link to GitHub: `[ verifique a arquitetura → github.com/mutav-finance ]`. The trust mechanic is the link to the code, not a paragraph.
 
 ## User flow position
 
@@ -69,7 +69,7 @@ The grid is mirrored relative to the proprietário section — form left, copy r
 │ Ao entrar na lista, você…        │
 │                                  │
 │ [ verifique a arquitetura →      │
-│   github.com/tga-protocol ]      │
+│   github.com/mutav-finance ]      │
 └──────────────────────────────────┘
 ```
 
@@ -145,11 +145,11 @@ The grid is mirrored relative to the proprietário section — form left, copy r
     Ao entrar na lista, você consente com o uso do seu e-mail para receber novidades sobre o protocolo. Pode sair quando quiser — basta responder qualquer e-mail com "sair".
   </p>
 
-  <a href="https://github.com/tga-protocol"
+  <a href="https://github.com/mutav-finance"
      target="_blank" rel="noopener noreferrer"
      className="mt-8 inline-block font-mono text-xs text-text-2
                 hover:text-accent transition-colors duration-150">
-    [ verifique a arquitetura → github.com/tga-protocol ]
+    [ verifique a arquitetura → github.com/mutav-finance ]
   </a>
 </form>
 ```
@@ -181,7 +181,7 @@ Same mechanism as proprietário capture. `name="company_url"` honeypot, `name="a
 
 #### Verifiability link
 - The single most important investidor-trust mechanic. Per `content-strategy.md § Investidor Capture` ("Ana doesn't need a paragraph of reassurance, she needs a link to the code").
-- Element: `<a href="https://github.com/tga-protocol" target="_blank" rel="noopener noreferrer">[ verifique a arquitetura → github.com/tga-protocol ]</a>`
+- Element: `<a href="https://github.com/mutav-finance" target="_blank" rel="noopener noreferrer">[ verifique a arquitetura → github.com/mutav-finance ]</a>`
 - Style: Mono 12px, `var(--color-text-2)`. Hover: `color → var(--color-accent)`.
 - The `→` arrow inside the brackets is a Phosphor `ArrowRight` icon at `weight="light"` 14px — or the Unicode `→` character if rendering as inline text. Recommendation: Unicode `→` keeps it pure-typographic and avoids loading the icon font for one glyph.
 - Position: under the LGPD lines. 32px gap.
@@ -227,12 +227,12 @@ Same as default.
 | Tab from input | Focus moves to submit button. Button gets focus outline (1px amber inset, but already has 1px amber border — implementation note: focus uses `outline-offset: -2px` to stay inside the visible border). |
 | Click submit / Enter | Server Action `joinWaitlist` runs. Button enters loading state. |
 | Hover button | `bg-transparent → bg-accent`, `text-accent → text-canvas`. 150ms ease-out. |
-| Click verifiability link | Opens `github.com/tga-protocol` in new tab (`target="_blank"`, `rel="noopener noreferrer"`). |
+| Click verifiability link | Opens `github.com/mutav-finance` in new tab (`target="_blank"`, `rel="noopener noreferrer"`). |
 | Reduced-motion | Color transitions kept. No transforms, so no behavior change. |
 
 ## Accessibility
 
-- **VoiceOver order:** kicker → "heading 2, Capital lastreado em garantias reais" → "list of 3 items, item 1, O capital lastreia garantias reais…" (etc.) → "Seu e-mail, edit text, required" → "Entrar na lista, button" → status + consent → "verifique a arquitetura, github dot com slash tga-protocol, link, opens in new tab".
+- **VoiceOver order:** kicker → "heading 2, Capital lastreado em garantias reais" → "list of 3 items, item 1, O capital lastreia garantias reais…" (etc.) → "Seu e-mail, edit text, required" → "Entrar na lista, button" → status + consent → "verifique a arquitetura, github dot com slash mutav-finance, link, opens in new tab".
 - **Bracket convention:** the `[` and `]` around the button label and link label are decorative. Wrap the brackets in `<span aria-hidden="true">[ </span>` and `<span aria-hidden="true"> ]</span>` so screen readers announce "Entrar na lista, button" cleanly. Same for the verifiability link.
 - **Heading structure:** `<h2 id="inv-h2">`. No h1 here.
 - **Section landmark:** `<section id="investidor-form" data-front="investidor" aria-labelledby="inv-h2">`.
