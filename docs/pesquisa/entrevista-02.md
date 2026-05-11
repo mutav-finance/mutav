@@ -76,15 +76,7 @@
 
 ---
 
-## CANVAS · preencher logo após
-
-| | |
-|---|---|
-| Nome / Cargo | Cinara Bigois / Diretora — locação há 30 anos |
-| Imobiliária | Cinara Bigois Imobiliária |
-| Cidade | SC |
-| Contratos ativos | 35 |
-| Garantia atual | onerosa |
+## CANVAS · 
 
 **Citações exatas** _(palavras dela, não sua interpretação)_
 

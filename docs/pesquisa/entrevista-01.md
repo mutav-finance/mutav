@@ -76,15 +76,7 @@
 
 ---
 
-## CANVAS · preencher logo após
-
-| | |
-|---|---|
-| Nome / Cargo | Diego Prigol / Diretor |
-| Imobiliária | Imobiliária Remax |
-| Cidade | Passo Fundo RS |
-| Contratos ativos | 230 |
-| Garantia atual | Seguro Fiança, garantias de aplicativos |
+## CANVAS 
 
 **Citações exatas** _(palavras dela, não sua interpretação)_
 

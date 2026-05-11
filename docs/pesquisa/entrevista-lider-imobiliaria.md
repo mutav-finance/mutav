@@ -60,15 +60,7 @@
 
 ---
 
-## CANVAS · preencher logo após
-
-| | |
-|---|---|
-| Nome / Cargo | |
-| Imobiliária | |
-| Cidade | |
-| Contratos ativos | |
-| Garantia atual | |
+## CANVAS 
 
 **Citações exatas** _(palavras dela, não sua interpretação)_
 
