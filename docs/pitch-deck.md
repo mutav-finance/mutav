@@ -4,197 +4,260 @@
 
 ## Cover
 
-**Rental Guarantee Tokenization**
-Turning Brazilian rental guarantees into a real-yield onchain asset.
+**MUTAV**
+Turning Brazil's R$ 1B rental guarantee market into real onchain yield.
 
 > REAL ASSET · REAL YIELD
 
 ---
 
-## 01 · Market — A High-Volume Market Inaccessible to Crypto Investors
+## 01 · Problem
 
-| Metric | Value |
-|---|---|
-| Brazilians paying rent (2024) | **46.5M** |
-| Real estate sector / year | **R$ 110B** |
-| Rental insurance premiums (Jan–Nov 2024) | **R$ 1.29B** |
-| Digital guarantees market (2025) | **R$ 300M** |
-
-### Market concentration
-
-The rental guarantee market is dominated by a few players with their own capital. When one fails, the entire chain is affected.
-
-- **QuintoCred — shut down (2025):** 45,000 contracts affected · 3,000 real estate agencies impacted
-- **CredPago — default (2025):** Payment delays · settlement infrastructure failures
-
-### Recent events
-
-- **CredPago / Grupo Loft** — R$ 40B in assets · 16k agencies · acquired for a billion
-- **BTG Pactual** — Billion-dollar profit in under 2 years in the sector
-- **Loft — R$ 100M in tech (2026)** — Focus: rental guarantee innovation
-
----
-
-## 02 · Problem
+> "In 2025, QuintoCred — one of Brazil's largest rental guarantors — shut down overnight. 45,000 contracts cancelled. 3,000 agencies without coverage. No warning. No fallback."
 
 ### 01 — Concentrated capital, systemic risk
 
-Guarantors operate with their own capital, no outside participation. When one fails — like QuintoCred and CredPago in 2025 — there's no collective absorption mechanism. The risk stays trapped in a few players.
+Guarantors operate with their own isolated capital — no collective participation, no distributed buffer. When one fails, the entire chain collapses.
+
+- **QuintoCred — shut down (2025):** 45,000 contracts cancelled · 3,000 agencies left without coverage
+- **CredPago — default (2025):** Payment delays · settlement failure across 16,000 agencies
 
 ### 02 — High cost, slow settlement
 
-Tenants pay **10–15% per year** in fees. Landlords wait **up to 60 days** to receive payment on defaults, dependent on manual processes with no predictability.
+A landlord who activates a guarantee after a tenant default waits **up to 60 days** for payment — through manual, opaque processes with no predictability. Tenants pay **10–15% per year** in fees with no transparency on where that capital goes.
 
-### 03 — Market inaccessible to investors
+### 03 — A billion-reais asset class with no entry point
 
-A sector moving **over R$ 1 billion in annual premiums** remains closed to individuals and the crypto ecosystem. No mechanism exists for outside participation.
+Over **R$ 1 billion flows through rental guarantee premiums annually** in Brazil. Investors who recognize the opportunity have no mechanism to participate — the sector runs on closed, proprietary capital with zero onchain exposure.
 
 ---
 
-## 03 · What is MUTAV
+## 02 · Solution
 
-MUTAV is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset accessible globally.
+MUTAV is an onchain infrastructure protocol that opens the Brazilian rental guarantee market — distributing risk, automating settlement, and creating a new real-yield asset class for global investors.
 
-It operates on two simultaneous fronts:
-
-| Front | Description |
+| Problem | MUTAV's answer |
 |---|---|
-| **B2B — Rent Guarantee** | Acts as a rental guarantee layer in partnership with real estate agencies, acquiring new rental guarantee contracts and onboarding them into the protocol. |
-| **B2C — Crypto Investors** | Tokenized RWA fund providing the crypto ecosystem with access to rental guarantee contract premiums. |
+| Concentrated capital, systemic risk | Risk distributed across tokenized fund pools — no single-guarantor failure point |
+| High cost, slow settlement | Smart contract automation: default settlement **60 days → 10 days** · competitive dynamic rates |
+| Market closed to investors | Tokenized RWA fund: any crypto investor enters from **$1K**, earning real yield from Brazilian rental contracts |
+
+**Two operating fronts:**
+
+| Front | Role |
+|---|---|
+| **B2B — Rent Guarantee** | Rental guarantee layer for real estate agencies — contracts registered and settled onchain |
+| **B2C — Crypto Investors** | Tokenized RWA fund giving the crypto ecosystem direct access to rental guarantee premiums |
 
 > The only onchain protocol with direct exposure to the Brazilian rental guarantee market.
 
 ---
 
-## 04 · How It Works — Risk Engine
+## 03 · Traction
 
-### 01 — Agencies: Smart Contract via Dashboard
+### Market validation
 
-Each real estate agency connects to the protocol via the dashboard and receives a **dedicated smart contract**. Tenant and landlord contracts are registered inside it.
-
-- Agency → Smart Contract → Protocol
-- Each tenant/landlord contract registered onchain
-- Non-custodial — funds on smart contracts, multisig admin
-
-### 02 — Risk Engine: Scoring & Fund Grouping
-
-Each individual contract is assigned a **risk score**. The agency's risk level is the weighted average of all active contracts. The protocol groups agencies into funds by risk tier — enabling granular risk management at scale.
-
-| Fund | Profile |
+| Signal | Status |
 |---|---|
-| 🔴 High risk fund | Agencies with elevated default history |
-| 🟡 Medium risk fund | Mixed portfolio agencies |
-| 🟢 Low risk fund | Consistent performing agencies |
+| Agencies in active conversation | **30** |
+| Agencies with signed letters of intent | **10** |
+| Target region | Northern RS · SC coast |
 
-### 03 — Investor: Capital Allocation via Dashboard
+### Product
 
-The investor accesses the dashboard, browses available funds, and allocates capital freely. The protocol handles risk management at the protocol level; the investor controls their own exposure and return profile.
+- **MVP in active development** — smart contracts (Solana/Anchor) + agency dashboard + investor dashboard
 
-| Risk | Return |
-|---|---|
-| High risk | ↑ Higher return |
-| Medium risk | → Balanced return |
-| Low risk | ↓ Stable return |
+### Team proof of execution
+
+- **Chainless (Julia Buratto)** — launched 2023 · **0 → 30,000 users** · still running
+
+### Investor signal
+
+- **[Hackathon — name, prize value]**
+- **CMJ investment — [status / value]**
 
 ---
 
-## 05 · How It Works — Flow
+## 04 · Market
 
-### B2C Operations (Investor side)
+### Market size
 
-Crypto Investor → **Investor Dashboard** ⇄ **MUTAV Protocol**
+| Layer | Value | Notes |
+|---|---|---|
+| **TAM** — total rental insurance premiums | **R$ 1.29B/year** | Jan–Nov 2024 |
+| **SAM** — digital guarantees market | **R$ 300M/year** | 2025 estimate |
+| **SOM** — MUTAV Phase 1 target | **R$ 60M/year** | 20% of SAM |
 
-### B2B Operations (Agency side)
+> **46.5 million** Brazilians paying rent (2024) · **74,000** active real estate agencies · **650,000** registered brokers — one of the world's largest real estate distribution networks, with massive untapped potential for scalable growth.
 
-**MUTAV Protocol** ⇄ **Agency Dashboard** ← Rental Agency ← Tenant / Landlord
+### Market signals
 
-### Benefits
+The sector is undergoing rapid consolidation and tech investment — validating the opportunity:
 
-| B2C | B2B |
+- **BTG Pactual** — billion-dollar profit in under 2 years operating in the guarantee sector
+- **Loft — R$ 100M in tech (2026)** — strategic focus on rental guarantee innovation
+- **CredPago / Grupo Loft** — acquired for over R$ 1B · 16k agencies · R$ 40B in assets
+
+MUTAV brings what none of these players have: onchain infrastructure and open investor participation.
+
+---
+
+## 05 · How It Works
+
+### 01 — Agencies connect via dashboard
+
+Each real estate agency joins the protocol through a dedicated dashboard and receives an **individual smart contract**. Tenant and landlord contracts are registered inside it.
+
+- Agency → Smart Contract → Protocol
+- Each contract registered onchain
+- Non-custodial — funds held in smart contracts · multisig admin
+
+### 02 — Risk engine: scoring and fund grouping
+
+Every contract receives a **risk score**. The agency's score is the weighted average of all active contracts. The protocol groups agencies into risk-tiered funds — enabling granular risk management at scale.
+
+| Fund | Profile |
 |---|---|
-| Access to RWA funds in the Brazilian real estate market | More efficient rental guarantees for landlords, with dynamic rates for tenants |
-| Access to a previously closed billion-dollar market | Default settlement: **60 days → 10 days** via automated onchain execution |
+| 🔴 High risk | Agencies with elevated default history |
+| 🟡 Medium risk | Mixed portfolio agencies |
+| 🟢 Low risk | Consistent performing agencies |
+
+### 03 — Investors allocate capital and earn yield
+
+The investor accesses the dashboard, browses available funds by risk tier, and allocates capital freely. The protocol handles risk at the protocol level — the investor controls their own exposure and return profile.
+
+| Risk | Return |
+|---|---|
+| High | ↑ Higher yield |
+| Medium | → Balanced yield |
+| Low | ↓ Stable yield |
+
+### Settlement flow
+
+**B2B:** Tenant / Landlord → Rental Agency → Agency Dashboard ⇄ **MUTAV Protocol**
+
+**B2C:** Crypto Investor → Investor Dashboard ⇄ **MUTAV Protocol**
+
+**Result:** Default settlement from 60 days (manual) to **10 days** via automated onchain execution.
 
 ---
 
 ## 06 · Business Model
 
-**B2B2C model:** the B2B side integrates real estate agencies as a guarantee infrastructure provider; the B2C side operates as an RWA fund tokenization protocol.
+**B2B2C model:** the B2B side integrates real estate agencies as guarantee infrastructure; the B2C side operates as an RWA fund tokenization protocol.
 
-### Revenue Streams
+### Revenue streams
 
-| Stream | Description |
+| Stream | Mechanics |
 |---|---|
-| **Fee spread** | 20% fee charged to the tenant — spread allocated to the fund |
-| **Management fee** | Fee on MUTAV SA AUM (Assets Under Management) |
-| **Redemption fee** | 0.25% charged on the amount withdrawn at investor exit |
-| **NAV appreciation** | Returns built into the fund via fees + collateral yield |
+| **Fee spread** | MUTAV retains **20% of the tenant's existing guarantee fee** as protocol spread — remainder allocated to the fund as yield |
+| **Management fee** | **[X]%** annually on AUM (MUTAV SA) |
+| **Redemption fee** | **0.25%** charged on investor withdrawals |
+| **NAV appreciation** | Value accrues to all fund positions via fees + collateral yield |
 
-### NAV Mechanics
+### Unit economics (Phase 1 illustration)
 
-- New deposits don't dilute existing holders — everyone enters at current NAV
-- Fees & yield accrue automatically to all holders, no action required
-- Default impact distributed proportionally — risk is collective
+| Variable | Value |
+|---|---|
+| Average tenant guarantee fee | R$ 1,500/year per contract |
+| MUTAV's 20% protocol spread | **R$ 300/year per contract** |
+| Agency with 50 contracts | R$ 15,000/year in fees → **R$ 3,000/year to MUTAV** |
+| 20 agencies at full pilot | 1,000 contracts → **R$ 300,000/year from spread alone** |
 
-### Fund Structure
+### NAV mechanics
 
-- KYC required — no minimum lockup period
+- New deposits enter at current NAV — existing holders not diluted
+- Fees and yield accrue automatically to all positions, no action required
+- Default impact distributed proportionally across the fund
+
+### Fund structure
+
+- KYC required · no minimum lockup period
 - 2.5% weekly redemption cap · onchain queue
 - Queue positions continue accruing yield while waiting
 
-### Conservative Projection
+### Conservative projection (Phase 1 ceiling)
 
-- Base market (Brazil): **R$ 300M/year**
-- Initial market penetration: **20%**
-- Applied spread: **2%**
+- Base market: **R$ 300M/year** digital guarantees
+- MUTAV penetration: **20%** → R$ 60M managed volume
+- Protocol spread: **20% of guarantee fees** (~2% of managed volume)
 
-> **R$ 1.2M/year** estimated revenue — phase 1.
-> Excludes management fee, redemption fee, or NAV appreciation.
-
----
-
-## 07 · Go to Market
-
-### Phase 1 — Pilot
-
-**Real estate agencies**
-- Target: **20–30 agencies** — northern RS and SC coast
-- Entry via network with **30+ years of experience** in the rental market
-- Pitch: operational automation + **2% fee** on contracts and better conditions for tenants and landlords
-- Landlords and Tenants acquired via partner agencies
-
-**Investors — crypto-natives**
-- Ticket: **$1K–$10K** retail crypto-native
-- Seed capital: hackathon prizes + CMJ investment + founders network
-- Channel: **X (Twitter)** — organic reach + strategic network
-- Narrative: the only onchain protocol with exposure to the Brazilian guarantee market
-
-### Phase 2 — Expansion
-
-**Transition criteria:** Active contracts + AUM threshold + sustained operation
-
-**Real estate agencies**
-- Cold outreach to new markets beyond the pilot region
-- Pilot track record as adoption proof for new agencies
-- Less bureaucracy, more predictability, additional revenue stream
-
-**Investors**
-- MUTAV as collateral in onchain protocols (DeFi integration)
-- Opening to institutional investors with KYC
-- Narrative: Brazil has more than 74,000 active real estate agencies and 650,000 registered real estate brokers, forming one of the largest real estate distribution networks in the world, with massive untapped potential for scalable growth and market penetration.
+> **R$ 1.2M/year** estimated revenue from fee spread alone.
+> Excludes management fee, redemption fee, and NAV appreciation.
 
 ---
 
-## 08 · Team
+## 07 · Team
 
-### Matheus "Draau" de Pauli — Project Manager · Web3 Builder
-5+ years building products that connect technology, brand, and market. Multidisciplinary team coordination and blockchain solutions. Co-founder of No Bloco — inserting creative professionals into the Web3 ecosystem.
+### Matheus "Draau" de Pauli — CEO · Project Manager · Web3 Builder
 
-### Julia Hoffmann Buratto — Design Engineer · UFSC Architect
-Founder of jubs.studio. In 2023 launched Chainless — from zero to 5,000 users, now past 30,000 and still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3.
+5+ years building products at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco — inserting creative professionals into the Web3 ecosystem. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.
 
-### Lucas Oliveira — Cryptographer · Senior Blockchain Engineer
-5+ years in blockchain product development — design, architecture, security auditing, and mainnet deployment. Head of Education at Nearx, leading Web3 and AI education in Latin America. Former Blockchain Engineer at Clearsale. Mathematics degree, Berkeley Blockchain certification.
+### Julia Hoffmann Buratto — CTO · Design Engineer · Architect (UFSC)
 
-### Strategic Network
-Access to the real estate market through connections with professionals with **30+ years of rental experience** in Southern Brazil — enabling validation, first pilots, and early adopter agencies.
+Founder of jubs.studio. Launched Chainless in 2023 — from zero to **30,000 users**, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.
+
+### Lucas Oliveira — Blockchain Engineer · Cryptographer
+
+5+ years in blockchain product development — design, architecture, security auditing, and mainnet deployment. Head of Education at Nearx, leading Web3 and AI education in Latin America. Former Blockchain Engineer at Clearsale. Mathematics degree · Berkeley Blockchain certification.
+
+### Advisor
+
+**Cinara Bigóis — Real Estate Market Advisor**
+30 years of experience in the Brazilian rental market. Active real estate broker · [CRECI-XX]. Direct access to agencies, pilots, and early adoption network in Southern Brazil.
+
+### Why this team
+
+Three complementary builders — product, design-engineering, and blockchain — with a proven execution track record and direct domain access through an embedded real estate advisor. Julia's 30,000-user product and Lucas's mainnet deployments prove this team ships. Cinara's network is what gets the first 10 agencies to production.
+
+---
+
+## 08 · Financials
+
+### Phase 1 milestones — 12-month trajectory
+
+| Milestone | Target |
+|---|---|
+| MVP launch · first agencies onboarded | Month [X] |
+| 5 agencies live · first contracts onchain | Month [X] |
+| 15 agencies active · first AUM deployed | Month [X] |
+| 25–30 agencies · R$ [X]M AUM | Month [X] |
+| Phase 2 trigger: contracts + AUM threshold + sustained operation | Month [X] |
+
+### Revenue trajectory (fee spread only)
+
+| Active agencies | Avg contracts/agency | Annual spread revenue |
+|---|---|---|
+| 5 | 50 | R$ 75,000 |
+| 15 | 50 | R$ 225,000 |
+| 30 | 50 | R$ 450,000 |
+| Full Phase 1 (20% SAM) | — | **R$ 1,200,000** |
+
+### Current state
+
+- AUM deployed: pre-launch
+- Burn rate: [R$/month]
+- Runway: [months]
+
+---
+
+## 09 · Ask
+
+### We are raising
+
+> **[R$X / $X]** via **[SAFE / equity / grant / acceleration program]**
+
+### Use of funds
+
+| Allocation | Purpose |
+|---|---|
+| **[X]%** | Product — MVP to production-ready |
+| **[X]%** | Operations — agency onboarding, legal, CVM registration |
+| **[X]%** | Growth — investor community, agency acquisition beyond pilot |
+
+### What this capital unlocks
+
+- **30 agencies onboarded** — from 10 signed LOIs to live contracts
+- **R$ [X]M in AUM** deployed
+- **CVM registration** completed — required for fund operation at scale
+- **Phase 2 trigger** reached — institutional investors + DeFi collateral integration
