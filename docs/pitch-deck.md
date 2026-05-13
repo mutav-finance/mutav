@@ -5,28 +5,28 @@
 ## Cover
 
 **MUTAV**
-The protocol that opens Brazil's R$ 1B rental guarantee market to crypto investors — real yield, onchain.
+The protocol that opens Brazil's R$ 1B rental guarantee market to crypto investors — real asset, real yield.
 
-*Seed stage · 2025*
+*Seed stage · 2026*
 
 ---
 
 ## 01 · Problem
 
-> "In 2025, QuintoCred — one of Brazil's largest rental guarantors — shut down overnight. 45,000 contracts cancelled. 3,000 agencies without coverage. No warning. No fallback."
+> "In 2025, QuintoCred — one of Brazil's largest rental guarantors — shut down overnight. 45,000 contracts cancelled. 3,000 agencies without coverage."
 
 ### 01 — Concentrated capital, systemic risk
 
-Guarantors operate with their own isolated capital — no collective participation, no distributed buffer. When one fails, the entire chain collapses.
+Guarantors operate with their own isolated capital. When one fails, the entire market collapses.
 
 - **QuintoCred — shut down (2025):** 45,000 contracts cancelled · 3,000 agencies left without coverage
 - **CredPago — default (2025):** Payment delays · settlement failure across 16,000 agencies
 
 For the agencies left exposed, there was no recourse and no timeline for resolution.
 
-### 02 — High cost, slow settlement
+### 02 — Lack of transperency, slow settlement
 
-A landlord files a guarantee claim. What follows is 60 days of phone calls, manual paperwork, and silence — while the property sits vacant and the mortgage doesn't pause. Tenants, on the other side, pay **10–15% per year** in fees with no transparency on where that capital goes or who holds it.
+When the guarantee is triggered, what follows are days of bureaucracy and little clarity around deadlines and required documentation. Meanwhile, tenants pay **10–15% per month** in fees, with no transparency regarding where that capital goes.
 
 ### 03 — A billion-reais asset class with no entry point
 
@@ -36,12 +36,12 @@ An investor watching BTG Pactual generate billion-reais profits in rental guaran
 
 ## 02 · Solution
 
-MUTAV opens the Brazilian rental guarantee market — distributing risk across a tokenized fund, automating settlement through smart contracts, and making real yield from rental contracts accessible to crypto investors worldwide.
+MUTAV opens the Brazilian rental guarantee market — distributing risk across a tokenized fund, automating settlement through smart contracts, and making real yield from rental contracts accessible to crypto investors.
 
 | Problem | MUTAV's answer |
 |---|---|
 | Concentrated capital, systemic risk | Risk distributed across tokenized fund pools — no single-guarantor failure point |
-| High cost, slow settlement | Smart contract automation: default settlement **60 days → 10 days** · competitive dynamic rates |
+| Lack of transperency, slow settlement | Smart contract Automation: Clear timelines, full transparency, and fast default settlement.|
 | Market closed to investors | Tokenized RWA fund: any crypto investor enters from **$1K**, earning real yield from Brazilian rental contracts |
 
 **Two operating fronts:**
@@ -69,9 +69,10 @@ MUTAV opens the Brazilian rental guarantee market — distributing risk across a
 
 - **MVP in active development** — smart contracts (Solana/Anchor) + agency dashboard + investor dashboard
 
-### Team proof of execution
+### Distribution advantage
 
-- **Chainless (Julia Buratto)** — launched 2023 · **0 → 30,000 users** · still running
+- **Chainless (Julia Buratto)** — launched 2023 · **0 → 30,000 crypto-native users** · still running
+  30,000 crypto-native users = MUTAV's target B2C investor base, already reachable at zero CAC
 
 ### Investor signal
 
