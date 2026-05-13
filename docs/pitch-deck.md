@@ -5,9 +5,9 @@
 ## Cover
 
 **MUTAV**
-Turning Brazil's R$ 1B rental guarantee market into real onchain yield.
+The protocol that opens Brazil's R$ 1B rental guarantee market to crypto investors — real yield, onchain.
 
-> REAL ASSET · REAL YIELD
+*Seed stage · 2025*
 
 ---
 
@@ -22,19 +22,21 @@ Guarantors operate with their own isolated capital — no collective participati
 - **QuintoCred — shut down (2025):** 45,000 contracts cancelled · 3,000 agencies left without coverage
 - **CredPago — default (2025):** Payment delays · settlement failure across 16,000 agencies
 
+For the agencies left exposed, there was no recourse and no timeline for resolution.
+
 ### 02 — High cost, slow settlement
 
-A landlord who activates a guarantee after a tenant default waits **up to 60 days** for payment — through manual, opaque processes with no predictability. Tenants pay **10–15% per year** in fees with no transparency on where that capital goes.
+A landlord files a guarantee claim. What follows is 60 days of phone calls, manual paperwork, and silence — while the property sits vacant and the mortgage doesn't pause. Tenants, on the other side, pay **10–15% per year** in fees with no transparency on where that capital goes or who holds it.
 
 ### 03 — A billion-reais asset class with no entry point
 
-Over **R$ 1 billion flows through rental guarantee premiums annually** in Brazil. Investors who recognize the opportunity have no mechanism to participate — the sector runs on closed, proprietary capital with zero onchain exposure.
+An investor watching BTG Pactual generate billion-reais profits in rental guarantees in under two years has no mechanism to replicate that exposure. Over **R$ 1 billion flows through rental guarantee premiums annually** in Brazil — and the sector is structurally closed to outside capital. No fund, no token, no entry point.
 
 ---
 
 ## 02 · Solution
 
-MUTAV is an onchain infrastructure protocol that opens the Brazilian rental guarantee market — distributing risk, automating settlement, and creating a new real-yield asset class for global investors.
+MUTAV opens the Brazilian rental guarantee market — distributing risk across a tokenized fund, automating settlement through smart contracts, and making real yield from rental contracts accessible to crypto investors worldwide.
 
 | Problem | MUTAV's answer |
 |---|---|
@@ -49,7 +51,7 @@ MUTAV is an onchain infrastructure protocol that opens the Brazilian rental guar
 | **B2B — Rent Guarantee** | Rental guarantee layer for real estate agencies — contracts registered and settled onchain |
 | **B2C — Crypto Investors** | Tokenized RWA fund giving the crypto ecosystem direct access to rental guarantee premiums |
 
-> The only onchain protocol with direct exposure to the Brazilian rental guarantee market.
+> The first onchain protocol operating in the Brazilian rental guarantee market.
 
 ---
 
@@ -132,6 +134,11 @@ The investor accesses the dashboard, browses available funds by risk tier, and a
 | Medium | → Balanced yield |
 | Low | ↓ Stable yield |
 
+**Fund mechanics:**
+- New deposits enter at current NAV — existing holders not diluted
+- Yield accrues automatically to all positions, no action required
+- KYC required · no minimum lockup · 2.5% weekly redemption cap · onchain queue
+
 ### Settlement flow
 
 **B2B:** Tenant / Landlord → Rental Agency → Agency Dashboard ⇄ **MUTAV Protocol**
@@ -163,18 +170,6 @@ The investor accesses the dashboard, browses available funds by risk tier, and a
 | MUTAV's 20% protocol spread | **R$ 300/year per contract** |
 | Agency with 50 contracts | R$ 15,000/year in fees → **R$ 3,000/year to MUTAV** |
 | 20 agencies at full pilot | 1,000 contracts → **R$ 300,000/year from spread alone** |
-
-### NAV mechanics
-
-- New deposits enter at current NAV — existing holders not diluted
-- Fees and yield accrue automatically to all positions, no action required
-- Default impact distributed proportionally across the fund
-
-### Fund structure
-
-- KYC required · no minimum lockup period
-- 2.5% weekly redemption cap · onchain queue
-- Queue positions continue accruing yield while waiting
 
 ### Conservative projection (Phase 1 ceiling)
 
