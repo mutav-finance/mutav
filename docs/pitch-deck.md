@@ -5,7 +5,7 @@
 ## Cover
 
 **Rental Guarantee Tokenization**
-Turning Brazilian rental guarantees into a real-yield onchain asset. Real contracts. Real yield.
+Turning Brazilian rental guarantees into a real-yield onchain asset.
 
 > REAL ASSET · REAL YIELD
 
@@ -53,7 +53,7 @@ A sector moving **over R$ 1 billion in annual premiums** remains closed to indiv
 
 ## 03 · What is MUTAV
 
-MUTAV is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset.
+MUTAV is an onchain infrastructure protocol that turns the Brazilian rental guarantee market into a real-yield asset accessible globally.
 
 It operates on two simultaneous fronts:
 
@@ -74,6 +74,7 @@ Each real estate agency connects to the protocol via the dashboard and receives 
 
 - Agency → Smart Contract → Protocol
 - Each tenant/landlord contract registered onchain
+- Non-custodial — funds on smart contracts, multisig admin
 
 ### 02 — Risk Engine: Scoring & Fund Grouping
 
@@ -112,7 +113,7 @@ Crypto Investor → **Investor Dashboard** ⇄ **MUTAV Protocol**
 | B2C | B2B |
 |---|---|
 | Access to RWA funds in the Brazilian real estate market | More efficient rental guarantees for landlords, with dynamic rates for tenants |
-| Access to a previously closed billion-dollar market | More practical system with reduced operational costs |
+| Access to a previously closed billion-dollar market | Default settlement: **60 days → 10 days** via automated onchain execution |
 
 ---
 
@@ -128,6 +129,18 @@ Crypto Investor → **Investor Dashboard** ⇄ **MUTAV Protocol**
 | **Management fee** | Fee on MUTAV SA AUM (Assets Under Management) |
 | **Redemption fee** | 0.25% charged on the amount withdrawn at investor exit |
 | **NAV appreciation** | Returns built into the fund via fees + collateral yield |
+
+### NAV Mechanics
+
+- New deposits don't dilute existing holders — everyone enters at current NAV
+- Fees & yield accrue automatically to all holders, no action required
+- Default impact distributed proportionally — risk is collective
+
+### Fund Structure
+
+- KYC required — no minimum lockup period
+- 2.5% weekly redemption cap · onchain queue
+- Queue positions continue accruing yield while waiting
 
 ### Conservative Projection
 
