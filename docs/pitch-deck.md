@@ -71,8 +71,13 @@ MUTAV opens the Brazilian rental guarantee market — distributing risk across a
 
 ### Distribution advantage
 
+**B2C — Crypto investors**
 - **Chainless (Julia Buratto)** — launched 2023 · **0 → 30,000 crypto-native users** · still running
   30,000 crypto-native users = MUTAV's target B2C investor base, already reachable at zero CAC
+
+**B2B — Real estate agencies**
+- **Advisor network** — 30 years in the Southern Brazil rental market
+  Direct relationships across RS and SC — the source behind 30 active conversations and 10 signed LOIs
 
 ### Investor signal
 
