@@ -5,7 +5,7 @@
 ## Cover
 
 **MUTAV**
-The protocol that opens Brazil's R$ 1B rental guarantee market to crypto investors — real asset, real yield.
+The protocol that opens Brazil's $770M rental guarantee market to crypto investors — real asset, real yield.
 
 *Seed stage · 2026*
 
@@ -30,7 +30,7 @@ When the guarantee is triggered, what follows are days of bureaucracy and little
 
 ### 03 — A billion-reais asset class with no entry point
 
-An investor watching BTG Pactual generate billion-reais profits in rental guarantees in under two years has no mechanism to replicate that exposure. Over **R$ 1 billion flows through rental guarantee premiums annually** in Brazil — and the sector is structurally closed to outside capital. No fund, no token, no entry point.
+An investor watching BTG Pactual generate billion-reais profits in rental guarantees in under two years has no mechanism to replicate that exposure. Over **$770 million flows through rental guarantee premiums annually** in Brazil, and the sector is structurally closed to outside capital. No entry point.
 
 ---
 
@@ -79,11 +79,6 @@ MUTAV opens the Brazilian rental guarantee market — distributing risk across a
 - **Advisor network** — 30 years in the Southern Brazil rental market
   Direct relationships across RS and SC — the source behind 30 active conversations and 10 signed LOIs
 
-### Investor signal
-
-- **[Hackathon — name, prize value]**
-- **CMJ investment — [status / value]**
-
 ---
 
 ## 04 · Market
@@ -92,19 +87,21 @@ MUTAV opens the Brazilian rental guarantee market — distributing risk across a
 
 | Layer | Value | Notes |
 |---|---|---|
-| **TAM** — total rental insurance premiums | **R$ 1.29B/year** | Jan–Nov 2024 |
-| **SAM** — digital guarantees market | **R$ 300M/year** | 2025 estimate |
-| **SOM** — MUTAV Phase 1 target | **R$ 60M/year** | 20% of SAM |
+| **TAM** — total paid rental guarantee premiums | **$770M/year** | Rental Insurance $385M + Digital Guarantees ~$385M · SUSEP 2025 |
+| **SAM** — digital guarantee market (garantias onerosas) | **$304M/year** | 21% of 17.8M contracts · growing +254% since 2020 · ABMI |
+| **SOM** — MUTAV Phase 1 target | **$1.5M/year** | ~5,000 contracts · Southern Brazil pilot |
 
-> **46.5 million** Brazilians paying rent (2024) · **74,000** active real estate agencies · **650,000** registered brokers — one of the world's largest real estate distribution networks, with massive untapped potential for scalable growth.
+> **17.8 million** Brazilian households renting (2024, +54% vs 2016) · **74,000** active real estate agencies · **650,000** registered brokers. Paid guarantees now represent **49% of all rental contracts** — already surpassing the traditional guarantor figure for the first time.
 
 ### Market signals
 
 The sector is undergoing rapid consolidation and tech investment — validating the opportunity:
 
+- **Paid guarantees overtook the guarantor** — from 18% (2020) to 49% (2024) of all contracts · +254% in 4 years · ABMI
+- **Default rate rising** — 3.8% in 2025 (vs 3.14% in 2024) · increasing pressure on guarantee demand · Superlógica
+- **CredAluga** — fintech raised US$ 5M from Grupo OLX · 30K active contracts · +200% growth in 2024
 - **BTG Pactual** — billion-dollar profit in under 2 years operating in the guarantee sector
-- **Loft — R$ 100M in tech (2026)** — strategic focus on rental guarantee innovation
-- **CredPago / Grupo Loft** — acquired for over R$ 1B · 16k agencies · R$ 40B in assets
+- **CredPago / Grupo Loft** — acquired for over $200M · 16k agencies · $8.1B in assets
 
 MUTAV brings what none of these players have: onchain infrastructure and open investor participation.
 
@@ -172,18 +169,20 @@ The investor accesses the dashboard, browses available funds by risk tier, and a
 
 | Variable | Value |
 |---|---|
-| Average tenant guarantee fee | R$ 1,500/year per contract |
-| MUTAV's 20% protocol spread | **R$ 300/year per contract** |
-| Agency with 50 contracts | R$ 15,000/year in fees → **R$ 3,000/year to MUTAV** |
-| 20 agencies at full pilot | 1,000 contracts → **R$ 300,000/year from spread alone** |
+| Average tenant guarantee fee | **$25/month** per contract ($304/year) |
+| MUTAV's 20% protocol spread | **$5/month** per contract ($61/year) |
+| Investor fund yield (80%) | **$20/month** per contract ($243/year) allocated as fund yield |
+| Agency with 50 contracts | $3,043/year in fees → $609 to MUTAV · **$2,434/year to the fund** |
+| 20 agencies at full pilot | 1,000 contracts → $61K/year to MUTAV · **$243K/year to investors** |
 
 ### Conservative projection (Phase 1 ceiling)
 
-- Base market: **R$ 300M/year** digital guarantees
-- MUTAV penetration: **20%** → R$ 60M managed volume
-- Protocol spread: **20% of guarantee fees** (~2% of managed volume)
+- Base market: **$304M/year** digital guarantees (SAM)
+- Phase 1 target: **~5,000 contracts** · Southern Brazil pilot → **$1.5M/year in guarantee fees**
+- Protocol spread: **20% of guarantee fees** → **$300K/year to MUTAV**
+- Investor fund yield: **80% of guarantee fees** → **$1.2M/year distributed to the fund**
 
-> **R$ 1.2M/year** estimated revenue from fee spread alone.
+> Total guarantee flow at Phase 1 target: **$1.5M/year** — $300K protocol revenue + $1.2M investor yield.
 > Excludes management fee, redemption fee, and NAV appreciation.
 
 ---
@@ -222,22 +221,22 @@ Three complementary builders — product, design-engineering, and blockchain —
 | MVP launch · first agencies onboarded | Month [X] |
 | 5 agencies live · first contracts onchain | Month [X] |
 | 15 agencies active · first AUM deployed | Month [X] |
-| 25–30 agencies · R$ [X]M AUM | Month [X] |
+| 25–30 agencies · $[X]M AUM | Month [X] |
 | Phase 2 trigger: contracts + AUM threshold + sustained operation | Month [X] |
 
 ### Revenue trajectory (fee spread only)
 
 | Active agencies | Avg contracts/agency | Annual spread revenue |
 |---|---|---|
-| 5 | 50 | R$ 75,000 |
-| 15 | 50 | R$ 225,000 |
-| 30 | 50 | R$ 450,000 |
-| Full Phase 1 (20% SAM) | — | **R$ 1,200,000** |
+| 5 | 50 | $15K |
+| 15 | 50 | $45K |
+| 30 | 50 | $90K |
+| Phase 1 target (~5,000 contracts) | — | **$300K** |
 
 ### Current state
 
 - AUM deployed: pre-launch
-- Burn rate: [R$/month]
+- Burn rate: [$/month]
 - Runway: [months]
 
 ---
@@ -246,7 +245,7 @@ Three complementary builders — product, design-engineering, and blockchain —
 
 ### We are raising
 
-> **[R$X / $X]** via **[SAFE / equity / grant / acceleration program]**
+> **[$X]** via **[SAFE / equity / grant / acceleration program]**
 
 ### Use of funds
 
@@ -259,6 +258,6 @@ Three complementary builders — product, design-engineering, and blockchain —
 ### What this capital unlocks
 
 - **30 agencies onboarded** — from 10 signed LOIs to live contracts
-- **R$ [X]M in AUM** deployed
+- **$[X]M in AUM** deployed
 - **CVM registration** completed — required for fund operation at scale
 - **Phase 2 trigger** reached — institutional investors + DeFi collateral integration
