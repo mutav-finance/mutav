@@ -182,6 +182,14 @@ Financial Institution
 
 ---
 
+## GAP 8 — Fund Management & Early Adopter Structure
+
+**8.1** What benefits will early adopters of the first tokenized fund receive? Options to evaluate: reduced management fee, higher yield allocation (ex: 85% vs 80%), priority access to lower-risk tiers, Phase 2 whitelist. No decision made — needs fund management expertise to define.
+
+**8.2** Fund management layer is an open gap — who administers the fund operationally? Does MUTAV SA self-manage or partner with a licensed administrator (required for CVM registration)?
+
+---
+
 ## Cross-Cutting Gaps (independent of reference)
 
 Identified via JURY.md baseline (score 2.25/5, 2026-04-10):
