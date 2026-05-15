@@ -39,7 +39,7 @@ export function InvestidorCapture() {
           <WaitlistForm audience="investidor" />
           <p className="mt-6 font-mono text-2xs leading-relaxed text-text-2">
             <a
-              href="https://github.com/tga-protocol"
+              href="https://github.com/mutav-finance"
               target="_blank"
               rel="noopener"
               className="text-accent hover:underline underline-offset-4"

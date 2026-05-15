@@ -64,7 +64,7 @@ Two primary personas. The page does not route them — it lets them self-segment
 - A hero that signals seriousness without overpromising — category claim, not feature claim
 - A vision arc that reads as horizon, not roadmap. Dates would be a red flag
 - Mecânica + onchain transparency + arquitetura in the investidor-capture form
-- A footer with `github.com/tga-protocol` and the verifiability link `[ verifique a arquitetura → ]` — the trust mechanic for her is the link to the code, not a paragraph
+- A footer with `github.com/mutav-finance` and the verifiability link `[ verifique a arquitetura → ]` — the trust mechanic for her is the link to the code, not a paragraph
 
 ---
 

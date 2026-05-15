@@ -72,7 +72,7 @@ When the next `/gsp-project-*` skill runs in this repo, the agent will:
 3. Read `pitch/deck.pdf` directly (Read tool supports PDFs)
 4. Read `photography/*.{jpg,webp,png}` directly (Read tool is multimodal)
 5. Cross-reference findings against `.design/projects/landing/brief/scope.md` and the existing `messages/{pt-BR,en}.json` copy
-6. Surface concrete edits as a focused PR or as comments on [issue #13](https://github.com/tga-protocol/sgr/issues/13)
+6. Surface concrete edits as a focused PR or as comments on [issue #13](https://github.com/mutav-finance/mutav/issues/13)
 
 You don't need to invoke anything special — just drop the files and continue. Run `/gsp-project-critique` next time you want a fresh pass that consumes the new references.
 
@@ -81,7 +81,7 @@ You don't need to invoke anything special — just drop the files and continue. 
 ## Quick reference for Draau
 
 ```
-cd ~/Projects/tga-protocol/sgr   # or wherever this repo lives
+cd ~/Projects/mutav-finance/mutav   # or wherever this repo lives
 
 # Figma
 echo "https://www.figma.com/design/<fileKey>/<name>" \

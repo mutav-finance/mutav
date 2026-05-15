@@ -89,7 +89,7 @@ Three sentences, technical register, mecânica + transparência onchain + arquit
 
 Avoid the never-say list for investor copy: *"confie em nós", "acreditamos", "nosso objetivo é", APY garantido, "hackathon", moonshot/alpha/degen, "alta liquidez" without data, "ecossistema" (generic), "oportunidade única"*. The third sentence is the only specific positioning claim and it's defensible.
 
-Form: email + audience tag + `[ entrar na lista ]`. Below: mono link `[ verifique a arquitetura → github.com/tga-protocol ]`. The verifiability gesture is the trust mechanic — Ana doesn't need a paragraph of reassurance, she needs a link to the code.
+Form: email + audience tag + `[ entrar na lista ]`. Below: mono link `[ verifique a arquitetura → github.com/mutav-finance ]`. The verifiability gesture is the trust mechanic — Ana doesn't need a paragraph of reassurance, she needs a link to the code.
 
 ### Team
 

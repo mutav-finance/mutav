@@ -97,7 +97,7 @@ Smoke test against `bun run dev`:
 - **Waitlist real backend** — wire Resend + Vercel KV; replace stub
 - **i18n /en route** — wire next-intl; move to `app/[locale]/page.tsx`; translate all 32 strings
 - **Real founder copy lock** — Draau + jubs canonical track-record line (currently placeholder)
-- **Repo decision** — extract `landing/` to its own repo (`sgr-landing`) when ready to ship; current location is co-located with the strategy repo
+- **Repo decision** — extract `landing/` to its own repo (`mutav-landing`) when ready to ship; current location is co-located with the strategy repo
 - **Deploy** — point at Vercel project; configure env vars; pick domain
 - **Privacy + Terms pages** — `/privacidade` and `/termos` are linked from the footer but don't exist yet
 

@@ -93,7 +93,7 @@ The design enters this audit in unusually good shape — every screen ends in a 
 | 2.4.1 Bypass blocks | **PASS** | Skip link "Pular para o conteúdo" → `#main` is the first focusable element, `sr-only` until focused. |
 | 2.4.2 Page titled | **PASS** | `<title>tga — aluguel garantido</title>` per shared/navigation. Locale-aware. |
 | 2.4.3 Focus order | **PASS** | DOM-driven, matches visual order. Locale toggle in nav — visible early. |
-| 2.4.4 Link purpose | **PASS** | All link text is meaningful. "github.com/tga-protocol", "Colosseum", "Twitter / X" — no "click here". The Mono bracketed CTAs (`[ verifique a arquitetura → github.com/tga-protocol ]`) are decorative-bracketed but the underlying text is the URL. Brackets `aria-hidden`. |
+| 2.4.4 Link purpose | **PASS** | All link text is meaningful. "github.com/mutav-finance", "Colosseum", "Twitter / X" — no "click here". The Mono bracketed CTAs (`[ verifique a arquitetura → github.com/mutav-finance ]`) are decorative-bracketed but the underlying text is the URL. Brackets `aria-hidden`. |
 | 2.4.5 Multiple ways | **N/A** for single-page sites. Skipped per WCAG. |
 | 2.4.6 Headings & labels | **PASS** | Heading tree clean. Labels descriptive ("Seu e-mail", not "E-mail"). |
 | 2.4.7 Focus visible | **PASS** | 1px amber inset border on every focusable element. Verified per screen audit block. |

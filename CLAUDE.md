@@ -2,13 +2,13 @@
 
 ## Project
 SGR (Sistema de Garantia Registrada) — strategy, brand, docs, and shared specs across all chains.
-Part of the [tga-protocol](https://github.com/tga-protocol) org.
+Part of the [mutav-finance](https://github.com/mutav-finance) org.
 
 ## Sibling repos
 - `brand` — canonical brand artifacts; vendored into each consumer's `.design/branding/tga/`
-- `sgr-solana` — Solana/Anchor smart contracts (Colosseum Frontier hackathon)
-- `sgr-stellar` — Stellar/Soroban smart contracts (NearX acceleration)
-- `sgr-app` — Next.js dashboard for managing rental guarantees
+- `mutav-solana` — Solana/Anchor smart contracts (Colosseum Frontier hackathon)
+- `mutav-stellar` — Stellar/Soroban smart contracts (NearX acceleration)
+- `mutav-app` — Next.js dashboard for managing rental guarantees
 
 ## Resources
 - **Colosseum Dev Resources:** https://colosseum.com/frontier/resources

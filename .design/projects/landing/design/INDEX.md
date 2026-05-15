@@ -48,7 +48,7 @@ The TGA landing is a **single-route, single-scroll, two-front composition**. Bod
 - **Bifurcation is the only centered moment.** Two equal-weight cards with `gap-px bg-border` 1px divider. Click = smooth-scroll + focus into target form. Both forms render server-side and are always visible (no toggle).
 - **Captures are mirrored.** Proprietário left-skewed (col 1–5 copy, col 7–12 form). Investidor right-skewed (col 1–6 form, col 8–12 copy). The chiral mirror is the section-level visual companion to the dark→light→dark fold.
 - **Proprietário copy is jargon-zero.** Three sentences in plain pt-BR. Audited every word. Approved: outcome language. Forbidden and absent: blockchain, wallet, smart contract, token, DeFi, onchain, liquidação, transparência (as marketing).
-- **Investidor copy is verifiability-as-invitation.** Three sentences (mecânica + onchain + arquitetura). The `[ verifique a arquitetura → github.com/tga-protocol ]` link is the trust mechanic.
+- **Investidor copy is verifiability-as-invitation.** Three sentences (mecânica + onchain + arquitetura). The `[ verifique a arquitetura → github.com/mutav-finance ]` link is the trust mechanic.
 - **Team is anti-anonymous.** Draau + jubs, real names, real roles, real one-liners. 7/5 column asymmetry on lg+. Photography or designed alternative — not in-between.
 - **Footer is mono everything.** Bloomberg-Terminal density. Repos, colosseum, comunidade, locale echo, legal. Hover amber on links is the single transient amber moment in the footer.
 

@@ -20,7 +20,7 @@ Single route: `/` (with optional locale suffix `/en`). The "screens" below are s
 | 6 | `proprietario-capture` | investidor | P0 | Same dark canvas as rest of landing — no light Imobiliárias front. Three sentences in plain pt-BR (zero jargon) + email input + audience tag. CTA: `[ avise-me ]` (Mono Investidor button style). |
 | 7 | `investidor-capture` | investidor | P0 | Mirrored layout, same dark canvas. Three sentences (mecânica, transparência onchain, arquitetura). Email + audience tag. CTA: `[ entrar na lista ]` |
 | 8 | `team` | investidor | P0 | Draau + jubs. Real faces (or designed alternatives — see open question). Track record one-liners. Anti-anonymous |
-| 9 | `footer` | investidor | P0 | Repos (`tga-protocol` org), Colosseum copilot link, judges link, Twitter/Telegram (TBD), language toggle echo, OG meta target |
+| 9 | `footer` | investidor | P0 | Repos (`mutav-finance` org), Colosseum copilot link, judges link, Twitter/Telegram (TBD), language toggle echo, OG meta target |
 
 P0 sections must ship together. The vision arc (P1) is part of the launch but secondary in hierarchy — keep it quiet. Future P1 reserves: testimonials, press, deeper proof — once they exist.
 
@@ -47,7 +47,7 @@ See `target-adaptations.md` for how these compose from the brand spec.
 
 **In scope.** One-page vision landing, bilingual (pt-BR primary, en secondary), responsive (mobile-first → desktop), shippable to a static or Vercel-hosted Next.js app. Email waitlist with audience self-tag. OG meta + basic SEO. Founders' team section.
 
-**Out of scope.** Dashboards (live in `sgr-app`). Wallet connect / auth. Documentation site. Pitch deck. Blog / CMS. Quantified product claims (NAV, R$ liquidados, contracts active — no real numbers, no placeholders). Per-product feature pages. Stripe / payment flows.
+**Out of scope.** Dashboards (live in `mutav-app`). Wallet connect / auth. Documentation site. Pitch deck. Blog / CMS. Quantified product claims (NAV, R$ liquidados, contracts active — no real numbers, no placeholders). Per-product feature pages. Stripe / payment flows.
 
 ## Success criteria
 

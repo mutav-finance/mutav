@@ -22,11 +22,11 @@ lg+ (≥1024)                                                          ~auto
 │  │ tga-        │ copilot     │ x.com/      │ [ pt-BR / en ]      │    │
 │  │ protocol    │             │ tgaprotocol │                     │    │
 │  │             │ jury        │             │ tga.protocol        │    │
-│  │ sgr-solana  │             │ telegram    │                     │    │
+│  │ mutav-solana  │             │ telegram    │                     │    │
 │  │             │             │             │                     │    │
-│  │ sgr-stellar │             │             │                     │    │
+│  │ mutav-stellar │             │             │                     │    │
 │  │             │             │             │                     │    │
-│  │ sgr-app     │             │             │                     │    │
+│  │ mutav-app     │             │             │                     │    │
 │  └─────────────┴─────────────┴─────────────┴─────────────────────┘    │
 │  ↓ 64px                                                                │
 │                                                                        │
@@ -40,10 +40,10 @@ lg+ (≥1024)                                                          ~auto
 │ ── 1px border (top) ──           │
 │                                  │
 │ código                           │
-│ tga-protocol                     │
-│ sgr-solana                       │
-│ sgr-stellar                      │
-│ sgr-app                          │
+│ mutav-finance                     │
+│ mutav-solana                       │
+│ mutav-stellar                      │
+│ mutav-app                          │
 │                                  │
 │ colosseum                        │
 │ copilot                          │
@@ -75,10 +75,10 @@ lg+ (≥1024)                                                          ~auto
 ### Column 1 — código
 - Label: `código` (en: `code`) — JetBrains Mono Medium 11px ALL CAPS, `tracking-[0.10em]`, `var(--color-text-3)` = `#555B66`. Margin-bottom: 16px.
 - Links (Mono 12px, `var(--color-text-2)` = `#8A8F99`, hover → amber):
-  - `tga-protocol` → `https://github.com/tga-protocol` (the org)
-  - `sgr-solana` → `https://github.com/tga-protocol/sgr-solana`
-  - `sgr-stellar` → `https://github.com/tga-protocol/sgr-stellar`
-  - `sgr-app` → `https://github.com/tga-protocol/sgr-app`
+  - `mutav-finance` → `https://github.com/mutav-finance` (the org)
+  - `mutav-solana` → `https://github.com/mutav-finance/mutav-solana`
+  - `mutav-stellar` → `https://github.com/mutav-finance/mutav-stellar`
+  - `mutav-app` → `https://github.com/mutav-finance/mutav-app`
 - Each link `target="_blank" rel="noopener noreferrer"`.
 - 8px vertical gap between links.
 
@@ -147,7 +147,7 @@ N/A — static.
 
 | Trigger | Result |
 |---------|--------|
-| Click GitHub repo link | Opens `github.com/tga-protocol/...` in new tab. |
+| Click GitHub repo link | Opens `github.com/mutav-finance/...` in new tab. |
 | Click colosseum copilot | Opens copilot URL in new tab. |
 | Click x.com / telegram | Opens platform in new tab. |
 | Click `pt-BR` or `en` (locale toggle echo) | Same as nav locale toggle — navigates to `/` or `/en`. |
