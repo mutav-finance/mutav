@@ -1,6 +1,6 @@
 # TGA — Fluxogramas do Sistema
 
-Documento de referência extraído dos diagramas Excalidraw (`docs/images/excalidraw_fluxos.svg`).
+Documento de referência extraído dos diagramas Excalidraw (`docs/img/excalidraw_fluxos.svg`).
 Registra os fluxos operacionais do protocolo conforme desenhados — fonte primária para enriquecer o whitepaper.
 
 ---
@@ -172,6 +172,6 @@ Detalhamento que não está desenvolvido no whitepaper atual:
 
 ## Referência
 
-- **Fonte:** `docs/images/excalidraw_fluxos.svg`
+- **Fonte:** `docs/img/excalidraw_fluxos.svg`
 - **Extração:** 2026-05-05
 - **Próximo passo:** incorporar sistema de risco, score e fluxos detalhados na seção de Gestão de Risco do whitepaper
