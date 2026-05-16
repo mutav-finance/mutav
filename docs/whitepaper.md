@@ -244,9 +244,11 @@ O projeto é liderado por Matheus "Draau" de Pauli, Project Manager e Web3 build
 
 A equipe conta também com Julia Hoffmann Buratto, design engineer, arquiteta e urbanista (UFSC), com MBA em Cidades Responsivas e fundadora da jubs.studio. Em 2023, lançou a Chainless, levando o produto de zero a 5.000 usuários; atualmente, o protocolo ultrapassa 30.000 usuários e segue operando conforme projetado. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em produtos fintech e Web3 voltados à tokenização, crédito e automação de fluxos financeiros.
 
-O time inclui ainda Lucas Oliveira, criptógrafo e engenheiro blockchain sênior com mais de 5 anos em desenvolvimento de produtos blockchain — design, arquitetura, auditoria de segurança e deploy em mainnet. Head de Educação na Nearx, liderando educação em Web3 e IA na América Latina. Ex-Blockchain Engineer na Clearsale. Formação em Matemática, certificação Berkeley Blockchain.
+**Advisors**
 
-O projeto possui ainda proximidade estratégica com o mercado imobiliário, por meio de conexões com profissionais com mais de 30 anos de experiência no setor de locações imobiliárias, facilitando validação e acesso a players relevantes. A equipe será expandida conforme a evolução da iniciativa, com a incorporação de especialistas em DeFi, jurídico imobiliário, desenvolvimento e design, garantindo uma estrutura sólida para crescimento escalável.
+Lucas Oliveira atua como Advisor Técnico. Engenheiro blockchain sênior com mais de 5 anos em desenvolvimento de produtos blockchain — design, arquitetura, auditoria de segurança e deploy em mainnet. Ex-Blockchain Engineer na Clearsale, Head de Educação na Nearx, formação em Matemática e certificação Berkeley Blockchain. Embaixador ativo do ecossistema Stellar.
+
+Cinara Bigóis atua como Advisor de Mercado Imobiliário. Com 30 anos de experiência no mercado de locações no Sul do Brasil, corretora ativa com relacionamentos consolidados junto a imobiliárias e operadores regionais — viabilizando validação direta com o mercado e acesso aos primeiros parceiros do piloto.
 
 ---
 
