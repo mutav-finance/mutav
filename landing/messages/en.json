@@ -126,16 +126,16 @@
     "founders": [
       {
         "initial": "D",
-        "name": "Draau",
-        "role": "Protocol engineering. Solana / Anchor.",
-        "track": "5+ years in Web3.",
+        "name": "Matheus \"Draau\" de Pauli",
+        "role": "Project Manager · Web3 Builder",
+        "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
         "githubLabel": "Draau on GitHub"
       },
       {
         "initial": "J",
-        "name": "jubs",
-        "role": "Design engineering. Frontend / systems.",
-        "track": "Colosseum Frontier 2026.",
+        "name": "Julia Hoffmann Buratto",
+        "role": "Design Engineer · UFSC Architect",
+        "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
         "githubLabel": "jubs on GitHub"
       }
     ]

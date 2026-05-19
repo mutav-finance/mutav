@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { MonoKicker } from "./mono-kicker";
 
@@ -5,13 +6,18 @@ type Founder = {
   initial: string;
   name: string;
   role: string;
-  track: string;
+  bio: string;
   githubLabel: string;
 };
 
 const HREFS: Record<string, string> = {
   D: "https://github.com/draaujpeg",
   J: "https://github.com/hoffms",
+};
+
+const PHOTOS: Record<string, string> = {
+  D: "/team/draau.jpg",
+  J: "/team/jubs.jpg",
 };
 
 export function Team() {
@@ -34,28 +40,45 @@ export function Team() {
         </h2>
 
         <ul className="mt-16 grid gap-px bg-border lg:grid-cols-2">
-          {founders.map((f) => (
-            <li key={f.name} className="bg-surface p-8 flex items-start gap-6">
-              <a
-                href={HREFS[f.initial] ?? "#"}
-                target="_blank"
-                rel="noopener"
-                aria-label={f.githubLabel}
-                className="shrink-0 size-12 bg-accent text-canvas grid place-items-center font-display font-bold text-xl outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2 hover:bg-accent-dim transition-[background-color] duration-150 ease-out"
-              >
-                {f.initial}
-              </a>
-              <div className="flex-1 min-w-0">
-                <p className="font-display font-bold text-xl leading-tight text-text">
-                  {f.name}
-                </p>
-                <p className="mt-2 font-sans text-base-sm leading-relaxed text-text-2">
-                  {f.role}
-                </p>
-                <p className="mt-2 font-mono text-xs text-text-2">{f.track}</p>
-              </div>
-            </li>
-          ))}
+          {founders.map((f) => {
+            const photo = PHOTOS[f.initial];
+            return (
+              <li key={f.name} className="bg-surface p-8 flex items-start gap-6">
+                <a
+                  href={HREFS[f.initial] ?? "#"}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={f.githubLabel}
+                  className="shrink-0 size-16 outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                >
+                  {photo ? (
+                    <Image
+                      src={photo}
+                      alt={f.name}
+                      width={64}
+                      height={64}
+                      className="size-16 object-cover grayscale"
+                    />
+                  ) : (
+                    <span className="size-16 bg-accent text-canvas grid place-items-center font-display font-bold text-xl hover:bg-accent-dim transition-[background-color] duration-150 ease-out">
+                      {f.initial}
+                    </span>
+                  )}
+                </a>
+                <div className="flex-1 min-w-0">
+                  <p className="font-display font-bold text-xl leading-tight text-text">
+                    {f.name}
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-accent">
+                    {f.role}
+                  </p>
+                  <p className="mt-3 font-sans text-base-sm leading-relaxed text-text-2">
+                    {f.bio}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
