@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    metadataBase: new URL("https://tga.protocol"),
+    metadataBase: new URL("https://mutav.finance"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

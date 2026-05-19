@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "tga — aluguel garantido, do jeito que deveria funcionar",
-    "description": "TGA — protocolo de garantia locatícia. Quando o inquilino atrasa, o repasse é automático. Sem formulário, sem fila.",
-    "ogTitle": "tga — aluguel garantido, do jeito que deveria funcionar",
+    "title": "mutav — aluguel garantido, do jeito que deveria funcionar",
+    "description": "MUTAV — protocolo de garantia locatícia. Quando o inquilino atrasa, o repasse é automático. Sem formulário, sem fila.",
+    "ogTitle": "mutav — aluguel garantido, do jeito que deveria funcionar",
     "ogDescription": "Protocolo de garantia locatícia. Liquidação automatizada, registro verificável."
   },
   "skipLink": "pular para o conteúdo",
   "nav": {
-    "logoLabel": "tga — início",
+    "logoLabel": "mutav — início",
     "liveLabel": "protocolo ativo",
     "languageLabel": "Idioma"
   },
@@ -61,7 +61,7 @@
       {
         "n": "03",
         "label": "Depois",
-        "title": "TGA — exposição programável",
+        "title": "MUTAV — exposição programável",
         "body": "Investidores acessam o spread do mercado de locação com NAV verificável e log de liquidações onchain."
       },
       {
@@ -105,7 +105,7 @@
       "O dinheiro cai na conta cadastrada — automaticamente."
     ],
     "dignity": "Vamos te avisar quando estiver pronto. Não vamos te encher.",
-    "consent": "Ao entrar na lista, você consente com o uso do seu e-mail para receber novidades sobre a TGA. Pode sair quando quiser — basta responder qualquer e-mail com \"sair\"."
+    "consent": "Ao entrar na lista, você consente com o uso do seu e-mail para receber novidades sobre a MUTAV. Pode sair quando quiser — basta responder qualquer e-mail com \"sair\"."
   },
   "investidor": {
     "kickerIndex": "→ 02",
@@ -117,7 +117,7 @@
       "Liquidação programática registrada onchain. Audit report e código abertos.",
       "Founders nomeados. Não é projeto anônimo."
     ],
-    "verifyCta": "[ verifique a arquitetura → github.com/tga-protocol ]",
+    "verifyCta": "[ verifique a arquitetura → github.com/mutav-finance ]",
     "tagline": "Não confie. Verifique."
   },
   "team": {
@@ -148,7 +148,7 @@
       {
         "label": "Protocolo",
         "links": [
-          { "label": "github.com/tga-protocol", "href": "https://github.com/tga-protocol" },
+          { "label": "github.com/mutav-finance", "href": "https://github.com/mutav-finance" },
           { "label": "white paper", "href": "https://github.com/mutav-finance/mutav" }
         ]
       },
@@ -174,7 +174,7 @@
         ]
       }
     ],
-    "copyright": "© {year} tga — token de garantia de aluguel."
+    "copyright": "© {year} mutav — token de garantia de aluguel."
   },
   "waitlist": {
     "emailLabel": "Seu e-mail",
@@ -186,7 +186,7 @@
     },
     "success": {
       "proprietario": "recebido — você está na lista de proprietários. Vamos te avisar quando estiver pronto.",
-      "investidor": "recebido — você está na lista de investidores. Acompanhe o build no github.com/tga-protocol."
+      "investidor": "recebido — você está na lista de investidores. Acompanhe o build no github.com/mutav-finance."
     },
     "error": {
       "INVALID": {

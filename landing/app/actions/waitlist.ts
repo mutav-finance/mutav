@@ -34,9 +34,9 @@ export async function joinWaitlist(formData: FormData): Promise<WaitlistResult> 
 
   // TODO: persist to Resend audience + Vercel KV — see brief/install-manifest.md
   // For the first commit this is a stub that always succeeds for valid input.
-  // To exercise the error branches in dev, set TGA_WAITLIST_FORCE to one of:
+  // To exercise the error branches in dev, set MUTAV_WAITLIST_FORCE to one of:
   // "duplicate" | "rate-limit" | "server-error".
-  const force = process.env.TGA_WAITLIST_FORCE;
+  const force = process.env.MUTAV_WAITLIST_FORCE;
   if (force === "duplicate") return { ok: false, code: "DUPLICATE" };
   if (force === "rate-limit") return { ok: false, code: "RATE_LIMITED" };
   if (force === "server-error") return { ok: false, code: "SERVER_ERROR" };

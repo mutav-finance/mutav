@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "tga — rent insurance, the way it should work",
-    "description": "TGA — Brazilian rental guarantee protocol. When tenants miss payments, settlement is automatic. No paperwork, no queue.",
-    "ogTitle": "tga — rent insurance, the way it should work",
+    "title": "mutav — rent insurance, the way it should work",
+    "description": "MUTAV — Brazilian rental guarantee protocol. When tenants miss payments, settlement is automatic. No paperwork, no queue.",
+    "ogTitle": "mutav — rent insurance, the way it should work",
     "ogDescription": "Programmable rental guarantee. Automated settlement, verifiable record."
   },
   "skipLink": "skip to content",
   "nav": {
-    "logoLabel": "tga — home",
+    "logoLabel": "mutav — home",
     "liveLabel": "protocol live",
     "languageLabel": "Language"
   },
@@ -61,7 +61,7 @@
       {
         "n": "03",
         "label": "After",
-        "title": "TGA — programmable exposure",
+        "title": "MUTAV — programmable exposure",
         "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
       },
       {
@@ -105,7 +105,7 @@
       "The money lands in the registered account — automatically."
     ],
     "dignity": "We'll let you know when we're ready. We won't spam.",
-    "consent": "By joining the list, you consent to the use of your email to receive updates about TGA. You can leave any time — just reply to any email with \"unsubscribe\"."
+    "consent": "By joining the list, you consent to the use of your email to receive updates about MUTAV. You can leave any time — just reply to any email with \"unsubscribe\"."
   },
   "investidor": {
     "kickerIndex": "→ 02",
@@ -117,7 +117,7 @@
       "Programmatic settlement on-chain. Audit report and code open.",
       "Named founders. Not an anonymous project."
     ],
-    "verifyCta": "[ verify the architecture → github.com/tga-protocol ]",
+    "verifyCta": "[ verify the architecture → github.com/mutav-finance ]",
     "tagline": "Don't trust. Verify."
   },
   "team": {
@@ -148,7 +148,7 @@
       {
         "label": "Protocol",
         "links": [
-          { "label": "github.com/tga-protocol", "href": "https://github.com/tga-protocol" },
+          { "label": "github.com/mutav-finance", "href": "https://github.com/mutav-finance" },
           { "label": "white paper", "href": "https://github.com/mutav-finance/mutav" }
         ]
       },
@@ -174,7 +174,7 @@
         ]
       }
     ],
-    "copyright": "© {year} tga — rental guarantee token."
+    "copyright": "© {year} mutav — rental guarantee token."
   },
   "waitlist": {
     "emailLabel": "Your email",
@@ -186,7 +186,7 @@
     },
     "success": {
       "proprietario": "received — you're on the landlord list. We'll let you know when we're ready.",
-      "investidor": "received — you're on the investor list. Follow the build at github.com/tga-protocol."
+      "investidor": "received — you're on the investor list. Follow the build at github.com/mutav-finance."
     },
     "error": {
       "INVALID": {
