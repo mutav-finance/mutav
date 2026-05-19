@@ -587,6 +587,45 @@ NAV é atualizado para os demais investidores
 | R1 | Naming das entidades do grupo | MUTAV Soluções (Garantidora BR), Mutav Treasury Fund (fundo offshore), Mutav Treasury Management (gestora offshore), MUTAV (brand/plataforma) — sufixo societário pendente counsel | 2026-05-19 |
 | R2 | Framing regulatório da Garantidora | "Zona cinza" tratada como working hypothesis pending counsel — não como fato estabelecido | 2026-05-19 |
 | R3 | Foco de mercado do fundo | Plataforma direcionada a investidores internacionais (inglês, cripto-nativos, self-directed); acesso de brasileiros residentes pendente opinião jurídica | 2026-05-19 |
+| T1a | NAV update trigger | Por evento (não por epoch fixo). Observação: verificar capacidade operacional antes de implementar. | 2026-05-19 |
+| T1b | Cap de variação de NAV por epoch | ±1.0% com dois tipos de update: Tesouro yield (automático, sem aprovação) e taxa de inquilino/default (manual, requer aprovação) | 2026-05-19 |
+| T1c | Circuit breaker tolerance | ±0.5% — se variação superar esse threshold, aciona pausa | 2026-05-19 |
+| T1d | Política durante pausa do NAV | Refund mints + hold redeems (investidor novo recebe de volta; resgates ficam em fila até NAV voltar ao range) | 2026-05-19 |
+| F1 | Taxa de gestão | 1% a.a. sobre AUM | 2026-05-19 |
+| F2 | Taxa de saque | 0.25% sobre o valor resgatado | 2026-05-19 |
+| O1 | Prazo de análise e aprovação da imobiliária | 48h úteis | 2026-05-19 |
+| O2 | Critério mínimo de carteira da imobiliária | Sem mínimo na v1 | 2026-05-19 |
+| O3 | Prazo de repasse imobiliária → Garantidora | Data fixa no mês (dia a definir no contrato de parceria) | 2026-05-19 |
+| O4 | Prazo de repasse Garantidora → Fundo | 2 dias úteis após recebimento da imobiliária | 2026-05-19 |
+| O7 | Prazo de tolerância para default | 15 dias corridos após o vencimento do aluguel antes de acionar a MUTAV | 2026-05-19 |
+| O8 | SLA de resposta + cobertura da MUTAV após notificação | 5 dias úteis para verificar o acionamento e liberar o pagamento ao proprietário/imobiliária | 2026-05-19 |
+| O9 | Prazo máximo para liquidação após aprovação da Garantidora | 2 dias úteis — da aprovação até o pagamento na conta da imobiliária/proprietário | 2026-05-19 |
+| O10 | Moeda de pagamento para imobiliária/proprietário | BRL via Pix ou TED | 2026-05-19 |
+| O11 | Prazo para publicação do ajuste de NAV após default | Imediato onchain — ajuste visível assim que a transação confirma no Stellar. Observação: verificar capacidade da infraestrutura de indexação antes de comprometer o SLA | 2026-05-19 |
+| O15 | Prazo de carência antes de iniciar cobrança extrajudicial | 30 dias após MUTAV cobrir o default antes de acionar cobrança formal contra o inquilino | 2026-05-19 |
+| O16 | Política de parcelamento da dívida com o inquilino | Sim — parcelamento disponível. Detalhe do fluxo operacional a definir (número de parcelas, juros, plataforma) | 2026-05-19 |
+| O18 | Política de venda de carteira de créditos inadimplentes | Caso a caso — founders avaliam volume e perfil da carteira antes de alienar | 2026-05-19 |
+| O20 | Cap de resgate semanal | 2.5% do AUM por semana — sem limite diário, fila onchain processa em ordem de chegada dentro do cap semanal | 2026-05-19 |
+
+---
+
+### Estrutura do Fundo — pendente founders
+
+| # | Decisão | Owner | Bloqueia |
+|---|---|---|---|
+| J1 | Jurisdição do fundo offshore | Founders | Regulador, obrigações de reporting, custo de constituição, L1, L3 |
+
+**Opções em avaliação:**
+
+| | Cayman Islands | BVI | Bermuda | Marshall Islands | UAE / ADGM | Próspera (Honduras) |
+|---|---|---|---|---|---|---|
+| **Custo setup** | $20–40k | $5–15k | $15–30k | $1–3k | $10–25k | ~$1k |
+| **Custo anual** | $10–20k | $5–10k | $8–15k | $1–2k | $8–15k | Muito baixo (1% revenue tax) |
+| **Tempo de setup** | 4–8 semanas | 2–4 semanas | 4–8 semanas | 1–2 semanas | 4–8 semanas | Rápido |
+| **Reconhecimento institucional** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐ |
+| **Crypto-friendly** | ✓ | ✓ | ✓ | ✓ (DAOs) | ✓ | ✓✓ (Bitcoin legal tender, DAOs, smart contracts) |
+| **Certeza jurídica** | Máxima | Alta | Alta | Baixa | Média | Crítica |
+| **Status atual** | Estável | Estável | Estável | Estável | Estável | ⚠️ Framework ZEDE declarado inconstitucional retroativamente pelo Supremo de Honduras (2024); Próspera contesta via arbitragem ICSID ($10.7B); operando via brechas |
 
 ---
 
@@ -631,7 +670,6 @@ Três decisões de política de treasury detalhadas com tabelas de trade-off e r
 
 | # | Decisão | Bloqueia |
 |---|---|---|
-| T1 | NAV update policy: epoch length, per-epoch change cap, pause-on-deviation tolerance, política durante pausa | Compliance runbook, defaults operacionais do NAV update job |
 | T2 | Deposit pricing approach: single BRL NAV / dual share class (USD + BRL) / USD NAV com TESOURO underlying | UI de portfolio do investidor, schema de moeda, disclosure CVM |
 | T3 | Pix quarantine window: 7 / 30 / 80 dias — trade-off entre exposição a MED reversals e capital de float | Sizing do float de TESOURO, UI de quarantine, reconciliação |
 
@@ -641,8 +679,6 @@ Três decisões de política de treasury detalhadas com tabelas de trade-off e r
 
 | # | Decisão | Owner | Bloqueia |
 |---|---|---|---|
-| F1 | Percentual da taxa de gestão (% a.a. sobre AUM) | Founders | Receita da Gestora, modelo financeiro |
-| F2 | Percentual da taxa de saque | Founders | Receita da Gestora, Subscription Agreement |
 | F3 | Proporção mínima de MTVH que a Garantidora deve reter (skin-in-the-game) | Founders + counsel | Colchão mínimo de first-loss, política de risco |
 | F4 | Threshold de aporte para exigir declaração de origem dos recursos (AML) | Counsel | KYC reforçado, operacional do §3 |
 | F5 | Jurisdições bloqueadas para investidores (ex: EUA, países sancionados) | Counsel + business | Política de acesso geográfico, sanctions screening |
@@ -653,10 +689,6 @@ Três decisões de política de treasury detalhadas com tabelas de trade-off e r
 
 | # | Decisão | Owner | Bloqueia |
 |---|---|---|---|
-| O1 | Prazo máximo para análise e aprovação da imobiliária | Business | SLA de onboarding, contrato de parceria |
-| O2 | Critério mínimo de carteira ativa para aceitar a imobiliária | Business | Perfil mínimo de parceiro |
-| O3 | Prazo máximo para repasse da imobiliária à Garantidora | Business + counsel | Cláusula do contrato de agente de cobrança |
-| O4 | Prazo máximo para repasse da Garantidora ao Fundo | Business | Fluxo de caixa e cessão de recebíveis |
 | O5 | Valor máximo coberto por contrato (teto da fiança) | Founders + counsel | Exposição máxima por inquilino, Termo de Adesão |
 | O6 | Prazo de carência antes da garantia entrar em vigor | Business + counsel | Proteção contra fraude no onboarding |
 
@@ -664,15 +696,25 @@ Três decisões de política de treasury detalhadas com tabelas de trade-off e r
 
 ### Operacionais — Default e Liquidação
 
+> **Fluxo de recebimento duplo (plataforma — a trackear):**
+> Se a MUTAV já cobriu o default e o inquilino pagar depois, a imobiliária recebe em duplicidade.
+> A plataforma deve detectar esse evento e acionar o fluxo de reembolso: imobiliária devolve o valor à MUTAV → MUTAV repõe o NAV do fundo.
+> Esse fluxo precisa ser desenhado e implementado na plataforma antes de v1 em produção.
+
 | # | Decisão | Owner | Bloqueia |
 |---|---|---|---|
-| O7 | Prazo de tolerância para default (dias antes de acionar MUTAV) | Business | Gatilho de cobertura, contrato com imobiliária |
-| O8 | SLA de resposta da MUTAV após notificação de default | Business | Compromisso contratual com imobiliária |
-| O9 | Prazo máximo para liquidação após aprovação da Garantidora | Business + eng | Velocidade de cobertura, SLA onchain |
-| O10 | Moeda de pagamento para a imobiliária / proprietário (BRL ou stablecoin) | Business | Complexidade do fluxo de câmbio, ET3 |
-| O11 | Prazo para publicação do ajuste de NAV após evento de default | Business | Obrigação com investidores, §6 |
 | O12 | Limite mínimo de MTVH que a Garantidora deve manter (colchão mínimo) | Founders | Evita zerar o colchão de first-loss |
 | O13 | Moeda de transferência para o Fundo (BRL → stablecoin → Tesouro tokenizado) | Business + eng | Arquitetura do fluxo financeiro, ET3 |
+
+**Opções em avaliação:**
+
+| Caminho | Como funciona | Pro | Contra |
+|---|---|---|---|
+| BRL → Etherfuse → TESOURO | Garantidora faz Pix para Etherfuse, Etherfuse minta TESOURO direto na wallet Stellar do Fundo | Menos etapas, menor custo | Bloqueado por ET1 (eligibilidade offshore) e ET4 (B2B settlement extension) |
+| BRL → USDC → TESOURO | Garantidora converte BRL em USDC via exchange, usa USDC para comprar TESOURO | Não depende de Etherfuse aceitar BRL offshore | Mais passos, custo de câmbio BRL/USD, FX exposure |
+| BRL → BRZ (stablecoin BR) → TESOURO | Via BRZ na Stellar como intermediário | Mantém exposição em BRL | BRZ com menor liquidez, dependência de mais um vendor |
+
+> Decisão bloqueada por ET1 e ET4 — working hypothesis: BRL → Etherfuse → TESOURO (caminho 1) pendente confirmação Etherfuse.
 | O14 | Tratamento fiscal da conversão BRL → cripto | Counsel + tax advisor | Parecer fiscal, obrigações BACEN |
 
 ---
@@ -681,10 +723,7 @@ Três decisões de política de treasury detalhadas com tabelas de trade-off e r
 
 | # | Decisão | Owner | Bloqueia |
 |---|---|---|---|
-| O15 | Prazo de carência antes de iniciar cobrança extrajudicial | Business + counsel | Política de relacionamento com inadimplente |
-| O16 | Política de parcelamento (MUTAV aceita parcelar a dívida com o inquilino?) | Founders | Fluxo de recuperação, modelagem de perdas |
 | O17 | Parceiro de cobrança extrajudicial / jurídico | Business | Processo e custo de recuperação |
-| O18 | Política de venda de carteira de créditos inadimplentes | Founders | Quando e como alienar créditos |
 
 ---
 
@@ -693,7 +732,6 @@ Três decisões de política de treasury detalhadas com tabelas de trade-off e r
 | # | Decisão | Owner | Bloqueia |
 |---|---|---|---|
 | O19 | Período de lock-up mínimo antes do primeiro resgate | Business + counsel | Liquidez do fundo, Subscription Agreement |
-| O20 | Limite diário de resgate (% do AUM) | Business | Evita corrida ao fundo |
 | O21 | Prazo de liquidação após posição chegar ao topo da fila de resgate | Business + eng | SLA com o investidor |
 
 ---
