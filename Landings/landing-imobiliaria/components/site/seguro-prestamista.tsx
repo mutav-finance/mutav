@@ -19,7 +19,7 @@ export function SeguroPrestamista() {
         <ul className="mt-12 grid gap-4 lg:grid-cols-3 lg:gap-8">
           {items.map((line, i) => (
             <li key={i} className="border-t border-border pt-6">
-              <p className="font-sans text-base-sm leading-relaxed text-text">
+              <p className="font-sans text-base-sm leading-relaxed text-text-2">
                 {line}
               </p>
             </li>
