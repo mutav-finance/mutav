@@ -1,4 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,13 +19,14 @@ export default async function TermosPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  if (locale === "en") redirect("/termos");
 
   return (
     <main id="main" className="min-h-screen bg-canvas text-text px-6 py-16 md:py-24">
       <div className="max-w-2xl mx-auto">
         <a
           href="/"
-          className="inline-block text-xs font-mono text-text-3 hover:text-accent transition-colors mb-12"
+          className="inline-block text-xs font-mono text-text-2 hover:text-accent transition-colors mb-12"
         >
           ← mutav.finance
         </a>
@@ -32,7 +34,7 @@ export default async function TermosPage({
         <h1 className="font-display text-3xl md:text-4xl font-bold text-text mb-3">
           Termos de Uso
         </h1>
-        <p className="font-mono text-xs text-text-3 mb-12">
+        <p className="font-mono text-xs text-text-2 mb-12">
           Última atualização: <time dateTime="2026-05-20">2026-05-20</time>
           {" · "}versão 1.0 · rascunho pendente revisão dos founders
         </p>
