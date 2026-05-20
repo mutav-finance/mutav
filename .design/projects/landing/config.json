@@ -3,14 +3,17 @@
   "project_type": "design",
   "project": {
     "name": "landing",
-    "label": "TGA Landing Page",
+    "label": "MUTAV Landing Pages",
     "created": "2026-05-02"
   },
   "brand": {
     "ref": "tga",
     "path": "../../branding/tga"
   },
-  "implementation_target": "shadcn",
+  "implementation_targets": [
+    "Landings/landing-investidor",
+    "Landings/landing-imobiliaria"
+  ],
   "design_scope": "screens",
   "codebase_type": "greenfield",
   "tech_stack": {
