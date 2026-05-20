@@ -150,7 +150,7 @@ export default async function TermosPage({
         <div className="mt-16 pt-8 border-t border-surface-2">
           <a
             href="/"
-            className="inline-block text-xs font-mono text-text-3 hover:text-accent transition-colors"
+            className="inline-block text-xs font-mono text-text-2 hover:text-accent transition-colors"
           >
             ← mutav.finance
           </a>
