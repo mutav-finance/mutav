@@ -1,11 +1,13 @@
 import { setRequestLocale } from "next-intl/server";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
+import { SocialProof } from "@/components/site/social-proof";
 import { TheGap } from "@/components/site/the-gap";
+import { CustoAprovacao } from "@/components/site/custo-aprovacao";
 import { VisionArc } from "@/components/site/vision-arc";
-import { Bifurcation } from "@/components/site/bifurcation";
+import { Art37 } from "@/components/site/art37";
 import { ImobiliariaCapture } from "@/components/site/imobiliaria-capture";
-import { InvestidorCapture } from "@/components/site/investidor-capture";
+import { SeguroPrestamista } from "@/components/site/seguro-prestamista";
 import { Team } from "@/components/site/team";
 import { SiteFooter } from "@/components/site/footer";
 
@@ -22,11 +24,13 @@ export default async function Home({
       <SiteNav />
       <main id="main" className="flex-1">
         <Hero />
+        <SocialProof />
         <TheGap />
+        <CustoAprovacao />
         <VisionArc />
-        <Bifurcation />
+        <Art37 />
         <ImobiliariaCapture />
-        <InvestidorCapture />
+        <SeguroPrestamista />
         <Team />
       </main>
       <SiteFooter />
