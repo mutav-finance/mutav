@@ -19,7 +19,18 @@
     "h1Line2": "the way it should",
     "h1Line3": "work.",
     "subhead": "When the tenant is late, you get paid. No form, no queue, no intermediary deciding when to settle. The protocol sends the payout automatically — and every payout is recorded, public, and verifiable.",
-    "manifesto": "The protocol that doesn't fail when the market fails."
+    "manifesto": "The protocol that doesn't fail when the market fails.",
+    "timelineSignal": "Pilot launching 2026 · limited spots"
+  },
+  "socialProof": {
+    "kicker": "backing",
+    "items": [
+      {
+        "org": "Stellar Development Foundation",
+        "detail": "Stellar 37° - Acceleration Program",
+        "type": "acceleration"
+      }
+    ]
   },
   "gap": {
     "kicker": "the problem",
@@ -41,6 +52,72 @@
         "body": "The rental guarantee market needs to stop depending on one player not breaking."
       }
     ]
+  },
+  "market": {
+    "kicker": "the market",
+    "h2": "A billion-dollar market that's never been open to outside capital.",
+    "stats": [
+      {
+        "value": "$22B",
+        "label": "Real estate services ecosystem (COFECI)",
+        "note": "~R$110B annually"
+      },
+      {
+        "value": "$258M",
+        "label": "Rental guarantee premiums, Jan–Nov 2024 (CQCS)",
+        "note": "~R$1.29B — and growing"
+      },
+      {
+        "value": "$60M",
+        "label": "Digital rental guarantee market (2025)",
+        "note": "~R$300M — early stage, expanding fast"
+      },
+      {
+        "value": "46.5M",
+        "label": "Brazilians renting as of 2024",
+        "note": "All-time record — structural demand, not a cycle"
+      }
+    ]
+  },
+  "tiers": {
+    "kicker": "how the fund works",
+    "h2Line1": "Three risk classes.",
+    "h2Line2": "Choose your exposure.",
+    "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield — no distributions, all growth reflects directly in the token price.",
+    "items": [
+      {
+        "token": "MTVH",
+        "label": "Subordinated",
+        "riskLabel": "First-loss",
+        "yieldLabel": "Highest yield",
+        "body": "You absorb defaults first. In exchange: maximum exposure to rental-guarantee market yield. MUTAV itself holds MTVH — skin-in-the-game by design.",
+        "access": "Qualified investors · KYC required"
+      },
+      {
+        "token": "MTVM",
+        "label": "Mezzanine",
+        "riskLabel": "Mid-tier exposure",
+        "yieldLabel": "Balanced yield",
+        "body": "Protected by MTVH. You absorb losses only if MTVH is fully depleted. Balanced exposure for investors who want meaningful yield without first-loss risk.",
+        "access": "Open · KYC required"
+      },
+      {
+        "token": "MTVL",
+        "label": "Senior",
+        "riskLabel": "Last to absorb",
+        "yieldLabel": "Most stable",
+        "body": "Last in the waterfall. Designed for capital preservation with consistent yield from tokenized Brazilian treasury plus guarantee fees.",
+        "access": "Open · KYC required"
+      }
+    ],
+    "waterfall": "Defaults hit MTVH first → MTVM if MTVH zeroes → MTVL last.",
+    "redeemNote": "Self-custodial tokens. Redemption via on-chain queue — 2.5% weekly cap, 0.25% exit fee."
+  },
+  "midCta": {
+    "h2": "Get access when we launch.",
+    "body": "Pilot launching 2026. Limited spots in the first cohort.",
+    "cta": "[ join the investor list ]",
+    "note": "Named founders. Open code. Verifiable architecture."
   },
   "vision": {
     "kicker": "the path — no dates, no promises",
@@ -89,13 +166,13 @@
         "n": "02",
         "label": "Investor",
         "subjectLabel": "investor",
-        "body": "You operate on Solana or DeFi. You want real yield with verifiable collateral.",
+        "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
         "aria": "Jump to the investor waitlist",
         "cta": "continue below ↓"
       }
     ]
   },
-  "proprietario": {
+  "imobiliaria": {
     "kickerIndex": "→ 01",
     "kicker": "landlord or agency",
     "h2": "You don't wait.",
@@ -142,7 +219,7 @@
   },
   "footer": {
     "tagline": "Rent insurance, the way it should work.",
-    "subtitle": "Rental guarantee protocol built on Solana.",
+    "subtitle": "Rental guarantee protocol built on Stellar.",
     "navLabel": "Footer",
     "columns": [
       {
@@ -160,10 +237,10 @@
         ]
       },
       {
-        "label": "Colosseum",
+        "label": "Stellar",
         "links": [
-          { "label": "copilot", "href": "https://arena.colosseum.org/copilot" },
-          { "label": "frontier", "href": "https://colosseum.com/frontier/resources" }
+          { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
+          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" }
         ]
       },
       {
@@ -181,28 +258,28 @@
     "emailPlaceholder": "you@example.com",
     "submitting": "sending…",
     "buttonLabel": {
-      "proprietario": "[ notify me ]",
+      "imobiliaria": "[ notify me ]",
       "investidor": "[ join the list ]"
     },
     "success": {
-      "proprietario": "received — you're on the landlord list. We'll let you know when we're ready.",
+      "imobiliaria": "received — you're on the landlord list. We'll let you know when we're ready.",
       "investidor": "received — you're on the investor list. Follow the build at github.com/mutav-finance."
     },
     "error": {
       "INVALID": {
-        "proprietario": "Invalid email. Check the format and try again.",
+        "imobiliaria": "Invalid email. Check the format and try again.",
         "investidor": "Invalid email. Check the format."
       },
       "DUPLICATE": {
-        "proprietario": "That email is already on the list. We'll be in touch.",
+        "imobiliaria": "That email is already on the list. We'll be in touch.",
         "investidor": "Already on the list. Check the history on GitHub."
       },
       "RATE_LIMITED": {
-        "proprietario": "Too many attempts. Try again in a few minutes.",
+        "imobiliaria": "Too many attempts. Try again in a few minutes.",
         "investidor": "Rate-limited. Try in a few minutes."
       },
       "SERVER_ERROR": {
-        "proprietario": "Couldn't save. Try again.",
+        "imobiliaria": "Couldn't save. Try again.",
         "investidor": "Server error. Try again."
       }
     }

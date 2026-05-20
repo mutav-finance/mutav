@@ -19,7 +19,18 @@
     "h1Line2": "do jeito que deveria",
     "h1Line3": "funcionar.",
     "subhead": "Quando o inquilino atrasa, você recebe. Sem formulário, sem fila, sem intermediário que decide quando pagar. O protocolo executa o repasse automaticamente — e cada repasse fica registrado, público e verificável.",
-    "manifesto": "O protocolo que não falha quando o mercado falha."
+    "manifesto": "O protocolo que não falha quando o mercado falha.",
+    "timelineSignal": "Piloto em 2026 · vagas limitadas"
+  },
+  "socialProof": {
+    "kicker": "apoio",
+    "items": [
+      {
+        "org": "Stellar Development Foundation",
+        "detail": "Stellar 37º - Programa de Aceleração",
+        "type": "acceleration"
+      }
+    ]
   },
   "gap": {
     "kicker": "o problema",
@@ -41,6 +52,72 @@
         "body": "O mercado de garantia locatícia precisa parar de depender de um único player não quebrar."
       }
     ]
+  },
+  "market": {
+    "kicker": "o mercado",
+    "h2": "Um mercado bilionário que nunca foi aberto a capital externo.",
+    "stats": [
+      {
+        "value": "US$ 22B",
+        "label": "Ecossistema imobiliário (COFECI)",
+        "note": "~R$ 110B por ano"
+      },
+      {
+        "value": "US$ 258M",
+        "label": "Prêmios de garantia locatícia, jan–nov 2024 (CQCS)",
+        "note": "~R$ 1,29B — e crescendo"
+      },
+      {
+        "value": "US$ 60M",
+        "label": "Mercado de garantias digitais (2025)",
+        "note": "~R$ 300M — fase inicial, expansão rápida"
+      },
+      {
+        "value": "46,5M",
+        "label": "Brasileiros em situação de aluguel (2024)",
+        "note": "Recorde histórico — demanda estrutural, não um ciclo"
+      }
+    ]
+  },
+  "tiers": {
+    "kicker": "como o fundo funciona",
+    "h2Line1": "Três classes de risco.",
+    "h2Line2": "Escolha sua exposição.",
+    "intro": "O Mutav Treasury Fund emite três classes de token com absorção sequencial de perdas (waterfall). O NAV aprecia diariamente com taxas de garantia locatícia e rendimento do Tesouro brasileiro — sem distribuições, todo crescimento é refletido no preço do token.",
+    "items": [
+      {
+        "token": "MTVH",
+        "label": "Subordinada",
+        "riskLabel": "First-loss",
+        "yieldLabel": "Maior yield",
+        "body": "Você absorve os defaults primeiro. Em troca: máxima exposição ao yield do mercado de garantia locatícia. A própria MUTAV retém cotas MTVH — skin-in-the-game por design.",
+        "access": "Investidores qualificados · KYC obrigatório"
+      },
+      {
+        "token": "MTVM",
+        "label": "Mezzanine",
+        "riskLabel": "Exposição intermediária",
+        "yieldLabel": "Yield balanceado",
+        "body": "Protegida pela MTVH. Você absorve perdas apenas se a MTVH zerar. Exposição equilibrada para quem quer yield relevante sem risco de first-loss.",
+        "access": "Aberto · KYC obrigatório"
+      },
+      {
+        "token": "MTVL",
+        "label": "Sênior",
+        "riskLabel": "Última a absorver",
+        "yieldLabel": "Mais estável",
+        "body": "Última no waterfall. Desenhada para preservação de capital com yield consistente do Tesouro brasileiro tokenizado mais taxas de garantia.",
+        "access": "Aberto · KYC obrigatório"
+      }
+    ],
+    "waterfall": "Defaults atingem a MTVH primeiro → MTVM se MTVH zerar → MTVL por último.",
+    "redeemNote": "Tokens self-custodial. Resgate via fila onchain — cap semanal de 2,5%, taxa de saída de 0,25%."
+  },
+  "midCta": {
+    "h2": "Garanta acesso quando lançarmos.",
+    "body": "Piloto em 2026. Vagas limitadas na primeira turma.",
+    "cta": "[ entrar na lista de investidores ]",
+    "note": "Founders nomeados. Código aberto. Arquitetura verificável."
   },
   "vision": {
     "kicker": "o caminho — sem datas, sem promessas",
@@ -89,15 +166,15 @@
         "n": "02",
         "label": "Investidor",
         "subjectLabel": "investidor",
-        "body": "Você opera no Solana ou DeFi. Quer yield real com colateral verificável.",
+        "body": "Você opera no Stellar ou DeFi. Quer yield real com colateral verificável.",
         "aria": "Saltar para a inscrição de investidores",
         "cta": "continuar abaixo ↓"
       }
     ]
   },
-  "proprietario": {
+  "imobiliaria": {
     "kickerIndex": "→ 01",
-    "kicker": "proprietário ou imobiliária",
+    "kicker": "imobiliária ou proprietário",
     "h2": "Você não fica esperando.",
     "items": [
       "Quando o inquilino atrasa, você recebe.",
@@ -142,7 +219,7 @@
   },
   "footer": {
     "tagline": "Aluguel garantido, do jeito que deveria funcionar.",
-    "subtitle": "Protocolo de garantia locatícia construído na Solana.",
+    "subtitle": "Protocolo de garantia locatícia construído na Stellar.",
     "navLabel": "Rodapé",
     "columns": [
       {
@@ -160,10 +237,10 @@
         ]
       },
       {
-        "label": "Colosseum",
+        "label": "Stellar",
         "links": [
-          { "label": "copilot", "href": "https://arena.colosseum.org/copilot" },
-          { "label": "frontier", "href": "https://colosseum.com/frontier/resources" }
+          { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
+          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" }
         ]
       },
       {
@@ -181,28 +258,28 @@
     "emailPlaceholder": "voce@exemplo.com",
     "submitting": "enviando…",
     "buttonLabel": {
-      "proprietario": "[ avise-me ]",
+      "imobiliaria": "[ avise-me ]",
       "investidor": "[ entrar na lista ]"
     },
     "success": {
-      "proprietario": "recebido — você está na lista de proprietários. Vamos te avisar quando estiver pronto.",
+      "imobiliaria": "recebido — você está na lista. Vamos te avisar quando estiver pronto.",
       "investidor": "recebido — você está na lista de investidores. Acompanhe o build no github.com/mutav-finance."
     },
     "error": {
       "INVALID": {
-        "proprietario": "E-mail inválido. Verifique e tente de novo.",
+        "imobiliaria": "E-mail inválido. Verifique e tente de novo.",
         "investidor": "E-mail inválido. Verifique o formato."
       },
       "DUPLICATE": {
-        "proprietario": "Esse e-mail já está na lista. Vamos te avisar quando estiver pronto.",
+        "imobiliaria": "Esse e-mail já está na lista. Vamos te avisar quando estiver pronto.",
         "investidor": "Já está na lista. Confira o histórico no GitHub."
       },
       "RATE_LIMITED": {
-        "proprietario": "Muitas tentativas. Tente novamente em alguns minutos.",
+        "imobiliaria": "Muitas tentativas. Tente novamente em alguns minutos.",
         "investidor": "Rate-limited. Tente em alguns minutos."
       },
       "SERVER_ERROR": {
-        "proprietario": "Não foi possível salvar. Tente novamente.",
+        "imobiliaria": "Não foi possível salvar. Tente novamente.",
         "investidor": "Falha no servidor. Tente novamente."
       }
     }

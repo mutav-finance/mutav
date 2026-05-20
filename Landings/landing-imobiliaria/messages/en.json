@@ -21,6 +21,23 @@
     "subhead": "When the tenant is late, you get paid. No form, no queue, no intermediary deciding when to settle. The protocol sends the payout automatically — and every payout is recorded, public, and verifiable.",
     "manifesto": "The protocol that doesn't fail when the market fails."
   },
+  "socialProof": {
+    "kicker": "credibility",
+    "h2": "Built with people who know the market.",
+    "items": [
+      {
+        "name": "Cinara Bigóis",
+        "role": "30 years in the Southern Brazil rental market",
+        "body": "A reference in Southern Brazil's rental segment. Partner in designing MUTAV's operational model from day one — the guarantee gap was identified directly in the field, alongside people who run the market every day."
+      }
+    ]
+  },
+  "art37": {
+    "kicker": "legal foundation",
+    "h2": "Backed by Art. 37 of the Tenant Protection Act.",
+    "body": "MUTAV operates as an institutional guarantor under Art. 37, clause I of Law 8.245/91 — the same law that governs all rental contracts in Brazil. For the agency: no change to the lease agreement. For the tenant: no guarantor, no deposit, no traditional surety bond. For the landlord: automatic coverage.",
+    "note": "We are new to the market. Our legal foundation is public, verifiable, and the same as always."
+  },
   "gap": {
     "kicker": "the problem",
     "h2": "Renters and investors pay for the same broken layer.",
@@ -37,10 +54,32 @@
       },
       {
         "label": "Fragility",
-        "headline": "When one provider falls, thousands of contracts fall with it.",
-        "body": "The rental guarantee market needs to stop depending on one player not breaking."
+        "headline": "2025. The market failed. Thousands of contracts affected.",
+        "body": "When a concentrated provider falls, the whole market feels it. MUTAV distributes the risk — the fund doesn't depend on any single player staying solvent."
       }
     ]
+  },
+  "custoAprovacao": {
+    "kicker": "cost and approval",
+    "h2": "Simple to onboard.",
+    "items": [
+      {
+        "label": "Approval",
+        "value": "48 business hours",
+        "note": "Automatic analysis — no queue, no meeting."
+      },
+      {
+        "label": "Tenant fee",
+        "value": "variable by score",
+        "note": "Calculated by risk profile. No cost to the agency."
+      },
+      {
+        "label": "Cost to the agency",
+        "value": "R$ 0",
+        "note": "MUTAV charges nothing to the agency. The fee is paid by the tenant alongside rent."
+      }
+    ],
+    "note": "Reference figures. Final details confirmed before launch."
   },
   "vision": {
     "kicker": "the path — no dates, no promises",
@@ -89,7 +128,7 @@
         "n": "02",
         "label": "Investor",
         "subjectLabel": "investor",
-        "body": "You operate on Solana or DeFi. You want real yield with verifiable collateral.",
+        "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
         "aria": "Jump to the investor waitlist",
         "cta": "continue below ↓"
       }
@@ -104,8 +143,23 @@
       "No form. No queue. No call to support.",
       "The money lands in the registered account — automatically."
     ],
+    "cobertura": {
+      "kicker": "how we cover it",
+      "body": "Our coverage comes from a fund backed by international investors, allocated in tokenized Brazilian treasury and managed by our programmable infrastructure. Every payout is recorded — the backing is verifiable, not a promise."
+    },
     "dignity": "We'll let you know when we're ready. We won't spam.",
     "consent": "By joining the list, you consent to the use of your email to receive updates about MUTAV. You can leave any time — just reply to any email with \"unsubscribe\"."
+  },
+  "seguroPrestamista": {
+    "kickerIndex": "→ 03",
+    "kicker": "for the tenant too",
+    "h2": "The tenant wins as well.",
+    "items": [
+      "No guarantor. No deposit. No traditional surety bond.",
+      "MUTAV replaces all of it — one monthly fee built into the rent bill.",
+      "Credit protection included: in case of income loss, the tenant has coverage."
+    ],
+    "note": "Three sides of the contract. One protocol that serves all of them."
   },
   "investidor": {
     "kickerIndex": "→ 02",
@@ -142,7 +196,7 @@
   },
   "footer": {
     "tagline": "Rent insurance, the way it should work.",
-    "subtitle": "Rental guarantee protocol built on Solana.",
+    "subtitle": "Rental guarantee protocol built on Stellar.",
     "navLabel": "Footer",
     "columns": [
       {
@@ -160,10 +214,10 @@
         ]
       },
       {
-        "label": "Colosseum",
+        "label": "Stellar",
         "links": [
-          { "label": "copilot", "href": "https://arena.colosseum.org/copilot" },
-          { "label": "frontier", "href": "https://colosseum.com/frontier/resources" }
+          { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
+          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" }
         ]
       },
       {
@@ -181,11 +235,11 @@
     "emailPlaceholder": "you@example.com",
     "submitting": "sending…",
     "buttonLabel": {
-      "imobiliaria": "[ notify me ]",
+      "imobiliaria": "[ join the list ]",
       "investidor": "[ join the list ]"
     },
     "success": {
-      "imobiliaria": "received — you're on the landlord list. We'll let you know when we're ready.",
+      "imobiliaria": "received — you're on the list. We'll let you know when we're ready.",
       "investidor": "received — you're on the investor list. Follow the build at github.com/mutav-finance."
     },
     "error": {
