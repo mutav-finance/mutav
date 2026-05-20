@@ -13,7 +13,7 @@ export function LanguageToggle({ className }: { className?: string }) {
   const linkClass = (active: boolean) =>
     cn(
       "outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2",
-      active ? "text-text" : "text-text-3 hover:text-text",
+      active ? "text-text" : "text-text-2 hover:text-text",
     );
 
   return (
