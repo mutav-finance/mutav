@@ -25,7 +25,7 @@ export function Market() {
         <ul className="mt-16 grid gap-px bg-border lg:grid-cols-4">
           {stats.map((s) => (
             <li key={s.label} className="bg-surface p-8">
-              <p className="font-display font-bold text-4xl lg:text-5xl text-text tabular-nums leading-none tracking-[-0.02em]">
+              <p className="font-mono font-bold text-4xl lg:text-5xl text-text leading-none">
                 {s.value}
               </p>
               <p className="mt-4 font-sans text-sm leading-snug text-text-2">
