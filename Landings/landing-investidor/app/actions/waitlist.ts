@@ -4,7 +4,7 @@
 // Real backend (Resend + Vercel KV) wired in a follow-up PR.
 // Returns a discriminated union so the client can match on `code` for fix-004.
 
-export type Audience = "proprietario" | "investidor";
+export type Audience = "imobiliaria" | "investidor";
 
 export type WaitlistResult =
   | { ok: true }
@@ -28,7 +28,7 @@ export async function joinWaitlist(formData: FormData): Promise<WaitlistResult> 
   if (!EMAIL_RE.test(email)) {
     return { ok: false, code: "INVALID" };
   }
-  if (audience !== "proprietario" && audience !== "investidor") {
+  if (audience !== "imobiliaria" && audience !== "investidor") {
     return { ok: false, code: "INVALID" };
   }
 

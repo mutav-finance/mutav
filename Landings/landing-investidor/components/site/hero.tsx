@@ -29,6 +29,9 @@ export function Hero() {
         <p className="mt-6 font-mono text-sm text-text-2">
           {t("manifesto")}
         </p>
+        <p className="mt-4 font-mono text-2xs uppercase tracking-[0.03em] text-accent">
+          {t("timelineSignal")}
+        </p>
       </div>
     </section>
   );

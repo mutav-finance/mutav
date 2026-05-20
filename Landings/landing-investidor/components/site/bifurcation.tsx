@@ -10,7 +10,7 @@ type Card = {
   cta: string;
 };
 
-const HREFS = ["#proprietario", "#investidor"];
+const HREFS = ["#imobiliaria", "#investidor"];
 
 export function Bifurcation() {
   const t = useTranslations("bifurcation");

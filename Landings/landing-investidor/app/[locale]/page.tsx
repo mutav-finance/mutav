@@ -1,10 +1,12 @@
 import { setRequestLocale } from "next-intl/server";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
+import { SocialProof } from "@/components/site/social-proof";
 import { TheGap } from "@/components/site/the-gap";
+import { Market } from "@/components/site/market";
+import { Tiers } from "@/components/site/tiers";
+import { MidCta } from "@/components/site/mid-cta";
 import { VisionArc } from "@/components/site/vision-arc";
-import { Bifurcation } from "@/components/site/bifurcation";
-import { ProprietarioCapture } from "@/components/site/proprietario-capture";
 import { InvestidorCapture } from "@/components/site/investidor-capture";
 import { Team } from "@/components/site/team";
 import { SiteFooter } from "@/components/site/footer";
@@ -22,10 +24,12 @@ export default async function Home({
       <SiteNav />
       <main id="main" className="flex-1">
         <Hero />
+        <SocialProof />
         <TheGap />
+        <Market />
+        <Tiers />
+        <MidCta />
         <VisionArc />
-        <Bifurcation />
-        <ProprietarioCapture />
         <InvestidorCapture />
         <Team />
       </main>
