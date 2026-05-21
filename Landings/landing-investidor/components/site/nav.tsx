@@ -34,7 +34,7 @@ export function SiteNav() {
         </nav>
 
         <Button variant="investidor" asChild>
-          <a href="#investidor">{t("ctaLabel")} →</a>
+          <a href="#mid-cta">{t("ctaLabel")} →</a>
         </Button>
       </div>
     </header>

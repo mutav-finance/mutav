@@ -5,7 +5,7 @@ export function MidCta() {
   const t = useTranslations("midCta");
 
   return (
-    <section aria-labelledby="mid-cta-h2" className="border-b border-border">
+    <section id="mid-cta" aria-labelledby="mid-cta-h2" className="border-b border-border">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24 flex flex-col items-center text-center">
         <h2
           id="mid-cta-h2"

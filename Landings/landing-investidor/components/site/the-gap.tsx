@@ -15,7 +15,7 @@ export function TheGap() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
         <h2
           id="gap-h2"
-          className="max-w-[40rem] font-display font-bold text-text text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em]"
+          className="w-full text-center font-display font-bold text-text text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em]"
         >
           {t("h2")}
         </h2>

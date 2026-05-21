@@ -35,7 +35,7 @@ Isso gera quatro distorções principais:
 - **Para o mercado:** concentração de risco em poucos players. Quando um deles falha, como observado nos eventos envolvendo QuintoCred e CredPago em 2025, não há mecanismo eficiente de absorção coletiva.
 - **Para inquilinos:** estrutura oligopolista com custos elevados (10–15%)
 - **Para proprietários:** liquidação lenta de inadimplência (até 60 dias).
-- **Para investidores:** um mercado de mais de R$ 1 bilhão em prêmios anuais permanece inacessível a pessoas físicas e ao ecossistema cripto.
+- **Para investidores:** um mercado de mais bilhionario em prêmios anuais permanece inacessível a pessoas físicas e ao ecossistema cripto.
 
 A MUTAV resolve esses pontos simultaneamente.
 

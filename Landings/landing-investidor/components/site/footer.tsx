@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Logo } from "./logo";
 import { LiveSquare } from "./live-square";
-import { LanguageToggle } from "./language-toggle";
 
 type FooterLink = { label: string; href: string };
 type FooterColumn = { label: string; links: FooterLink[] };
@@ -27,11 +26,22 @@ export function SiteFooter() {
             <p className="mt-3 font-mono text-xs text-text-2 max-w-[24rem]">
               {t("subtitle")}
             </p>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              aria-label="MUTAV on X / Twitter"
+              className="mt-6 inline-flex text-text-3 hover:text-accent transition-[color] duration-150 ease-out outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
           </div>
 
           <nav
             aria-label={t("navLabel")}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8"
+            className="flex flex-wrap justify-end gap-x-16 gap-y-8"
           >
             {columns.map((col) => (
               <div key={col.label}>
@@ -40,7 +50,7 @@ export function SiteFooter() {
                 </p>
                 <ul className="mt-3 space-y-2">
                   {col.links.map((l) => (
-                    <li key={l.href}>
+                    <li key={l.label}>
                       <a
                         href={l.href}
                         target={l.href.startsWith("http") ? "_blank" : undefined}
@@ -61,7 +71,6 @@ export function SiteFooter() {
           <p className="font-mono text-2xs text-text-2">
             {t("copyright", { year })}
           </p>
-          <LanguageToggle />
         </div>
       </div>
     </footer>

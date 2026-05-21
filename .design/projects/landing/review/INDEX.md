@@ -1,26 +1,34 @@
 # QA Review
-> Phase: review · Project: landing · Brand: tga · Generated: 2026-05-02
+> Phase: review | Project: landing | Brand: tga (MUTAV) | Updated: 2026-05-20
 
 ## Verdict
 
-**Conditional Pass** — shippable for the Colosseum demo. One Major contrast bug and one Major token-discipline drift surfaced. No design re-loop required.
+**Conditional Pass** — F-001 (`data-front="imobiliarias"`) and F-002 (`InvestidorCapture` removal) resolved. One Major issue remains: A-003 (disabled language toggle: `#9E9C98 on #F7F6F3` = 2.3:1 — fails WCAG 1.4.3 in the now-active light context). One-line fix: change `text-text-3` → `text-text-2` in `language-toggle.tsx:16`.
 
 ## QA Validation
 
 | Chunk | File | ~Lines |
 |-------|------|--------|
-| Acceptance Report | [acceptance-report.md](./acceptance-report.md) | ~190 |
-| Issues | [issues.md](./issues.md) | ~120 |
+| Acceptance Report | [acceptance-report.md](./acceptance-report.md) | ~130 |
+| Issues | [issues.md](./issues.md) | ~100 |
 
 ## Summary
 
-- 9/9 designed sections implemented
-- All critique fixes 001–006 verified in source
-- Brand contract holds (0px radius, no shadows, no glass, no `#22C55E`, no transforms, no jargon in proprietário copy)
-- `bun run build` ✓ — Next.js 16.2.4, TS clean, 4/4 static pages
-- 0 Critical, 4 Major, 5 Minor issues
-- One missed contrast bump (hero kicker, A-002) — same anti-pattern as fix-002/003
-- 51 arbitrary `text-[NNpx]` usages bypass the brand type-scale tokens (B-001) — render correctly today, refactor follow-up
+- F-001 resolved: `data-front="imobiliarias"` on `<html>` at `layout.tsx:63` — Imobiliárias light front active
+- F-002 resolved: `InvestidorCapture` removed from `page.tsx` — `ImobiliariaCapture` is sole capture form
+- All 4 new components (SocialProof, CustoAprovacao, Art37, SeguroPrestamista) pass brand contract in light context
+- A-003 escalated to Major: disabled `en` toggle fails WCAG 1.4.3 in light context (2.3:1)
+- 0 Critical, 1 Major, 4 Minor issues
+
+## Open Major Issue
+
+| Issue | Description | Remediation |
+|-------|-------------|-------------|
+| A-003 | Disabled `en` toggle: `#9E9C98 on #F7F6F3` = 2.3:1 — fails WCAG 1.4.3; live link, no exemption | Change `text-text-3` → `text-text-2` in `language-toggle.tsx:16`; or add `aria-disabled` + product decision |
+
+## Implementation path
+
+`Landings/landing-imobiliaria/` (current, from `feat/lp-imobiliaria-components` branch)
 
 ## Related
 

@@ -154,8 +154,21 @@
 .mutav-live-square {
   animation: mutav-live-pulse 2s linear infinite;
 }
+/* Solution cards — sequential dot indicator, left-to-right pass */
+@keyframes mutav-dot-blink {
+  0%   { opacity: 1; }
+  20%  { opacity: 0.15; }
+  80%  { opacity: 0.15; }
+  100% { opacity: 1; }
+}
+.mutav-dot-blink {
+  animation: mutav-dot-blink 3.6s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mutav-live-square { animation: none; opacity: 1; }
+  .mutav-dot-blink   { animation: none; opacity: 1; }
   html { scroll-behavior: auto !important; }
 }
 

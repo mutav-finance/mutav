@@ -11,9 +11,10 @@
     "liveLabel": "protocol live",
     "languageLabel": "Language",
     "links": [
-      { "label": "Protocol", "href": "#the-gap" },
-      { "label": "Fund", "href": "#tiers" },
-      { "label": "Team", "href": "#team" }
+      { "label": "Protocol", "href": "#tiers" },
+      { "label": "Vision", "href": "#solutions" },
+      { "label": "Team", "href": "#team" },
+      { "label": "Docs", "href": "#" }
     ],
     "ctaLabel": "Join the list"
   },
@@ -24,7 +25,7 @@
     "h1Line1": "Real asset,",
     "h1Line2": "real yield.",
     "h1Line3": "",
-    "subhead": "The protocol that opens Brazil's $770M rental guarantee market to crypto investors.",
+    "subhead": "The on-chain rental guarantee fund. The protocol that opens Brazil's $770M rental guarantee market to crypto investors.",
     "manifesto": "",
     "timelineSignal": ""
   },
@@ -59,14 +60,39 @@
       }
     ]
   },
+  "solutions": {
+    "kicker": "our vision",
+    "h2Lines": ["REAL YIELD.", "REAL INFRA.", "REAL ACCESS."],
+    "items": [
+      {
+        "gapRef": "Correlation",
+        "headline": "Yield from rent.",
+        "body": "MUTAV yield comes from rental fees and Brazilian treasury. When crypto corrects, your position holds. Magic."
+      },
+      {
+        "gapRef": "No accountability",
+        "headline": "Legal structure.",
+        "body": "MUTAV built the infrastructure that opens this market. The full operation runs within a regulated framework."
+      },
+      {
+        "gapRef": "No access",
+        "headline": "On-chain for the 1st time.",
+        "body": "Tokenized Brazil's rental market. Three token classes. Any qualified investor. Self-custodial. The vehicle that didn't exist until now."
+      }
+    ]
+  },
   "market": {
     "kicker": "the market",
     "h2": "A billion-dollar market that's never been open to you.",
-    "subtitle": "Verifiable settlement. Onchain record. Real-market yield.",
+    "featuredValue": "$770M",
+    "featuredLabel": "Brazil's Rent Guarantee Ecosystem",
+    "featuredBody": "The rental guarantee segment that crypto has never accessed.",
+    "featuredBody2": "Consistent fees from physical contracts.",
+    "featuredSource": "+195% market growth since 2020",
     "stats": [
       {
         "value": "$22B",
-        "label": "Real estate services ecosystem",
+        "label": "Brazil's total real estate market",
         "source": "70,000 real agencies"
       },
       {
@@ -90,14 +116,14 @@
     "kicker": "how the fund works",
     "h2Line1": "Three risk classes.",
     "h2Line2": "Choose your exposure.",
-    "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield. No distributions, all growth reflects directly in the token price.",
+    "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield.",
     "items": [
       {
-        "token": "MTVH",
-        "riskLabel": "First-loss",
-        "yieldLabel": "Highest yield",
-        "body": "You absorb defaults first. In exchange: maximum exposure to rental-guarantee market yield.",
-        "access": "MUTAV itself holds MTVH. Skin-in-the-game by design."
+        "token": "MTVL",
+        "riskLabel": "Last to absorb",
+        "yieldLabel": "Most stable",
+        "body": "Last in the waterfall. Designed for capital preservation with consistent yield from tokenized Brazilian treasury plus guarantee fees.",
+        "access": ""
       },
       {
         "token": "MTVM",
@@ -107,20 +133,19 @@
         "access": ""
       },
       {
-        "token": "MTVL",
-        "riskLabel": "Last to absorb",
-        "yieldLabel": "Most stable",
-        "body": "Last in the waterfall. Designed for capital preservation with consistent yield from tokenized Brazilian treasury plus guarantee fees.",
-        "access": ""
+        "token": "MTVH",
+        "riskLabel": "First-loss",
+        "yieldLabel": "Highest yield",
+        "body": "You absorb defaults first. In exchange: maximum exposure to rental-guarantee market yield.",
+        "access": "MUTAV itself holds MTVH. Skin-in-the-game by design."
       }
     ],
-    "waterfall": "",
-    "redeemNote": "Self-custodial tokens. Redemption via on-chain queue. 2.5% weekly cap, 0.25% exit fee."
+    "waterfall": ""
   },
   "midCta": {
     "h2": "GET ACCESS WHEN WE LAUNCH",
     "body": "Pilot launching 2026. Limited spots in the first cohort.",
-    "cta": "[ join the investor list ]",
+    "cta": "[ join the list ]",
     "note": ""
   },
   "vision": {
@@ -230,42 +255,34 @@
     "items": [
       {
         "q": "How does the waterfall work?",
-        "a": "Defaults hit MTVH first. Only if MTVH is fully depleted does MTVM absorb losses. MTVL is last in the waterfall."
-      },
-      {
-        "q": "Can I verify settlements?",
-        "a": "Every payout is logged on-chain. The audit report and code are open on GitHub."
+        "a": "Defaults hit MTVH first. Only if MTVH reaches a critical default threshold does MTVM absorb losses. MTVL is last in the waterfall."
       },
       {
         "q": "How do I redeem?",
         "a": "Tokens are self-custodial. Redemption via on-chain queue. 2.5% weekly cap, 0.25% exit fee."
+      },
+      {
+        "q": "How is the guarantee fee collected?",
+        "a": "Partner agencies register rental contracts on our platform to be covered by the guarantee. MUTAV's infrastructure handles the entire path that fee takes — from contract origination at the agency level all the way into the fund."
       }
     ]
   },
   "footer": {
-    "tagline": "Rent insurance, the way it should work.",
-    "subtitle": "Rental guarantee protocol built on Stellar.",
+    "tagline": "Real asset. Real yield.",
+    "subtitle": "The on-chain rental guarantee fund.",
     "navLabel": "Footer",
     "columns": [
       {
         "label": "Protocol",
         "links": [
-          { "label": "github.com/mutav-finance", "href": "https://github.com/mutav-finance" },
-          { "label": "white paper", "href": "https://github.com/mutav-finance/mutav" }
+          { "label": "Docs", "href": "#" }
         ]
       },
       {
-        "label": "Builders",
-        "links": [
-          { "label": "Draau", "href": "https://github.com/draaujpeg" },
-          { "label": "jubs", "href": "https://github.com/hoffms" }
-        ]
-      },
-      {
-        "label": "Stellar",
+        "label": "Built on",
         "links": [
           { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
-          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" }
+          { "label": "Stellar 37° Acceleration Program", "href": "https://stellar.org" }
         ]
       },
       {
