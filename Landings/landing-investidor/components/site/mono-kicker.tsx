@@ -24,7 +24,7 @@ export function MonoKicker({
           <span aria-hidden> / </span>
           <span>{total}</span>
           <span aria-hidden className="mx-2 text-text-3">
-            —
+            ·
           </span>
         </>
       )}

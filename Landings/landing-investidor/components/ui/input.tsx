@@ -7,7 +7,7 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
       type={type}
       data-slot="input"
       className={cn(
-        "h-12 w-full bg-transparent border border-border text-text",
+        "h-10 w-full bg-transparent border border-border text-text",
         "px-4 font-mono text-base-sm placeholder:text-text-3",
         // Imobiliárias front gets a white surface inside the form
         "[[data-front=imobiliarias]_&]:bg-surface",

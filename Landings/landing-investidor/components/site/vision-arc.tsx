@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
 
 type Phase = { n: string; label: string; title: string; body: string };
 
@@ -14,10 +13,9 @@ export function VisionArc() {
       className="border-b border-border"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
-        <MonoKicker label={t("kicker")} />
         <h2
           id="arc-h2"
-          className="mt-6 max-w-[40rem] font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+          className="max-w-[40rem] font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
         >
           {t("h2")}
         </h2>
@@ -28,7 +26,7 @@ export function VisionArc() {
               <div aria-hidden className="h-px w-full bg-accent/40 mb-6" />
               <p className="font-mono text-2xs tracking-[0.03em] uppercase text-text-2">
                 <span className="text-accent">{p.n}</span>
-                <span className="mx-2 text-text-3">—</span>
+                <span className="mx-2 text-text-3">·</span>
                 {p.label}
               </p>
               <p className="mt-3 font-display font-bold text-lg leading-tight text-text">

@@ -36,10 +36,7 @@ export async function generateMetadata({
     },
     robots: { index: true, follow: true },
     alternates: {
-      languages: {
-        "pt-BR": "/",
-        en: "/en",
-      },
+      canonical: "/",
     },
   };
 }

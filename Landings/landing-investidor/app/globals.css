@@ -134,6 +134,18 @@
   --color-primary-foreground: #1A1A1A;
 }
 
+/* Marquee — backed by strip */
+@keyframes mutav-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.mutav-marquee {
+  animation: mutav-marquee 24s linear infinite;
+}
+.mutav-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Live amber square pulse — only ambient animation in the system */
 @keyframes mutav-live-pulse {
   0%, 100% { opacity: 1; }
@@ -159,18 +171,8 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }
-  /* Investidor canvas — architectural grid texture at 3% opacity */
   body {
     background-color: var(--canvas);
-    background-image:
-      linear-gradient(to right,  rgba(240, 240, 238, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(240, 240, 238, 0.03) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-  /* Imobiliárias scoped sections — no texture */
-  [data-front="imobiliarias"] {
-    background-color: var(--canvas);
-    background-image: none;
   }
   /* Tabular numerals — JetBrains Mono mandatory for all numeric data */
   .font-mono,

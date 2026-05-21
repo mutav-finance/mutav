@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
 import { WaitlistForm } from "./waitlist-form";
 
 export function InvestidorCapture() {
@@ -14,10 +13,9 @@ export function InvestidorCapture() {
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24 grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="lg:order-2">
-          <MonoKicker index={t("kickerIndex")} label={t("kicker")} />
           <h2
             id="inv-h2"
-            className="mt-6 font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+            className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
           >
             {t("h2Line1")}
             <br />
@@ -27,7 +25,7 @@ export function InvestidorCapture() {
             {items.map((line, i) => (
               <li
                 key={i}
-                className="font-sans text-base leading-relaxed text-text"
+                className="font-sans text-base leading-relaxed text-text-2"
               >
                 {line}
               </li>
