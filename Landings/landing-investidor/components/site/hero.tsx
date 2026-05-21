@@ -23,20 +23,20 @@ export function Hero() {
         </div>
         <h1
           id="hero-h1"
-          className="font-display font-bold uppercase leading-[0.95] tracking-[-0.02em]"
+          className="font-display font-bold uppercase leading-[1.0625] tracking-[-0.03em]"
         >
-          <span className="block text-[clamp(2.75rem,6vw,5.5rem)]">
+          <span className="block text-6xl">
             <span className="text-text">Access the </span>
             <span className="text-accent">$770M</span>
           </span>
-          <span className="block text-[clamp(2.75rem,6vw,5.5rem)] text-text">
+          <span className="block text-6xl text-text">
             Brazilian Rental
           </span>
-          <span className="block text-[clamp(2.75rem,6vw,5.5rem)] text-text">
+          <span className="block text-6xl text-text">
             Guarantee Market
           </span>
         </h1>
-        <p className="mt-10 max-w-[40rem] font-sans text-lg leading-[1.55] text-text-2">
+        <p className="mt-10 max-w-[40rem] font-sans text-base leading-[1.5] text-text-2">
           The on-chain rental guarantee fund. Opening real assets with real yield to investors through onchain guarantee funds.
         </p>
         <div className="mt-8 flex items-center gap-10">
