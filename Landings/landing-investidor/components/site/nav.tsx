@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Logo } from "./logo";
 import { LiveSquare } from "./live-square";
-import { Button } from "@/components/ui/button";
+import { ScrambleButton } from "@/components/site/scramble-button";
 
 type NavLink = { label: string; href: string };
 
@@ -33,9 +33,9 @@ export function SiteNav() {
           ))}
         </nav>
 
-        <Button variant="investidor" asChild>
-          <a href="#mid-cta">{t("ctaLabel")} →</a>
-        </Button>
+        <ScrambleButton variant="investidor" href="#mid-cta">
+          {t("ctaLabel") + " →"}
+        </ScrambleButton>
       </div>
     </header>
   );

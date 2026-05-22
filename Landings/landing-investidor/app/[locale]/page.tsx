@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { SiteNav } from "@/components/site/nav";
+import { SocialProof } from "@/components/site/social-proof";
 import { Hero } from "@/components/site/hero";
 import { TheGap } from "@/components/site/the-gap";
 import { Solutions } from "@/components/site/solutions";
@@ -23,6 +24,7 @@ export default async function Home({
       <SiteNav />
       <main id="main" className="flex-1">
         <Hero />
+        <SocialProof />
         <TheGap />
         <Solutions />
         <Market />

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 type Stat = { value: string; label: string; source?: string };
 
@@ -16,13 +18,13 @@ export function Market() {
         <div className="grid lg:grid-cols-2 gap-px bg-border">
 
           {/* Left column */}
-          <div className="flex flex-col gap-px bg-border border-t border-l border-b border-border">
+          <BlurFade delay={0} className="flex flex-col gap-px bg-border border-t border-l border-b border-border">
 
             {/* Main headline card */}
             <div className="bg-canvas p-10 flex flex-col justify-between gap-8">
               <h2
                 id="market-h2"
-                className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+                className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] uppercase"
               >
                 {t("h2")}
               </h2>
@@ -49,30 +51,37 @@ export function Market() {
               ))}
             </div>
 
-          </div>
+          </BlurFade>
 
           {/* Right column — featured accent card */}
-          <div className="bg-accent p-10 flex flex-col justify-between gap-8 min-h-[480px]">
-            <div>
+          <BlurFade delay={0.15} className="relative bg-accent p-10 flex flex-col justify-between gap-8 min-h-[480px] overflow-hidden">
+            <Image
+              src="/img/8.jpg"
+              alt=""
+              fill
+              className="object-cover opacity-40" style={{objectPosition: "55% 50%"}}
+              aria-hidden
+            />
+            <div className="relative z-10">
               <p className="font-mono text-2xs uppercase tracking-[0.03em] text-canvas/60">
                 {t("featuredSource")}
               </p>
               <p className="mt-6 font-mono font-bold text-5xl lg:text-6xl text-canvas leading-none">
                 {t("featuredValue")}
               </p>
-              <p className="mt-3 font-display font-bold text-xl text-canvas leading-snug">
+              <p className="mt-3 font-display font-bold text-xl text-canvas leading-snug whitespace-pre-line">
                 {t("featuredLabel")}
               </p>
             </div>
-            <div className="flex flex-col gap-1">
-              <p className="font-sans text-base-sm leading-relaxed text-canvas/80">
+            <div className="relative z-10 flex flex-col gap-1">
+              <p className="font-sans text-base-sm leading-relaxed text-canvas/80 whitespace-pre-line">
                 {t("featuredBody")}
               </p>
               <p className="font-sans text-base-sm leading-relaxed text-canvas/80">
                 {t("featuredBody2")}
               </p>
             </div>
-          </div>
+          </BlurFade>
 
         </div>
       </div>

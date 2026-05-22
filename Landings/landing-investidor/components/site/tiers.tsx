@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 type Tier = {
@@ -15,6 +16,12 @@ const TOKEN_COLOR: Record<string, { border: string; text: string }> = {
   MTVH: { border: "border-error",   text: "text-error" },
   MTVM: { border: "border-accent",  text: "text-accent" },
   MTVL: { border: "border-success", text: "text-success" },
+};
+
+const TOKEN_IMAGE: Record<string, string> = {
+  MTVH: "/img/MTVH.jpg",
+  MTVM: "/img/MTVM.jpg",
+  MTVL: "/img/MTVL.jpg",
 };
 
 export function Tiers() {
@@ -104,13 +111,18 @@ export function Tiers() {
 
           </div>
 
-          {/* Right — image placeholder */}
-          <div className="bg-surface min-h-[480px] lg:min-h-0 flex flex-col items-center justify-center p-8">
-            <div className={`w-full h-full min-h-[400px] border flex items-center justify-center transition-colors duration-300 ${colors.border}`}>
-              <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3">
-                [ {items[active]?.token} · fund diagram ]
-              </p>
-            </div>
+          {/* Right — tier image */}
+          <div className="bg-surface min-h-[480px] lg:min-h-0 relative overflow-hidden">
+            {items.map((tier, i) => (
+              <Image
+                key={tier.token}
+                src={TOKEN_IMAGE[tier.token]}
+                alt={tier.token}
+                fill
+                className={`object-cover transition-opacity duration-300 ${i === active ? "opacity-100" : "opacity-0"}`}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            ))}
           </div>
 
         </div>

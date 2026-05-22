@@ -26,7 +26,7 @@ export function Team() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24 flex flex-col items-center text-center">
         <h2
           id="team-h2"
-          className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+          className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] uppercase"
         >
           {t("h2")}
         </h2>

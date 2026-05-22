@@ -8,7 +8,7 @@ import {
   type Audience,
   type WaitlistResult,
 } from "@/app/actions/waitlist";
-import { Button } from "@/components/ui/button";
+import { ScrambleButton } from "@/components/site/scramble-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -18,16 +18,15 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
   const { pending } = useFormStatus();
   return (
     <div className="mt-6 flex flex-col">
-      <Button
+      <ScrambleButton
         type="submit"
         disabled={pending}
-        aria-disabled={pending}
         variant="investidor"
         size="lg"
         className="w-full sm:w-auto"
       >
         {label}
-      </Button>
+      </ScrambleButton>
       {pending && (
         <p className="mt-2 font-mono text-xs text-text-2" aria-hidden>
           {pendingLabel}

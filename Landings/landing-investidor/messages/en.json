@@ -41,7 +41,7 @@
   },
   "gap": {
     "kicker": "the problem",
-    "h2": "YOU ARE CORRELATED TO BTC AND CALLING IT A STRATEGY",
+    "h2": "YOU ARE CORRELATED TO BTC\nAND CALLING IT A STRATEGY",
     "items": [
       {
         "label": "Correlation",
@@ -85,8 +85,8 @@
     "kicker": "the market",
     "h2": "A billion-dollar market that's never been open to you.",
     "featuredValue": "$770M",
-    "featuredLabel": "Brazil's Rent Guarantee Ecosystem",
-    "featuredBody": "The rental guarantee segment that crypto has never accessed.",
+    "featuredLabel": "Brazil's Rent\nGuarantee Ecosystem",
+    "featuredBody": "The rental guarantee segment\nthat crypto has never accessed.",
     "featuredBody2": "Consistent fees from physical contracts.",
     "featuredSource": "+195% market growth since 2020",
     "stats": [

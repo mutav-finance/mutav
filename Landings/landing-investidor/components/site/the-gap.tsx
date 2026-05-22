@@ -1,4 +1,7 @@
 import { useTranslations } from "next-intl";
+import { Typewriter } from "./typewriter";
+import { ShineBorder } from "@/components/ui/shine-border";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 type GapItem = { label: string; headline: string; body: string };
 
@@ -15,27 +18,29 @@ export function TheGap() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
         <h2
           id="gap-h2"
-          className="w-full text-center font-display font-bold text-text text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em]"
+          className="w-full text-center font-display font-bold text-text text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] whitespace-pre-line"
         >
-          {t("h2")}
+          <Typewriter text={t("h2")} speed={40} />
         </h2>
 
         <ul className="mt-16 grid gap-4 lg:grid-cols-3">
-          {items.map((g) => (
-            <li key={g.label} className="bg-surface border border-border p-8 flex flex-col gap-6">
-              <div className="flex items-center gap-3">
-                <span className="block size-[6px] bg-accent shrink-0" aria-hidden />
-                <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-2">
-                  {g.label}
+          {items.map((g, i) => (
+            <BlurFade key={g.label} as="li" delay={i * 0.1}>
+              <ShineBorder fill="var(--surface)" className="p-8 flex flex-col gap-6 h-full">
+                <div className="flex items-center gap-3">
+                  <span className="block size-[6px] bg-accent shrink-0" aria-hidden />
+                  <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-2">
+                    {g.label}
+                  </p>
+                </div>
+                <p className="font-display font-bold text-2xl leading-tight text-text">
+                  {g.headline}
                 </p>
-              </div>
-              <p className="font-display font-bold text-2xl leading-tight text-text">
-                {g.headline}
-              </p>
-              <p className="font-sans text-base-sm leading-relaxed text-text-2 flex-1">
-                {g.body}
-              </p>
-            </li>
+                <p className="font-sans text-base-sm leading-relaxed text-text-2 flex-1">
+                  {g.body}
+                </p>
+              </ShineBorder>
+            </BlurFade>
           ))}
         </ul>
       </div>
