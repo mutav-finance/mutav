@@ -27,6 +27,8 @@ export function Market() {
                 className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] uppercase"
               >
                 {t("h2")}
+                <br />
+                <span className="text-accent">until now.</span>
               </h2>
             </div>
 

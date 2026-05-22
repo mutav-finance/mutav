@@ -37,12 +37,16 @@ export function Tiers() {
       className="border-b border-border"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
+        <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3 mb-6 flex items-center gap-3">
+          <span className="block w-px h-3 bg-accent shrink-0" aria-hidden />
+          MUTAV FUND
+        </p>
         <h2
           id="tiers-h2"
-          className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+          className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] uppercase"
         >
           {t("h2Line1")}
-          <span className="lg:block">{t("h2Line2")}</span>
+          <span className="lg:block text-accent">{t("h2Line2")}</span>
         </h2>
         <p className="mt-6 max-w-[52rem] font-sans text-base-sm leading-relaxed text-text-2">
           {t("intro")}

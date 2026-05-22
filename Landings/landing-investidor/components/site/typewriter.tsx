@@ -58,11 +58,11 @@ export function Typewriter({
 
   return (
     <span ref={ref} className={className}>
-      {before}
+      <span className="text-accent">{before}</span>
       {after && (
         <>
           {"\n"}
-          <span className="text-accent">{after}</span>
+          <span className="text-text">{after}</span>
         </>
       )}
       {cursor && (
