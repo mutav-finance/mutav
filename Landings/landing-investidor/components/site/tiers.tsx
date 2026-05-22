@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 type Tier = {
@@ -18,10 +17,10 @@ const TOKEN_COLOR: Record<string, { border: string; text: string }> = {
   MTVL: { border: "border-success", text: "text-success" },
 };
 
-const TOKEN_IMAGE: Record<string, string> = {
-  MTVH: "/img/MTVH.jpg",
-  MTVM: "/img/MTVM.jpg",
-  MTVL: "/img/MTVL.jpg",
+const TOKEN_CSS_VAR: Record<string, string> = {
+  MTVH: "var(--error)",
+  MTVM: "var(--accent)",
+  MTVL: "var(--success)",
 };
 
 export function Tiers() {
@@ -62,7 +61,7 @@ export function Tiers() {
                 <button
                   key={tier.token}
                   onClick={() => setActive(i)}
-                  className={`w-full text-left pl-6 pr-8 py-8 flex flex-col gap-3 border-l-2 transition-colors duration-150 ${
+                  className={`w-full text-left pl-6 pr-8 py-8 flex flex-col gap-3 border-l-2 border-b-2 transition-colors duration-150 ${
                     isActive ? c.border : "border-transparent hover:border-border"
                   }`}
                 >
@@ -111,18 +110,31 @@ export function Tiers() {
 
           </div>
 
-          {/* Right — tier image */}
-          <div className="bg-surface min-h-[480px] lg:min-h-0 relative overflow-hidden">
-            {items.map((tier, i) => (
-              <Image
-                key={tier.token}
-                src={TOKEN_IMAGE[tier.token]}
-                alt={tier.token}
-                fill
-                className={`object-cover transition-opacity duration-300 ${i === active ? "opacity-100" : "opacity-0"}`}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            ))}
+          {/* Right — tier image with Precision Brutalism frame */}
+          <div className={`bg-surface min-h-[480px] lg:min-h-0 relative overflow-hidden border-2 transition-colors duration-300 ${colors.border}`}>
+
+
+            {/* Tier-tinted overlay */}
+            <div
+              aria-hidden
+              className="absolute inset-0 z-10 pointer-events-none transition-colors duration-300"
+              style={{ backgroundColor: TOKEN_CSS_VAR[items[active]?.token] ?? "var(--accent)", opacity: 0.08 }}
+            />
+
+            {/* Corner marks — register marks */}
+            <div aria-hidden className={`absolute top-4 left-4 z-20 size-4 border-t border-l transition-colors duration-300 ${colors.border}`} />
+            <div aria-hidden className={`absolute top-4 right-4 z-20 size-4 border-t border-r transition-colors duration-300 ${colors.border}`} />
+            <div aria-hidden className={`absolute bottom-4 right-4 z-20 size-4 border-b border-r transition-colors duration-300 ${colors.border}`} />
+            <div aria-hidden className={`absolute bottom-4 left-4 z-20 size-4 border-b border-l transition-colors duration-300 ${colors.border}`} />
+
+            {/* Token identifier — beside top-left corner mark */}
+            <p
+              aria-hidden
+              className={`absolute top-[1.125rem] left-10 z-20 font-mono text-2xs uppercase tracking-[0.06em] transition-colors duration-300 ${colors.text}`}
+            >
+              {items[active]?.token}
+            </p>
+
           </div>
 
         </div>
