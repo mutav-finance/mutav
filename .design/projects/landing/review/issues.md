@@ -1,89 +1,115 @@
 # Issues
-> Phase: review · Project: landing · Brand: tga (MUTAV) · Updated: 2026-05-20
-> Branch: `feat/lp-imobiliaria-components`
-> All paths are absolute against the `Landings/landing-imobiliaria/` package root.
+> Phase: review · Project: landing · Brand: tga (MUTAV) · Updated: 2026-05-21
+> Branch: `feat/lp-investidor-components`
+> All paths are relative to `Landings/landing-investidor/`.
 
 ## Severity legend
 
 - **Critical** — blocks acceptance / blocks shipping
-- **Major** — significant deviation from design or brand contract; ship-eligible only with documented exception
+- **Major** — significant deviation; ship-eligible only with documented exception
 - **Minor** — polish, drift, or nice-to-have
 
-No **Critical** issues found.
-
-> **2026-05-20 re-review note (pass 2).** F-001 (`data-front="imobiliarias"`) and F-002 (`InvestidorCapture` removal) are resolved. A-003 has escalated from Minor to Major because the light front is now active. New minor issue H-001 identified: `SeguroPrestamista` kicker counter silently dropped.
-
----
-
-## Major
-
-### A-003 — Disabled language toggle fails WCAG 1.4.3 in Imobiliárias light context
-
-| | |
-|---|---|
-| **Severity** | Major (escalated from Minor) |
-| **WCAG** | 1.4.3 Contrast (Minimum) |
-| **File** | [`components/site/language-toggle.tsx:16`](../../../../Landings/landing-imobiliaria/components/site/language-toggle.tsx) |
-| **Expected** | Inactive locale label meets at least 3:1 contrast in all rendered contexts. |
-| **Actual** | Inactive locale uses `text-text-3`. In Imobiliárias light context (now active): `#9E9C98 on #F7F6F3` = **2.3:1** — fails WCAG 1.4.3 for all text sizes. WCAG disabled-state exemption (1.4.3 exception) requires the component to be truly non-interactive — these are live navigation links, so the exemption does not apply. |
-| **Impact** | Users relying on minimum contrast (low vision, poor lighting) cannot reliably read the inactive language option. This is now a shipping blocker when the light front is live. |
-| **Remediation** | Change inactive locale class from `text-text-3` to `text-text-2` in `language-toggle.tsx:16`. In light context: `#6B6860 on #F7F6F3` = 5.4:1 — AA pass. Alternatively, style inactive links as `opacity-50` and add `aria-disabled="true"` if you intend them as truly non-interactive placeholders (then WCAG exemption applies). |
-| **Status** | Open — requires product decision (live link vs disabled placeholder) + one-line fix |
+No **Critical** or **Major** issues found.
 
 ---
 
 ## Minor
 
-### H-001 — `SeguroPrestamista` kicker index silently dropped by `MonoKicker`
+### T-001 — Team photos committed but not wired in component
 
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`components/site/seguro-prestamista.tsx:11`](../../../../Landings/landing-imobiliaria/components/site/seguro-prestamista.tsx) |
-| **Actual** | `<MonoKicker index={t("kickerIndex")} label={t("kicker")} />` — `index="→ 03"` passed but no `total` prop. `mono-kicker.tsx:21` requires `{index && total && ...}` to render the counter prefix; without `total`, only the label renders. The `→ 03` counter is silently dropped. |
-| **Note** | This pattern is consistent with `ImobiliariaCapture` (`→ 01`) and `InvestidorCapture` (`→ 02`) which also pass `index` without `total`. Either (a) the `→ NN` style was intended to render without a total (in which case `MonoKicker` needs an update to support index-only), or (b) a `total` prop should be added to all section kickers. The hero kicker (passing both `index="01"` + `total="04"`) is the only one that renders the counter. |
-| **Remediation** | Option A: Update `MonoKicker` to render the index prefix when only `index` is provided (remove the `&&total` gate for the `→ NN` format). Option B: Add `total` to all section kickers. Option C: Remove `kickerIndex` from section messages and document that section kickers are label-only by design. |
-| **Status** | Carry forward — needs design decision |
-
-### G-001 — Art37 section kicker is label-only (consistent behavior, document intent)
-
-| | |
-|---|---|
-| **Severity** | Minor |
-| **File** | [`components/site/art37.tsx:11`](../../../../Landings/landing-imobiliaria/components/site/art37.tsx) |
-| **Actual** | `<MonoKicker label={t("kicker")} />` — no `index` prop. Other capture sections define `kickerIndex` in messages (even though it silently drops per H-001). Art37 has no `kickerIndex` at all. |
-| **Remediation** | If section kickers are label-only by design, align all sections (remove `kickerIndex` from messages, remove `index` props) and document. If a counter is wanted, add `kickerIndex` to art37 messages. |
-| **Status** | Carry forward — clarify and document intent |
-
-### G-002 — `SeguroPrestamista` item text uses `text-text` instead of `text-text-2`
-
-| | |
-|---|---|
-| **Severity** | Minor |
-| **File** | [`components/site/seguro-prestamista.tsx:22`](../../../../Landings/landing-imobiliaria/components/site/seguro-prestamista.tsx) |
-| **Actual** | `<p className="font-sans text-base-sm leading-relaxed text-text">` — item text uses `text-text` (primary, `#1A1A1A` in light) rather than `text-text-2` (secondary, `#6B6860`). All other sections use `text-text-2` for supporting body/note text. |
-| **Impact** | Minor visual inconsistency — items read at full primary weight. Contrast is not an issue. |
-| **Remediation** | Change `text-text` → `text-text-2` on the `<p>` inside the `<li>` at line 22, if items are supporting evidence. Keep `text-text` if items are primary declarations and document the intent. |
-| **Status** | Carry forward |
-
-### D-003 — Both packages share one design project config
-
-| | |
-|---|---|
-| **Severity** | Minor |
-| **File** | `.design/projects/landing/config.json` |
-| **Note** | Both `Landings/landing-investidor/` and `Landings/landing-imobiliaria/` share the same design project at `.design/projects/landing/`. Reviews, build logs, and manifests co-mingle. |
-| **Remediation** | Either (a) create a separate `.design/projects/landing-imobiliaria/` project with its own config, or (b) update the shared config to list both implementation targets and tag review entries by package. |
-| **Status** | Carry forward |
+| **File** | [`components/site/team.tsx:43-53`](../../../../Landings/landing-investidor/components/site/team.tsx) |
+| **Expected** | `draau.jpg` and `jubs.png` from `public/team/` rendered as `<Image>` with `grayscale` filter, 160×160 or aspect-ratio square, 0px radius. |
+| **Actual** | Component renders `<span>[ photo · D ]</span>` and `<span>[ photo · J ]</span>` as placeholder text. Photos exist at `public/team/draau.jpg` and `public/team/jubs.png` but are not imported or rendered. |
+| **Impact** | Team section looks unfinished. Per the critique `prioritized-fixes.md §4`, founders chose path A (photo) — the photos have been committed but not rendered. |
+| **Remediation** | Add `import Image from "next/image"`. In the founder card, replace the placeholder `<a>` content with `<Image src={/team/${f.initial === 'D' ? 'draau.jpg' : 'jubs.png'}} ... className="w-full h-full object-cover grayscale" />`. Alternatively, pass photo paths through the messages/founder type. |
+| **Status** | Open |
 
 ---
 
-## Resolved (this review pass)
+### A-001 — Pending status text is `aria-hidden` — screen readers cannot hear it
 
-| Issue | Description | Resolution |
-|-------|-------------|------------|
-| F-001 | `landing-imobiliaria` rendered Investidor dark theme | `data-front="imobiliarias"` added to `<html>` at `layout.tsx:63` |
-| F-002 | `InvestidorCapture` mounted on imobiliária page | `InvestidorCapture` removed from `page.tsx`; `ImobiliariaCapture` is sole capture |
+| | |
+|---|---|
+| **Severity** | Minor |
+| **File** | [`components/site/waitlist-form.tsx:32`](../../../../Landings/landing-investidor/components/site/waitlist-form.tsx) |
+| **Expected** | The "sending…" text announced to screen readers via polite live region (fix-005 spec: `role="status"` or `aria-live="polite"`). |
+| **Actual** | `<p className="... text-text-2" aria-hidden>{pendingLabel}</p>` — `aria-hidden` excludes the text from the accessibility tree. `aria-busy={isPending}` on the form is present and announces state change, but the specific "sending…" string is sighted-only. |
+| **Impact** | Screen reader users hear the form become `aria-busy` but do not hear the "enviando…" / "sending…" confirmation text. Partial WCAG 4.1.3 compliance. |
+| **Remediation** | Remove `aria-hidden` from the pending status paragraph, or use `role="status"` with `aria-live="polite"` on the paragraph so it announces when it appears. The `aria-busy` on the form already covers state announcement; making the text visible to AT is extra clarity. |
+| **Status** | Open |
+
+---
+
+### A-002 — Tier selector buttons missing accessible state
+
+| | |
+|---|---|
+| **Severity** | Minor |
+| **File** | [`components/site/tiers.tsx:55-104`](../../../../Landings/landing-investidor/components/site/tiers.tsx) |
+| **Expected** | Active tier button communicates selected/pressed state to screen readers via `aria-pressed` or `aria-selected`. |
+| **Actual** | `<button onClick={() => setActive(i)} className="...">` — no `aria-pressed`, no `aria-selected`, no `role="tab"`. Sighted users see the left-border + color activation. Screen readers cannot determine which tier is active. |
+| **Impact** | Screen reader users can activate tiers but cannot determine which is currently selected without visually inspecting the content change. |
+| **Remediation** | Add `aria-pressed={isActive}` to each tier button (toggle pattern). Or refactor to a tab pattern: `role="tablist"` on the list, `role="tab"` + `aria-selected={isActive}` on each button, `role="tabpanel"` on the right content column. |
+| **Status** | Open |
+
+---
+
+### A-003 — `<dt>` inside `<button>` — invalid HTML in FAQ accordion
+
+| | |
+|---|---|
+| **Severity** | Minor |
+| **File** | [`components/site/faq.tsx:32-34`](../../../../Landings/landing-investidor/components/site/faq.tsx) |
+| **Expected** | Valid HTML — `<dt>` should only appear inside `<dl>`. The accordion question text should be in an element valid as button content (e.g., `<span>`, `<p>`). |
+| **Actual** | `<button><dt className="...">{item.q}</dt></button>` — `<dt>` (definition term) is a flow content element that is not permitted as content of `<button>`. While browsers render this, validators will flag it and some screen readers may announce unexpected semantics. |
+| **Impact** | Minor semantics issue; visual rendering and keyboard behavior are not affected in practice. |
+| **Remediation** | Replace `<dt>` with `<span>` inside the button: `<span className="font-display font-bold text-base leading-snug text-text">{item.q}</span>`. Keep `<dl>` + `<dd>` structure for the definition list semantics. |
+| **Status** | Open |
+
+---
+
+### D-001 — VisionArc and InvestidorCapture built but not mounted; page order differs from STATE.md
+
+| | |
+|---|---|
+| **Severity** | Minor |
+| **File** | [`app/[locale]/page.tsx`](../../../../Landings/landing-investidor/app/%5Blocale%5D/page.tsx) |
+| **Expected** | Per `STATE.md § Post-review decisions (2026-05-20)`, current page order is: Nav → Hero → SocialProof → TheGap → Market → Tiers → MidCta → VisionArc → InvestidorCapture → Team → Footer. |
+| **Actual** | page.tsx mounts: Nav → Hero → TheGap → Solutions → Market → Tiers → MidCta → Team → Faq → Footer. SocialProof, VisionArc, and InvestidorCapture are not mounted. Solutions and Faq are mounted but not listed in STATE.md. |
+| **Impact** | No waitlist capture on the investidor LP. Users can learn about the fund (TheGap, Solutions, Market, Tiers) but have no mechanism to join the waitlist. MidCta button links to `#investidor-form` which doesn't exist — dead anchor. |
+| **Remediation** | Either (a) mount `InvestidorCapture` and add `id="investidor-form"` to its section, then update STATE.md; or (b) document that the investidor LP is information-only for this phase with a separate conversion path. Update STATE.md to reflect actual page composition. Fix the dead `#investidor-form` anchor in MidCta. |
+| **Status** | Open — requires product decision |
+
+---
+
+### L-001 — LP ships English-only; locale strategy not documented
+
+| | |
+|---|---|
+| **Severity** | Minor |
+| **File** | [`i18n/routing.ts`](../../../../Landings/landing-investidor/i18n/routing.ts) |
+| **Expected** | Per the original design spec and brand brief, pt-BR is the primary locale. `routing.ts` should declare `locales: ["pt-BR", "en"]`, `defaultLocale: "pt-BR"`. |
+| **Actual** | `routing.ts` declares `locales: ["en"]`, `defaultLocale: "en"`. No pt-BR messages file exists. The investidor LP delivers in English only. |
+| **Impact** | Brazilian investors who prefer pt-BR receive only English. This is a significant audience mismatch for a Brazil-targeted financial product. The investidor persona (Lucas analog) is Brazilian. |
+| **Note** | This may be a deliberate product decision (English for international/crypto investor audience). If so, it should be documented in STATE.md. The landing-imobiliaria package ships pt-BR as primary, suggesting locale strategy differs per front. |
+| **Remediation** | Document the locale strategy in STATE.md. If pt-BR is desired for investidor, add `messages/pt-BR.json` and update `routing.ts`. |
+| **Status** | Open — needs product decision + STATE.md update |
+
+---
+
+### H-001 — MonoKicker counter prefix requires both `index` + `total`; most sections pass neither
+
+| | |
+|---|---|
+| **Severity** | Minor |
+| **File** | [`components/site/mono-kicker.tsx:21`](../../../../Landings/landing-investidor/components/site/mono-kicker.tsx) |
+| **Actual** | `MonoKicker` renders the counter prefix only when `{index && total}`. Hero passes `"Real Asset. Real Yield."` as a bare `label`. Other sections don't pass any index/total. The `01 / 04 — label` pattern from the original design never appears on this LP. |
+| **Note** | The original design specified Mono kicker pattern as `01 / 04 — label`. The investidor LP doesn't use this pattern at all — sections use section headings directly or bare label kickers without numbering. This is a design divergence from the section kicker spec, but all sections are still properly labeled and navigable. |
+| **Remediation** | If the numbered kicker pattern is desired, add `index` + `total` props to each section's kicker. If the pattern is intentionally dropped for the investidor LP, remove the dead `index` + `total` props from the MonoKicker component or document the decision. |
+| **Status** | Carry forward |
 
 ---
 
@@ -92,7 +118,20 @@ No **Critical** issues found.
 | Severity | Count |
 |----------|-------|
 | Critical | 0 |
-| Major | 1 (A-003 — disabled toggle contrast in light context) |
-| Minor | 4 (H-001, G-001, G-002, D-003) |
+| Major | 0 |
+| Minor | 6 (T-001, A-001, A-002, A-003, D-001, L-001) |
 
-**A-003 is the only blocker.** The fix is one line: change `text-text-3` → `text-text-2` for the inactive locale in `language-toggle.tsx:16`. Alternatively, treat inactive locales as `aria-disabled` placeholders (WCAG exemption then applies — but requires product agreement that `en` is not a live link).
+**D-001 is the highest-impact minor issue:** the MidCta CTA links to `#investidor-form` which does not exist on the page. This is a broken UX flow even though it is not a brand contract violation. Recommend fixing before shipping.
+
+---
+
+## Resolved (from prior reviews on main)
+
+| Issue | Description | Resolution |
+|-------|-------------|------------|
+| fix-001 | Consent line `text-text-3` → `text-text-2` | Applied in prior commit |
+| fix-002 | Track-record `text-text-3` → `text-text-2` | Applied in prior commit |
+| fix-003 | Footer 11px Mono `text-text-3` → `text-text-2` | Applied in prior commit |
+| fix-004 | Error state enum + 4 codes × 2 fronts | Applied — `WaitlistResult` discriminated union in `waitlist.ts` |
+| fix-005 | `aria-busy` + pending status text | Partially applied — `aria-busy` present; status text `aria-hidden` (A-001) |
+| fix-006 | Investidor button 40 → 44px | Applied — `size="lg"` = 44px in button.tsx:28 |

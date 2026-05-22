@@ -7,7 +7,8 @@ type SolutionItem = { gapRef: string; headline: string; body: string };
 
 export function Solutions() {
   const t = useTranslations("solutions");
-  const items = t.raw("items") as SolutionItem[];
+  const rawItems = t.raw("items") as SolutionItem[];
+  const items = [rawItems[2], rawItems[0], rawItems[1]];
 
   const h2Lines = t.raw("h2Lines") as string[];
   const words = h2Lines.map((line) => line.slice(4));
@@ -19,19 +20,21 @@ export function Solutions() {
       className="border-b border-border"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
-        <div className="text-center">
-          <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3 mb-6">
-            {t("kicker")}
-          </p>
-          <AnimatedSolutionsHeading
-            words={words}
-            className="font-display font-bold text-text text-5xl lg:text-7xl leading-[1.05] tracking-[-0.02em]"
-          />
+        <div className="flex justify-center">
+          <div>
+            <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3 mb-2">
+              {t("kicker")}
+            </p>
+            <AnimatedSolutionsHeading
+              words={words}
+              className="font-display font-bold text-text text-[3.3rem] lg:text-[4.95rem] leading-[1.05] tracking-[-0.02em]"
+            />
+          </div>
         </div>
 
         <ul className="mt-16 grid gap-4 lg:grid-cols-3">
           {items.map((s, i) => (
-            <BlurFade key={s.gapRef} as="li" delay={i * 0.1}>
+            <BlurFade key={s.gapRef} as="li" delay={i * 0.1} className={i !== 1 ? "lg:mt-10" : "lg:self-start"}>
               <ShineBorder fill="var(--surface)" className="p-8 flex flex-col gap-6 h-full">
                 <div className="flex items-center gap-[5px]" aria-hidden>
                   {[0, -2.4, -1.2].map((d) => (
@@ -48,6 +51,23 @@ export function Solutions() {
                 <p className="font-sans text-base-sm leading-relaxed text-text-2 flex-1">
                   {s.body}
                 </p>
+                <div
+                  aria-hidden
+                  className="w-full aspect-video bg-surface-2 border border-border flex items-center justify-center"
+                >
+                  <svg
+                    className="w-8 h-8 text-text-3"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1}
+                  >
+                    <path d="M21 15l-5-5L10 16l-3-3-4 4" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <rect x="3" y="3" width="18" height="18" />
+                  </svg>
+                </div>
               </ShineBorder>
             </BlurFade>
           ))}

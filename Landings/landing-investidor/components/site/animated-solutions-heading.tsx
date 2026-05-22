@@ -18,15 +18,17 @@ export function AnimatedSolutionsHeading({ words, className }: Props) {
     return () => clearTimeout(id);
   }, [current, words.length]);
 
+  const longest = words.reduce((a, b) => (b.length > a.length ? b : a), "");
+
   return (
-    <h2 id="solutions-h2" className={className}>
+    <h2 id="solutions-h2" className={`${className} flex items-baseline gap-4`}>
       <span className="text-accent">REAL</span>
-      <span className="relative flex w-full justify-center overflow-hidden pb-4 pt-1">
-        &nbsp;
+      <span className="relative overflow-hidden">
+        <span className="invisible" aria-hidden>{longest}</span>
         {words.map((word, i) => (
           <motion.span
             key={i}
-            className="absolute font-bold"
+            className="absolute inset-0 flex items-center justify-start font-bold"
             initial={{ opacity: 0, y: "-100%" }}
             transition={{ type: "spring", stiffness: 50 }}
             animate={

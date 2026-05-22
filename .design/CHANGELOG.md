@@ -4,6 +4,16 @@ Reverse-chronological record of GSP project completions across `.design/projects
 
 ---
 
+## [landing-investidor] — 2026-05-21 (review: Conditional Pass — feat/lp-investidor-components)
+> Brand: tga (MUTAV) | Scope: QA review of `landing-investidor` on `feat/lp-investidor-components`; 0 Critical, 0 Major, 6 Minor issues
+
+**Added:** Solutions, Market, Tiers, MidCta, Faq (new undesigned investor-targeted sections); hero reworked with fluid clamp H1, partner logos, CTA button; VisionArc + InvestidorCapture built but not mounted
+**Modified:** hero.tsx (copy overhaul + clamp type), footer.tsx (X/Twitter icon added, LanguageToggle removed), page.tsx (new section order), tiers.tsx (interactive selector), solutions.tsx (dot-blink animation)
+**Patterns:** Single-front Investidor-only dark composition; English-only locale (`locales: ["en"]`); Market bg-accent TAM panel; Tiers interactive list with color-coded token classes
+**Open minor issues:** D-001 (MidCta links to dead `#investidor-form` anchor), T-001 (team photos not wired), A-001 (pending text aria-hidden), A-002 (Tiers aria-pressed missing), A-003 (dt in button), L-001 (locale strategy undocumented)
+**PR:** [#37](https://github.com/mutav-finance/mutav/pull/37)
+**Files:** ~30 files touched → [review/INDEX.md](./projects/landing/review/INDEX.md)
+
 ## [landing-imobiliaria] — 2026-05-20 (re-review pass 2: Conditional Pass)
 > Brand: tga (MUTAV) | Scope: QA re-review pass 2 — F-001 + F-002 resolved; A-003 escalated to Major
 

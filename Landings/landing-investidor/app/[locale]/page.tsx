@@ -7,6 +7,8 @@ import { Solutions } from "@/components/site/solutions";
 import { Market } from "@/components/site/market";
 import { Tiers } from "@/components/site/tiers";
 import { MidCta } from "@/components/site/mid-cta";
+import { VisionArc } from "@/components/site/vision-arc";
+import { InvestidorCapture } from "@/components/site/investidor-capture";
 import { Team } from "@/components/site/team";
 import { Faq } from "@/components/site/faq";
 import { SiteFooter } from "@/components/site/footer";

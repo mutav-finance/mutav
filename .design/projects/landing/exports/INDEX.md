@@ -111,4 +111,5 @@ This file is the entry point for coding agents consuming GSP design output.
 |---------|------|
 | Acceptance Report | [acceptance-report.md](../review/acceptance-report.md) |
 | Issues | [issues.md](../review/issues.md) |
+| Review Index | [INDEX.md](../review/INDEX.md) |
 <!-- END:review -->
