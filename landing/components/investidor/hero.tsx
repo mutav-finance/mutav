@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ScrambleButton } from "@/components/site/scramble-button";
-import { MonoKicker } from "@/components/site/mono-kicker";
+import { ScrambleButton } from "@/components/investidor/scramble-button";
+import { MonoKicker } from "@/components/shared/mono-kicker";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 export function Hero() {
