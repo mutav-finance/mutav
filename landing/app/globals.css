@@ -172,6 +172,11 @@
     background-color: var(--canvas);
     background-image: none;
   }
+  /* Audience-aware body bg via :has() — keeps body bg in sync with active route wrapper */
+  body:has([data-front="imobiliarias"]) {
+    background-color: var(--canvas);
+    background-image: none;
+  }
   /* Tabular numerals — JetBrains Mono mandatory for all numeric data */
   .font-mono,
   [class*="font-mono"] {
