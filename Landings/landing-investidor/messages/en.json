@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "title": "mutav. Rent insurance, the way it should work",
+    "description": "MUTAV. Brazilian rental guarantee protocol. When tenants miss payments, settlement is automatic. No paperwork, no queue.",
+    "ogTitle": "mutav. Rent insurance, the way it should work",
+    "ogDescription": "Programmable rental guarantee. Automated settlement, verifiable record."
+  },
+  "skipLink": "skip to content",
+  "nav": {
+    "logoLabel": "mutav",
+    "liveLabel": "protocol live",
+    "languageLabel": "Language",
+    "links": [
+      { "label": "Protocol", "href": "#protocol" },
+      { "label": "Vision", "href": "#solutions" },
+      { "label": "Team", "href": "#team" },
+      { "label": "Docs", "href": "#" }
+    ],
+    "ctaLabel": "Join the list"
+  },
+  "hero": {
+    "kicker": "we start with the guarantee",
+    "kickerIndex": "01",
+    "kickerTotal": "04",
+    "h1Line1": "Real asset,",
+    "h1Line2": "real yield.",
+    "h1Line3": "",
+    "subhead": "The on-chain rental guarantee fund. Opening real assets with real yield to investors through onchain guarantee funds.",
+    "manifesto": "",
+    "timelineSignal": ""
+  },
+  "socialProof": {
+    "kicker": "backing",
+    "items": [
+      {
+        "org": "Stellar Development Foundation",
+        "detail": "Stellar 37° - Acceleration Program",
+        "type": "acceleration"
+      }
+    ]
+  },
+  "gap": {
+    "kicker": "the problem",
+    "h2": "YOU ARE CORRELATED TO BTC\nAND CALLING IT A STRATEGY",
+    "items": [
+      {
+        "label": "",
+        "headline": "No diversification.",
+        "body": "BTC drops 40%. The whole portfolio moves together. You are leveraged to one narrative.."
+      },
+      {
+        "label": "",
+        "headline": "No security.",
+        "body": "The protocol behind your yield has no legal identity. No legal protection for your money."
+      },
+      {
+        "label": "",
+        "headline": "Locked billions.",
+        "body": "Brazil's billion-dollar rental guarantee market pays consistent fees. No on-chain vehicle existed. Until now."
+      }
+    ]
+  },
+  "solutions": {
+    "kicker": "our vision",
+    "h2Lines": ["REAL YIELD", "REAL INFRA", "REAL ACCESS"],
+    "items": [
+      {
+        "gapRef": "Correlation",
+        "headline": "Yield from rent.",
+        "body": "MUTAV yield comes from rental fees and Brazilian treasury. When crypto corrects, your position holds. Magic."
+      },
+      {
+        "gapRef": "No accountability",
+        "headline": "Legal structure.",
+        "body": "MUTAV built the infrastructure that opens this market. The full operation runs within a regulated framework."
+      },
+      {
+        "gapRef": "No access",
+        "headline": "On-chain for the 1st time.",
+        "body": "Tokenized Brazil's rental market. Three token classes. Any qualified investor. Self-custodial. The vehicle that didn't exist until now."
+      }
+    ]
+  },
+  "market": {
+    "kicker": "the market",
+    "h2": "A billion-dollar market that's never been open to you",
+    "featuredValue": "$770M",
+    "featuredLabel": "Brazil's Rent\nGuarantee Ecosystem",
+    "featuredBody": "The rental guarantee segment\nthat crypto has never accessed.",
+    "featuredBody2": "Consistent fees from physical contracts.",
+    "featuredSource": "+195% market growth since 2020",
+    "stats": [
+      {
+        "value": "$22B",
+        "label": "Brazil's total real estate market",
+        "source": "70,000 real agencies"
+      },
+      {
+        "value": "$258M",
+        "label": "Rental guarantee premiums (2024)",
+        "source": "rental insurance category only"
+      },
+      {
+        "value": "$60M",
+        "label": "Digital rental guarantee market (2025)",
+        "source": "app-based guarantee category only"
+      },
+      {
+        "value": "46.5M",
+        "label": "Brazilians renting as of 2024",
+        "source": "17.8M rental units"
+      }
+    ]
+  },
+  "tiers": {
+    "kicker": "how the fund works",
+    "h2Line1": "Three risk classes",
+    "h2Line2": "Choose your exposure",
+    "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield.",
+    "items": [
+      {
+        "token": "MTVL",
+        "riskLabel": "Last to absorb",
+        "yieldLabel": "Most stable",
+        "body": "Last in the waterfall. Designed for capital preservation with consistent yield from tokenized Brazilian treasury plus guarantee fees.",
+        "access": ""
+      },
+      {
+        "token": "MTVM",
+        "riskLabel": "Mid-tier exposure",
+        "yieldLabel": "Balanced yield",
+        "body": "Protected by MTVH. You absorb losses only if MTVH reaches a critical default threshold. Balanced exposure for investors who want meaningful yield without first-loss risk.",
+        "access": ""
+      },
+      {
+        "token": "MTVH",
+        "riskLabel": "First-loss",
+        "yieldLabel": "Highest yield",
+        "body": "You absorb defaults first. In exchange: maximum exposure to rental-guarantee market yield.",
+        "access": "MUTAV itself holds MTVH. Skin-in-the-game by design."
+      }
+    ],
+    "waterfall": ""
+  },
+  "midCta": {
+    "h2": "GET ACCESS WHEN WE LAUNCH",
+    "body": "Pilot launching 2026. Limited spots in the first cohort.",
+    "cta": "[ join the list ]",
+    "note": ""
+  },
+  "vision": {
+    "kicker": "the path. no dates, no promises",
+    "h2": "We start with the guarantee. The whole rental layer comes after",
+    "phases": [
+      {
+        "n": "01",
+        "label": "Now",
+        "title": "Rental guarantee",
+        "body": "Automatic payout to the landlord on default. Programmatic settlement, public record."
+      },
+      {
+        "n": "02",
+        "label": "Next",
+        "title": "Verifiable system",
+        "body": "Every payment, default, and settlement logged on-chain. Auditable by anyone."
+      },
+      {
+        "n": "03",
+        "label": "After",
+        "title": "MUTAV: programmable exposure",
+        "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
+      },
+      {
+        "n": "04",
+        "label": "Horizon",
+        "title": "Programmable payments and funds",
+        "body": "Optimizing what most blocks the rental market: transactions, payments, fund custody. Where it makes sense."
+      }
+    ]
+  },
+  "bifurcation": {
+    "kicker": "which side is yours?",
+    "h2Line1": "Tell us who you are",
+    "h2Line2": "We'll let you know when we're ready",
+    "cards": [
+      {
+        "n": "01",
+        "label": "Agency / Landlord",
+        "subjectLabel": "agency or landlord",
+        "body": "You rent, manage, or own property. You want a guarantee that pays.",
+        "aria": "Jump to the landlord and agency waitlist",
+        "cta": "continue below ↓"
+      },
+      {
+        "n": "02",
+        "label": "Investor",
+        "subjectLabel": "investor",
+        "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
+        "aria": "Jump to the investor waitlist",
+        "cta": "continue below ↓"
+      }
+    ]
+  },
+  "imobiliaria": {
+    "kickerIndex": "→ 01",
+    "kicker": "landlord or agency",
+    "h2": "You don't wait",
+    "items": [
+      "When the tenant is late, you get paid.",
+      "No form. No queue. No call to support.",
+      "The money lands in the registered account. Automatically."
+    ],
+    "dignity": "We'll let you know when we're ready. We won't spam.",
+    "consent": "By joining the list, you consent to the use of your email to receive updates about MUTAV. You can leave any time. Just reply to any email with \"unsubscribe\"."
+  },
+  "investidor": {
+    "kickerIndex": "→ 02",
+    "kicker": "investor",
+    "h2Line1": "Real yield",
+    "h2Line2": "Brazilian rental market, on-chain",
+    "items": [
+      "Rental-guarantee spread. Not a generic pool.",
+      "Programmatic settlement. Code open.",
+      "Named founders."
+    ],
+    "verifyCta": "[ verify the architecture → github.com/mutav-finance ]",
+    "tagline": "Don't trust. Verify."
+  },
+  "team": {
+    "kicker": "who's building it",
+    "eyebrow": "+30 years in the rental real estate market",
+    "h2": "The people behind it",
+    "subtitle": "Named founders. We ship in public.",
+    "teamCardTitle": "Building in public",
+    "teamCardBody": "Code open on GitHub. Architecture verifiable. No anonymous team.",
+    "founders": [
+      {
+        "initial": "D",
+        "name": "Matheus Draau",
+        "role": "Project Manager · Web3 Builder",
+        "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
+        "githubLabel": "Draau on GitHub"
+      },
+      {
+        "initial": "J",
+        "name": "Julia H. Buratto",
+        "role": "Blockchain & AI Product Engineer",
+        "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
+        "githubLabel": "jubs on GitHub"
+      }
+    ]
+  },
+  "faq": {
+    "h2": "Common questions",
+    "items": [
+      {
+        "q": "How does the waterfall work?",
+        "a": "Defaults hit MTVH first. Only if MTVH reaches a critical default threshold does MTVM absorb losses. MTVL is last in the waterfall."
+      },
+      {
+        "q": "How do I redeem?",
+        "a": "Tokens are self-custodial. Redemption via on-chain queue. 2.5% weekly cap, 0.25% exit fee."
+      },
+      {
+        "q": "How is the guarantee fee collected?",
+        "a": "Partner agencies register rental contracts on our platform to be covered by the guarantee. MUTAV's infrastructure handles the entire path that fee takes — from contract origination at the agency level all the way into the fund."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Real asset. Real yield.",
+    "subtitle": "The on-chain rental guarantee fund.",
+    "navLabel": "Footer",
+    "columns": [
+      {
+        "label": "Protocol",
+        "links": [
+          { "label": "Docs", "href": "#" }
+        ]
+      },
+      {
+        "label": "Built on",
+        "links": [
+          { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
+          { "label": "Stellar 37° Acceleration Program", "href": "https://stellar.org" }
+        ]
+      },
+      {
+        "label": "Legal",
+        "links": [
+          { "label": "privacy", "href": "/privacidade" },
+          { "label": "terms", "href": "/termos" }
+        ]
+      }
+    ],
+    "copyright": "© {year} mutav. Rental guarantee token."
+  },
+  "waitlist": {
+    "emailLabel": "Your email",
+    "emailPlaceholder": "you@example.com",
+    "submitting": "sending…",
+    "buttonLabel": {
+      "imobiliaria": "[ notify me ]",
+      "investidor": "[ join the list ]"
+    },
+    "success": {
+      "imobiliaria": "Received. You're on the landlord list. We'll let you know when we're ready.",
+      "investidor": "Received. You're on the investor list. Follow the build at github.com/mutav-finance."
+    },
+    "error": {
+      "INVALID": {
+        "imobiliaria": "Invalid email. Check the format and try again.",
+        "investidor": "Invalid email. Check the format."
+      },
+      "DUPLICATE": {
+        "imobiliaria": "That email is already on the list. We'll be in touch.",
+        "investidor": "Already on the list. Check the history on GitHub."
+      },
+      "RATE_LIMITED": {
+        "imobiliaria": "Too many attempts. Try again in a few minutes.",
+        "investidor": "Rate-limited. Try in a few minutes."
+      },
+      "SERVER_ERROR": {
+        "imobiliaria": "Couldn't save. Try again.",
+        "investidor": "Server error. Try again."
+      }
+    }
+  }
+}

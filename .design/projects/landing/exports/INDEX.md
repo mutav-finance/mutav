@@ -100,7 +100,8 @@ This file is the entry point for coding agents consuming GSP design output.
 | Section | File |
 |---------|------|
 | Build Manifest | [INDEX.md](../build/INDEX.md) |
-| Implementation | [`landing/`](../../../../landing/) |
+| Implementation (investidor) | [`Landings/landing-investidor/`](../../../../Landings/landing-investidor/) |
+| Implementation (imobiliaria) | [`Landings/landing-imobiliaria/`](../../../../Landings/landing-imobiliaria/) |
 <!-- END:build -->
 
 ## QA Review
@@ -110,4 +111,5 @@ This file is the entry point for coding agents consuming GSP design output.
 |---------|------|
 | Acceptance Report | [acceptance-report.md](../review/acceptance-report.md) |
 | Issues | [issues.md](../review/issues.md) |
+| Review Index | [INDEX.md](../review/INDEX.md) |
 <!-- END:review -->

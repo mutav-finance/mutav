@@ -3,20 +3,6 @@
 
 ---
 
-## ANTES DE LIGAR
-
-- Peça permissão para gravar
-- Abra o canvas de anotações (última seção)
-- Não mencione nenhuma solução durante a entrevista
-
----
-
-## ABERTURA · 1 min
-
-> _"Obrigado pelo tempo. Estou pesquisando como imobiliárias lidam com garantia locatícia — sem nada para vender, só quero entender sua experiência. Posso gravar?"_
-
----
-
 ## AQUECIMENTO · 1 min
 
 **"Quantos contratos de locação vocês têm ativos hoje, mais ou menos?"**

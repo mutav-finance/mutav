@@ -1,11 +1,11 @@
-# SGR — Agent Context
+# MUTAV — Agent Context
 
 ## Project
-SGR (Sistema de Garantia Registrada) — strategy, brand, docs, and shared specs across all chains.
+MUTAV — tokenização de garantia de aluguel. Strategy, brand, docs, and shared specs across all chains.
 Part of the [mutav-finance](https://github.com/mutav-finance) org.
 
 ## Sibling repos
-- `brand` — canonical brand artifacts; vendored into each consumer's `.design/branding/tga/`
+- `brand` — canonical brand artifacts; vendored into each consumer's `.design/branding/mutav/`
 - `mutav-solana` — Solana/Anchor smart contracts (Colosseum Frontier hackathon)
 - `mutav-stellar` — Stellar/Soroban smart contracts (NearX acceleration)
 - `mutav-app` — Next.js dashboard for managing rental guarantees
@@ -21,4 +21,4 @@ Part of the [mutav-finance](https://github.com/mutav-finance) org.
 Feature branches → squash merge PRs to main. `main` is protected.
 
 ## Brand artifacts
-Shared brand lives in the sibling `brand/` repo and is vendored into `.design/branding/tga/` here. To refine brand: `cd ../brand && claude`, run `/gsp-brand-*`, commit, then `bun brand:export` from `brand/` and review the resulting diffs in each consumer. To audit alignment: `cd ../brand && bun brand:audit`.
+Shared brand lives in the sibling `brand/` repo and is vendored into `.design/branding/mutav/` here. To refine brand: `cd ../brand && claude`, run `/gsp-brand-*`, commit, then `bun brand:export` from `brand/` and review the resulting diffs in each consumer. To audit alignment: `cd ../brand && bun brand:audit`.
