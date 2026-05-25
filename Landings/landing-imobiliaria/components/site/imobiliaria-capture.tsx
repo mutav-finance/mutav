@@ -31,6 +31,15 @@ export function ImobiliariaCapture() {
               </li>
             ))}
           </ol>
+
+          <div className="mt-10 border-t border-border pt-6">
+            <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-2">
+              {t("cobertura.kicker")}
+            </p>
+            <p className="mt-3 font-sans text-base-sm leading-relaxed text-text-2">
+              {t("cobertura.body")}
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col">

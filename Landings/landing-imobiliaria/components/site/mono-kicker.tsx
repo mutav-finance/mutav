@@ -28,6 +28,14 @@ export function MonoKicker({
           </span>
         </>
       )}
+      {index && !total && (
+        <>
+          <span className="text-text">{index}</span>
+          <span aria-hidden className="mx-2 text-text-3">
+            —
+          </span>
+        </>
+      )}
       <span>{label}</span>
     </p>
   );
