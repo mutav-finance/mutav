@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { CaretDown } from "@phosphor-icons/react";
 
 type Tier = {
   token: string;
@@ -73,10 +74,16 @@ export function Tiers() {
                 <button
                   key={tier.token}
                   onClick={() => setActive(i)}
-                  className={`w-full text-left pl-6 pr-8 py-8 flex flex-col gap-3 border-l-2 border-b-2 transition-colors duration-150 ${
+                  className={`relative w-full text-left pl-6 pr-8 py-8 flex flex-col gap-3 border-l-2 border-b-2 transition-colors duration-150 ${
                     isActive ? c.border : "border-transparent hover:border-border"
                   }`}
                 >
+                  <CaretDown
+                    aria-hidden
+                    className={`absolute top-3 left-3 size-3 transition-colors duration-150 ${
+                      isActive ? c.text : "text-text-3"
+                    }`}
+                  />
                   <div className="flex items-baseline gap-4">
                     <p className={`font-display font-bold text-2xl tracking-[-0.01em] transition-colors duration-150 ${
                       isActive ? c.text : "text-text-3"
