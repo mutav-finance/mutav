@@ -11,7 +11,7 @@
     "liveLabel": "protocol live",
     "languageLabel": "Language",
     "links": [
-      { "label": "Protocol", "href": "#tiers" },
+      { "label": "Protocol", "href": "#protocol" },
       { "label": "Vision", "href": "#solutions" },
       { "label": "Team", "href": "#team" },
       { "label": "Docs", "href": "#" }
@@ -62,7 +62,7 @@
   },
   "solutions": {
     "kicker": "our vision",
-    "h2Lines": ["REAL YIELD.", "REAL INFRA.", "REAL ACCESS."],
+    "h2Lines": ["REAL YIELD", "REAL INFRA", "REAL ACCESS"],
     "items": [
       {
         "gapRef": "Correlation",
@@ -83,7 +83,7 @@
   },
   "market": {
     "kicker": "the market",
-    "h2": "A billion-dollar market that's never been open to you.",
+    "h2": "A billion-dollar market that's never been open to you",
     "featuredValue": "$770M",
     "featuredLabel": "Brazil's Rent\nGuarantee Ecosystem",
     "featuredBody": "The rental guarantee segment\nthat crypto has never accessed.",
@@ -114,8 +114,8 @@
   },
   "tiers": {
     "kicker": "how the fund works",
-    "h2Line1": "Three risk classes.",
-    "h2Line2": "Choose your exposure.",
+    "h2Line1": "Three risk classes",
+    "h2Line2": "Choose your exposure",
     "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield.",
     "items": [
       {
@@ -150,7 +150,7 @@
   },
   "vision": {
     "kicker": "the path. no dates, no promises",
-    "h2": "We start with the guarantee. The whole rental layer comes after.",
+    "h2": "We start with the guarantee. The whole rental layer comes after",
     "phases": [
       {
         "n": "01",
@@ -180,8 +180,8 @@
   },
   "bifurcation": {
     "kicker": "which side is yours?",
-    "h2Line1": "Tell us who you are.",
-    "h2Line2": "We'll let you know when we're ready.",
+    "h2Line1": "Tell us who you are",
+    "h2Line2": "We'll let you know when we're ready",
     "cards": [
       {
         "n": "01",
@@ -204,7 +204,7 @@
   "imobiliaria": {
     "kickerIndex": "→ 01",
     "kicker": "landlord or agency",
-    "h2": "You don't wait.",
+    "h2": "You don't wait",
     "items": [
       "When the tenant is late, you get paid.",
       "No form. No queue. No call to support.",
@@ -216,8 +216,8 @@
   "investidor": {
     "kickerIndex": "→ 02",
     "kicker": "investor",
-    "h2Line1": "Real yield.",
-    "h2Line2": "Brazilian rental market, on-chain.",
+    "h2Line1": "Real yield",
+    "h2Line2": "Brazilian rental market, on-chain",
     "items": [
       "Rental-guarantee spread. Not a generic pool.",
       "Programmatic settlement. Code open.",
@@ -251,7 +251,7 @@
     ]
   },
   "faq": {
-    "h2": "Common questions.",
+    "h2": "Common questions",
     "items": [
       {
         "q": "How does the waterfall work?",

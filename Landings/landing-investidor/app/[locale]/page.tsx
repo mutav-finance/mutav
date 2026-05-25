@@ -5,6 +5,7 @@ import { Hero } from "@/components/site/hero";
 import { TheGap } from "@/components/site/the-gap";
 import { Solutions } from "@/components/site/solutions";
 import { Market } from "@/components/site/market";
+import { Protocol } from "@/components/site/protocol";
 import { Tiers } from "@/components/site/tiers";
 import { MidCta } from "@/components/site/mid-cta";
 import { VisionArc } from "@/components/site/vision-arc";
@@ -30,6 +31,7 @@ export default async function Home({
         <TheGap />
         <Solutions />
         <Market />
+        <Protocol />
         <Tiers />
         <MidCta />
         <Team />

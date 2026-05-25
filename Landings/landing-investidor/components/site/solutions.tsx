@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { AnimatedSolutionsHeading } from "./animated-solutions-heading";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { SolutionVisual } from "./solutions-visuals";
 
 type SolutionItem = { gapRef: string; headline: string; body: string };
 
@@ -22,7 +23,8 @@ export function Solutions() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
         <div className="flex justify-center">
           <div>
-            <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3 mb-2">
+            <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3 mb-2 flex items-center gap-3">
+              <span className="block w-px h-3 bg-accent shrink-0" aria-hidden />
               {t("kicker")}
             </p>
             <AnimatedSolutionsHeading
@@ -53,20 +55,9 @@ export function Solutions() {
                 </p>
                 <div
                   aria-hidden
-                  className="w-full aspect-video bg-surface-2 border border-border flex items-center justify-center"
+                  className="w-full aspect-video bg-canvas border border-border flex items-center justify-center px-6"
                 >
-                  <svg
-                    className="w-8 h-8 text-text-3"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1}
-                  >
-                    <path d="M21 15l-5-5L10 16l-3-3-4 4" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <rect x="3" y="3" width="18" height="18" />
-                  </svg>
+                  <SolutionVisual index={i} />
                 </div>
               </ShineBorder>
             </BlurFade>

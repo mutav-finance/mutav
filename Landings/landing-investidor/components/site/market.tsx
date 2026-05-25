@@ -28,7 +28,7 @@ export function Market() {
               >
                 {t("h2")}
                 <br />
-                <span className="text-accent">until now.</span>
+                <span className="text-accent">until now</span>
               </h2>
             </div>
 

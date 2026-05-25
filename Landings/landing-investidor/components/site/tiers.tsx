@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
@@ -23,6 +24,13 @@ const TOKEN_CSS_VAR: Record<string, string> = {
   MTVL: "var(--success)",
 };
 
+const TOKEN_IMG: Record<string, string> = {
+  MTVH: "/img/MTVH.jpg",
+  MTVM: "/img/MTVM.jpg",
+  MTVL: "/img/MTVL.jpg",
+};
+
+
 export function Tiers() {
   const t = useTranslations("tiers");
   const items = t.raw("items") as Tier[];
@@ -39,7 +47,7 @@ export function Tiers() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
         <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3 mb-6 flex items-center gap-3">
           <span className="block w-px h-3 bg-accent shrink-0" aria-hidden />
-          MUTAV FUND
+          MUTAV TREASURY
         </p>
         <h2
           id="tiers-h2"
@@ -117,6 +125,28 @@ export function Tiers() {
           {/* Right — tier image with Precision Brutalism frame */}
           <div className={`bg-surface min-h-[480px] lg:min-h-0 relative overflow-hidden border-2 transition-colors duration-300 ${colors.border}`}>
 
+
+            {/* Tier image */}
+            {TOKEN_IMG[items[active]?.token] && (
+              <Image
+                key={items[active].token}
+                src={TOKEN_IMG[items[active].token]}
+                alt={items[active].token}
+                fill
+                className="object-cover opacity-40"
+                style={items[active].token === "MTVM" ? { objectPosition: "center 35%" } : undefined}
+              />
+            )}
+
+            {/* Scanlines */}
+            <div
+              aria-hidden
+              className="absolute inset-0 z-10 pointer-events-none"
+              style={{
+                backgroundImage: `repeating-linear-gradient(to bottom, ${TOKEN_CSS_VAR[items[active]?.token] ?? "var(--accent)"} 0px, ${TOKEN_CSS_VAR[items[active]?.token] ?? "var(--accent)"} 1px, transparent 1px, transparent 8px)`,
+                opacity: items[active]?.token === "MTVM" ? 0.3 : 0.4,
+              }}
+            />
 
             {/* Tier-tinted overlay */}
             <div

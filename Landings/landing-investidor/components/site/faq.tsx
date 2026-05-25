@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
@@ -11,8 +12,27 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section aria-labelledby="faq-h2" className="border-b border-border">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
+    <section aria-labelledby="faq-h2" className="relative border-b border-border overflow-hidden">
+      {/* Background image — right-aligned */}
+      <div className="absolute inset-0 flex items-center justify-end pointer-events-none" aria-hidden>
+        <div className="w-full mx-auto max-w-[1440px] px-6 lg:px-8 flex justify-end translate-x-[15%]">
+          <div className="relative w-[960px] h-[1080px] -translate-y-[10%]">
+            <Image
+              src="/img/9.jpg"
+              alt=""
+              fill
+              className="object-cover grayscale opacity-15"
+            />
+            <div className="absolute inset-0 bg-canvas opacity-30 mix-blend-multiply" />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to right, var(--canvas) 0%, transparent 25%, transparent 75%, var(--canvas) 100%)" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
         <div className="lg:grid lg:grid-cols-2">
           <div>
             <h2
@@ -51,3 +71,4 @@ export function Faq() {
     </section>
   );
 }
+
