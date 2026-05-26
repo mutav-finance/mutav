@@ -175,14 +175,6 @@
   animation-play-state: paused;
 }
 
-/* Live amber square pulse — only ambient animation in the system */
-@keyframes mutav-live-pulse {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.4; }
-}
-.mutav-live-square {
-  animation: mutav-live-pulse 2s linear infinite;
-}
 /* Solution cards — sequential dot indicator, left-to-right pass */
 @keyframes mutav-dot-blink {
   0%   { opacity: 1; }
@@ -196,8 +188,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mutav-live-square { animation: none; opacity: 1; }
-  .mutav-dot-blink   { animation: none; opacity: 1; }
+  .mutav-dot-blink { animation: none; opacity: 1; }
   html { scroll-behavior: auto !important; }
 }
 
