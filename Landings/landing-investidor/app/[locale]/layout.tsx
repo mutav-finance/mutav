@@ -54,7 +54,7 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale, namespace: "meta" });
 
   return (
     <html lang={locale} className={`${geist.variable} h-full antialiased`}>

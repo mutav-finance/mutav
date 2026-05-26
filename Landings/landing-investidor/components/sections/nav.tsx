@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
-import { Logo } from "./logo";
-import { LiveSquare } from "./live-square";
-import { ScrambleButton } from "@/components/site/scramble-button";
+import { Logo } from "@/components/primitives/logo";
+import { LiveSquare } from "@/components/primitives/live-square";
+import { ScrambleButton } from "@/components/primitives/scramble-button";
 
 type NavLink = { label: string; href: string };
 

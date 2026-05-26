@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Typewriter } from "./typewriter";
+import { Typewriter } from "@/components/primitives/typewriter";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { BlurFade } from "@/components/ui/blur-fade";
 

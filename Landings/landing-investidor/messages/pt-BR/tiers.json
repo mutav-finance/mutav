@@ -1,0 +1,30 @@
+{
+  "kicker": "how the fund works",
+  "h2Line1": "Three risk classes",
+  "h2Line2": "Choose your exposure",
+  "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield.",
+  "items": [
+    {
+      "token": "MTVL",
+      "riskLabel": "Last to absorb",
+      "yieldLabel": "Most stable",
+      "body": "Last in the waterfall. Designed for capital preservation with consistent yield from tokenized Brazilian treasury plus guarantee fees.",
+      "access": ""
+    },
+    {
+      "token": "MTVM",
+      "riskLabel": "Mid-tier exposure",
+      "yieldLabel": "Balanced yield",
+      "body": "Protected by MTVH. You absorb losses only if MTVH reaches a critical default threshold. Balanced exposure for investors who want meaningful yield without first-loss risk.",
+      "access": ""
+    },
+    {
+      "token": "MTVH",
+      "riskLabel": "First-loss",
+      "yieldLabel": "Highest yield",
+      "body": "You absorb defaults first. In exchange: maximum exposure to rental-guarantee market yield.",
+      "access": "MUTAV itself holds MTVH. Skin-in-the-game by design."
+    }
+  ],
+  "waterfall": ""
+}

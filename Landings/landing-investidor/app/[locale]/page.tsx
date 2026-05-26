@@ -1,18 +1,17 @@
 import { setRequestLocale } from "next-intl/server";
-import { SiteNav } from "@/components/site/nav";
-import { SocialProof } from "@/components/site/social-proof";
-import { Hero } from "@/components/site/hero";
-import { TheGap } from "@/components/site/the-gap";
-import { Solutions } from "@/components/site/solutions";
-import { Market } from "@/components/site/market";
-import { Protocol } from "@/components/site/protocol";
-import { Tiers } from "@/components/site/tiers";
-import { MidCta } from "@/components/site/mid-cta";
-import { VisionArc } from "@/components/site/vision-arc";
-import { InvestidorCapture } from "@/components/site/investidor-capture";
-import { Team } from "@/components/site/team";
-import { Faq } from "@/components/site/faq";
-import { SiteFooter } from "@/components/site/footer";
+import { SiteNav } from "@/components/sections/nav";
+import { SocialProof } from "@/components/sections/social-proof";
+import { Hero } from "@/components/sections/hero";
+import { TheGap } from "@/components/sections/the-gap";
+import { Solutions } from "@/components/sections/solutions";
+import { Market } from "@/components/sections/market";
+import { Protocol } from "@/components/sections/protocol";
+import { Tiers } from "@/components/sections/tiers";
+import { MidCta } from "@/components/sections/mid-cta";
+import { InvestidorCapture } from "@/components/marketing/investidor-capture";
+import { Team } from "@/components/sections/team";
+import { Faq } from "@/components/sections/faq";
+import { SiteFooter } from "@/components/sections/footer";
 
 export default async function Home({
   params,
@@ -34,6 +33,7 @@ export default async function Home({
         <Protocol />
         <Tiers />
         <MidCta />
+        <InvestidorCapture />
         <Team />
         <Faq />
       </main>

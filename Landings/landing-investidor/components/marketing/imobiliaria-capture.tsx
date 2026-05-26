@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
-import { WaitlistForm } from "./waitlist-form";
+import { MonoKicker } from "@/components/primitives/mono-kicker";
+import { WaitlistForm } from "@/components/marketing/waitlist-form";
 
 export function ImobiliariaCapture() {
   const t = useTranslations("imobiliaria");

@@ -1,0 +1,24 @@
+{
+  "kicker": "who's building it",
+  "eyebrow": "+30 years in the rental real estate market",
+  "h2": "The people behind it",
+  "subtitle": "Named founders. We ship in public.",
+  "teamCardTitle": "Building in public",
+  "teamCardBody": "Code open on GitHub. Architecture verifiable. No anonymous team.",
+  "founders": [
+    {
+      "initial": "D",
+      "name": "Matheus Draau",
+      "role": "Project Manager · Web3 Builder",
+      "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
+      "githubLabel": "Draau on GitHub"
+    },
+    {
+      "initial": "J",
+      "name": "Julia H. Buratto",
+      "role": "Blockchain & AI Product Engineer",
+      "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
+      "githubLabel": "jubs on GitHub"
+    }
+  ]
+}

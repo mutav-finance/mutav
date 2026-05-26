@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
-import { AnimatedSolutionsHeading } from "./animated-solutions-heading";
+import { AnimatedSolutionsHeading } from "@/components/primitives/animated-solutions-heading";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { SolutionVisual } from "./solutions-visuals";
+import { SolutionVisual } from "@/components/sections/solutions-visuals";
 
 type SolutionItem = { gapRef: string; headline: string; body: string };
 

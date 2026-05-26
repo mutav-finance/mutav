@@ -8,7 +8,7 @@ import {
   type Audience,
   type WaitlistResult,
 } from "@/app/actions/waitlist";
-import { ScrambleButton } from "@/components/site/scramble-button";
+import { ScrambleButton } from "@/components/primitives/scramble-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 

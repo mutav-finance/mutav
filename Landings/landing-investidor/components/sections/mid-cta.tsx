@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ScrambleButton } from "@/components/site/scramble-button";
+import { ScrambleButton } from "@/components/primitives/scramble-button";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 export function MidCta() {

@@ -1,0 +1,25 @@
+{
+  "kicker": "our vision",
+  "h2Lines": [
+    "REAL YIELD",
+    "REAL INFRA",
+    "REAL ACCESS"
+  ],
+  "items": [
+    {
+      "gapRef": "Correlation",
+      "headline": "Yield from rent.",
+      "body": "MUTAV yield comes from rental fees and Brazilian treasury. When crypto corrects, your position holds. Magic."
+    },
+    {
+      "gapRef": "No accountability",
+      "headline": "Legal structure.",
+      "body": "MUTAV built the infrastructure that opens this market. The full operation runs within a regulated framework."
+    },
+    {
+      "gapRef": "No access",
+      "headline": "On-chain for the 1st time.",
+      "body": "Tokenized Brazil's rental market. Three token classes. Any qualified investor. Self-custodial. The vehicle that didn't exist until now."
+    }
+  ]
+}

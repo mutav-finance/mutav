@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { WaitlistForm } from "./waitlist-form";
+import { WaitlistForm } from "@/components/marketing/waitlist-form";
 
 export function InvestidorCapture() {
   const t = useTranslations("investidor");
@@ -7,7 +7,7 @@ export function InvestidorCapture() {
 
   return (
     <section
-      id="investidor"
+      id="investidor-form"
       aria-labelledby="inv-h2"
       className="border-b border-border"
     >

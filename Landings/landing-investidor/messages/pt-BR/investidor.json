@@ -1,0 +1,13 @@
+{
+  "kickerIndex": "→ 02",
+  "kicker": "investor",
+  "h2Line1": "Real yield",
+  "h2Line2": "Brazilian rental market, on-chain",
+  "items": [
+    "Rental-guarantee spread. Not a generic pool.",
+    "Programmatic settlement. Code open.",
+    "Named founders."
+  ],
+  "verifyCta": "[ verify the architecture → github.com/mutav-finance ]",
+  "tagline": "Don't trust. Verify."
+}

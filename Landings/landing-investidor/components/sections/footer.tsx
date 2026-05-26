@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import { Logo } from "./logo";
-import { LiveSquare } from "./live-square";
+import { Logo } from "@/components/primitives/logo";
+import { LiveSquare } from "@/components/primitives/live-square";
 
 type FooterLink = { label: string; href: string };
 type FooterColumn = { label: string; links: FooterLink[] };

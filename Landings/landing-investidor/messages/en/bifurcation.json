@@ -1,0 +1,23 @@
+{
+  "kicker": "which side is yours?",
+  "h2Line1": "Tell us who you are",
+  "h2Line2": "We'll let you know when we're ready",
+  "cards": [
+    {
+      "n": "01",
+      "label": "Agency / Landlord",
+      "subjectLabel": "agency or landlord",
+      "body": "You rent, manage, or own property. You want a guarantee that pays.",
+      "aria": "Jump to the landlord and agency waitlist",
+      "cta": "continue below ↓"
+    },
+    {
+      "n": "02",
+      "label": "Investor",
+      "subjectLabel": "investor",
+      "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
+      "aria": "Jump to the investor waitlist",
+      "cta": "continue below ↓"
+    }
+  ]
+}
