@@ -8,7 +8,7 @@
   },
   "success": {
     "imobiliaria": "Recebido. Você está na lista de proprietários e imobiliárias. A gente avisa quando estiver pronto.",
-    "investidor": "Recebido. Você está na lista de investidores. Acompanhe o build em github.com/mutav-finance."
+    "investidor": "Recebido. Você está na lista de investidores. Acompanhe o build em x.com/Mutavfinance."
   },
   "error": {
     "INVALID": {
@@ -17,7 +17,7 @@
     },
     "DUPLICATE": {
       "imobiliaria": "Esse email já está na lista. A gente entra em contato.",
-      "investidor": "Já está na lista. Confira o histórico no GitHub."
+      "investidor": "Já está na lista. Acompanhe o build em x.com/Mutavfinance."
     },
     "RATE_LIMITED": {
       "imobiliaria": "Muitas tentativas. Tente daqui a alguns minutos.",

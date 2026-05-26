@@ -34,7 +34,7 @@ export function SiteNav() {
 
         <div className="flex items-center gap-5">
           <LanguageToggle />
-          <ScrambleButton variant="investidor" href="#mid-cta">
+          <ScrambleButton variant="investidor" href="#investidor-form">
             {t("ctaLabel") + " →"}
           </ScrambleButton>
         </div>

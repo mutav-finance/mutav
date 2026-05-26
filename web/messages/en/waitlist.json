@@ -8,7 +8,7 @@
   },
   "success": {
     "imobiliaria": "Received. You're on the landlord list. We'll let you know when we're ready.",
-    "investidor": "Received. You're on the investor list. Follow the build at github.com/mutav-finance."
+    "investidor": "Received. You're on the investor list. Stay updated at x.com/Mutavfinance."
   },
   "error": {
     "INVALID": {
@@ -17,7 +17,7 @@
     },
     "DUPLICATE": {
       "imobiliaria": "That email is already on the list. We'll be in touch.",
-      "investidor": "Already on the list. Check the history on GitHub."
+      "investidor": "Already on the list. Stay updated at x.com/Mutavfinance."
     },
     "RATE_LIMITED": {
       "imobiliaria": "Too many attempts. Try again in a few minutes.",

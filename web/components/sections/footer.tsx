@@ -22,7 +22,7 @@ export function SiteFooter() {
               {t("subtitle")}
             </p>
             <a
-              href="#"
+              href="https://x.com/Mutavfinance"
               target="_blank"
               rel="noopener"
               aria-label="MUTAV on X / Twitter"

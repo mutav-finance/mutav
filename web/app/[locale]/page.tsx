@@ -7,7 +7,6 @@ import { Solutions } from "@/components/sections/solutions";
 import { Market } from "@/components/sections/market";
 import { Protocol } from "@/components/sections/protocol";
 import { Tiers } from "@/components/sections/tiers";
-import { MidCta } from "@/components/sections/mid-cta";
 import { InvestidorCapture } from "@/components/marketing/investidor-capture";
 import { Team } from "@/components/sections/team";
 import { Faq } from "@/components/sections/faq";
@@ -32,8 +31,7 @@ export default async function Home({
         <Market />
         <Protocol />
         <Tiers />
-        <MidCta />
-        <InvestidorCapture />
+<InvestidorCapture />
         <Team />
         <Faq />
       </main>
