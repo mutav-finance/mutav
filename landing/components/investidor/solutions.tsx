@@ -7,7 +7,7 @@ import { SolutionVisual } from "./solutions-visuals";
 type SolutionItem = { gapRef: string; headline: string; body: string };
 
 export function Solutions() {
-  const t = useTranslations("solutions");
+  const t = useTranslations("investidor.solutions");
   const rawItems = t.raw("items") as SolutionItem[];
   const items = [rawItems[2], rawItems[0], rawItems[1]];
 

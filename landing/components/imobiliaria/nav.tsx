@@ -4,7 +4,7 @@ import { LiveSquare } from "@/components/shared/live-square";
 import { LanguageToggle } from "@/components/shared/language-toggle";
 
 export function SiteNav() {
-  const t = useTranslations("nav");
+  const t = useTranslations("imobiliaria.nav");
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-canvas/95 backdrop-blur-[0px]">
       <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-6 lg:px-8">

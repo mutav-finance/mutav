@@ -1,99 +1,9 @@
 {
-  "nav": {
-    "logoLabel": "mutav — home",
-    "liveLabel": "protocol live",
-    "languageLabel": "Language"
-  },
-  "footer": {
-    "tagline": "Rent insurance, the way it should work.",
-    "subtitle": "Rental guarantee protocol built on Stellar.",
-    "navLabel": "Footer",
-    "columns": [
-      {
-        "label": "Protocol",
-        "links": [
-          {
-            "label": "github.com/mutav-finance",
-            "href": "https://github.com/mutav-finance"
-          },
-          {
-            "label": "white paper",
-            "href": "https://github.com/mutav-finance/mutav"
-          }
-        ]
-      },
-      {
-        "label": "Builders",
-        "links": [
-          {
-            "label": "Draau",
-            "href": "https://github.com/draaujpeg"
-          },
-          {
-            "label": "jubs",
-            "href": "https://github.com/hoffms"
-          }
-        ]
-      },
-      {
-        "label": "Stellar",
-        "links": [
-          {
-            "label": "Stellar Development Foundation",
-            "href": "https://stellar.org"
-          },
-          {
-            "label": "Stellar Acceleration",
-            "href": "https://stellar.org/foundation/stellar-community-fund"
-          }
-        ]
-      },
-      {
-        "label": "Legal",
-        "links": [
-          {
-            "label": "privacy",
-            "href": "/privacidade"
-          },
-          {
-            "label": "terms",
-            "href": "/termos"
-          }
-        ]
-      }
-    ],
-    "copyright": "© {year} mutav — rental guarantee token."
-  },
-  "skipLink": "skip to content",
-  "vision": {
-    "kicker": "the path — no dates, no promises",
-    "h2": "We start with the guarantee. The whole rental layer comes after.",
-    "phases": [
-      {
-        "n": "01",
-        "label": "Now",
-        "title": "Rental guarantee",
-        "body": "Automatic payout to the landlord on default. Programmatic settlement, public record."
-      },
-      {
-        "n": "02",
-        "label": "Next",
-        "title": "On-chain reputation score",
-        "body": "Payment history as verifiable reputation — for tenants, landlords, and agencies."
-      },
-      {
-        "n": "03",
-        "label": "After",
-        "title": "MUTAV — programmable exposure",
-        "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
-      },
-      {
-        "n": "04",
-        "label": "Horizon",
-        "title": "Programmable payments and funds",
-        "body": "Optimizing what most blocks the rental market — transactions, payments, fund custody. Where it makes sense."
-      }
-    ]
+  "meta": {
+    "title": "mutav — rent insurance, the way it should work",
+    "description": "MUTAV — Brazilian rental guarantee protocol. When tenants miss payments, settlement is automatic. No paperwork, no queue.",
+    "ogTitle": "mutav — rent insurance, the way it should work",
+    "ogDescription": "Programmable rental guarantee. Automated settlement, verifiable record."
   },
   "waitlist": {
     "emailLabel": "Your email",
@@ -126,56 +36,13 @@
       }
     }
   },
-  "meta": {
-    "title": "mutav — rent insurance, the way it should work",
-    "description": "MUTAV — Brazilian rental guarantee protocol. When tenants miss payments, settlement is automatic. No paperwork, no queue.",
-    "ogTitle": "mutav — rent insurance, the way it should work",
-    "ogDescription": "Programmable rental guarantee. Automated settlement, verifiable record."
-  },
-  "team": {
-    "kicker": "who's building it",
-    "h2": "Not an anonymous project.",
-    "founders": [
-      {
-        "initial": "D",
-        "name": "Matheus \"Draau\" de Pauli",
-        "role": "Project Manager · Web3 Builder",
-        "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
-        "githubLabel": "Draau on GitHub"
-      },
-      {
-        "initial": "J",
-        "name": "Julia Hoffmann Buratto",
-        "role": "Design Engineer · UFSC Architect",
-        "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
-        "githubLabel": "jubs on GitHub"
-      }
-    ]
-  },
-  "bifurcation": {
-    "kicker": "which side is yours?",
-    "h2Line1": "Tell us who you are.",
-    "h2Line2": "We'll let you know when we're ready.",
-    "cards": [
-      {
-        "n": "01",
-        "label": "Agency / Landlord",
-        "subjectLabel": "agency or landlord",
-        "body": "You rent, manage, or own property. You want a guarantee that pays.",
-        "aria": "Jump to the landlord and agency waitlist",
-        "cta": "continue below ↓"
-      },
-      {
-        "n": "02",
-        "label": "Investor",
-        "subjectLabel": "investor",
-        "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
-        "aria": "Jump to the investor waitlist",
-        "cta": "continue below ↓"
-      }
-    ]
-  },
+  "skipLink": "skip to content",
   "imobiliaria": {
+    "nav": {
+      "logoLabel": "mutav — home",
+      "liveLabel": "protocol live",
+      "languageLabel": "Language"
+    },
     "hero": {
       "kicker": "we start with the guarantee",
       "kickerIndex": "01",
@@ -246,6 +113,59 @@
       ],
       "note": "Reference figures. Final details confirmed before launch."
     },
+    "vision": {
+      "kicker": "the path — no dates, no promises",
+      "h2": "We start with the guarantee. The whole rental layer comes after.",
+      "phases": [
+        {
+          "n": "01",
+          "label": "Now",
+          "title": "Rental guarantee",
+          "body": "Automatic payout to the landlord on default. Programmatic settlement, public record."
+        },
+        {
+          "n": "02",
+          "label": "Next",
+          "title": "On-chain reputation score",
+          "body": "Payment history as verifiable reputation — for tenants, landlords, and agencies."
+        },
+        {
+          "n": "03",
+          "label": "After",
+          "title": "MUTAV — programmable exposure",
+          "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
+        },
+        {
+          "n": "04",
+          "label": "Horizon",
+          "title": "Programmable payments and funds",
+          "body": "Optimizing what most blocks the rental market — transactions, payments, fund custody. Where it makes sense."
+        }
+      ]
+    },
+    "bifurcation": {
+      "kicker": "which side is yours?",
+      "h2Line1": "Tell us who you are.",
+      "h2Line2": "We'll let you know when we're ready.",
+      "cards": [
+        {
+          "n": "01",
+          "label": "Agency / Landlord",
+          "subjectLabel": "agency or landlord",
+          "body": "You rent, manage, or own property. You want a guarantee that pays.",
+          "aria": "Jump to the landlord and agency waitlist",
+          "cta": "continue below ↓"
+        },
+        {
+          "n": "02",
+          "label": "Investor",
+          "subjectLabel": "investor",
+          "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
+          "aria": "Jump to the investor waitlist",
+          "cta": "continue below ↓"
+        }
+      ]
+    },
     "imobiliaria": {
       "kickerIndex": "→ 01",
       "kicker": "agency or landlord",
@@ -285,9 +205,113 @@
       ],
       "verifyCta": "[ verify the architecture → github.com/mutav-finance ]",
       "tagline": "Don't trust. Verify."
+    },
+    "team": {
+      "kicker": "who's building it",
+      "h2": "Not an anonymous project.",
+      "founders": [
+        {
+          "initial": "D",
+          "name": "Matheus \"Draau\" de Pauli",
+          "role": "Project Manager · Web3 Builder",
+          "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
+          "githubLabel": "Draau on GitHub"
+        },
+        {
+          "initial": "J",
+          "name": "Julia Hoffmann Buratto",
+          "role": "Design Engineer · UFSC Architect",
+          "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
+          "githubLabel": "jubs on GitHub"
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Rent insurance, the way it should work.",
+      "subtitle": "Rental guarantee protocol built on Stellar.",
+      "navLabel": "Footer",
+      "columns": [
+        {
+          "label": "Protocol",
+          "links": [
+            {
+              "label": "github.com/mutav-finance",
+              "href": "https://github.com/mutav-finance"
+            },
+            {
+              "label": "white paper",
+              "href": "https://github.com/mutav-finance/mutav"
+            }
+          ]
+        },
+        {
+          "label": "Builders",
+          "links": [
+            {
+              "label": "Draau",
+              "href": "https://github.com/draaujpeg"
+            },
+            {
+              "label": "jubs",
+              "href": "https://github.com/hoffms"
+            }
+          ]
+        },
+        {
+          "label": "Stellar",
+          "links": [
+            {
+              "label": "Stellar Development Foundation",
+              "href": "https://stellar.org"
+            },
+            {
+              "label": "Stellar Acceleration",
+              "href": "https://stellar.org/foundation/stellar-community-fund"
+            }
+          ]
+        },
+        {
+          "label": "Legal",
+          "links": [
+            {
+              "label": "privacy",
+              "href": "/privacidade"
+            },
+            {
+              "label": "terms",
+              "href": "/termos"
+            }
+          ]
+        }
+      ],
+      "copyright": "© {year} mutav — rental guarantee token."
     }
   },
   "investidor": {
+    "nav": {
+      "logoLabel": "mutav",
+      "liveLabel": "protocol live",
+      "languageLabel": "Language",
+      "links": [
+        {
+          "label": "Protocol",
+          "href": "#protocol"
+        },
+        {
+          "label": "Vision",
+          "href": "#solutions"
+        },
+        {
+          "label": "Team",
+          "href": "#team"
+        },
+        {
+          "label": "Docs",
+          "href": "#"
+        }
+      ],
+      "ctaLabel": "Join the list"
+    },
     "hero": {
       "kicker": "we start with the guarantee",
       "kickerIndex": "01",
@@ -422,6 +446,59 @@
       "cta": "[ join the list ]",
       "note": ""
     },
+    "vision": {
+      "kicker": "the path. no dates, no promises",
+      "h2": "We start with the guarantee. The whole rental layer comes after",
+      "phases": [
+        {
+          "n": "01",
+          "label": "Now",
+          "title": "Rental guarantee",
+          "body": "Automatic payout to the landlord on default. Programmatic settlement, public record."
+        },
+        {
+          "n": "02",
+          "label": "Next",
+          "title": "Verifiable system",
+          "body": "Every payment, default, and settlement logged on-chain. Auditable by anyone."
+        },
+        {
+          "n": "03",
+          "label": "After",
+          "title": "MUTAV: programmable exposure",
+          "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
+        },
+        {
+          "n": "04",
+          "label": "Horizon",
+          "title": "Programmable payments and funds",
+          "body": "Optimizing what most blocks the rental market: transactions, payments, fund custody. Where it makes sense."
+        }
+      ]
+    },
+    "bifurcation": {
+      "kicker": "which side is yours?",
+      "h2Line1": "Tell us who you are",
+      "h2Line2": "We'll let you know when we're ready",
+      "cards": [
+        {
+          "n": "01",
+          "label": "Agency / Landlord",
+          "subjectLabel": "agency or landlord",
+          "body": "You rent, manage, or own property. You want a guarantee that pays.",
+          "aria": "Jump to the landlord and agency waitlist",
+          "cta": "continue below ↓"
+        },
+        {
+          "n": "02",
+          "label": "Investor",
+          "subjectLabel": "investor",
+          "body": "You operate on Stellar or DeFi. You want real yield with verifiable collateral.",
+          "aria": "Jump to the investor waitlist",
+          "cta": "continue below ↓"
+        }
+      ]
+    },
     "imobiliaria": {
       "kickerIndex": "→ 01",
       "kicker": "landlord or agency",
@@ -447,6 +524,30 @@
       "verifyCta": "[ verify the architecture → github.com/mutav-finance ]",
       "tagline": "Don't trust. Verify."
     },
+    "team": {
+      "kicker": "who's building it",
+      "eyebrow": "+30 years in the rental real estate market",
+      "h2": "The people behind it",
+      "subtitle": "Named founders. We ship in public.",
+      "teamCardTitle": "Building in public",
+      "teamCardBody": "Code open on GitHub. Architecture verifiable. No anonymous team.",
+      "founders": [
+        {
+          "initial": "D",
+          "name": "Matheus Draau",
+          "role": "Project Manager · Web3 Builder",
+          "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
+          "githubLabel": "Draau on GitHub"
+        },
+        {
+          "initial": "J",
+          "name": "Julia H. Buratto",
+          "role": "Blockchain & AI Product Engineer",
+          "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
+          "githubLabel": "jubs on GitHub"
+        }
+      ]
+    },
     "faq": {
       "h2": "Common questions",
       "items": [
@@ -463,6 +564,49 @@
           "a": "Partner agencies register rental contracts on our platform to be covered by the guarantee. MUTAV's infrastructure handles the entire path that fee takes — from contract origination at the agency level all the way into the fund."
         }
       ]
+    },
+    "footer": {
+      "tagline": "Real asset. Real yield.",
+      "subtitle": "The on-chain rental guarantee fund.",
+      "navLabel": "Footer",
+      "columns": [
+        {
+          "label": "Protocol",
+          "links": [
+            {
+              "label": "Docs",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "label": "Built on",
+          "links": [
+            {
+              "label": "Stellar Development Foundation",
+              "href": "https://stellar.org"
+            },
+            {
+              "label": "Stellar 37° Acceleration Program",
+              "href": "https://stellar.org"
+            }
+          ]
+        },
+        {
+          "label": "Legal",
+          "links": [
+            {
+              "label": "privacy",
+              "href": "/privacidade"
+            },
+            {
+              "label": "terms",
+              "href": "/termos"
+            }
+          ]
+        }
+      ],
+      "copyright": "© {year} mutav. Rental guarantee token."
     }
   }
 }

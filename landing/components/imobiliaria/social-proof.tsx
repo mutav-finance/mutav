@@ -4,7 +4,7 @@ import { MonoKicker } from "@/components/shared/mono-kicker";
 type AdvisorItem = { name: string; role: string; body: string };
 
 export function SocialProof() {
-  const t = useTranslations("socialProof");
+  const t = useTranslations("imobiliaria.socialProof");
   const items = t.raw("items") as AdvisorItem[];
 
   return (

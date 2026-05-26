@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 type Phase = { n: string; label: string; title: string; body: string };
 
 export function VisionArc() {
-  const t = useTranslations("vision");
+  const t = useTranslations("investidor.vision");
   const phases = t.raw("phases") as Phase[];
 
   return (

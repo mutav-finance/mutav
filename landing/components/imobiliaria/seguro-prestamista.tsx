@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { MonoKicker } from "@/components/shared/mono-kicker";
 
 export function SeguroPrestamista() {
-  const t = useTranslations("seguroPrestamista");
+  const t = useTranslations("imobiliaria.seguroPrestamista");
   const items = t.raw("items") as string[];
 
   return (

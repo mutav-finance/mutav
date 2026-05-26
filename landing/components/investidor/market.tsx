@@ -5,7 +5,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 type Stat = { value: string; label: string; source?: string };
 
 export function Market() {
-  const t = useTranslations("market");
+  const t = useTranslations("investidor.market");
   const stats = t.raw("stats") as Stat[];
 
   return (

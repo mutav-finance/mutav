@@ -6,7 +6,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 type GapItem = { label: string; headline: string; body: string };
 
 export function TheGap() {
-  const t = useTranslations("gap");
+  const t = useTranslations("investidor.gap");
   const rawItems = t.raw("items") as GapItem[];
   const items = [rawItems[2], rawItems[0], rawItems[1]];
 

@@ -4,7 +4,7 @@ import { MonoKicker } from "@/components/shared/mono-kicker";
 type GapItem = { label: string; headline: string; body: string };
 
 export function TheGap() {
-  const t = useTranslations("gap");
+  const t = useTranslations("imobiliaria.gap");
   const items = t.raw("items") as GapItem[];
 
   return (

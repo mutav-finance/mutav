@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { MonoKicker } from "@/components/shared/mono-kicker";
 
 export function Art37() {
-  const t = useTranslations("art37");
+  const t = useTranslations("imobiliaria.art37");
 
   return (
     <section aria-labelledby="art37-h2" className="border-b border-border">

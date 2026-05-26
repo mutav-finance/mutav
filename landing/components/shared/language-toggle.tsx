@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export function LanguageToggle({ className }: { className?: string }) {
   const locale = useLocale();
   const pathname = usePathname();
-  const t = useTranslations("nav");
+  const label = locale === "pt-BR" ? "Idioma" : "Language";
 
   const linkClass = (active: boolean) =>
     cn(
@@ -18,7 +18,7 @@ export function LanguageToggle({ className }: { className?: string }) {
 
   return (
     <nav
-      aria-label={t("languageLabel")}
+      aria-label={label}
       className={cn("flex items-center font-mono text-2xs", className)}
     >
       <span aria-hidden className="text-text-3">[ </span>

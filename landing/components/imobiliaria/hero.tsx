@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { MonoKicker } from "@/components/shared/mono-kicker";
 
 export function Hero() {
-  const t = useTranslations("hero");
+  const t = useTranslations("imobiliaria.hero");
   return (
     <section
       id="hero"

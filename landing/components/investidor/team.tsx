@@ -14,7 +14,7 @@ const HREFS: Record<string, string> = {
 };
 
 export function Team() {
-  const t = useTranslations("team");
+  const t = useTranslations("investidor.team");
   const founders = t.raw("founders") as Founder[];
 
   return (

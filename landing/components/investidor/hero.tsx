@@ -5,7 +5,7 @@ import { MonoKicker } from "@/components/shared/mono-kicker";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 export function Hero() {
-  const t = useTranslations("hero");
+  const t = useTranslations("investidor.hero");
   return (
     <section
       id="hero"

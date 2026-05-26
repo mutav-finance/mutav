@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 type FaqItem = { q: string; a: string };
 
 export function Faq() {
-  const t = useTranslations("faq");
+  const t = useTranslations("investidor.faq");
   const items = t.raw("items") as FaqItem[];
   const [open, setOpen] = useState<number | null>(null);
 

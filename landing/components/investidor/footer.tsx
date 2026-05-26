@@ -6,8 +6,8 @@ type FooterLink = { label: string; href: string };
 type FooterColumn = { label: string; links: FooterLink[] };
 
 export function SiteFooter() {
-  const t = useTranslations("footer");
-  const tNav = useTranslations("nav");
+  const t = useTranslations("investidor.footer");
+  const tNav = useTranslations("investidor.nav");
   const columns = t.raw("columns") as FooterColumn[];
   const year = new Date().getFullYear();
 

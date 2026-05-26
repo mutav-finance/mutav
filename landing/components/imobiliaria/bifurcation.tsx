@@ -13,7 +13,7 @@ type Card = {
 const HREFS = ["#imobiliaria", "#investidor"];
 
 export function Bifurcation() {
-  const t = useTranslations("bifurcation");
+  const t = useTranslations("imobiliaria.bifurcation");
   const cards = t.raw("cards") as Card[];
 
   return (

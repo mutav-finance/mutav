@@ -6,7 +6,7 @@ import { ScrambleButton } from "@/components/investidor/scramble-button";
 type NavLink = { label: string; href: string };
 
 export function SiteNav() {
-  const t = useTranslations("nav");
+  const t = useTranslations("investidor.nav");
   const links = t.raw("links") as NavLink[];
 
   return (

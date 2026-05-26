@@ -4,7 +4,7 @@ import { MonoKicker } from "@/components/shared/mono-kicker";
 type Phase = { n: string; label: string; title: string; body: string };
 
 export function VisionArc() {
-  const t = useTranslations("vision");
+  const t = useTranslations("imobiliaria.vision");
   const phases = t.raw("phases") as Phase[];
 
   return (

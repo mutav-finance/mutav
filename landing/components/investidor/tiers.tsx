@@ -32,7 +32,7 @@ const TOKEN_IMG: Record<string, string> = {
 
 
 export function Tiers() {
-  const t = useTranslations("tiers");
+  const t = useTranslations("investidor.tiers");
   const items = t.raw("items") as Tier[];
   const [active, setActive] = useState(0);
 

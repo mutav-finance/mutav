@@ -21,7 +21,7 @@ const PHOTOS: Record<string, string> = {
 };
 
 export function Team() {
-  const t = useTranslations("team");
+  const t = useTranslations("imobiliaria.team");
   const founders = t.raw("founders") as Founder[];
 
   return (

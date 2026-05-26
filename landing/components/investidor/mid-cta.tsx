@@ -4,7 +4,7 @@ import { ScrambleButton } from "@/components/investidor/scramble-button";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 export function MidCta() {
-  const t = useTranslations("midCta");
+  const t = useTranslations("investidor.midCta");
 
   return (
     <section id="mid-cta" aria-labelledby="mid-cta-h2" className="relative border-b border-border overflow-hidden">

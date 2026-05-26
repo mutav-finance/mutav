@@ -3,7 +3,7 @@ import { MonoKicker } from "@/components/shared/mono-kicker";
 import { WaitlistForm } from "@/components/shared/waitlist-form";
 
 export function ImobiliariaCapture() {
-  const t = useTranslations("imobiliaria");
+  const t = useTranslations("imobiliaria.imobiliaria");
   const items = t.raw("items") as string[];
 
   return (

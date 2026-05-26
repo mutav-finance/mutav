@@ -4,7 +4,7 @@ import { MonoKicker } from "@/components/shared/mono-kicker";
 type CustoItem = { label: string; value: string; note: string };
 
 export function CustoAprovacao() {
-  const t = useTranslations("custoAprovacao");
+  const t = useTranslations("imobiliaria.custoAprovacao");
   const items = t.raw("items") as CustoItem[];
 
   return (

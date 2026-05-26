@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { WaitlistForm } from "@/components/shared/waitlist-form";
 
 export function InvestidorCapture() {
-  const t = useTranslations("investidor");
+  const t = useTranslations("investidor.investidor");
   const items = t.raw("items") as string[];
 
   return (
