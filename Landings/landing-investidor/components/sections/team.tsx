@@ -16,7 +16,7 @@ const HREFS: Record<string, string> = {
 
 const PHOTOS: Record<string, string> = {
   D: "/team/draau.jpg",
-  J: "/team/jubs.png",
+  J: "/team/jubs.jpg",
 };
 
 export function Team() {
