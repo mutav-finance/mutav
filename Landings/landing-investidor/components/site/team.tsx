@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 type Founder = {
@@ -11,6 +12,11 @@ type Founder = {
 const HREFS: Record<string, string> = {
   D: "https://github.com/draaujpeg",
   J: "https://github.com/hoffms",
+};
+
+const PHOTOS: Record<string, string> = {
+  D: "/team/draau.jpg",
+  J: "/team/jubs.png",
 };
 
 export function Team() {
@@ -38,18 +44,30 @@ export function Team() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 pb-24">
         <div className="lg:px-[12.5%]">
           <ul className="grid gap-px bg-border lg:grid-cols-2">
-            {founders.map((f) => (
+            {founders.map((f) => {
+              const photo = PHOTOS[f.initial];
+              return (
               <li key={f.name} className="bg-surface flex flex-col">
                 <a
                   href={HREFS[f.initial] ?? "#"}
                   target="_blank"
                   rel="noopener"
                   aria-label={f.githubLabel}
-                  className="w-full aspect-[4/3] bg-canvas border-b border-border flex items-center justify-center outline-none focus-visible:outline-1 focus-visible:outline-accent"
+                  className="relative w-full aspect-[4/3] bg-canvas border-b border-border flex items-center justify-center overflow-hidden outline-none focus-visible:outline-1 focus-visible:outline-accent"
                 >
-                  <span className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3">
-                    [ photo · {f.initial} ]
-                  </span>
+                  {photo ? (
+                    <Image
+                      src={photo}
+                      alt={f.name}
+                      fill
+                      sizes="(min-width: 1024px) 35vw, 100vw"
+                      className="object-cover grayscale"
+                    />
+                  ) : (
+                    <span className="font-mono text-2xs uppercase tracking-[0.03em] text-text-3">
+                      [ photo · {f.initial} ]
+                    </span>
+                  )}
                 </a>
                 <div className="p-8">
                   <p className="font-display font-bold text-xl leading-tight text-text">
@@ -60,7 +78,8 @@ export function Team() {
                   </p>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
           <div className="mt-4 flex items-center gap-4">
             <div className="flex-1 h-px bg-accent" aria-hidden />
