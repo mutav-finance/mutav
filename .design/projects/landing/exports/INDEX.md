@@ -100,7 +100,7 @@ This file is the entry point for coding agents consuming GSP design output.
 | Section | File |
 |---------|------|
 | Build Manifest | [INDEX.md](../build/INDEX.md) |
-| Implementation (investidor) | [`Landings/landing-investidor/`](../../../../Landings/landing-investidor/) |
+| Implementation (investidor) | [`web/`](../../../../web/) |
 | Implementation (imobiliaria) | [`Landings/landing-imobiliaria/`](../../../../Landings/landing-imobiliaria/) |
 <!-- END:build -->
 

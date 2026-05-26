@@ -35,7 +35,7 @@
 
 ## Implementation path
 
-`Landings/landing-investidor/` (current, from `feat/lp-investidor-components` branch)
+`web/` (current, from `feat/lp-investidor-components` branch)
 
 ## Related
 

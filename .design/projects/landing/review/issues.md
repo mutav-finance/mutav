@@ -1,7 +1,7 @@
 # Issues
 > Phase: review · Project: landing · Brand: tga (MUTAV) · Updated: 2026-05-21
 > Branch: `feat/lp-investidor-components`
-> All paths are relative to `Landings/landing-investidor/`.
+> All paths are relative to `web/`.
 
 ## Severity legend
 
@@ -20,7 +20,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`components/site/team.tsx:43-53`](../../../../Landings/landing-investidor/components/site/team.tsx) |
+| **File** | [`components/site/team.tsx:43-53`](../../../../web/components/site/team.tsx) |
 | **Expected** | `draau.jpg` and `jubs.png` from `public/team/` rendered as `<Image>` with `grayscale` filter, 160×160 or aspect-ratio square, 0px radius. |
 | **Actual** | Component renders `<span>[ photo · D ]</span>` and `<span>[ photo · J ]</span>` as placeholder text. Photos exist at `public/team/draau.jpg` and `public/team/jubs.png` but are not imported or rendered. |
 | **Impact** | Team section looks unfinished. Per the critique `prioritized-fixes.md §4`, founders chose path A (photo) — the photos have been committed but not rendered. |
@@ -34,7 +34,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`components/site/waitlist-form.tsx:32`](../../../../Landings/landing-investidor/components/site/waitlist-form.tsx) |
+| **File** | [`components/site/waitlist-form.tsx:32`](../../../../web/components/site/waitlist-form.tsx) |
 | **Expected** | The "sending…" text announced to screen readers via polite live region (fix-005 spec: `role="status"` or `aria-live="polite"`). |
 | **Actual** | `<p className="... text-text-2" aria-hidden>{pendingLabel}</p>` — `aria-hidden` excludes the text from the accessibility tree. `aria-busy={isPending}` on the form is present and announces state change, but the specific "sending…" string is sighted-only. |
 | **Impact** | Screen reader users hear the form become `aria-busy` but do not hear the "enviando…" / "sending…" confirmation text. Partial WCAG 4.1.3 compliance. |
@@ -48,7 +48,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`components/site/tiers.tsx:55-104`](../../../../Landings/landing-investidor/components/site/tiers.tsx) |
+| **File** | [`components/site/tiers.tsx:55-104`](../../../../web/components/site/tiers.tsx) |
 | **Expected** | Active tier button communicates selected/pressed state to screen readers via `aria-pressed` or `aria-selected`. |
 | **Actual** | `<button onClick={() => setActive(i)} className="...">` — no `aria-pressed`, no `aria-selected`, no `role="tab"`. Sighted users see the left-border + color activation. Screen readers cannot determine which tier is active. |
 | **Impact** | Screen reader users can activate tiers but cannot determine which is currently selected without visually inspecting the content change. |
@@ -62,7 +62,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`components/site/faq.tsx:32-34`](../../../../Landings/landing-investidor/components/site/faq.tsx) |
+| **File** | [`components/site/faq.tsx:32-34`](../../../../web/components/site/faq.tsx) |
 | **Expected** | Valid HTML — `<dt>` should only appear inside `<dl>`. The accordion question text should be in an element valid as button content (e.g., `<span>`, `<p>`). |
 | **Actual** | `<button><dt className="...">{item.q}</dt></button>` — `<dt>` (definition term) is a flow content element that is not permitted as content of `<button>`. While browsers render this, validators will flag it and some screen readers may announce unexpected semantics. |
 | **Impact** | Minor semantics issue; visual rendering and keyboard behavior are not affected in practice. |
@@ -76,7 +76,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`app/[locale]/page.tsx`](../../../../Landings/landing-investidor/app/%5Blocale%5D/page.tsx) |
+| **File** | [`app/[locale]/page.tsx`](../../../../web/app/%5Blocale%5D/page.tsx) |
 | **Expected** | Per `STATE.md § Post-review decisions (2026-05-20)`, current page order is: Nav → Hero → SocialProof → TheGap → Market → Tiers → MidCta → VisionArc → InvestidorCapture → Team → Footer. |
 | **Actual** | page.tsx mounts: Nav → Hero → TheGap → Solutions → Market → Tiers → MidCta → Team → Faq → Footer. SocialProof, VisionArc, and InvestidorCapture are not mounted. Solutions and Faq are mounted but not listed in STATE.md. |
 | **Impact** | No waitlist capture on the investidor LP. Users can learn about the fund (TheGap, Solutions, Market, Tiers) but have no mechanism to join the waitlist. MidCta button links to `#investidor-form` which doesn't exist — dead anchor. |
@@ -90,7 +90,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`i18n/routing.ts`](../../../../Landings/landing-investidor/i18n/routing.ts) |
+| **File** | [`i18n/routing.ts`](../../../../web/i18n/routing.ts) |
 | **Expected** | Per the original design spec and brand brief, pt-BR is the primary locale. `routing.ts` should declare `locales: ["pt-BR", "en"]`, `defaultLocale: "pt-BR"`. |
 | **Actual** | `routing.ts` declares `locales: ["en"]`, `defaultLocale: "en"`. No pt-BR messages file exists. The investidor LP delivers in English only. |
 | **Impact** | Brazilian investors who prefer pt-BR receive only English. This is a significant audience mismatch for a Brazil-targeted financial product. The investidor persona (Lucas analog) is Brazilian. |
@@ -105,7 +105,7 @@ No **Critical** or **Major** issues found.
 | | |
 |---|---|
 | **Severity** | Minor |
-| **File** | [`components/site/mono-kicker.tsx:21`](../../../../Landings/landing-investidor/components/site/mono-kicker.tsx) |
+| **File** | [`components/site/mono-kicker.tsx:21`](../../../../web/components/site/mono-kicker.tsx) |
 | **Actual** | `MonoKicker` renders the counter prefix only when `{index && total}`. Hero passes `"Real Asset. Real Yield."` as a bare `label`. Other sections don't pass any index/total. The `01 / 04 — label` pattern from the original design never appears on this LP. |
 | **Note** | The original design specified Mono kicker pattern as `01 / 04 — label`. The investidor LP doesn't use this pattern at all — sections use section headings directly or bare label kickers without numbering. This is a design divergence from the section kicker spec, but all sections are still properly labeled and navigable. |
 | **Remediation** | If the numbered kicker pattern is desired, add `index` + `total` props to each section's kicker. If the pattern is intentionally dropped for the investidor LP, remove the dead `index` + `total` props from the MonoKicker component or document the decision. |

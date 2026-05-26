@@ -4,7 +4,7 @@
 **Started:** 2026-05-02
 **Brand:** tga (vendored from sibling `brand/` repo)
 **Current Phase:** 6 (Review) — Conditional Pass
-**Implementation Target:** shadcn (greenfield) — `Landings/landing-investidor/` (dark) · `Landings/landing-imobiliaria/` (light)
+**Implementation Target:** shadcn (greenfield) — `web/` (dark) · `Landings/landing-imobiliaria/` (light)
 **Prettiness Level:** 95%
 
 ---

@@ -1,6 +1,6 @@
 # Acceptance Report
 > Phase: review · Project: landing · Brand: tga (MUTAV) · Updated: 2026-05-21
-> Reviewer: GSP QA Reviewer · Build target: `Landings/landing-investidor/` (Next.js + Tailwind v4 + shadcn/ui)
+> Reviewer: GSP QA Reviewer · Build target: `web/` (Next.js + Tailwind v4 + shadcn/ui)
 > Branch: `feat/lp-investidor-components`
 
 ## Verdict
@@ -36,19 +36,19 @@ Wait — checking the page.tsx: VisionArc is not mounted. Sections rendered are 
 
 | # | Section | Status | Codebase |
 |---|---------|--------|----------|
-| — | Nav | complete | [`components/site/nav.tsx`](../../../../Landings/landing-investidor/components/site/nav.tsx) |
-| — | Hero | complete — copy reworked | [`components/site/hero.tsx`](../../../../Landings/landing-investidor/components/site/hero.tsx) |
-| — | TheGap | complete | [`components/site/the-gap.tsx`](../../../../Landings/landing-investidor/components/site/the-gap.tsx) |
-| — | Solutions | complete (undesigned — brand contract followed) | [`components/site/solutions.tsx`](../../../../Landings/landing-investidor/components/site/solutions.tsx) |
-| — | Market | complete (undesigned — brand contract followed) | [`components/site/market.tsx`](../../../../Landings/landing-investidor/components/site/market.tsx) |
-| — | Tiers | complete (undesigned — brand contract followed) | [`components/site/tiers.tsx`](../../../../Landings/landing-investidor/components/site/tiers.tsx) |
-| — | MidCta | complete (undesigned — brand contract followed) | [`components/site/mid-cta.tsx`](../../../../Landings/landing-investidor/components/site/mid-cta.tsx) |
-| — | Team | complete — photos not wired (see T-001) | [`components/site/team.tsx`](../../../../Landings/landing-investidor/components/site/team.tsx) |
-| — | Faq | complete (undesigned — brand contract followed) | [`components/site/faq.tsx`](../../../../Landings/landing-investidor/components/site/faq.tsx) |
-| — | Footer | complete | [`components/site/footer.tsx`](../../../../Landings/landing-investidor/components/site/footer.tsx) |
-| — | VisionArc | built, not mounted in page | [`components/site/vision-arc.tsx`](../../../../Landings/landing-investidor/components/site/vision-arc.tsx) |
-| — | InvestidorCapture | built, not mounted in page | [`components/site/investidor-capture.tsx`](../../../../Landings/landing-investidor/components/site/investidor-capture.tsx) |
-| — | Bifurcation | built, not mounted in page | [`components/site/bifurcation.tsx`](../../../../Landings/landing-investidor/components/site/bifurcation.tsx) |
+| — | Nav | complete | [`components/site/nav.tsx`](../../../../web/components/site/nav.tsx) |
+| — | Hero | complete — copy reworked | [`components/site/hero.tsx`](../../../../web/components/site/hero.tsx) |
+| — | TheGap | complete | [`components/site/the-gap.tsx`](../../../../web/components/site/the-gap.tsx) |
+| — | Solutions | complete (undesigned — brand contract followed) | [`components/site/solutions.tsx`](../../../../web/components/site/solutions.tsx) |
+| — | Market | complete (undesigned — brand contract followed) | [`components/site/market.tsx`](../../../../web/components/site/market.tsx) |
+| — | Tiers | complete (undesigned — brand contract followed) | [`components/site/tiers.tsx`](../../../../web/components/site/tiers.tsx) |
+| — | MidCta | complete (undesigned — brand contract followed) | [`components/site/mid-cta.tsx`](../../../../web/components/site/mid-cta.tsx) |
+| — | Team | complete — photos not wired (see T-001) | [`components/site/team.tsx`](../../../../web/components/site/team.tsx) |
+| — | Faq | complete (undesigned — brand contract followed) | [`components/site/faq.tsx`](../../../../web/components/site/faq.tsx) |
+| — | Footer | complete | [`components/site/footer.tsx`](../../../../web/components/site/footer.tsx) |
+| — | VisionArc | built, not mounted in page | [`components/site/vision-arc.tsx`](../../../../web/components/site/vision-arc.tsx) |
+| — | InvestidorCapture | built, not mounted in page | [`components/site/investidor-capture.tsx`](../../../../web/components/site/investidor-capture.tsx) |
+| — | Bifurcation | built, not mounted in page | [`components/site/bifurcation.tsx`](../../../../web/components/site/bifurcation.tsx) |
 
 ---
 
@@ -56,15 +56,15 @@ Wait — checking the page.tsx: VisionArc is not mounted. Sections rendered are 
 
 | Component | Codebase | Brand contract |
 |-----------|----------|----------------|
-| Logo | [`components/site/logo.tsx`](../../../../Landings/landing-investidor/components/site/logo.tsx) | Geist Bold lowercase amber wordmark, `tracking-[-0.03em]` — pass |
-| LiveSquare | [`components/site/live-square.tsx`](../../../../Landings/landing-investidor/components/site/live-square.tsx) | 6px `bg-accent`, `mutav-live-square` 2s linear infinite, `role="status"` — pass |
-| LanguageToggle | [`components/site/language-toggle.tsx`](../../../../Landings/landing-investidor/components/site/language-toggle.tsx) | Inactive locale `text-text-3` (`#555B66`) on dark canvas (`#0E0F11`) = 3.7:1 — borderline AA for 11px; hover goes to `text-text` which passes; note: LP ships en-only so toggle is vestigial |
-| MonoKicker | [`components/site/mono-kicker.tsx`](../../../../Landings/landing-investidor/components/site/mono-kicker.tsx) | Passes `label` only in most sections (counter prefix requires both `index` + `total`); consistent pattern across all sections — see H-001 |
-| WaitlistForm | [`components/site/waitlist-form.tsx`](../../../../Landings/landing-investidor/components/site/waitlist-form.tsx) | Discriminated union error codes, `aria-busy` on form, `role="alert"` — pass; pending text is `aria-hidden` — see A-001 |
-| Button | [`components/ui/button.tsx`](../../../../Landings/landing-investidor/components/ui/button.tsx) | 4 variants: investidor/imobiliarias/outline/ghost; investidor `size="lg"` = 44px (fix-006 applied); `text-[#1A1A1A]` on imobiliarias — documented exception |
-| Input | [`components/ui/input.tsx`](../../../../Landings/landing-investidor/components/ui/input.tsx) | JetBrains Mono 14px, 0px radius, amber focus border, no ring — pass |
-| Label | [`components/ui/label.tsx`](../../../../Landings/landing-investidor/components/ui/label.tsx) | Inter 13px Medium (`text-sm font-medium`) — pass |
-| Tiers | [`components/site/tiers.tsx`](../../../../Landings/landing-investidor/components/site/tiers.tsx) | Interactive token selector; `aria-expanded` missing on tier buttons (see A-002) |
+| Logo | [`components/site/logo.tsx`](../../../../web/components/site/logo.tsx) | Geist Bold lowercase amber wordmark, `tracking-[-0.03em]` — pass |
+| LiveSquare | [`components/site/live-square.tsx`](../../../../web/components/site/live-square.tsx) | 6px `bg-accent`, `mutav-live-square` 2s linear infinite, `role="status"` — pass |
+| LanguageToggle | [`components/site/language-toggle.tsx`](../../../../web/components/site/language-toggle.tsx) | Inactive locale `text-text-3` (`#555B66`) on dark canvas (`#0E0F11`) = 3.7:1 — borderline AA for 11px; hover goes to `text-text` which passes; note: LP ships en-only so toggle is vestigial |
+| MonoKicker | [`components/site/mono-kicker.tsx`](../../../../web/components/site/mono-kicker.tsx) | Passes `label` only in most sections (counter prefix requires both `index` + `total`); consistent pattern across all sections — see H-001 |
+| WaitlistForm | [`components/site/waitlist-form.tsx`](../../../../web/components/site/waitlist-form.tsx) | Discriminated union error codes, `aria-busy` on form, `role="alert"` — pass; pending text is `aria-hidden` — see A-001 |
+| Button | [`components/ui/button.tsx`](../../../../web/components/ui/button.tsx) | 4 variants: investidor/imobiliarias/outline/ghost; investidor `size="lg"` = 44px (fix-006 applied); `text-[#1A1A1A]` on imobiliarias — documented exception |
+| Input | [`components/ui/input.tsx`](../../../../web/components/ui/input.tsx) | JetBrains Mono 14px, 0px radius, amber focus border, no ring — pass |
+| Label | [`components/ui/label.tsx`](../../../../web/components/ui/label.tsx) | Inter 13px Medium (`text-sm font-medium`) — pass |
+| Tiers | [`components/site/tiers.tsx`](../../../../web/components/site/tiers.tsx) | Interactive token selector; `aria-expanded` missing on tier buttons (see A-002) |
 
 ---
 
