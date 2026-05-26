@@ -1,24 +1,24 @@
 {
-  "kicker": "who's building it",
-  "eyebrow": "+30 years in the rental real estate market",
-  "h2": "The people behind it",
-  "subtitle": "Named founders. We ship in public.",
-  "teamCardTitle": "Building in public",
-  "teamCardBody": "Code open on GitHub. Architecture verifiable. No anonymous team.",
+  "kicker": "quem está construindo",
+  "eyebrow": "+30 anos no mercado de aluguel imobiliário",
+  "h2": "As pessoas por trás",
+  "subtitle": "Founders identificados. Construímos em público.",
+  "teamCardTitle": "Construindo em público",
+  "teamCardBody": "Código aberto no GitHub. Arquitetura verificável. Sem time anônimo.",
   "founders": [
     {
       "initial": "D",
       "name": "Matheus Draau",
       "role": "Project Manager · Web3 Builder",
-      "bio": "5+ years building brands at the intersection of technology, brand, and market. Multidisciplinary team coordination and blockchain product development. Co-founder of No Bloco. Direct exposure to the Southern Brazil real estate network gave him the first look at the rental guarantee gap.",
-      "githubLabel": "Draau on GitHub"
+      "bio": "+5 anos construindo marcas na intersecção entre tecnologia, branding e mercado. Coordenação de times multidisciplinares e desenvolvimento de produtos blockchain. Co-fundador da No Bloco. Exposição direta à rede imobiliária do Sul do Brasil deu a primeira visão da lacuna na garantia locatícia.",
+      "githubLabel": "Draau no GitHub"
     },
     {
       "initial": "J",
       "name": "Julia H. Buratto",
       "role": "Blockchain & AI Product Engineer",
-      "bio": "Founder of jubs.studio. Launched Chainless in 2023, from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure, with experience in fintech and Web3 products.",
-      "githubLabel": "jubs on GitHub"
+      "bio": "Fundadora da jubs.studio. Lançou a Chainless em 2023, de zero a 30 mil usuários, ainda rodando. Trabalha na intersecção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em fintech e produtos Web3.",
+      "githubLabel": "jubs no GitHub"
     }
   ]
 }

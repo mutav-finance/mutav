@@ -1,21 +1,21 @@
 {
-  "kicker": "the problem",
-  "h2": "YOU ARE CORRELATED TO BTC\nAND CALLING IT A STRATEGY",
+  "kicker": "o problema",
+  "h2": "VOCÊ ESTÁ CORRELACIONADO AO BTC\nE CHAMA ISSO DE ESTRATÉGIA",
   "items": [
     {
       "label": "",
-      "headline": "No diversification.",
-      "body": "BTC drops 40%. The whole portfolio moves together. You are leveraged to one narrative.."
+      "headline": "Sem diversificação.",
+      "body": "BTC cai 40%. O portfólio inteiro se move junto. Você está alavancado em uma única narrativa."
     },
     {
       "label": "",
-      "headline": "No security.",
-      "body": "The protocol behind your yield has no legal identity. No legal protection for your money."
+      "headline": "Sem segurança.",
+      "body": "O protocolo por trás do seu rendimento não tem identidade legal. Sem proteção jurídica para o seu dinheiro."
     },
     {
       "label": "",
-      "headline": "Locked billions.",
-      "body": "Brazil's billion-dollar rental guarantee market pays consistent fees. No on-chain vehicle existed. Until now."
+      "headline": "Bilhões travados.",
+      "body": "O mercado bilionário de garantia locatícia do Brasil paga taxas consistentes. Nenhum veículo on-chain existia. Até agora."
     }
   ]
 }

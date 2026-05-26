@@ -1,17 +1,17 @@
 {
-  "h2": "Common questions",
+  "h2": "Perguntas comuns",
   "items": [
     {
-      "q": "How does the waterfall work?",
-      "a": "Defaults hit MTVH first. Only if MTVH reaches a critical default threshold does MTVM absorb losses. MTVL is last in the waterfall."
+      "q": "Como funciona a cascata?",
+      "a": "A inadimplência atinge o MTVH primeiro. Apenas se o MTVH atingir um limite crítico, o MTVM começa a absorver perdas. O MTVL é o último na cascata."
     },
     {
-      "q": "How do I redeem?",
-      "a": "Tokens are self-custodial. Redemption via on-chain queue. 2.5% weekly cap, 0.25% exit fee."
+      "q": "Como faço o resgate?",
+      "a": "Os tokens são self-custodial. Resgate via fila on-chain. Limite semanal de 2,5%, taxa de saída de 0,25%."
     },
     {
-      "q": "How is the guarantee fee collected?",
-      "a": "Partner agencies register rental contracts on our platform to be covered by the guarantee. MUTAV's infrastructure handles the entire path that fee takes — from contract origination at the agency level all the way into the fund."
+      "q": "Como a taxa de garantia é coletada?",
+      "a": "Imobiliárias parceiras registram contratos de aluguel na nossa plataforma para serem cobertos pela garantia. A infraestrutura MUTAV cuida de todo o caminho que essa taxa faz — da originação no contrato em nível de imobiliária até dentro do fundo."
     }
   ]
 }

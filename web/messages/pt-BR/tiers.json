@@ -1,29 +1,29 @@
 {
-  "kicker": "how the fund works",
-  "h2Line1": "Three risk classes",
-  "h2Line2": "Choose your exposure",
-  "intro": "The Mutav Treasury Fund issues three token classes with sequential loss absorption (waterfall). NAV appreciates daily from rental guarantee fees and Brazilian treasury yield.",
+  "kicker": "como o fundo funciona",
+  "h2Line1": "Três classes de risco",
+  "h2Line2": "Escolha sua exposição",
+  "intro": "O Fundo Mutav Treasury emite três classes de token com absorção de perdas sequencial (cascata). O NAV se valoriza diariamente das taxas de garantia locatícia e do rendimento do tesouro brasileiro.",
   "items": [
     {
       "token": "MTVL",
-      "riskLabel": "Last to absorb",
-      "yieldLabel": "Most stable",
-      "body": "Last in the waterfall. Designed for capital preservation with consistent yield from tokenized Brazilian treasury plus guarantee fees.",
+      "riskLabel": "Última a absorver",
+      "yieldLabel": "Mais estável",
+      "body": "Última na cascata. Desenhada para preservação de capital com rendimento consistente do tesouro brasileiro tokenizado mais taxas de garantia.",
       "access": ""
     },
     {
       "token": "MTVM",
-      "riskLabel": "Mid-tier exposure",
-      "yieldLabel": "Balanced yield",
-      "body": "Protected by MTVH. You absorb losses only if MTVH reaches a critical default threshold. Balanced exposure for investors who want meaningful yield without first-loss risk.",
+      "riskLabel": "Exposição intermediária",
+      "yieldLabel": "Rendimento balanceado",
+      "body": "Protegido pelo MTVH. Você absorve perdas apenas se o MTVH atingir um limite crítico de inadimplência. Exposição balanceada para investidores que querem rendimento relevante sem o risco de primeira perda.",
       "access": ""
     },
     {
       "token": "MTVH",
-      "riskLabel": "First-loss",
-      "yieldLabel": "Highest yield",
-      "body": "You absorb defaults first. In exchange: maximum exposure to rental-guarantee market yield.",
-      "access": "MUTAV itself holds MTVH. Skin-in-the-game by design."
+      "riskLabel": "Primeira perda",
+      "yieldLabel": "Maior rendimento",
+      "body": "Você absorve a inadimplência primeiro. Em troca: exposição máxima ao rendimento do mercado de garantia locatícia.",
+      "access": "A própria MUTAV detém MTVH. Skin-in-the-game por design."
     }
   ],
   "waterfall": ""

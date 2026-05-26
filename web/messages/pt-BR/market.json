@@ -1,31 +1,31 @@
 {
-  "kicker": "the market",
-  "h2": "A billion-dollar market that's never been open to you",
-  "featuredValue": "$770M",
-  "featuredLabel": "Brazil's Rent\nGuarantee Ecosystem",
-  "featuredBody": "The rental guarantee segment\nthat crypto has never accessed.",
-  "featuredBody2": "Consistent fees from physical contracts.",
-  "featuredSource": "+195% market growth since 2020",
+  "kicker": "o mercado",
+  "h2": "Um mercado bilionário que nunca esteve aberto para você",
+  "featuredValue": "R$ 4 bi",
+  "featuredLabel": "Ecossistema brasileiro\nde garantia locatícia",
+  "featuredBody": "O segmento de garantia locatícia\nque o cripto nunca acessou.",
+  "featuredBody2": "Taxas consistentes de contratos físicos.",
+  "featuredSource": "+195% de crescimento de mercado desde 2020",
   "stats": [
     {
-      "value": "$22B",
-      "label": "Brazil's total real estate market",
-      "source": "70,000 real agencies"
+      "value": "R$ 115 bi",
+      "label": "Mercado imobiliário total do Brasil",
+      "source": "70 mil imobiliárias"
     },
     {
-      "value": "$258M",
-      "label": "Rental guarantee premiums (2024)",
-      "source": "rental insurance category only"
+      "value": "R$ 1,3 bi",
+      "label": "Prêmios de garantia locatícia (2024)",
+      "source": "categoria seguro fiança apenas"
     },
     {
-      "value": "$60M",
-      "label": "Digital rental guarantee market (2025)",
-      "source": "app-based guarantee category only"
+      "value": "R$ 312 mi",
+      "label": "Mercado de garantia locatícia digital (2025)",
+      "source": "categoria garantia via app apenas"
     },
     {
-      "value": "46.5M",
-      "label": "Brazilians renting as of 2024",
-      "source": "17.8M rental units"
+      "value": "46,5 mi",
+      "label": "Brasileiros alugando em 2024",
+      "source": "17,8 mi unidades alugadas"
     }
   ]
 }

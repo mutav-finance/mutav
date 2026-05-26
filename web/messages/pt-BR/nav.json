@@ -1,18 +1,18 @@
 {
   "logoLabel": "mutav",
-  "liveLabel": "protocol live",
-  "languageLabel": "Language",
+  "liveLabel": "protocolo ativo",
+  "languageLabel": "Idioma",
   "links": [
     {
-      "label": "Protocol",
+      "label": "Protocolo",
       "href": "#protocol"
     },
     {
-      "label": "Vision",
+      "label": "Visão",
       "href": "#solutions"
     },
     {
-      "label": "Team",
+      "label": "Equipe",
       "href": "#team"
     },
     {
@@ -20,5 +20,5 @@
       "href": "#"
     }
   ],
-  "ctaLabel": "Join the list"
+  "ctaLabel": "Entrar na lista"
 }
