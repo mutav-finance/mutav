@@ -1,0 +1,43 @@
+{
+  "tagline": "Real asset. Real yield.",
+  "subtitle": "The on-chain rental guarantee fund.",
+  "navLabel": "Footer",
+  "columns": [
+    {
+      "label": "Protocol",
+      "links": [
+        {
+          "label": "Docs",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "label": "Built on",
+      "links": [
+        {
+          "label": "Stellar Development Foundation",
+          "href": "https://stellar.org"
+        },
+        {
+          "label": "Stellar 37° Acceleration Program",
+          "href": "https://stellar.org"
+        }
+      ]
+    },
+    {
+      "label": "Legal",
+      "links": [
+        {
+          "label": "privacy",
+          "href": "/privacidade"
+        },
+        {
+          "label": "terms",
+          "href": "/termos"
+        }
+      ]
+    }
+  ],
+  "copyright": "© {year} mutav. Rental guarantee token."
+}

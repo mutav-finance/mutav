@@ -1,0 +1,31 @@
+{
+  "kicker": "the market",
+  "h2": "A billion-dollar market that's never been open to you",
+  "featuredValue": "$770M",
+  "featuredLabel": "Brazil's Rent\nGuarantee Ecosystem",
+  "featuredBody": "The rental guarantee segment\nthat crypto has never accessed.",
+  "featuredBody2": "Consistent fees from physical contracts.",
+  "featuredSource": "+195% market growth since 2020",
+  "stats": [
+    {
+      "value": "$22B",
+      "label": "Brazil's total real estate market",
+      "source": "70,000 real agencies"
+    },
+    {
+      "value": "$258M",
+      "label": "Rental guarantee premiums (2024)",
+      "source": "rental insurance category only"
+    },
+    {
+      "value": "$60M",
+      "label": "Digital rental guarantee market (2025)",
+      "source": "app-based guarantee category only"
+    },
+    {
+      "value": "46.5M",
+      "label": "Brazilians renting as of 2024",
+      "source": "17.8M rental units"
+    }
+  ]
+}

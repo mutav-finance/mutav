@@ -4,8 +4,8 @@
 **Started:** 2026-05-02
 **Brand:** tga (vendored from sibling `brand/` repo)
 **Current Phase:** 6 (Review) — Conditional Pass
-**Implementation Target:** shadcn (greenfield) — implemented at `landing/`
-**Prettiness Level:** 100%
+**Implementation Target:** shadcn (greenfield) — `web/` (dark) · `Landings/landing-imobiliaria/` (light)
+**Prettiness Level:** 95%
 
 ---
 
@@ -18,7 +18,7 @@
 | 3 | Design | complete | 2026-05-02 | 2026-05-02 |
 | 4 | Critique | complete | 2026-05-02 | 2026-05-03 |
 | 5 | Build | complete | 2026-05-03 | 2026-05-03 |
-| 6 | Review | complete | 2026-05-02 | 2026-05-02 |
+| 6 | Review | needs-revision | 2026-05-02 | 2026-05-21 |
 
 ## Status Values
 <!-- pending | in-progress | complete | needs-revision | skipped -->
@@ -40,6 +40,13 @@
 - Waitlist backend: Resend + Vercel KV (own list, LGPD-clean, scales into dashboard launch)
 - Live indicator → 6×6 amber square (not "dot") to honor 0px-radius contract
 - Hold 150ms color/border transitions (per `tga.yml`); ignore stricter "0ms hard cuts" wording in DESIGN.md
+
+## Post-review decisions (2026-05-20 re-review)
+- **D-005 — ACCEPTED:** LP investidor page composition intentionally diverged from the original 9-screen design. The dual-front (Bifurcation + ImobiliariaCapture) is not the investidor LP's concern — imobiliária has its own separate package (`landing-imobiliaria`). The 4 new sections (SocialProof, Market, Tiers, MidCta) are accepted product additions that follow the brand token vocabulary and three-layer hierarchy. No design-phase update required for these sections; they are considered implementation-level decisions by the founders.
+- **E-002 — FIXED:** `market.tsx` stat values changed from `font-display` to `font-mono` — tabular numerals now active via globals.css rule.
+- **Bifurcation + ImobiliariaCapture:** components remain in codebase but are unmounted in LP investidor. They are candidates for the `landing-imobiliaria` package.
+- **Founder photos committed:** `public/team/draau.jpg` + `public/team/jubs.png` — resolves design open question.
+- **Current page order (LP investidor):** Nav → Hero → SocialProof → TheGap → Market → Tiers → MidCta → VisionArc → InvestidorCapture → Team → Footer.
 
 ## Post-review decisions (2026-05-03)
 - **Vision arc phase 04 reframed:** "tokenização imobiliária" → "pagamentos e fundos programáveis". Brazilian regulation unfavorable for property tokenization in near term.

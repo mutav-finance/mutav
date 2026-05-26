@@ -1,0 +1,17 @@
+{
+  "h2": "Common questions",
+  "items": [
+    {
+      "q": "How does the waterfall work?",
+      "a": "Defaults hit MTVH first. Only if MTVH reaches a critical default threshold does MTVM absorb losses. MTVL is last in the waterfall."
+    },
+    {
+      "q": "How do I redeem?",
+      "a": "Tokens are self-custodial. Redemption via on-chain queue. 2.5% weekly cap, 0.25% exit fee."
+    },
+    {
+      "q": "How is the guarantee fee collected?",
+      "a": "Partner agencies register rental contracts on our platform to be covered by the guarantee. MUTAV's infrastructure handles the entire path that fee takes — from contract origination at the agency level all the way into the fund."
+    }
+  ]
+}

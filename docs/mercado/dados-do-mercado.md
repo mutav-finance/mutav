@@ -10,7 +10,7 @@
 |---|---|---|
 | Domicílios alugados no Brasil (2024) | **17,8 milhões** | IBGE / FipeZap |
 | Domicílios alugados (2016) | 12,3 milhões | IBGE |
-| Crescimento 2016→2024 | **+54,1%** | IBGE |
+| Crescimento 2016→2024 | **+44,7%** | IBGE |
 | Participação no total de domicílios (2016) | 18% | IBGE |
 | Participação no total de domicílios (2024) | **23%** | IBGE |
 | Alta no preço do aluguel (2024) | **+13,5%** | FipeZap |
@@ -36,7 +36,8 @@
 |---|---|---|
 | Taxa de inadimplência geral (Set/2025) | **3,80%** | Índice Superlógica |
 | Taxa de inadimplência (Set/2024) | 3,14% | Índice Superlógica |
-| Pico recente | ~7% (Jul/2024) | Superlógica |
+| Pico nacional recente | ~3,86% (Fev/Abr 2024) | Superlógica |
+| Pico regional (Norte, Dez/2024) | 7,05% | Superlógica |
 | Inadimplência residencial | 3,57% | Superlógica |
 | Inadimplência comercial | 5,55% | Superlógica |
 | Inadimplência no Nordeste | 5,97% (maior regional) | Superlógica |
@@ -162,7 +163,7 @@ Os 39% ainda com fiador representam o mercado a ser convertido:
 ### Fintechs / Novos modelos
 | Player | Destaque |
 |---|---|
-| **CredAluga** | +200% em 2024; 30.000 contratos ativos; R$ 30M sob gestão (fundo); captou US$ 5M do Grupo OLX; receita projetada R$ 30M em 2024 |
+| **CredAluga** | +200% em 2024; 30.000 contratos ativos; R$ 30M sob gestão (fundo); captou US$ 5M do Grupo OLX; round de R$ 60M em set/2024 (Provence Partners + Caravela Capital); receita projetada R$ 30M em 2024 |
 | **QuintoAndar** | Encerrou serviço de garantia de aluguel para imobiliárias (2024) — abriu espaço para competidores |
 | **CredAluga + Kanastra** | Lançaram primeiro fundo de investimento como substituto ao título de capitalização para garantia locatícia |
 
@@ -172,7 +173,7 @@ Os 39% ainda com fiador representam o mercado a ser convertido:
 
 | Evento | Impacto |
 |---|---|
-| Marco Legal do Despejo Extrajudicial (2025) | Acelera processo de desocupação; valoriza garantias com cobertura jurídica |
+| PL 3.999/20 — Despejo Extrajudicial (aprovado pela CCJ da Câmara em jun/2025; aguarda Senado) | Acelera processo de desocupação; valoriza garantias com cobertura jurídica |
 | Circular SUSEP Nº 712 (Dez/2024) | Atualização regulatória para seguros de fiança |
 | Lei do Contrato de Seguro (aprovação esperada) | Cria ambiente mais transparente; estimula crescimento |
 | Alta taxa Selic (2024–2025) | Crédito imobiliário mais caro → mais pessoas no aluguel |
@@ -212,3 +213,6 @@ Os 39% ainda com fiador representam o mercado a ser convertido:
 - [Agência Brasil — Aluguel subiu 13,5% em 2024](https://agenciabrasil.ebc.com.br/economia/noticia/2025-01/aluguel-subiu-135-em-2024-veja-quais-capitais-tem-o-preco-mais-alto)
 - [Idee Seguros — Inadimplência de aluguel bate recorde](https://www.ideeseguros.com.br/inadimplencia-de-aluguel-bate-recorde)
 - [Imobi Report — Inadimplência bate recorde em 2025](https://imobireport.com.br/aluguel/inadimplencia-de-aluguel-bate-recorde-e-registra-maior-taxa-de-2025-no-pais-aponta-indice-superlogica/)
+- [IBGE PNAD Contínua — Características Gerais dos Domicílios e dos Moradores 2024 (PDF primário)](https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/15ec1d59965a24b0bb2817eaf9b6f490.pdf)
+- [Imobi Report — CredAluga capta R$ 60M em setembro de 2024](https://imobireport.com.br/aluguel/grupo-olx-se-torna-socio-da-credaluga-para-simplificar-processo-de-locacao-no-brasil/)
+- [Câmara — CCJ aprova PL 3.999/20 (Despejo Extrajudicial)](https://www.camara.leg.br/noticias/1168282-comissao-de-constituicao-e-justica-aprova-proposta-que-preve-despejo-extrajudicial-por-atraso-de-aluguel/)
