@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Logo } from "@/components/primitives/logo";
+import { LanguageToggle } from "@/components/primitives/language-toggle";
 import { ScrambleButton } from "@/components/primitives/scramble-button";
 
 type NavLink = { label: string; href: string };
@@ -31,9 +32,12 @@ export function SiteNav() {
           ))}
         </nav>
 
-        <ScrambleButton variant="investidor" href="#mid-cta">
-          {t("ctaLabel") + " →"}
-        </ScrambleButton>
+        <div className="flex items-center gap-5">
+          <LanguageToggle />
+          <ScrambleButton variant="investidor" href="#mid-cta">
+            {t("ctaLabel") + " →"}
+          </ScrambleButton>
+        </div>
       </div>
     </header>
   );
