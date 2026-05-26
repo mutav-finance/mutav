@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
-import { Logo } from "./logo";
-import { LiveSquare } from "./live-square";
-import { LanguageToggle } from "./language-toggle";
+import { Logo } from "@/components/shared/logo";
+import { LiveSquare } from "@/components/shared/live-square";
+import { LanguageToggle } from "@/components/shared/language-toggle";
 
 type FooterLink = { label: string; href: string };
 type FooterColumn = { label: string; links: FooterLink[] };

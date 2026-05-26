@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { WaitlistForm } from "./waitlist-form";
+import { WaitlistForm } from "@/components/shared/waitlist-form";
 
 export function InvestidorCapture() {
   const t = useTranslations("investidor");

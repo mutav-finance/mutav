@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
+import { MonoKicker } from "@/components/shared/mono-kicker";
 
 type Phase = { n: string; label: string; title: string; body: string };
 

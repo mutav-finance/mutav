@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
-import { WaitlistForm } from "./waitlist-form";
+import { MonoKicker } from "@/components/shared/mono-kicker";
+import { WaitlistForm } from "@/components/shared/waitlist-form";
 
 export function InvestidorCapture() {
   const t = useTranslations("investidor");
