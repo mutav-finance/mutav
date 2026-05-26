@@ -1,13 +1,13 @@
 {
   "kickerIndex": "→ 02",
-  "kicker": "investor",
-  "h2Line1": "Real yield",
-  "h2Line2": "Brazilian rental market, on-chain",
+  "kicker": "investidor",
+  "h2Line1": "Rendimento real",
+  "h2Line2": "Mercado de aluguel brasileiro, on-chain",
   "items": [
-    "Rental-guarantee spread. Not a generic pool.",
-    "Programmatic settlement. Code open.",
-    "Named founders."
+    "Spread de garantia locatícia. Não um pool genérico.",
+    "Liquidação programática. Código aberto.",
+    "Founders identificados."
   ],
-  "verifyCta": "[ verify the architecture → github.com/mutav-finance ]",
-  "tagline": "Don't trust. Verify."
+  "verifyCta": "[ verifique a arquitetura → github.com/mutav-finance ]",
+  "tagline": "Não confie. Verifique."
 }

@@ -1,30 +1,30 @@
 {
-  "kicker": "the path. no dates, no promises",
-  "h2": "We start with the guarantee. The whole rental layer comes after",
+  "kicker": "o caminho. sem datas, sem promessas",
+  "h2": "Começamos com a garantia. Toda a camada de aluguel vem depois",
   "phases": [
     {
       "n": "01",
-      "label": "Now",
-      "title": "Rental guarantee",
-      "body": "Automatic payout to the landlord on default. Programmatic settlement, public record."
+      "label": "Agora",
+      "title": "Garantia locatícia",
+      "body": "Repasse automático ao proprietário em caso de inadimplência. Liquidação programática, registro público."
     },
     {
       "n": "02",
-      "label": "Next",
-      "title": "Verifiable system",
-      "body": "Every payment, default, and settlement logged on-chain. Auditable by anyone."
+      "label": "Próximo",
+      "title": "Sistema verificável",
+      "body": "Todo pagamento, inadimplência e liquidação registrado on-chain. Auditável por qualquer um."
     },
     {
       "n": "03",
-      "label": "After",
-      "title": "MUTAV: programmable exposure",
-      "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
+      "label": "Depois",
+      "title": "MUTAV: exposição programável",
+      "body": "Investidores acessam o spread do mercado de aluguel com NAV verificável e log de liquidação on-chain."
     },
     {
       "n": "04",
-      "label": "Horizon",
-      "title": "Programmable payments and funds",
-      "body": "Optimizing what most blocks the rental market: transactions, payments, fund custody. Where it makes sense."
+      "label": "Horizonte",
+      "title": "Pagamentos e fundos programáveis",
+      "body": "Otimizando o que mais trava o mercado de aluguel: transações, pagamentos, custódia de fundos. Onde fizer sentido."
     }
   ]
 }

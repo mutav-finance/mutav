@@ -1,10 +1,10 @@
 {
-  "tagline": "Real asset. Real yield.",
-  "subtitle": "The on-chain rental guarantee fund.",
-  "navLabel": "Footer",
+  "tagline": "Ativo real. Rendimento real.",
+  "subtitle": "O fundo de garantia locatícia on-chain.",
+  "navLabel": "Rodapé",
   "columns": [
     {
-      "label": "Protocol",
+      "label": "Protocolo",
       "links": [
         {
           "label": "Docs",
@@ -13,14 +13,14 @@
       ]
     },
     {
-      "label": "Built on",
+      "label": "Construído sobre",
       "links": [
         {
           "label": "Stellar Development Foundation",
           "href": "https://stellar.org"
         },
         {
-          "label": "Stellar 37° Acceleration Program",
+          "label": "Stellar 37° Programa de Aceleração",
           "href": "https://stellar.org"
         }
       ]
@@ -29,15 +29,15 @@
       "label": "Legal",
       "links": [
         {
-          "label": "privacy",
+          "label": "privacidade",
           "href": "/privacidade"
         },
         {
-          "label": "terms",
+          "label": "termos",
           "href": "/termos"
         }
       ]
     }
   ],
-  "copyright": "© {year} mutav. Rental guarantee token."
+  "copyright": "© {year} mutav. Token de garantia locatícia."
 }

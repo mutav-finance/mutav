@@ -1,25 +1,25 @@
 {
-  "kicker": "our vision",
+  "kicker": "nossa visão",
   "h2Lines": [
-    "REAL YIELD",
-    "REAL INFRA",
-    "REAL ACCESS"
+    "RENDIMENTO REAL",
+    "INFRA REAL",
+    "ACESSO REAL"
   ],
   "items": [
     {
-      "gapRef": "Correlation",
-      "headline": "Yield from rent.",
-      "body": "MUTAV yield comes from rental fees and Brazilian treasury. When crypto corrects, your position holds. Magic."
+      "gapRef": "Correlação",
+      "headline": "Rendimento do aluguel.",
+      "body": "O rendimento MUTAV vem de taxas de aluguel e do tesouro brasileiro. Quando o cripto corrige, sua posição segura. Magia."
     },
     {
-      "gapRef": "No accountability",
-      "headline": "Legal structure.",
-      "body": "MUTAV built the infrastructure that opens this market. The full operation runs within a regulated framework."
+      "gapRef": "Sem accountability",
+      "headline": "Estrutura legal.",
+      "body": "A MUTAV construiu a infraestrutura que abre esse mercado. A operação inteira roda dentro de um framework regulado."
     },
     {
-      "gapRef": "No access",
-      "headline": "On-chain for the 1st time.",
-      "body": "Tokenized Brazil's rental market. Three token classes. Any qualified investor. Self-custodial. The vehicle that didn't exist until now."
+      "gapRef": "Sem acesso",
+      "headline": "On-chain pela 1ª vez.",
+      "body": "Tokenizamos o mercado de aluguel do Brasil. Três classes de token. Qualquer investidor qualificado. Self-custodial. O veículo que não existia até agora."
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "kicker": "backing",
+  "kicker": "apoiadores",
   "items": [
     {
       "org": "Stellar Development Foundation",
-      "detail": "Stellar 37° - Acceleration Program",
+      "detail": "Stellar 37° - Programa de Aceleração",
       "type": "acceleration"
     }
   ]
