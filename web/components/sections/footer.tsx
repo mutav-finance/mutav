@@ -1,13 +1,11 @@
 import { useTranslations } from "next-intl";
 import { Logo } from "@/components/primitives/logo";
-import { LiveSquare } from "@/components/primitives/live-square";
 
 type FooterLink = { label: string; href: string };
 type FooterColumn = { label: string; links: FooterLink[] };
 
 export function SiteFooter() {
   const t = useTranslations("footer");
-  const tNav = useTranslations("nav");
   const columns = t.raw("columns") as FooterColumn[];
   const year = new Date().getFullYear();
 
@@ -16,10 +14,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-16">
         <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
           <div>
-            <div className="flex items-center gap-3">
-              <Logo />
-              <LiveSquare label={tNav("liveLabel")} />
-            </div>
+            <Logo />
             <p className="mt-6 font-sans text-base-sm leading-relaxed text-text max-w-[24rem]">
               {t("tagline")}
             </p>
