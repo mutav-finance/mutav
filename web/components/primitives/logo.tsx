@@ -21,9 +21,9 @@ import { cn } from "@/lib/utils";
  *   - Override sizing/spacing via `className` (e.g. `<Logo className="h-6 gap-3" />`)
  */
 
-const BRAND_LOGO_SRC: string | null = "/brand/logo.png";
-const BRAND_LOGO_INTRINSIC_WIDTH = 231;
-const BRAND_LOGO_INTRINSIC_HEIGHT = 231;
+const BRAND_LOGO_SRC: string | null = "/brand/logo.svg";
+const BRAND_LOGO_INTRINSIC_WIDTH = 72;
+const BRAND_LOGO_INTRINSIC_HEIGHT = 60;
 
 type Props = {
   className?: string;
