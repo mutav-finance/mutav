@@ -31,7 +31,7 @@ export function SiteFooter() {
 
           <nav
             aria-label={t("navLabel")}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8"
+            className="flex flex-wrap gap-12 justify-start"
           >
             {columns.map((col) => (
               <div key={col.label}>

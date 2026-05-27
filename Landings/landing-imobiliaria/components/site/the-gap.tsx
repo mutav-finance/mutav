@@ -17,12 +17,12 @@ export function TheGap() {
         <MonoKicker label={t("kicker")} />
         <h2
           id="gap-h2"
-          className="mt-6 max-w-[40rem] font-display font-bold text-text text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em]"
+          className="mt-6 max-w-[40rem] font-display font-bold text-text text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] uppercase"
         >
           {t("h2")}
         </h2>
 
-        <ul className="mt-16 grid gap-12 lg:grid-cols-3 lg:gap-8">
+        <ul className="mt-16 grid gap-12 lg:grid-cols-4 lg:gap-8">
           {items.map((g) => (
             <li key={g.label} className="border-t border-border pt-6">
               <p className="font-mono text-2xs uppercase tracking-[0.03em] text-text-2">

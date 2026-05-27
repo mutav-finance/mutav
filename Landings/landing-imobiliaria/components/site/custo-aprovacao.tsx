@@ -8,7 +8,7 @@ export function CustoAprovacao() {
   const items = t.raw("items") as CustoItem[];
 
   return (
-    <section aria-labelledby="custo-h2" className="border-b border-border">
+    <section id="produto" aria-labelledby="custo-h2" className="border-b border-border">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
         <MonoKicker label={t("kicker")} />
         <h2

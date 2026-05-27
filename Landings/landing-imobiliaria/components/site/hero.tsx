@@ -7,7 +7,7 @@ export function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-h1"
-      className="border-b border-border"
+      className="border-b border-border overflow-hidden"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24 lg:py-40">
         <MonoKicker

@@ -134,6 +134,45 @@
   --color-primary-foreground: #1A1A1A;
 }
 
+/* Shine border — rotating conic gradient border for solution cards */
+@property --shine-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes shine-rotate {
+  from { --shine-angle: 0deg; }
+  to   { --shine-angle: 360deg; }
+}
+.shine-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--shine-fill, var(--canvas)), var(--shine-fill, var(--canvas))) padding-box,
+    conic-gradient(
+      from var(--shine-angle),
+      transparent 0deg,
+      rgba(196, 126, 16, 0.35) 60deg,
+      transparent 120deg
+    ) border-box;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .shine-border {
+    animation: shine-rotate var(--shine-duration, 14s) linear infinite;
+  }
+}
+
+/* Solution card dots — sequential blink */
+@keyframes mutav-dot-blink {
+  0%   { opacity: 1; }
+  20%  { opacity: 0.15; }
+  80%  { opacity: 0.15; }
+  100% { opacity: 1; }
+}
+.mutav-dot-blink {
+  animation: mutav-dot-blink 3.6s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
 /* Live amber square pulse — only ambient animation in the system */
 @keyframes mutav-live-pulse {
   0%, 100% { opacity: 1; }

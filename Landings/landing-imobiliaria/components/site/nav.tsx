@@ -16,7 +16,31 @@ export function SiteNav() {
           <Logo />
           <LiveSquare label={t("liveLabel")} />
         </a>
-        <LanguageToggle />
+
+        <nav aria-label="menu principal" className="hidden lg:flex items-center gap-8">
+          <a
+            href="#produto"
+            className="font-mono text-xs uppercase tracking-[0.06em] text-text-2 hover:text-text transition-colors"
+          >
+            {t("produto")}
+          </a>
+          <a
+            href="#team"
+            className="font-mono text-xs uppercase tracking-[0.06em] text-text-2 hover:text-text transition-colors"
+          >
+            {t("quemSomos")}
+          </a>
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="#imobiliaria"
+            className="hidden lg:inline-flex items-center px-4 h-8 font-mono text-xs uppercase tracking-[0.06em] bg-accent text-canvas hover:bg-accent/90 transition-colors"
+          >
+            {t("cta")}
+          </a>
+          <LanguageToggle />
+        </div>
       </div>
     </header>
   );
