@@ -1,10 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import { WaitlistForm } from "./waitlist-form";
+
+const ease = [0.16, 1, 0.3, 1] as const;
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, ease, delay },
+});
 
 export function ImobiliariaCapture() {
   const t = useTranslations("imobiliaria");
-  const items = t.raw("items") as string[];
 
   return (
     <section
@@ -16,7 +26,7 @@ export function ImobiliariaCapture() {
         <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-8 -translate-x-[13%] translate-y-[5%]">
           <div className="relative w-[732px] h-[976px]">
             <Image
-              src="/img/11.jpg"
+              src="/img/khay-edwards.jpg"
               alt=""
               fill
               className="object-cover grayscale opacity-15"
@@ -34,7 +44,7 @@ export function ImobiliariaCapture() {
         </div>
       </div>
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-8 py-24 grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-        <div className="flex flex-col items-center">
+        <motion.div className="flex flex-col items-center" {...fadeUp(0)}>
           <span className="mb-3 flex items-center gap-4">
             <Image
               src="/brand/logo.svg"
@@ -59,12 +69,12 @@ export function ImobiliariaCapture() {
               +30 ANOS
             </p>
             <p className="font-mono text-xs text-text whitespace-nowrap leading-none">
-              no mercado de aluguel imobiliário
+              no mercado locatício
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col">
+        <motion.div className="flex flex-col" {...fadeUp(0.15)}>
           <h2
             id="imob-h2"
             className="font-display font-bold text-text text-[2.04rem] lg:text-[2.73rem] leading-[1.1] tracking-[-0.02em] uppercase whitespace-pre-line"
@@ -78,9 +88,8 @@ export function ImobiliariaCapture() {
           <p className="mt-6 font-mono text-2xs leading-relaxed text-text-2">
             {t("consent")}
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
-
   );
 }

@@ -3,7 +3,8 @@ import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { TheGap } from "@/components/site/the-gap";
 import { Solutions } from "@/components/site/solutions";
-import { VisionArc } from "@/components/site/vision-arc";
+import { ImobHelp } from "@/components/site/imob-help";
+import { QuemSomos } from "@/components/site/quem-somos";
 import { ImobiliariaCapture } from "@/components/site/imobiliaria-capture";
 import { SiteFooter } from "@/components/site/footer";
 
@@ -22,8 +23,9 @@ export default async function Home({
         <Hero />
         <TheGap />
         <Solutions />
-        <VisionArc />
+        <ImobHelp />
         <ImobiliariaCapture />
+        <QuemSomos />
       </main>
       <SiteFooter />
     </>

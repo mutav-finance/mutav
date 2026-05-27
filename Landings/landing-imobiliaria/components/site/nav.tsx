@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./logo";
 import { LiveSquare } from "./live-square";
 import { LanguageToggle } from "./language-toggle";
@@ -25,6 +26,12 @@ export function SiteNav() {
             {t("produto")}
           </a>
           <a
+            href="#imob-help"
+            className="font-mono text-xs uppercase tracking-[0.06em] text-text-2 hover:text-text transition-colors"
+          >
+            {t("diferenciais")}
+          </a>
+          <a
             href="#team"
             className="font-mono text-xs uppercase tracking-[0.06em] text-text-2 hover:text-text transition-colors"
           >
@@ -37,7 +44,7 @@ export function SiteNav() {
             href="#imobiliaria"
             className="hidden lg:inline-flex items-center px-4 h-8 font-mono text-xs uppercase tracking-[0.06em] bg-accent text-canvas hover:bg-accent/90 transition-colors"
           >
-            {t("cta")}
+            {t("cta")} <ArrowUpRight className="ml-1 w-4 h-4" />
           </a>
           <LanguageToggle />
         </div>
