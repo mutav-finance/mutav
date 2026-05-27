@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
 
 type Founder = {
   initial: string;
@@ -17,7 +16,7 @@ const HREFS: Record<string, string> = {
 
 const PHOTOS: Record<string, string> = {
   D: "/team/draau.jpg",
-  J: "/team/jubs.png",
+  J: "/team/jubs.jpg",
 };
 
 export function Team() {
@@ -31,55 +30,68 @@ export function Team() {
       className="border-b border-border"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24">
-        <MonoKicker label={t("kicker")} />
         <h2
           id="team-h2"
-          className="mt-6 max-w-[40rem] font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+          className="font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] text-center uppercase"
         >
           {t("h2")}
         </h2>
 
-        <ul className="mt-16 grid gap-px bg-border lg:grid-cols-2">
-          {founders.map((f) => {
-            const photo = PHOTOS[f.initial];
-            return (
-              <li key={f.name} className="bg-surface p-8 flex items-start gap-6">
-                <a
-                  href={HREFS[f.initial] ?? "#"}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={f.githubLabel}
-                  className="shrink-0 size-16 outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
-                >
-                  {photo ? (
-                    <Image
-                      src={photo}
-                      alt={f.name}
-                      width={64}
-                      height={64}
-                      className="size-16 object-cover grayscale"
-                    />
-                  ) : (
-                    <span className="size-16 bg-accent text-canvas grid place-items-center font-display font-bold text-xl hover:bg-accent-dim transition-[background-color] duration-150 ease-out">
-                      {f.initial}
-                    </span>
-                  )}
-                </a>
-                <div className="flex-1 min-w-0">
-                  <p className="font-display font-bold text-xl leading-tight text-text">
-                    {f.name}
-                  </p>
-                  <p className="mt-1 font-mono text-xs text-accent">
-                    {f.role}
-                  </p>
-                  <p className="mt-3 font-sans text-base-sm leading-relaxed text-text-2">
-                    {f.bio}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-8 flex flex-col gap-4 mx-auto w-fit">
+          <ul className="grid gap-px bg-border lg:grid-cols-2">
+            {founders.map((f) => {
+              const photo = PHOTOS[f.initial];
+              return (
+                <li key={f.name} className="bg-canvas flex flex-col">
+                  <a
+                    href={HREFS[f.initial] ?? "#"}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={f.githubLabel}
+                    className="relative flex-1 block min-h-[300px] outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                  >
+                    {photo ? (
+                      <Image
+                        src={photo}
+                        alt={f.name}
+                        fill
+                        sizes="(min-width: 1024px) 40vw, 100vw"
+                        className="object-cover grayscale"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-accent text-canvas grid place-items-center font-display font-bold text-4xl">
+                        {f.initial}
+                      </div>
+                    )}
+                  </a>
+                  <div className="p-6 border-t border-border bg-surface-2 shrink-0">
+                    <p className="font-display font-bold text-xl leading-tight text-text">
+                      {f.name}
+                    </p>
+                    <p className="mt-1 font-mono text-xs text-accent">
+                      {f.role}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="border border-accent p-5 flex flex-col justify-center items-center text-center self-center">
+            <p className="font-mono text-xs text-text-2 whitespace-nowrap leading-relaxed">
+              {t("preBadge")}
+            </p>
+            <p
+              className="font-display font-bold text-accent leading-none tracking-[-0.04em]"
+              style={{ fontSize: "clamp(2.1rem, 4.25vw, 3.6rem)" }}
+            >
+              +30 ANOS
+            </p>
+            <p className="mt-1.5 font-mono text-xs text-text-2 whitespace-nowrap leading-relaxed">
+              {t("badge")}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,47 +1,94 @@
+"use client";
+
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { MonoKicker } from "./mono-kicker";
+import { motion } from "framer-motion";
 import { WaitlistForm } from "./waitlist-form";
+
+const ease = [0.16, 1, 0.3, 1] as const;
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, ease, delay },
+});
 
 export function ImobiliariaCapture() {
   const t = useTranslations("imobiliaria");
-  const items = t.raw("items") as string[];
 
   return (
     <section
       id="imobiliaria"
       aria-labelledby="imob-h2"
-      className="border-b border-border"
+      className="relative border-b border-border overflow-hidden"
     >
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24 grid gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <MonoKicker index={t("kickerIndex")} label={t("kicker")} />
+      <div className="absolute inset-0 flex items-center pointer-events-none" aria-hidden>
+        <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-8 -translate-x-[13%] translate-y-[5%]">
+          <div className="relative w-[732px] h-[976px]">
+            <Image
+              src="/img/khay-edwards.jpg"
+              alt=""
+              fill
+              className="object-cover grayscale opacity-15"
+            />
+            <div className="absolute inset-0 bg-canvas opacity-30 mix-blend-multiply" />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to right, var(--canvas) 0%, transparent 25%, transparent 60%, var(--canvas) 100%)" }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to bottom, var(--canvas) 0%, transparent 15%, transparent 85%, var(--canvas) 100%)" }}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-8 py-24 grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <motion.div className="flex flex-col items-center" {...fadeUp(0)}>
+          <span className="mb-3 flex items-center gap-4">
+            <Image
+              src="/brand/logo.svg"
+              alt=""
+              width={77}
+              height={64}
+              className="shrink-0"
+            />
+            <div className="flex flex-col justify-center gap-2">
+              <span className="font-display font-bold text-[#0a0a0a] text-2xl leading-none tracking-[-0.02em] uppercase">feito para quem tem</span>
+              <span className="font-display font-bold text-[#0a0a0a] text-2xl leading-none tracking-[-0.02em] uppercase">muito o que fazer.</span>
+            </div>
+          </span>
+          <div className="mt-3 border border-accent px-12 py-5 flex flex-col items-center text-center w-fit mx-auto gap-1.5 bg-white/25">
+            <p className="font-mono text-xs text-text whitespace-nowrap leading-none">
+              assessorado por especialistas com
+            </p>
+            <p
+              className="font-display font-bold text-accent leading-none tracking-[-0.04em]"
+              style={{ fontSize: "clamp(2.1rem, 4.25vw, 3.6rem)" }}
+            >
+              +30 ANOS
+            </p>
+            <p className="font-mono text-xs text-text whitespace-nowrap leading-none">
+              no mercado locatício
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div className="flex flex-col" {...fadeUp(0.15)}>
           <h2
             id="imob-h2"
-            className="mt-6 font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em]"
+            className="font-display font-bold text-text text-[2.04rem] lg:text-[2.73rem] leading-[1.1] tracking-[-0.02em] uppercase whitespace-pre-line"
           >
             {t("h2")}
           </h2>
-          <ol className="mt-8 space-y-4 list-none">
-            {items.map((line, i) => (
-              <li
-                key={i}
-                className="font-sans text-base leading-relaxed text-text"
-              >
-                {line}
-              </li>
-            ))}
-          </ol>
-        </div>
 
-        <div className="flex flex-col">
-          <WaitlistForm audience="imobiliaria" />
+          <div className="mt-10">
+            <WaitlistForm audience="imobiliaria" />
+          </div>
           <p className="mt-6 font-mono text-2xs leading-relaxed text-text-2">
-            {t("dignity")}
-          </p>
-          <p className="mt-3 font-mono text-2xs leading-relaxed text-text-2">
             {t("consent")}
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

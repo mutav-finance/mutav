@@ -9,59 +9,99 @@
   "nav": {
     "logoLabel": "mutav — início",
     "liveLabel": "protocolo ativo",
-    "languageLabel": "Idioma"
+    "languageLabel": "Idioma",
+    "quemSomos": "Quem somos?",
+    "diferenciais": "Para imobiliárias",
+    "produto": "Produto",
+    "cta": "Seja uma parceira"
   },
   "hero": {
-    "kicker": "começamos pela garantia",
+    "kicker": "MUTAV SOLUÇÕES",
     "kickerIndex": "01",
     "kickerTotal": "04",
     "h1Line1": "Aluguel garantido,",
-    "h1Line2": "do jeito que deveria",
-    "h1Line3": "funcionar.",
-    "subhead": "Quando o inquilino atrasa, você recebe. Sem formulário, sem fila, sem intermediário que decide quando pagar. O protocolo executa o repasse automaticamente — e cada repasse fica registrado, público e verificável.",
-    "manifesto": "O protocolo que não falha quando o mercado falha."
+    "h1Line2": "do jeito que deveria ser",
+    "h1Line3": "",
+    "subheadHighlight": "Sem fiador, sem caução, sem burocracia.",
+    "subhead": "Sua imobiliária fecha mais contratos com menos atrito, acompanha o fundo de cobertura em tempo real e conta com seguro prestamista para o inquilino quando ele mais precisar.",
+    "manifesto": "GARANTIA MUTAV — FEITO PARA QUEM TEM MUITO O QUE FAZER"
   },
   "socialProof": {
-    "kicker": "credibilidade",
-    "h2": "Construído com quem conhece o mercado.",
+    "stat": "+30 anos",
+    "kicker": "apoiado por quem vive o mercado",
+    "headline": "atuando no mercado de locação imobiliária"
+  },
+  "auditavel": {
+    "kicker": "auditável",
+    "h2": "Cada repasse, registrado e verificável",
     "items": [
+      "Toda liquidação é registrada onchain — pública, permanente e acessível por qualquer pessoa.",
+      "Sem histórico escondido. O lastro do fundo é verificável em tempo real, não é promessa.",
+      "Código aberto e audit report disponíveis. Não confie. Verifique."
+    ]
+  },
+  "solutions": {
+    "kicker": "O que a MUTAV oferece",
+    "h2": "GARANTIA MUTAV",
+    "description": "Proteção para todos os envolvidos",
+    "cards": [
       {
-        "name": "Cinara Bigóis",
-        "role": "30 anos no mercado de locação no Sul do Brasil",
-        "body": "Referência no segmento de locação no Sul do Brasil. Parceira no desenho do modelo operacional da MUTAV desde o início — o gap de garantia foi identificado diretamente no campo, junto de quem opera o mercado todo dia."
+        "kicker": "transparência",
+        "headline": "LASTRO VERIFICÁVEL",
+        "body": "O fundo que cobre seus contratos pode ser consultado a qualquer momento, direto na plataforma. Você vê o lastro em tempo real e sabe exatamente o que está coberto. Acreditamos que saber o que você está entregando para os seus clientes não é um diferencial. É o básico."
+      },
+      {
+        "kicker": "agilidade",
+        "headline": "APROVAÇÃO FACILITADA",
+        "body": "Sem fiador, sem caução, sem papelada. A análise é automática e o resultado sai na hora. Simule direto na plataforma, suba seus contratos em poucos passos e feche mais negócios sem burocracia no caminho."
+      },
+      {
+        "kicker": "proteção",
+        "headline": "PROTEÇÃO EM 3 NÍVEIS",
+        "body": "Cada contrato tem um perfil de risco diferente. A MUTAV oferece três níveis de cobertura para que a imobiliária escolha o que faz mais sentido para cada inquilino."
+      },
+      {
+        "kicker": "para o inquilino",
+        "headline": "Seguro prestamista incluso.",
+        "body": "Em caso de perda de renda, o inquilino tem cobertura. Sem fiador, sem caução, sem seguro fiança tradicional. A MUTAV substitui tudo num único fee mensal embutido no boleto. Proteção para o inquilino."
       }
     ]
   },
   "art37": {
     "kicker": "base legal",
-    "h2": "Amparado pelo Art. 37 da Lei do Inquilinato.",
+    "h2": "Amparado pelo Art. 37 da Lei do Inquilinato",
     "body": "A MUTAV opera como fiadora institucional com base no Art. 37, inciso I da Lei 8.245/91 — a mesma lei que regula todos os contratos de locação no Brasil. Para a imobiliária: nenhuma mudança no contrato de locação. Para o inquilino: sem fiador, sem caução, sem seguro fiança. Para o proprietário: cobertura automática.",
     "note": "Somos novos no mercado. Nossa base legal é pública, verificável e a mesma de sempre."
   },
   "gap": {
-    "kicker": "o problema",
-    "h2": "Quem aluga, e quem investe, paga pela mesma falha.",
+    "kicker": "o mercado hoje",
+    "h2": "Quem aluga, e quem cuida,\npaga pela mesma falha",
     "items": [
       {
         "label": "Tempo",
-        "headline": "O repasse pode esperar 60 dias.",
-        "body": "O aluguel não pode. Famílias inteiras pagam o financiamento contando com o aluguel que não chega."
+        "headline": "Até 90 dias para cobertura.",
+        "body": "A espera no processo de cobertura impacta o fluxo de caixa do proprietário e a credibilidade da imobiliária. Contratos que dependem de garantias lentas comprometem toda a operação."
+      },
+      {
+        "label": "Insegurança",
+        "headline": "Insegurança em cada contrato.",
+        "body": "O mercado de garantias locatícias ainda opera com processos ineficientes. Não é um problema isolado, é uma realidade que a maioria das imobiliárias enfrenta no dia a dia."
       },
       {
         "label": "Opacidade",
-        "headline": "Garantia que ninguém audita.",
-        "body": "As garantidoras tradicionais não publicam histórico de repasses. Quando quebram, ninguém vê chegando."
+        "headline": "Sem visibilidade.",
+        "body": "Quando não é possível acompanhar o que cobre o contrato, a confiança fica no ar. O que não pode ser auditado não pode ser confiável."
       },
       {
-        "label": "Fragilidade",
-        "headline": "2025. O mercado falhou. Milhares de contratos afetados.",
-        "body": "Quando uma garantidora concentrada cai, o mercado inteiro sente. A MUTAV distribui o risco — o fundo não depende de um único player não quebrar."
+        "label": "Inquilino",
+        "headline": "O inquilino fica desprotegido.",
+        "body": "Sem cobertura em caso de perda de renda, o inquilino vira inadimplente mesmo querendo pagar. Um problema que afeta toda a cadeia do contrato."
       }
     ]
   },
   "custoAprovacao": {
     "kicker": "custo e aprovação",
-    "h2": "Simples de contratar.",
+    "h2": "Simples de contratar",
     "items": [
       {
         "label": "Aprovação",
@@ -81,40 +121,42 @@
     ],
     "note": "Valores de referência. Detalhes finais confirmados antes do lançamento."
   },
-  "vision": {
-    "kicker": "o caminho — sem datas, sem promessas",
-    "h2": "Começamos pela garantia. O aluguel inteiro vem depois.",
-    "phases": [
+  "imobHelp": {
+    "kicker": "para imobiliárias",
+    "h2": "A MUTAV veio pra facilitar a sua vida",
+    "cards": [
       {
-        "n": "01",
-        "label": "Agora",
-        "title": "Garantia locatícia",
-        "body": "Repasse automático ao proprietário em caso de inadimplência. Liquidação programada, registro público."
+        "icon": "layout",
+        "title": "Fácil de usar",
+        "body": "Sua equipe não precisa aprender nada novo. A gestão dos contratos acontece numa plataforma simples. Menos tempo administrativo, mais tempo fechando negócio.",
+        "checklist": ["menos burocracia", "mais contratos"]
       },
       {
-        "n": "02",
-        "label": "Próximo",
-        "title": "Score de reputação onchain",
-        "body": "Histórico de pagamentos como reputação verificável — para inquilinos, proprietários e imobiliárias."
+        "icon": "trending",
+        "title": "Mais contratos fechados",
+        "body": "Sem fiador, sem caução, sem burocracia. Sua imobiliária oferece uma alternativa moderna que desburocratiza o fechamento e reduz os contratos que travam no processo.",
+        "checklist": ["sem fiador", "sem caução"]
       },
       {
-        "n": "03",
-        "label": "Depois",
-        "title": "MUTAV — exposição programável",
-        "body": "Investidores acessam o spread do mercado de locação com NAV verificável e log de liquidações onchain."
+        "icon": "eye",
+        "title": "Transparência",
+        "body": "Você consegue conferir o fundo de cobertura a qualquer momento. Você sabe exatamente o que está entregando para o seu cliente. Acreditamos que a nossa transparência é a sua segurança.",
+        "exclusive": true,
+        "checklist": ["fundo auditável"]
       },
       {
-        "n": "04",
-        "label": "Horizonte",
-        "title": "Pagamentos e fundos programáveis",
-        "body": "Otimizar o que mais trava o mercado de locação — transações, pagamentos, custódia de fundos. Onde fizer sentido."
+        "icon": "shield",
+        "title": "Segurança para todos",
+        "body": "Se o inquilino perder a renda, o seguro prestamista entra em ação. Menos inadimplência chegando na sua mesa, menos estresse para sua equipe e mais tranquilidade para todos os lados do contrato.",
+        "exclusive": true,
+        "checklist": ["proteção para todos", "seguro prestamista incluso"]
       }
     ]
   },
   "bifurcation": {
     "kicker": "qual lado é o seu?",
-    "h2Line1": "Diga quem você é.",
-    "h2Line2": "Avisamos quando estiver pronto.",
+    "h2Line1": "Diga quem você é",
+    "h2Line2": "Avisamos quando estiver pronto",
     "cards": [
       {
         "n": "01",
@@ -137,23 +179,19 @@
   "imobiliaria": {
     "kickerIndex": "→ 01",
     "kicker": "imobiliária ou proprietário",
-    "h2": "Você não fica esperando.",
-    "items": [
-      "Quando o inquilino atrasa, você recebe.",
-      "Sem formulário. Sem fila. Sem ligar para uma central.",
-      "O dinheiro cai na conta cadastrada — automaticamente."
-    ],
+    "h2": "Seja um parceiro\nda MUTAV",
+    "items": [],
     "cobertura": {
       "kicker": "como cobrimos",
       "body": "Nossa cobertura é composta por um fundo com investidores internacionais e pela nossa infraestrutura programável, que mantém o capital alocado em Tesouro brasileiro. Cada repasse é registrado — o lastro é verificável, não é promessa."
     },
     "dignity": "Vamos te avisar quando estiver pronto. Não vamos te encher.",
-    "consent": "Ao entrar na lista, você consente com o uso do seu e-mail para receber novidades sobre a MUTAV. Pode sair quando quiser — basta responder qualquer e-mail com \"sair\"."
+    "consent": "Ao enviar, você aceita contato por e-mail. Cancele quando quiser."
   },
   "seguroPrestamista": {
     "kickerIndex": "→ 03",
     "kicker": "para o inquilino também",
-    "h2": "O inquilino sai ganhando.",
+    "h2": "O inquilino sai ganhando",
     "items": [
       "Sem fiador. Sem caução. Sem seguro fiança tradicional.",
       "A MUTAV substitui tudo isso — num único fee mensal embutido no boleto.",
@@ -164,8 +202,8 @@
   "investidor": {
     "kickerIndex": "→ 02",
     "kicker": "investidor",
-    "h2Line1": "Yield real. Colateral verificável.",
-    "h2Line2": "Mercado brasileiro, onchain.",
+    "h2Line1": "Yield real. Colateral verificável",
+    "h2Line2": "Mercado brasileiro, onchain",
     "items": [
       "Exposição ao spread de garantias locatícias brasileiras — especificidade que pool genérico não tem.",
       "Liquidação programática registrada onchain. Audit report e código abertos.",
@@ -175,49 +213,41 @@
     "tagline": "Não confie. Verifique."
   },
   "team": {
-    "kicker": "quem está construindo",
-    "h2": "Não é projeto anônimo.",
+    "kicker": "quem somos",
+    "h2": "Quem é a MUTAV?",
+    "description1": "A MUTAV surgiu como uma startup de garantias locatícias no Sul do Brasil. A equipe acredita que o mercado de locação brasileiro normalizou problemas que não deveriam ser normais. Proprietários esperando meses por cobertura, imobiliárias absorvendo risco que não é delas e um mercado que ainda não encontrou uma resposta à altura.",
+    "description2": "A operação conta com uma rede de assessores com <b>mais de 30 anos no mercado locatício</b>. São profissionais que acompanham o dia a dia das imobiliárias e sabem o que falha antes de virar problema. Com esse respaldo, a equipe constrói um protocolo de cobertura com fundo verificável, com menos papelada e sem processo novo para a imobiliária aprender.",
+    "preBadge": "assessorado por especialistas com",
+    "badge": "no mercado locatício",
+    "githubCta": "acompanhe o build → github.com/mutav-finance",
     "founders": [
       {
         "initial": "D",
-        "name": "Matheus \"Draau\" de Pauli",
+        "name": "Matheus \"Draau\"\nde Pauli",
         "role": "Project Manager · Web3 Builder",
-        "bio": "5+ anos construindo marcas na interseção de tecnologia, marca e mercado. Coordenação de equipes multidisciplinares e desenvolvimento de produtos em blockchain. Cofundador do No Bloco. Exposição direta à rede imobiliária do Sul do Brasil — o primeiro contato com o gap de garantia locatícia.",
+        "bio": "Trabalha na interseção entre tecnologia e mercado há 5 anos. Teve contato direto com o gap de garantia locatícia através da rede imobiliária do Sul do Brasil e não conseguiu ignorar.",
         "githubLabel": "Draau no GitHub"
       },
       {
         "initial": "J",
         "name": "Julia Hoffmann Buratto",
         "role": "Design Engineer · Arquiteta UFSC",
-        "bio": "Fundadora da jubs.studio. Lançou a Chainless em 2023, de zero a 30.000 usuários, ainda em operação. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em produtos fintech e Web3.",
+        "bio": "Designer e engenheira. Já lançou produto do zero com tração real. Traz o lado técnico e de produto da MUTAV com obsessão por fazer sistemas complexos parecerem simples.",
         "githubLabel": "jubs no GitHub"
       }
     ]
   },
   "footer": {
-    "tagline": "Aluguel garantido, do jeito que deveria funcionar.",
-    "subtitle": "Protocolo de garantia locatícia construído na Stellar.",
+    "tagline": "Feito para quem tem muito o que fazer!",
+    "subtitle": "Garantias Locatícias com MUTAV Soluções",
     "navLabel": "Rodapé",
     "columns": [
       {
-        "label": "Protocolo",
-        "links": [
-          { "label": "github.com/mutav-finance", "href": "https://github.com/mutav-finance" },
-          { "label": "white paper", "href": "https://github.com/mutav-finance/mutav" }
-        ]
-      },
-      {
-        "label": "Builders",
-        "links": [
-          { "label": "Draau", "href": "https://github.com/draaujpeg" },
-          { "label": "jubs", "href": "https://github.com/hoffms" }
-        ]
-      },
-      {
-        "label": "Stellar",
+        "label": "Apoio",
         "links": [
           { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
-          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" }
+          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" },
+          { "label": "NearX", "href": "https://nearx.com.br" }
         ]
       },
       {
@@ -228,7 +258,7 @@
         ]
       }
     ],
-    "copyright": "© {year} mutav — token de garantia de aluguel."
+    "copyright": "© {year} mutav soluções — garantias locatícias."
   },
   "waitlist": {
     "emailLabel": "Seu e-mail",
@@ -239,7 +269,7 @@
       "investidor": "[ entrar na lista ]"
     },
     "success": {
-      "imobiliaria": "recebido — você está na lista. Vamos te avisar quando estiver pronto.",
+      "imobiliaria": "recebido — entraremos em contato por e-mail.",
       "investidor": "recebido — você está na lista de investidores. Acompanhe o build no github.com/mutav-finance."
     },
     "error": {
@@ -248,7 +278,7 @@
         "investidor": "E-mail inválido. Verifique o formato."
       },
       "DUPLICATE": {
-        "imobiliaria": "Esse e-mail já está na lista. Vamos te avisar quando estiver pronto.",
+        "imobiliaria": "Esse e-mail já está na lista. Entraremos em contato por e-mail.",
         "investidor": "Já está na lista. Confira o histórico no GitHub."
       },
       "RATE_LIMITED": {

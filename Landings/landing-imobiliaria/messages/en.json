@@ -9,7 +9,10 @@
   "nav": {
     "logoLabel": "mutav — home",
     "liveLabel": "protocol live",
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "quemSomos": "About us",
+    "produto": "Product",
+    "cta": "Become a partner"
   },
   "hero": {
     "kicker": "we start with the guarantee",
@@ -17,35 +20,70 @@
     "kickerTotal": "04",
     "h1Line1": "Rent insurance,",
     "h1Line2": "the way it should",
-    "h1Line3": "work.",
+    "h1Line3": "work",
     "subhead": "When the tenant is late, you get paid. No form, no queue, no intermediary deciding when to settle. The protocol sends the payout automatically — and every payout is recorded, public, and verifiable.",
     "manifesto": "The protocol that doesn't fail when the market fails."
   },
   "socialProof": {
-    "kicker": "credibility",
-    "h2": "Built with people who know the market.",
+    "stat": "+30 years",
+    "kicker": "backed by people who live the market",
+    "headline": "in the real estate rental market"
+  },
+  "auditavel": {
+    "kicker": "auditable",
+    "h2": "Every payout, recorded and verifiable",
     "items": [
+      "Every settlement is recorded on-chain — public, permanent, and accessible by anyone.",
+      "No hidden history. The fund's collateral is verifiable in real time, not a promise.",
+      "Open-source code and audit report available. Don't trust. Verify."
+    ]
+  },
+  "solutions": {
+    "kicker": "innovating the market",
+    "h2": "What MUTAV offers",
+    "description": "Simple for every side of the contract",
+    "cards": [
       {
-        "name": "Cinara Bigóis",
-        "role": "30 years in the Southern Brazil rental market",
-        "body": "A reference in Southern Brazil's rental segment. Partner in designing MUTAV's operational model from day one — the guarantee gap was identified directly in the field, alongside people who run the market every day."
+        "kicker": "transparency",
+        "headline": "Every payout, recorded.",
+        "body": "Every settlement is public and permanent on-chain. The fund's collateral is verifiable in real time — not a promise."
+      },
+      {
+        "kicker": "agility",
+        "headline": "Approved in 48h. Zero cost.",
+        "body": "No changes to the lease agreement, no fee for the agency. Analysis is automatic and payouts happen without anyone needing to act."
+      },
+      {
+        "kicker": "simplicity",
+        "headline": "No guarantor. No deposit.",
+        "body": "MUTAV replaces all traditional guarantees with a single monthly fee bundled into rent — with credit life insurance included in case of income loss."
+      },
+      {
+        "kicker": "protection",
+        "headline": "Credit life insurance included.",
+        "body": "If the tenant loses income, they're covered. No guarantor, no deposit, no traditional surety bond — MUTAV replaces it all with a single monthly fee bundled into rent."
       }
     ]
   },
   "art37": {
     "kicker": "legal foundation",
-    "h2": "Backed by Art. 37 of the Tenant Protection Act.",
+    "h2": "Backed by Art. 37 of the Tenant Protection Act",
     "body": "MUTAV operates as an institutional guarantor under Art. 37, clause I of Law 8.245/91 — the same law that governs all rental contracts in Brazil. For the agency: no change to the lease agreement. For the tenant: no guarantor, no deposit, no traditional surety bond. For the landlord: automatic coverage.",
     "note": "We are new to the market. Our legal foundation is public, verifiable, and the same as always."
   },
   "gap": {
     "kicker": "the problem",
-    "h2": "Renters and investors pay for the same broken layer.",
+    "h2": "Renters and investors pay for the same broken layer",
     "items": [
       {
         "label": "Time",
-        "headline": "Settlement can wait 60 days.",
+        "headline": "Settlement can wait 60-90 days.",
         "body": "Rent can't. Whole families cover mortgages on rent that never arrives."
+      },
+      {
+        "label": "Fragility",
+        "headline": "2025. The market failed. Thousands of contracts affected.",
+        "body": "When a concentrated provider falls, the whole market feels it. MUTAV distributes the risk — the fund doesn't depend on any single player staying solvent."
       },
       {
         "label": "Opacity",
@@ -53,15 +91,15 @@
         "body": "Traditional providers don't publish payout history. When they collapse, nobody sees it coming."
       },
       {
-        "label": "Fragility",
-        "headline": "2025. The market failed. Thousands of contracts affected.",
-        "body": "When a concentrated provider falls, the whole market feels it. MUTAV distributes the risk — the fund doesn't depend on any single player staying solvent."
+        "label": "Tenant",
+        "headline": "The tenant bears the risk alone.",
+        "body": "With no coverage when they lose income, the tenant defaults even when willing to pay. The market punishes those already vulnerable."
       }
     ]
   },
   "custoAprovacao": {
     "kicker": "cost and approval",
-    "h2": "Simple to onboard.",
+    "h2": "Simple to onboard",
     "items": [
       {
         "label": "Approval",
@@ -81,40 +119,36 @@
     ],
     "note": "Reference figures. Final details confirmed before launch."
   },
-  "vision": {
-    "kicker": "the path — no dates, no promises",
-    "h2": "We start with the guarantee. The whole rental layer comes after.",
-    "phases": [
+  "imobHelp": {
+    "kicker": "for agencies",
+    "h2": "MUTAV helps your agency",
+    "cards": [
       {
-        "n": "01",
-        "label": "Now",
-        "title": "Rental guarantee",
-        "body": "Automatic payout to the landlord on default. Programmatic settlement, public record."
+        "icon": "layout",
+        "title": "Ease of use",
+        "body": "Easy to use and manage your contracts. Less admin time, more time closing deals."
       },
       {
-        "n": "02",
-        "label": "Next",
-        "title": "On-chain reputation score",
-        "body": "Payment history as verifiable reputation — for tenants, landlords, and agencies."
+        "icon": "trending",
+        "title": "More contracts closed",
+        "body": "Simple, 100% digital, built for people with a lot on their plate. No guarantor, no deposit, no red tape."
       },
       {
-        "n": "03",
-        "label": "After",
-        "title": "MUTAV — programmable exposure",
-        "body": "Investors access the rental-market spread with verifiable NAV and an on-chain settlement log."
+        "icon": "eye",
+        "title": "Auditability",
+        "body": "Anyone can check the coverage fund. No black box, no promise without backing."
       },
       {
-        "n": "04",
-        "label": "Horizon",
-        "title": "Programmable payments and funds",
-        "body": "Optimizing what most blocks the rental market — transactions, payments, fund custody. Where it makes sense."
+        "icon": "shield",
+        "title": "Safety for everyone involved",
+        "body": "We cover every side of the contract. Landlord gets paid, tenant is protected, agency has nothing to worry about."
       }
     ]
   },
   "bifurcation": {
     "kicker": "which side is yours?",
-    "h2Line1": "Tell us who you are.",
-    "h2Line2": "We'll let you know when we're ready.",
+    "h2Line1": "Tell us who you are",
+    "h2Line2": "We'll let you know when we're ready",
     "cards": [
       {
         "n": "01",
@@ -137,7 +171,7 @@
   "imobiliaria": {
     "kickerIndex": "→ 01",
     "kicker": "agency or landlord",
-    "h2": "You don't wait.",
+    "h2": "You don't wait",
     "items": [
       "When the tenant is late, you get paid.",
       "No form. No queue. No call to support.",
@@ -153,7 +187,7 @@
   "seguroPrestamista": {
     "kickerIndex": "→ 03",
     "kicker": "for the tenant too",
-    "h2": "The tenant wins as well.",
+    "h2": "The tenant wins as well",
     "items": [
       "No guarantor. No deposit. No traditional surety bond.",
       "MUTAV replaces all of it — one monthly fee built into the rent bill.",
@@ -164,8 +198,8 @@
   "investidor": {
     "kickerIndex": "→ 02",
     "kicker": "investor",
-    "h2Line1": "Real yield. Verifiable collateral.",
-    "h2Line2": "Brazilian rental market, on-chain.",
+    "h2Line1": "Real yield. Verifiable collateral",
+    "h2Line2": "Brazilian rental market, on-chain",
     "items": [
       "Exposure to the Brazilian rental-guarantee spread — specificity generic pools don't have.",
       "Programmatic settlement on-chain. Audit report and code open.",
@@ -176,7 +210,10 @@
   },
   "team": {
     "kicker": "who's building it",
-    "h2": "Not an anonymous project.",
+    "h2": "The people behind it",
+    "subtitle": "Named founders. We build in public.",
+    "preBadge": "backed by experts with",
+    "badge": "in the rental market",
     "founders": [
       {
         "initial": "D",
@@ -195,29 +232,16 @@
     ]
   },
   "footer": {
-    "tagline": "Rent insurance, the way it should work.",
-    "subtitle": "Rental guarantee protocol built on Stellar.",
+    "tagline": "Built for those who have too much to do!",
+    "subtitle": "Rental Guarantees with MUTAV Solutions",
     "navLabel": "Footer",
     "columns": [
       {
-        "label": "Protocol",
-        "links": [
-          { "label": "github.com/mutav-finance", "href": "https://github.com/mutav-finance" },
-          { "label": "white paper", "href": "https://github.com/mutav-finance/mutav" }
-        ]
-      },
-      {
-        "label": "Builders",
-        "links": [
-          { "label": "Draau", "href": "https://github.com/draaujpeg" },
-          { "label": "jubs", "href": "https://github.com/hoffms" }
-        ]
-      },
-      {
-        "label": "Stellar",
+        "label": "Apoio",
         "links": [
           { "label": "Stellar Development Foundation", "href": "https://stellar.org" },
-          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" }
+          { "label": "Stellar Acceleration", "href": "https://stellar.org/foundation/stellar-community-fund" },
+          { "label": "NearX", "href": "https://nearx.com.br" }
         ]
       },
       {
@@ -228,7 +252,7 @@
         ]
       }
     ],
-    "copyright": "© {year} mutav — rental guarantee token."
+    "copyright": "© {year} mutav soluções — garantias locatícias."
   },
   "waitlist": {
     "emailLabel": "Your email",

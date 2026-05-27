@@ -1,6 +1,6 @@
 # Project State
 
-## Project: TGA Landing Page (`landing`)
+## Project: MUTAV Landing Pages (`landing`)
 **Started:** 2026-05-02
 **Brand:** tga (vendored from sibling `brand/` repo)
 **Current Phase:** 6 (Review) — Conditional Pass
@@ -47,6 +47,28 @@
 - **Bifurcation + ImobiliariaCapture:** components remain in codebase but are unmounted in LP investidor. They are candidates for the `landing-imobiliaria` package.
 - **Founder photos committed:** `public/team/draau.jpg` + `public/team/jubs.png` — resolves design open question.
 - **Current page order (LP investidor):** Nav → Hero → SocialProof → TheGap → Market → Tiers → MidCta → VisionArc → InvestidorCapture → Team → Footer.
+
+## Post-review decisions (2026-05-20) — landing-imobiliaria re-review pass 3
+
+- **A-003 fixed:** `language-toggle.tsx` inactive locale `text-text-3` → `text-text-2` (5.4:1 AA in light context).
+- **H-001 fixed:** `MonoKicker` updated to render `index` prefix without requiring `total` — enables the `→ NN` section kicker pattern (ImobiliariaCapture, SeguroPrestamista).
+- **G-002 fixed:** `SeguroPrestamista` item text `text-text` → `text-text-2` for consistency with supporting body text.
+- **G-001 — ACCEPTED as design intent:** `Art37` kicker is label-only by design. Art37 is a legal reference section, not a numbered step in the user flow. Sections with `→ NN` numbering are action-oriented (ImobiliariaCapture → 01, SeguroPrestamista → 03); informational sections (TheGap, VisionArc, Art37) are label-only. This is the canonical pattern going forward.
+- **D-003 resolved:** `config.json` updated to list both implementation targets (`landing-investidor` + `landing-imobiliaria`) and label updated to "MUTAV Landing Pages". STATE.md renamed accordingly. No separate design project needed.
+
+## Post-review decisions (2026-05-20) — landing-imobiliaria re-review pass 2
+
+- **F-001 resolved:** `data-front="imobiliarias"` added to `<html>` in `layout.tsx:63` — Imobiliárias light front (`#F7F6F3` canvas, `#C47E10` accent) now active.
+- **F-002 resolved:** `InvestidorCapture` removed from `page.tsx`. `ImobiliariaCapture` is the sole capture form.
+- **A-003 escalated to Major:** Disabled `en` toggle (`text-text-3`) = `#9E9C98 on #F7F6F3` = 2.3:1 — fails WCAG 1.4.3 in the now-active light context. Fix: `text-text-3` → `text-text-2` in `language-toggle.tsx:16`.
+- **Review verdict:** Conditional Pass. 0 Critical, 1 Major (A-003 contrast), 4 Minor.
+
+## Post-review decisions (2026-05-20) — landing-imobiliaria re-review pass 1
+
+- **4 new components added:** SocialProof, CustoAprovacao, Art37, SeguroPrestamista — no design specs; brand contract followed inline.
+- **F-001 open (now resolved):** `landing-imobiliaria` rendered Investidor dark theme — `data-front="imobiliarias"` missing from layout.tsx. Fixed in pass 2.
+- **F-002 open (now resolved):** `InvestidorCapture` mounted on imobiliária landing — removed in pass 2.
+- **Team photos committed:** `draau.jpg` + `jubs.png` in both packages.
 
 ## Post-review decisions (2026-05-03)
 - **Vision arc phase 04 reframed:** "tokenização imobiliária" → "pagamentos e fundos programáveis". Brazilian regulation unfavorable for property tokenization in near term.

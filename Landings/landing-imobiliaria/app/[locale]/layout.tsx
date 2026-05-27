@@ -60,7 +60,7 @@ export default async function LocaleLayout({
   const t = await getTranslations({ locale });
 
   return (
-    <html lang={locale} className={`${geist.variable} h-full antialiased`}>
+    <html lang={locale} data-front="imobiliarias" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans text-text">
         <a href="#main" className="skip-link">
           {t("skipLink")}
