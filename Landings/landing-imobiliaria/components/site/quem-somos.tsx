@@ -72,7 +72,7 @@ export function QuemSomos() {
                         sizes="(min-width: 1024px) 150px, 50vw"
                         className="object-cover object-top grayscale brightness-125"
                       />
-                      <div className="absolute inset-0 bg-accent/25" />
+                      <div className="absolute inset-0 bg-accent/10" />
                     </>
                   ) : (
                     <div className="absolute inset-0 bg-accent grid place-items-center font-display font-bold text-4xl text-canvas">

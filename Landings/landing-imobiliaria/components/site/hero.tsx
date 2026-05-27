@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { ArrowDownRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { MonoKicker } from "./mono-kicker";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -19,9 +20,34 @@ export function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-h1"
-      className="border-b border-border overflow-hidden"
+      className="relative border-b border-border overflow-hidden"
     >
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-8 py-24 lg:py-40">
+      {/* Background image */}
+      <motion.div
+        className="absolute right-0 inset-y-0 w-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ duration: 1.2, ease, delay: 0.3 }}
+      >
+        <Image
+          src="/img/hero-building.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center grayscale brightness-125"
+          priority
+        />
+        <div className="absolute inset-0 bg-accent/25" />
+        {/* Fade left */}
+        <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-[var(--color-canvas)] to-transparent" />
+        {/* Fade right */}
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--color-canvas)] to-transparent" />
+        {/* Fade bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--color-canvas)] to-transparent" />
+      </motion.div>
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-8 py-24 lg:py-40">
         <motion.div {...fadeUp(0)}>
           <MonoKicker label={t("kicker")} showLine />
         </motion.div>
