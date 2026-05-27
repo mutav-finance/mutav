@@ -171,17 +171,14 @@
   "imobiliaria": {
     "kickerIndex": "→ 01",
     "kicker": "imobiliária ou proprietário",
-    "h2": "Seja um parceiro da MUTAV",
-    "items": [
-      "Feito para quem tem muito o que fazer.",
-      "Deixe seu e-mail e entraremos em contato."
-    ],
+    "h2": "Seja um parceiro\nda MUTAV",
+    "items": [],
     "cobertura": {
       "kicker": "como cobrimos",
       "body": "Nossa cobertura é composta por um fundo com investidores internacionais e pela nossa infraestrutura programável, que mantém o capital alocado em Tesouro brasileiro. Cada repasse é registrado — o lastro é verificável, não é promessa."
     },
     "dignity": "Vamos te avisar quando estiver pronto. Não vamos te encher.",
-    "consent": "Ao entrar, você aceita receber novidades por e-mail. Cancele quando quiser."
+    "consent": "Ao enviar, você aceita contato por e-mail. Cancele quando quiser."
   },
   "seguroPrestamista": {
     "kickerIndex": "→ 03",
@@ -209,9 +206,9 @@
   },
   "team": {
     "kicker": "quem está construindo",
-    "h2": "As pessoas por trás",
+    "h2": "A equipe fundadora",
     "subtitle": "Founders identificados. Construímos em público.",
-    "preBadge": "apoio de especialistas com",
+    "preBadge": "assessorado por especialistas com",
     "badge": "no mercado de aluguel imobiliário",
     "founders": [
       {

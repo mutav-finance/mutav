@@ -37,29 +37,8 @@ export function Team() {
           {t("h2")}
         </h2>
 
-        <div className="mt-8 grid lg:grid-cols-[auto_minmax(0,640px)] gap-10 lg:gap-16 items-start mx-auto w-fit">
-          <div className="flex flex-col justify-start items-center text-center">
-            <p className="font-mono text-base text-text-2 whitespace-nowrap leading-relaxed">
-              {t("preBadge")}
-            </p>
-            <p
-              className="font-display font-bold text-accent leading-none tracking-[-0.04em]"
-              style={{ fontSize: "clamp(5.5rem, 11vw, 10rem)" }}
-            >
-              +30
-            </p>
-            <p
-              className="font-display font-bold text-accent leading-none tracking-[-0.04em]"
-              style={{ fontSize: "clamp(4rem, 8vw, 7.5rem)" }}
-            >
-              ANOS
-            </p>
-            <p className="mt-4 font-mono text-base text-text-2 whitespace-nowrap leading-relaxed">
-              {t("badge")}
-            </p>
-          </div>
-
-          <ul className="grid gap-px bg-border lg:grid-cols-2 self-stretch">
+        <div className="mt-8 flex flex-col gap-4 mx-auto w-fit">
+          <ul className="grid gap-px bg-border lg:grid-cols-2">
             {founders.map((f) => {
               const photo = PHOTOS[f.initial];
               return (
@@ -69,7 +48,7 @@ export function Team() {
                     target="_blank"
                     rel="noopener"
                     aria-label={f.githubLabel}
-                    className="relative flex-1 block min-h-[200px] outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
+                    className="relative flex-1 block min-h-[300px] outline-none focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-2"
                   >
                     {photo ? (
                       <Image
@@ -97,6 +76,21 @@ export function Team() {
               );
             })}
           </ul>
+
+          <div className="border border-accent p-5 flex flex-col justify-center items-center text-center self-center">
+            <p className="font-mono text-xs text-text-2 whitespace-nowrap leading-relaxed">
+              {t("preBadge")}
+            </p>
+            <p
+              className="font-display font-bold text-accent leading-none tracking-[-0.04em]"
+              style={{ fontSize: "clamp(2.1rem, 4.25vw, 3.6rem)" }}
+            >
+              +30 ANOS
+            </p>
+            <p className="mt-1.5 font-mono text-xs text-text-2 whitespace-nowrap leading-relaxed">
+              {t("badge")}
+            </p>
+          </div>
         </div>
       </div>
     </section>
