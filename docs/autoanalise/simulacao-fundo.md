@@ -13,12 +13,12 @@ Modelo financeiro de crescimento do TGA SA com variáveis de mercado.
 | Contratos iniciais | 1.000 |
 | Crescimento médio | ~2.000 contratos/mês (variável) |
 | Aluguel médio | R$2.000/mês |
-| Câmbio | R$4,93 = $1 |
-| Fee ao fundo (8%) | R$160/mês = $32,45/contrato |
-| Fee ao protocolo (2%) | R$40/mês = $8,11/contrato |
+| Câmbio | R$5,00 = $1 |
+| Fee ao fundo (8%) | R$160/mês = $32,00/contrato |
+| Fee ao protocolo (2%) | R$40/mês = $8,00/contrato |
 | Yield colateral | 5% APY sobre AUM |
 | Inadimplência base | 3% ao ano ($3,05/contrato/mês) |
-| Payout por default | 3 meses de aluguel = $1.218 |
+| Payout por default | 3 meses de aluguel = $1.200 |
 | Taxa de resgate | 0,25% retida no fundo |
 | Cap de resgate | 2,5% do NAV/semana |
 

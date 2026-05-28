@@ -58,7 +58,7 @@
 
 | Período | Volume | Variação |
 |---|---|---|
-| 12 meses acumulados (2025) | **R$ 1,9 bilhão** | — |
+| 12 meses acumulados (2025) | **R$ 1,9 bilhão (~$380M)** | — |
 | Jan–Set 2024 | R$ 1,29 bilhão | +25,5% vs 2023 |
 | Jan–Mai 2025 | R$ 795,5 milhões | +14% vs 2024 |
 | Fevereiro 2025 (destaque) | R$ 174,5 milhões | recorde mensal |
@@ -93,8 +93,9 @@
 
 | Indicador | Dado | Fonte |
 |---|---|---|
-| Arrecadação (modalidade Instrumento de Garantia, Jan–Jul 2024) | R$ 1,87 bilhão | SUSEP / FenaCap |
-| Arrecadação (modalidade Instrumento de Garantia, 1º Sem 2025) | R$ 1,9 bilhão | SUSEP |
+| Arrecadação (modalidade Instrumento de Garantia, Jan–Jul 2024) | R$ 1,87 bilhão (7 meses) | SUSEP / FenaCap |
+| Arrecadação anualizada (modalidade Instrumento de Garantia, 2024) | **~R$ 3,2 bilhões/ano (~$640M)** | FenaCap Jan–Out 2024 anualizado |
+| Arrecadação (modalidade Instrumento de Garantia, 1º Sem 2025) | R$ 1,9 bilhão (~$380M) | SUSEP |
 | Crescimento modalidade garantia locatícia (2025 vs 2024) | **+7,6%** | FenaCap |
 | Total do setor de capitalização (Jan–Jul 2024) | R$ 17,89 bilhões | SUSEP |
 | Projeção do setor de capitalização para 2028 | R$ 91 bilhões | FenaCap |
@@ -131,23 +132,26 @@ Combinado garantias pagas (2024): 48,96%  → já superam o fiador
 
 | Modalidade | Volume anual |
 |---|---|
-| Seguro Fiança Locatícia (prêmios) | R$ 1,9 bi/ano |
-| Título de Capitalização (garantia locatícia) | ~R$ 1,9 bi/ano |
-| **Total garantias pagas (atual)** | **~R$ 3,8 bi/ano** |
+| Seguro Fiança Locatícia (prêmios) | R$ 1,9 bi/ano (~$380M) |
+| Título de Capitalização (garantia locatícia) | ~R$ 3,2 bi/ano (~$640M) |
+| Garantias digitais (fintechs) | ~R$ 300M/ano (~$60M) |
+| **Total onerosas (atual)** | **~R$ 5,4 bi/ano (~$1,08B)** |
 
-### SAM — Mercado Acessível
+> Nota: o valor de R$1,9B para Título de Capitalização (Jan–Jul 2024) reflete apenas 6–7 meses de dados, não o ano completo. A figura anualizada correta, baseada nos dados FenaCap Jan–Out 2024, é ~R$3,2B/ano.
 
-Considerando os 17,8M de domicílios alugados com ~49% já em garantias pagas:
-- ~8,7M de contratos com garantia paga
-- Ticket médio estimado de ~R$ 400–600/ano por contrato (7–10% de 1 aluguel médio)
-- **SAM estimado: R$ 3,5–5,2 bi/ano**
+### TAM e SAM
+
+| Nível | Valor | Critério |
+|---|---|---|
+| **TAM** (todas as onerosas) | **~$1,1B/ano** | Seguro Fiança + Título de Cap + Digital |
+| **SAM** (Título de Cap + Digital, sem SUSEP) | **~$700M/ano** | Mercado sem exigência de licença SUSEP |
 
 ### TAM total endereçável
 
 Os 39% ainda com fiador representam o mercado a ser convertido:
 - ~6,9M de contratos com fiador (potencial de migração)
-- Se convertidos a garantias pagas: **TAM adicional de R$ 2,8–4,1 bi/ano**
-- **TAM total (SAM + potencial de conversão): R$ 6–9 bi/ano**
+- Se convertidos a garantias pagas: **TAM adicional de R$ 2,8–4,1 bi/ano (~$560M–$820M)**
+- **TAM total (onerosas atuais + potencial de conversão): R$ 8–9,5 bi/ano (~$1,6B–$1,9B)**
 
 ---
 
@@ -156,14 +160,14 @@ Os 39% ainda com fiador representam o mercado a ser convertido:
 ### Seguradoras (Seguro Fiança)
 | Player | Destaque |
 |---|---|
-| **Tokio Marine** | 3º lugar no ranking; cresceu 52,1% no segmento fiança (2024); lucro total R$ 1,4 bi em 2024 |
-| **Pottencial** | Destaca R$ 1,9 bi movimentados em 12 meses no segmento |
+| **Tokio Marine** | 3º lugar no ranking; cresceu 52,1% no segmento fiança (2024); lucro total R$ 1,4 bi (~$280M) em 2024 |
+| **Pottencial** | Destaca R$ 1,9 bi (~$380M) movimentados em 12 meses no segmento |
 | **Porto Seguro** | Um dos maiores players do mercado imobiliário |
 
 ### Fintechs / Novos modelos
 | Player | Destaque |
 |---|---|
-| **CredAluga** | +200% em 2024; 30.000 contratos ativos; R$ 30M sob gestão (fundo); captou US$ 5M do Grupo OLX; round de R$ 60M em set/2024 (Provence Partners + Caravela Capital); receita projetada R$ 30M em 2024 |
+| **CredAluga** | +200% em 2024; 30.000 contratos ativos; R$ 30M ($6M) sob gestão (fundo); captou US$ 5M do Grupo OLX; round de R$ 60M (~$12M) em set/2024 (Provence Partners + Caravela Capital); receita projetada R$ 30M ($6M) em 2024 |
 | **QuintoAndar** | Encerrou serviço de garantia de aluguel para imobiliárias (2024) — abriu espaço para competidores |
 | **CredAluga + Kanastra** | Lançaram primeiro fundo de investimento como substituto ao título de capitalização para garantia locatícia |
 

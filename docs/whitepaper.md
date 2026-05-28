@@ -12,17 +12,17 @@ A MUTAV funciona como uma **infraestrutura onchain de garantia locatícia**, abr
 
 Alguns dados ilustram a dimensão e potencial desse mercado:
 
-- Ecosistema imobiliário (COFECI): O segmento de imobiliárias no Brasil movimenta anualmente **R$ 110 bilhões** [[FONTE]](https://imobireport.com.br/aluguel/credaluga-e-kanastra-lancam-primeiro-fundo-que-substitui-titulo-de-capitalizacao-como-garantia-de-aluguel/)
+- Ecosistema imobiliário (COFECI): O segmento de imobiliárias no Brasil movimenta anualmente **R$ 110 bilhões ($22B)** [[FONTE]](https://imobireport.com.br/aluguel/credaluga-e-kanastra-lancam-primeiro-fundo-que-substitui-titulo-de-capitalizacao-como-garantia-de-aluguel/)
 
 - Jan–Nov 2024 (CQCS): O segmento de seguro fiança locatícia arrecadou **R$ 1,29 bilhão em prêmios** emitidos entre janeiro e novembro de 2024. [[FONTE]](https://www.ideeseguros.com.br/seguro-fianca-cresce-em-2024)
 
 - Número de brasileiros vivendo de aluguel chegou a **46,5 milhões em 2024**, novo recorde histórico. [[FONTE]](https://agenciabrasil.ebc.com.br/geral/noticia/2025-08/parcela-de-familias-quem-pagam-aluguel-sobe-25-em-8-anos-mostra-ibge)
 
-- O mercado de garantias locatícias digitais movimenta cerca de **R$ 300 milhões por ano (2025)**, refletindo um setor ainda em estágio inicial, mas em expansão frente à crescente inadimplência e consolidação do segmento. [[FONTE]](https://portas.com.br/noticias/inadimplencia-crescente-acelera-consolidacao-no-mercado-de-garantias-locaticias/)
+- O mercado de garantias locatícias digitais movimenta cerca de **R$ 300 milhões por ano (~$60M) (2025)**, refletindo um setor ainda em estágio inicial, mas em expansão frente à crescente inadimplência e consolidação do segmento. [[FONTE]](https://portas.com.br/noticias/inadimplencia-crescente-acelera-consolidacao-no-mercado-de-garantias-locaticias/)
 
-- Loft / CredPago — os dados da aquisição bilionária: Na data da aquisição pela Loft (julho 2021), a CredPago tinha mais de 123 mil contratos, resultando em cerca de **R$ 40 bilhões em ativos sob gestão**, 16 mil imobiliárias parceiras e 145 mil clientes finais. A empresa havia crescido 10 vezes nos últimos 3 anos. A transação representou um **ganho de R$ 1,4 bilhão para o BTG Pactual** — que havia comprado 20% da CredPago em 2020 e depois ampliado para 49%. O BTG entrou por um valor muito menor e saiu bilionário em menos de **2 anos de investimento**. [[FONTE]](https://braziljournal.com/loft-compra-credpago-em-dinheiro-e-acoes/)
+- Loft / CredPago — os dados da aquisição bilionária: Na data da aquisição pela Loft (julho 2021), a CredPago tinha mais de 123 mil contratos, resultando em cerca de **R$ 40 bilhões ($8B) em ativos sob gestão**, 16 mil imobiliárias parceiras e 145 mil clientes finais. A empresa havia crescido 10 vezes nos últimos 3 anos. A transação representou um **ganho de R$ 1,4 bilhão (~$280M) para o BTG Pactual** — que havia comprado 20% da CredPago em 2020 e depois ampliado para 49%. O BTG entrou por um valor muito menor e saiu bilionário em menos de **2 anos de investimento**. [[FONTE]](https://braziljournal.com/loft-compra-credpago-em-dinheiro-e-acoes/)
 
-- Loft registra 1,2 milhão de transações em 2025 e amplia atuação em fintech. Empresa cresceu 35% no ano e **prevê investir R$ 100 milhões em tecnologia em 2026,** com foco em crédito imobiliário, **garantia locatícia** e SaaS. [[FONTE]](https://portas.com.br/mercado-imobiliario/loft-registra-12-milhao-de-transacoes-em-2025/#:~:text=Empresa%20cresceu%2035%25%20no%20ano%20e%20prev%C3%AA,R$%20100%20milh%C3%B5es%20em%20tecnologia%20em%202026.)
+- Loft registra 1,2 milhão de transações em 2025 e amplia atuação em fintech. Empresa cresceu 35% no ano e **prevê investir R$ 100 milhões ($20M) em tecnologia em 2026,** com foco em crédito imobiliário, **garantia locatícia** e SaaS. [[FONTE]](https://portas.com.br/mercado-imobiliario/loft-registra-12-milhao-de-transacoes-em-2025/#:~:text=Empresa%20cresceu%2035%25%20no%20ano%20e%20prev%C3%AA,R$%20100%20milh%C3%B5es%20em%20tecnologia%20em%202026.)
 
 ---
 
