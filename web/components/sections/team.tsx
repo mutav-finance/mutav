@@ -6,12 +6,6 @@ type Founder = {
   name: string;
   role: string;
   bio: string;
-  githubLabel: string;
-};
-
-const HREFS: Record<string, string> = {
-  D: "https://github.com/draaujpeg",
-  J: "https://github.com/hoffms",
 };
 
 const PHOTOS: Record<string, string> = {
@@ -48,13 +42,7 @@ export function Team() {
               const photo = PHOTOS[f.initial];
               return (
               <li key={f.name} className="bg-surface flex flex-col">
-                <a
-                  href={HREFS[f.initial] ?? "#"}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={f.githubLabel}
-                  className="relative w-full aspect-[4/3] bg-canvas border-b border-border flex items-center justify-center overflow-hidden outline-none focus-visible:outline-1 focus-visible:outline-accent"
-                >
+                <div className="relative w-full aspect-[4/3] bg-canvas border-b border-border flex items-center justify-center overflow-hidden">
                   {photo ? (
                     <Image
                       src={photo}
@@ -68,7 +56,7 @@ export function Team() {
                       [ photo · {f.initial} ]
                     </span>
                   )}
-                </a>
+                </div>
                 <div className="p-8">
                   <p className="font-display font-bold text-xl leading-tight text-text">
                     {f.name}
