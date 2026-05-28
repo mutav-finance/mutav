@@ -1,8 +1,8 @@
 {
   "kicker": "the market",
   "h2": "A billion-dollar market that's never been open to you",
-  "featuredValue": "$770M",
-  "featuredLabel": "Brazil's Rent\nGuarantee Ecosystem",
+  "featuredValue": "$1.1B",
+  "featuredLabel": "TAM - Brazil's Paid Rent\nGuarantee Ecosystem",
   "featuredBody": "The rental guarantee segment\nthat crypto has never accessed.",
   "featuredBody2": "Consistent fees from physical contracts.",
   "featuredSource": "+195% market growth since 2020",
@@ -13,14 +13,14 @@
       "source": "70,000 real agencies"
     },
     {
-      "value": "$258M",
-      "label": "Rental guarantee premiums (2024)",
+      "value": "$380M",
+      "label": "Rental guarantee premiums (2025)",
       "source": "rental insurance category only"
     },
     {
-      "value": "$60M",
-      "label": "Digital rental guarantee market (2025)",
-      "source": "app-based guarantee category only"
+      "value": "$700M",
+      "label": "SAM — Serviceable Market (2025)",
+      "source": "cap bonds + digital guarantee segment"
     },
     {
       "value": "46.5M",
