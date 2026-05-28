@@ -42,7 +42,7 @@ export function ImobHelp() {
           className="mt-6 font-display font-bold text-text text-3xl lg:text-4xl leading-[1.1] tracking-[-0.02em] uppercase"
           {...fadeUp(0.1)}
         >
-          A MUTAV veio pra <span className="text-accent">facilitar</span> a sua vida
+          {t.rich("h2", { accent: (chunks) => <span className="text-accent">{chunks}</span> })}
         </motion.h2>
 
         <motion.div className="mt-12 grid grid-cols-1 lg:grid-cols-[5fr_6fr] gap-2" {...fadeUp(0.2)}>

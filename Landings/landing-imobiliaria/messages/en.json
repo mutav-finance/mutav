@@ -11,6 +11,7 @@
     "liveLabel": "protocol live",
     "languageLabel": "Language",
     "quemSomos": "About us",
+    "diferenciais": "For agencies",
     "produto": "Product",
     "cta": "Become a partner"
   },
@@ -21,6 +22,7 @@
     "h1Line1": "Rent insurance,",
     "h1Line2": "the way it should",
     "h1Line3": "work",
+    "subheadHighlight": "No guarantor. No deposit. No red tape.",
     "subhead": "When the tenant is late, you get paid. No form, no queue, no intermediary deciding when to settle. The protocol sends the payout automatically — and every payout is recorded, public, and verifiable.",
     "manifesto": "The protocol that doesn't fail when the market fails."
   },
@@ -121,27 +123,33 @@
   },
   "imobHelp": {
     "kicker": "for agencies",
-    "h2": "MUTAV helps your agency",
+    "h2": "MUTAV is here to <accent>simplify</accent> your work",
     "cards": [
       {
         "icon": "layout",
         "title": "Ease of use",
-        "body": "Easy to use and manage your contracts. Less admin time, more time closing deals."
+        "body": "Easy to use and manage your contracts. Less admin time, more time closing deals.",
+        "checklist": ["less bureaucracy", "more contracts"]
       },
       {
         "icon": "trending",
         "title": "More contracts closed",
-        "body": "Simple, 100% digital, built for people with a lot on their plate. No guarantor, no deposit, no red tape."
+        "body": "Simple, 100% digital, built for people with a lot on their plate. No guarantor, no deposit, no red tape.",
+        "checklist": ["no guarantor", "no deposit"]
       },
       {
         "icon": "eye",
         "title": "Auditability",
-        "body": "Anyone can check the coverage fund. No black box, no promise without backing."
+        "body": "Anyone can check the coverage fund. No black box, no promise without backing.",
+        "exclusive": true,
+        "checklist": ["auditable fund"]
       },
       {
         "icon": "shield",
         "title": "Safety for everyone involved",
-        "body": "We cover every side of the contract. Landlord gets paid, tenant is protected, agency has nothing to worry about."
+        "body": "We cover every side of the contract. Landlord gets paid, tenant is protected, agency has nothing to worry about.",
+        "exclusive": true,
+        "checklist": ["protection for all", "credit life insurance included"]
       }
     ]
   },
@@ -212,6 +220,8 @@
     "kicker": "who's building it",
     "h2": "The people behind it",
     "subtitle": "Named founders. We build in public.",
+    "description1": "MUTAV started as a rental guarantee startup in southern Brazil. The team believes the Brazilian rental market has normalized problems that should never have become normal. Landlords waiting months for coverage, agencies absorbing risk that isn't theirs, and a market that still hasn't found an answer worth its weight.",
+    "description2": "The operation is supported by a network of advisors with <b>over 30 years in the rental market</b>. These are professionals who live the day-to-day of real estate agencies and know what breaks before it becomes a problem. With that backing, the team is building a coverage protocol with a verifiable fund, less paperwork, and no new process for the agency to learn.",
     "preBadge": "backed by experts with",
     "badge": "in the rental market",
     "founders": [

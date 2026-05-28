@@ -123,7 +123,7 @@
   },
   "imobHelp": {
     "kicker": "para imobiliárias",
-    "h2": "A MUTAV veio pra facilitar a sua vida",
+    "h2": "A MUTAV veio pra <accent>facilitar</accent> a sua vida",
     "cards": [
       {
         "icon": "layout",
