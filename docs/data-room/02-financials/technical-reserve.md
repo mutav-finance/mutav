@@ -54,12 +54,22 @@ Reserve_L1 = AUM × 20%
 
 ## Layer 2 — Coverage Months Target
 
-**Rule:** The reserve must cover at least 3 months of expected default payouts. Target is 6 months.
+**Rule:** Distribution rate is graduated by reserve coverage level. The fund targets 6 months of default coverage; distributions are reduced (not suspended) when coverage falls short.
 
 ```
 Monthly_defaults = default_rate × contracts × coverage_per_contract
 Reserve_L2 = Monthly_defaults × coverage_months
 ```
+
+### Distribution schedule by coverage level
+
+| Reserve coverage | Distribution rate | Reserve rebuild |
+|---|---|---|
+| >= 6 months (target) | **100%** — full distribution | None required |
+| 3–6 months (partial) | **50%** — partial distribution | 50% of net income redirected to reserve |
+| < 3 months (minimum) | **0%** — suspended | 100% of net income redirected to reserve |
+
+The 50% partial distribution rate applies when the reserve is between the 3-month floor and the 6-month target. Investors still receive yield during reserve recovery; the rebuild is slower but the fund is not locked.
 
 ### Brazil average (3.50%/month) — base case
 
@@ -134,10 +144,15 @@ Before any yield is distributed to token holders each month, the fund checks thr
 
 ```
 1. AUM > Reserve_L1 (20% floor)?          → if NO: no distribution
-2. Reserve balance > 6 months of defaults? → if NO: redirect income to reserve
+
+2. Reserve coverage level?
+   >= 6 months                            → 100% distribution
+   3–6 months                             → 50% distribution, 50% to reserve
+   < 3 months                             → 0% distribution, 100% to reserve
+
 3. Loss_ratio < 60%?                       → if NO: suspend distribution
 
-All three YES → distribute net income to MTVL, MTVM, MTVH per waterfall
+All conditions met → distribute net income to MTVL, MTVM, MTVH per waterfall
 ```
 
 ---
