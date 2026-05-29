@@ -27,7 +27,8 @@ These operate under SUSEP as underwriters — entirely internal capital, no inve
 | Player | Status | Key Data |
 |---|---|---|
 | **CredAluga** | Fast-growing | +200% in 2024; 30,000 contracts; R$30M AUM ($6M); raised R$60M (~$12M) (Sep 2024); Grupo OLX shareholder |
-| **QuintoAndar** | Exited segment (2024) | Left a gap that competitors are scrambling to fill |
+| **Creditas** | Established | Lease guarantee product for real estate agencies; +280% growth on brand trust alone, not on a meaningfully different mechanism |
+| **QuintoAndar** | Exited segment (2025) | Cancelled 45,000 contracts overnight — largest single market disruption in segment history |
 | **CredAluga + Kanastra** | Fund product | First investment fund replacing título de capitalização — closest structural analogue to MUTAV |
 
 **CredAluga is the most relevant benchmark:**
@@ -42,6 +43,26 @@ These operate under SUSEP as underwriters — entirely internal capital, no inve
 | Distribution moat | OLX Grupo (scale) | Cinara network (Sul); relationship-driven |
 
 CredAluga is well-capitalized with a head start. MUTAV's structural advantage: we can attract external capital they cannot access because their model is not designed for it.
+
+---
+
+## Substitutes & Status Quo
+
+### Substitutes (same need, different form)
+
+| Substitute | Current Situation |
+|---|---|
+| Traditional co-signer (fiador) | Dropped from 62% (2020) to 39% (2024) — in structural decline as urbanization reduces access to property-owning guarantors |
+| Cash deposit (caução) | Up to 3 months of rent held as security; tenant capital locked with zero return |
+
+### Status Quo (no paid guarantee)
+
+For agencies that don't push paid guarantees, the de facto alternatives are:
+
+- **Eviction through courts:** 6–12+ months without receiving rent; 3 months of rent locked in court deposits; full legal exposure for the agency
+- **Direct landlord–tenant deals:** rental negotiated without agency intermediation, bypassing both the guarantee and the agency's revenue
+
+Neither is acceptable to modern agencies — creating the structural opening for a guaranteed solution that works with, not around, them.
 
 ---
 
@@ -70,6 +91,42 @@ MUTAV vs. these protocols: more specific cash flow (rental fees are contractual 
 | Global investor access | No | No | Yes | **Yes** |
 | Programmatic default settlement | No | No | N/A | **Yes** |
 | Waterfall tranche architecture | Yes (insurance) | No | Yes (Maple) | **Yes** |
+
+---
+
+## Positioning Maps
+
+### Brazilian Rental Guarantee Market
+
+**Axes:** X = Product/Service → Smart Contract Infrastructure | Y = Opaque → Verifiable
+
+No incumbent has any incentive to publish their payout records. Real auditability would require reserve transparency that no traditional player would choose voluntarily. MUTAV owns this space by design — onchain means auditable by construction, not by promise.
+
+### Stellar RWA Market (Investor Perspective)
+
+**Axes:** X = Generic → Brazil-Specific | Y = Institutional → Accessible
+
+Most RWA projects start outside Brazil. The Brazilian rental guarantee market isn't obvious to anyone unfamiliar with local tenancy law. Using Brazil's payment rail requires an operational partner on the ground — a real barrier for projects without local presence. MUTAV is already there.
+
+---
+
+## Sustainable vs. False Differentials
+
+### Sustainable
+
+| Differential | Why it compounds |
+|---|---|
+| Proprietary data | An onchain repayment score that grows with every contract — the dataset becomes more valuable and exclusive over time |
+| Brand & trust | Identified founders, publicly auditable onchain records — vs. the structural opacity of every incumbent |
+| Pro-agency positioning | MUTAV settles claims automatically via smart contract with no adversarial process — while traditional insurance and fintechs dispute liability with agencies when a tenant defaults |
+
+### False
+
+| Differential | Why it fails |
+|---|---|
+| "We use blockchain" | Table stakes — not a differentiator |
+| "More features than surety insurance" | Easily copied |
+| "We're cheaper" | Destroys margin and attracts the wrong customers |
 
 ---
 

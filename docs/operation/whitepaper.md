@@ -10,6 +10,8 @@ A MUTAV surge como resposta a esse cenário, aplicando infraestrutura blockchain
 
 A MUTAV funciona como uma **infraestrutura onchain de garantia locatícia**, abrindo acesso a um mercado bilionário hoje concentrado em poucos participantes e criando as bases para uma camada financeira mais eficiente, transparente e escalável.
 
+O mercado de garantias locatícias pagas movimenta **$1.1B/ano (TAM)**, com um mercado digital endereçável de **$700M/ano (SAM)**. São **17.8 milhões de domicílios alugados no Brasil em 2024**, crescimento de 44,7% desde 2016. As garantias pagas saltaram de 18% para **49% de todos os contratos** entre 2020 e 2024 (+254%), ultrapassando o fiador como modalidade dominante.
+
 Alguns dados ilustram a dimensão e potencial desse mercado:
 
 - Ecosistema imobiliário (COFECI): O segmento de imobiliárias no Brasil movimenta anualmente **R$ 110 bilhões ($22B)** [[FONTE]](https://imobireport.com.br/aluguel/credaluga-e-kanastra-lancam-primeiro-fundo-que-substitui-titulo-de-capitalizacao-como-garantia-de-aluguel/)
@@ -32,10 +34,12 @@ O capital que sustenta as garantias locatícias atualmente é altamente **concen
 
 Isso gera quatro distorções principais:
 
-- **Para o mercado:** concentração de risco em poucos players. Quando um deles falha, como observado nos eventos envolvendo QuintoCred e CredPago em 2025, não há mecanismo eficiente de absorção coletiva.
+- **Para o mercado:** concentração de risco em poucos players. Quando um deles falha, como observado em 2025, quando a QuintoCred — uma das maiores garantidoras do Brasil — encerrou as operações de um dia para o outro, cancelando **45.000 contratos** e deixando **3.000 imobiliárias** sem cobertura, não há mecanismo eficiente de absorção coletiva.
 - **Para inquilinos:** estrutura oligopolista com custos elevados (10–15%)
-- **Para proprietários:** liquidação lenta de inadimplência (até 60 dias).
+- **Para proprietários:** liquidação lenta de inadimplência (até 90 dias).
 - **Para investidores:** um mercado de mais bilhionario em prêmios anuais permanece inacessível a pessoas físicas e ao ecossistema cripto.
+
+A imobiliária é o centro operacional de cada contrato — e as garantidoras tradicionais nunca as trataram como parceiras. A MUTAV faz diferente: o protocolo é construído em torno de como as imobiliárias realmente operam, não ao redor delas.
 
 A MUTAV resolve esses pontos simultaneamente.
 
@@ -55,7 +59,7 @@ O modelo é baseado em um **NAV apreciável**, no qual o retorno não é distrib
 
 O funcionamento da MUTAV segue um modelo estruturado baseado em mecanismos já consolidados em protocolos on-chain, como no mercado de reinsurance, validando sua robustez.
 
-Essa estrutura é sustentada por uma infraestrutura que garante transparência, execução automatizada e confiabilidade operacional. Isso permite que todos os contratos de garantia sejam registrados on-chain por meio da dashboard da imobiliaria, tornando o lastro do fundo verificável em tempo real. Complementarmente, a automatização da execução de inadimplências e a atualização do NAV, eliminando processos manuais e reduzindo o tempo de liquidação.
+Essa estrutura é sustentada por uma infraestrutura que garante transparência, execução automatizada com verificação por IA e confiabilidade operacional. Isso permite que todos os contratos de garantia sejam registrados on-chain por meio da dashboard da imobiliária, tornando o lastro do fundo verificável em tempo real. A execução de inadimplências é assistida por IA, combinando verificação automatizada com execução onchain para processar acionamentos com maior velocidade e precisão, com supervisão da equipe MUTAV em cada acionamento antes da liquidação final.
 
 A partir dessa base, o fluxo operacional se divide em três etapas principais: entrada de capital, geração de rendimento e saída.
 
@@ -174,11 +178,11 @@ A gestão de risco da MUTAV opera em dois planos complementares: no nível do co
 
 O modelo é estruturado para alinhar interesses entre todos os agentes do ecossistema de aluguel, distribuindo benefícios de forma clara:
 
-- **Investidor cripto-nativo** acessa o mercado de garantias locatícias por meio da valorização do NAV, com exposição a um ativo imobiliário e possibilidade de integração com o ecossistema DeFi.
+- **Investidor cripto-nativo** acessa o mercado de garantias locatícias por meio da valorização do NAV, com exposição a um ativo imobiliário, retorno descorrelacionado da volatilidade cripto, auto-custódia dos tokens via wallet própria e possibilidade de integração com o ecossistema DeFi.
 - **Investidor institucional** passa a ter acesso a um RWA estruturado, com transparência e capacidade de auditoria on-chain.
 - **Imobiliárias** ganham eficiência operacional e novas fontes de receita ao integrar o modelo de garantia tokenizada.
 - **Proprietários** se beneficiam de maior segurança e processos mais rápidos de liquidação em casos de inadimplência.
-- **Inquilinos** têm acesso facilitado ao aluguel, sem necessidade de garantias tradicionais mais restritivas.
+- **Inquilinos** têm acesso facilitado ao aluguel, sem necessidade de garantias tradicionais mais restritivas, com seguro de perda de renda incluso no contrato de garantia.
 
 O sistema cria um ciclo onde capital, eficiência e acesso são distribuídos de forma mais equilibrada entre todos os participantes.
 
@@ -210,7 +214,7 @@ Esse modelo garante sustentabilidade financeira ao mesmo tempo em que preserva c
 **Imobiliárias — entrada via rede existente**
 
 - Alvo: **20–30 imobiliárias** — litoral norte do RS e SC
-- Acesso via rede com **30+ anos de experiência** no mercado de locações do Sul do Brasil
+- Acesso via rede com **30+ anos de experiência** no mercado de locações do Sul do Brasil — região com o menor índice de inadimplência do país (**2,41%**), ideal para o piloto
 - Pitch: automação operacional + **fee de 2%** nos contratos e melhores condições para inquilinos e proprietários
 - Proprietários e inquilinos captados via imobiliárias parceiras
 
@@ -241,7 +245,7 @@ Esse modelo garante sustentabilidade financeira ao mesmo tempo em que preserva c
 
 O projeto é liderado por Matheus "Draau" de Pauli, Project Manager e Web3 builder com mais de 5 anos de experiência na construção e gestão de produtos que conectam tecnologia, marca e mercado. Atua na coordenação de equipes multidisciplinares e no desenvolvimento de soluções em blockchain, com base criativa aplicada à estratégia e execução. Além disso, é cofundador da comunidade No Bloco, iniciativa voltada à inserção de profissionais criativos no ecossistema Web3.
 
-A equipe conta também com Julia Hoffmann Buratto, design engineer, arquiteta e urbanista (UFSC), com MBA em Cidades Responsivas e fundadora da jubs.studio. Em 2023, lançou a Chainless, levando o produto de zero a 5.000 usuários; atualmente, o protocolo ultrapassa 30.000 usuários e segue operando conforme projetado. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em produtos fintech e Web3 voltados à tokenização, crédito e automação de fluxos financeiros.
+A equipe conta também com Julia Hoffmann Buratto, design engineer, arquiteta e urbanista (UFSC), com MBA em Cidades Responsivas e fundadora da jubs.studio. Em 2023, lançou a Chainless, levando o produto de zero a 30.000 usuários, ainda em operação. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em produtos fintech e Web3 voltados à tokenização, crédito e automação de fluxos financeiros.
 
 **Advisors**
 
@@ -251,7 +255,17 @@ Cinara Bigóis atua como Advisor de Mercado Imobiliário. Com 30 anos de experi�
 
 ---
 
-## 7. Conclusão
+## 7. Roadmap
+
+| Fase | Período | Milestones |
+|---|---|---|
+| **Phase 0 — Piloto** | Meses 0–6 | Mainnet live · 8–10 imobiliárias onboarded · 600 contratos ativos · $100K genesis AUM · Primeiro ciclo de fees fechado · Investidores early entram ao genesis NAV |
+| **Phase 1 — Escala** | Meses 6–18 | 20–30 imobiliárias · 2.500 contratos ativos · Abertura do fundo público · Integração DeFi como ativo RWA |
+| **Phase 2 — Expansão** | Meses 18–36 | 50 imobiliárias · 12.000 contratos ativos · $5M AUM · Seed Round ($5–6M) |
+
+---
+
+## 8. Conclusão
 
 A MUTAV propõe uma nova infraestrutura para o mercado de garantias locatícias, tornando-o mais aberto, eficiente e transparente por meio da tokenização e da utilização de blockchain. Ao conectar capital de investidores com demandas reais do setor imobiliário, o modelo cria um sistema sustentável, baseado em rendimento real e gestão de risco estruturada.
 

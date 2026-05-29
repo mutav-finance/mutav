@@ -1,7 +1,8 @@
 # MUTAV — Compliance Structure
 
-> Documento consolidado gerado em 2026-05-19. Fonte única de verdade para estrutura do modelo e fluxo de compliance operacional.
-> Decisões de política de treasury do app em [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
+> Documento consolidado gerado em 2026-05-19. Cobre fluxos operacionais, processo de compliance e decisões abertas.
+> Documento complementar — estrutura jurídica, entidades e acordos pendentes: [`docs/data-room/05-company-docs/legal-structure.md`](../data-room/05-company-docs/legal-structure.md).
+> Decisões de política de treasury do app: [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
 
 ---
 
@@ -50,7 +51,7 @@
 
 **O que é:** empresa operacional brasileira, atua como fiadora institucional nos contratos de locação.
 
-**Base legal:** Art. 37, inciso I da Lei do Inquilinato (fiança). Working hypothesis: o modelo de fiança institucional sob Art. 37 da Lei do Inquilinato mantém a Garantidora fora dos regimes SUSEP (seguro) e CVM (fundos), espelhando o precedente Credpago — pendente opinião de counsel.
+**Base legal (produto/serviço):** Art. 37, inciso I da Lei do Inquilinato (fiança) — enquadramento do produto, não do compliance estrutural. **Enquadramento regulatório:** TBD — pendente counsel (L1). Opções em avaliação: BACEN, SUSEP, CVM, ou nenhum (isento sob fiança). Não há posicionamento pré-definido.
 
 **Fluxo de receita:**
 
@@ -179,7 +180,7 @@ Default acontece na carteira
 
 | Entidade | País | Regulador | Receita |
 |---|---|---|---|
-| MUTAV Soluções | Brasil | BACEN (working hypothesis — pendente counsel) | 20% do split de fees |
+| MUTAV Soluções | Brasil | TBD — pendente counsel (L1) | 20% do split de fees |
 | Mutav Treasury Fund | Offshore (TBD) | Regulador local (TBD) | — |
 | Mutav Treasury Management | Offshore (TBD) | Regulador local (TBD) | Taxa de gestão + saque |
 

@@ -10,7 +10,7 @@
 | Parameter | Detail |
 |---|---|
 | Round type | Pre-Seed |
-| Target amount | [TBD — $XXX,XXX] |
+| Target amount | $200,000 |
 | Minimum ticket | [TBD — $XX,XXX] |
 | Instrument | [SAFE / Convertible Note / Token Warrant — TBD] |
 | Valuation cap | [TBD] |
@@ -22,21 +22,22 @@
 
 ## Use of Proceeds
 
-The pre-seed round funds MUTAV to its first mainnet milestone: a live product with 1,000+ active guarantee contracts and $500K+ in initial fund AUM.
+The pre-seed round funds MUTAV to its first mainnet milestone: a live product with 600 active guarantee contracts, $100K genesis AUM, and the first fee cycle closed — generating $32K/month in fee income to the fund.
 
 | Category | Allocation | Purpose |
 |---|---|---|
-| Legal & entity constitution | ~30% | Offshore entity (Cayman/BVI/Bermuda), Brazilian legal counsel (MUTAV Soluções), Subscription Agreement, Advisor agreements |
-| Smart contract audit | ~20% | Independent security audit (OpenZeppelin, Halborn, or equivalent) — required before mainnet with real investor capital |
-| KYC/AML infrastructure | ~15% | Vendor selection and integration (Sumsub or equivalent), biometric liveness, sanctions screening |
-| Pilot operations | ~20% | Imobiliária onboarding support, first team hires (Stellar engineer + legal ops), initial operational overhead |
-| Marketing & investor distribution | ~15% | Landing page, demo video, X/Twitter campaigns, hackathon presence, crypto media |
+| Fund allocation | ~50% | Capital deployed directly into the fund as genesis AUM |
+| Compliance & entity constitution | ~20% | Offshore entity (Cayman/BVI/Bermuda), Brazilian legal counsel (MUTAV Soluções), Subscription Agreement, Advisor agreements |
+| Smart contract audit | ~15% | Independent security audit (OpenZeppelin, Halborn, or equivalent) — required before mainnet with real investor capital |
+| Pilot operations | ~15% | Imobiliária onboarding support, first team hires (Stellar engineer + legal ops), initial operational overhead |
 
 ---
 
 ## What Investors Are Getting
 
 **The thesis:** MUTAV converts Brazil's closed rental guarantee capital market into an open, programmable, onchain infrastructure layer. The pre-seed funds the proof: live contracts, live AUM, live returns.
+
+**Entry terms:** pre-seed investors enter at **$1.00 NAV** — the genesis price, before any fee income or treasury yield accrues. This is the ground floor: the model projects **5x NAV and $50K/month net yield by month 18**.
 
 **The equity story:** investors in the pre-seed are buying into the entity that owns MUTAV Soluções (the Brazilian operational company) — which captures 20% of all tenant fees, and holds the mandatory MTVH position in the fund. As the fund grows, the value of that position grows.
 
@@ -62,7 +63,7 @@ The pre-seed does not need to fund MUTAV forever. It funds MUTAV to the point wh
 
 ## What Happens After Pre-Seed
 
-**Seed round target ($3-5M, projected ~18 months post-close):**
+**Seed round target ($5-6M, projected ~18 months post-close):**
 Triggered by: live mainnet + track record of contract growth + AUM above $3M threshold.
 Purpose: national expansion (beyond Sul region), institutional investor access, tranche architecture (MTVM/MTVL), DeFi integrations.
 

@@ -45,8 +45,9 @@ Paid guarantees surpassed the fiador as the dominant modality in 2024. The shift
 | Título de Capitalização (guarantee modality) | ~R$3.2B/year | ~$640M |
 | Digital fintechs (CredAluga, etc.) | ~R$300M/year | ~$60M |
 | **Total onerosas** | **~R$5.4B/year** | **~$1.08B** |
+| Captured (Insurance + Capitalização, SUSEP/FenaCAP) | ~R$3.8B/year | ~$760M |
 
-> Note: the R$1.9B figure for Título de Capitalização reflects Jan–Jul 2024 data only (6–7 months). The correct annualized figure from FenaCap Jan–Oct 2024 data is ~R$3.2B/year.
+> Note: the R$1.9B figure for Título de Capitalização reflects Jan–Jul 2024 data only (6–7 months). The correct annualized figure from FenaCap Jan–Oct 2024 data is ~R$3.2B/year. The R$3.8B "captured" figure (SUSEP/FenaCAP) represents the regulated and formally tracked portion of the market — a conservative floor for capital already flowing through the guarantee system.
 
 Growth rates: Seguro Fiança +195% (2020-2024); Garantias onerosas +254% (2020-2024). Record month: R$174.5M ($34.9M) in February 2025.
 
@@ -60,7 +61,7 @@ Default rates rising (3.14% Sep 2024 → 3.80% Sep 2025) — a tailwind: higher 
 |---|---|---|
 | TAM (all onerosas) | Seguro Fiança + Título de Cap + Digital | **~$1.1B/year** |
 | SAM (Título de Cap + Digital, no SUSEP) | Título de Cap (~$640M) + Digital (~$60M) | **~$700M/year** |
-| SOM (Year 1) | 23,500 contracts × R$200/year avg fee ($40) | ~$940K/year through MUTAV Soluções |
+| SOM (Year 1) | 5,000 contracts × R$40/month × 12 months | ~$480K/year through MUTAV Soluções (20% split) |
 
 ---
 

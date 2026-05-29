@@ -18,7 +18,7 @@ His approach to MUTAV is operator-first: the gap in Brazil's rental guarantee ca
 
 Systems architecture, UX, and onchain product design.
 
-Architect and urban planner (UFSC), MBA in Responsive Cities, founder of **jubs.studio**. Launched **Chainless** in 2023 — a Web3 fintech product — from zero to 5,000 users; now 30,000+ users, operating as designed. Co-designed MUTAV's three-tranche structure, NAV mechanics, and imobiliária dashboard flow.
+Architect and urban planner (UFSC), MBA in Responsive Cities, founder of **jubs.studio**. Launched **Chainless** in 2023 — a Web3 fintech product — from zero to 30,000 users, still running. Co-designed MUTAV's three-tranche structure, NAV mechanics, and imobiliária dashboard flow.
 
 Her track record of taking a DeFi product from zero to tens of thousands of real users is the clearest signal that MUTAV's product build is not speculative.
 

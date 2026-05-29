@@ -50,7 +50,6 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 |---|---|
 | [Market Opportunity](04-market-competition/market-opportunity.md) | Brazil's rental guarantee market: TAM/SAM/SOM, growth drivers, structural shift, and the macro tailwinds accelerating it |
 | [Competitive Landscape](04-market-competition/competitive-landscape.md) | Traditional incumbents, new entrants, global RWA protocols, and MUTAV's structural differentiation |
-| [Regulatory Landscape](04-market-competition/regulatory-landscape.md) | Brazilian and offshore regulatory framework, legal basis, pending decisions, and risk mitigation approach |
 
 ---
 
@@ -58,9 +57,8 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 
 | Document | Description |
 |---|---|
-| [Entity Structure](05-company-docs/entity-structure.md) | Three-entity architecture: MUTAV Soluções (BR), Mutav Treasury Fund (offshore), Mutav Treasury Management (offshore) |
+| [Legal Structure](05-company-docs/legal-structure.md) | Entity architecture, regulatory framework, jurisdiction options, open questions by priority, and pending legal agreements |
 | [Team & Advisors](05-company-docs/team-bios.md) | Full bios for founders and advisors, including the 30-year real estate network that enables the pilot |
-| [Legal Agreements — Pending](05-company-docs/_PENDING-legal-agreements.md) | Index of legal documents to be populated upon entity constitution |
 
 ---
 
