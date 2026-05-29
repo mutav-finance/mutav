@@ -28,40 +28,37 @@ Macro driver: 10.5% SELIC makes mortgage financing inaccessible for most Brazili
 
 ## The Guarantee Market
 
-### Shift from Fiador to Paid Guarantees
+### Shift from Personal Guarantor to Paid Guarantees
 
-| Year | Fiador | Paid guarantees | Caução/other |
+| Year | Personal guarantor (fiador) | Paid guarantees | Other |
 |---|---|---|---|
 | 2020 | 62.0% | 18.1% | 19.9% |
 | 2024 | 39.5% | **48.9%** | 11.6% |
 
-Paid guarantees surpassed the fiador as the dominant modality in 2024. The shift is structural and accelerating.
+Paid guarantees surpassed the personal guarantor as the dominant modality in 2024. The shift is structural and accelerating.
 
-### Volume
+### Market Volume
 
-| Type | Annual Volume | USD Equivalent |
+| Type | Annual volume | USD equivalent |
 |---|---|---|
-| Seguro Fiança Locatícia | R$1.9B/year | ~$380M |
-| Título de Capitalização (guarantee modality) | ~R$3.2B/year | ~$640M |
+| Surety insurance (Seguro Fiança) | R$1.9B/year | ~$380M |
+| Capitalização guarantee title | ~R$3.2B/year | ~$640M |
 | Digital fintechs (CredAluga, etc.) | ~R$300M/year | ~$60M |
-| **Total onerosas** | **~R$5.4B/year** | **~$1.08B** |
-| Captured (Insurance + Capitalização, SUSEP/FenaCAP) | ~R$3.8B/year | ~$760M |
+| **Total paid guarantees** | **~R$5.4B/year** | **~$1.08B** |
 
-> Note: the R$1.9B figure for Título de Capitalização reflects Jan–Jul 2024 data only (6–7 months). The correct annualized figure from FenaCap Jan–Oct 2024 data is ~R$3.2B/year. The R$3.8B "captured" figure (SUSEP/FenaCAP) represents the regulated and formally tracked portion of the market — a conservative floor for capital already flowing through the guarantee system.
+Growth: Surety insurance +195% (2020–2024); total paid guarantees +254% (2020–2024). Record month: R$174.5M ($34.9M) in February 2025.
 
-Growth rates: Seguro Fiança +195% (2020-2024); Garantias onerosas +254% (2020-2024). Record month: R$174.5M ($34.9M) in February 2025.
-
-Default rates rising (3.14% Sep 2024 → 3.80% Sep 2025) — a tailwind: higher defaults increase demand for guarantees. Sul region is lowest in Brazil at **2.41%**, ideal for the pilot.
+Default rates rising (3.14% Sep 2024 → 3.80% Sep 2025) — a tailwind: higher defaults increase demand for guarantees. Sul region is the lowest in Brazil at **2.41%**, ideal for the pilot.
 
 ---
 
-## TAM / SAM / SOM
+## Market Size (TAM / SAM / SOM)
 
-| Level | Calculation | Value |
+| Level | Description | Value |
 |---|---|---|
-| TAM (all onerosas) | Seguro Fiança + Título de Cap + Digital | **~$1.1B/year** |
-| SAM (Título de Cap + Digital, no SUSEP) | Título de Cap (~$640M) + Digital (~$60M) | **~$700M/year** |
-| SOM (Year 1) | 5,000 contracts × R$40/month × 12 months | ~$480K/year through MUTAV Soluções (20% split) |
+| TAM — total market | All paid guarantee modalities | **~$1.1B/year** |
+| SAM — addressable segment | Capitalização + digital (no SUSEP license needed) | **~$700M/year** |
+| SOM — Year 1 target | 5,000 contracts × R$40/month × 12 months | **~$480K/year** through MUTAV Soluções (20% split) |
 
 ---
 
@@ -75,4 +72,4 @@ Default rates rising (3.14% Sep 2024 → 3.80% Sep 2025) — a tailwind: higher 
 
 **4. High Selic → more renters:** +44.7% growth in rented households since 2016 with no reversal in sight.
 
-**5. RWA playbook proven globally:** Maple, Centrifuge, Goldfinch validated that credit instruments live on-chain. None touched Brazilian rental. MUTAV applies the playbook to a market that has never seen it.
+**5. Blockchain credit model proven globally:** Maple, Centrifuge, and Goldfinch validated that credit instruments can be managed on blockchain. None touched Brazilian rental. MUTAV applies the model to a market that has never seen it.

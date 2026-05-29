@@ -48,21 +48,13 @@ CredAluga is well-capitalized with a head start. MUTAV's structural advantage: w
 
 ## Substitutes & Status Quo
 
-### Substitutes (same need, different form)
-
-| Substitute | Current Situation |
+| Substitute | Current situation |
 |---|---|
 | Traditional co-signer (fiador) | Dropped from 62% (2020) to 39% (2024) — in structural decline as urbanization reduces access to property-owning guarantors |
-| Cash deposit (caução) | Up to 3 months of rent held as security; tenant capital locked with zero return |
+| Cash deposit (caução) | Up to 3 months of rent locked as security; tenant capital tied up with zero return |
+| No paid guarantee (status quo) | Agency faces 6–12+ months of unpaid rent through courts, locked deposits, and full legal exposure |
 
-### Status Quo (no paid guarantee)
-
-For agencies that don't push paid guarantees, the de facto alternatives are:
-
-- **Eviction through courts:** 6–12+ months without receiving rent; 3 months of rent locked in court deposits; full legal exposure for the agency
-- **Direct landlord–tenant deals:** rental negotiated without agency intermediation, bypassing both the guarantee and the agency's revenue
-
-Neither is acceptable to modern agencies — creating the structural opening for a guaranteed solution that works with, not around, them.
+Neither alternative is acceptable to modern agencies — which creates the structural opening for a guaranteed solution.
 
 ---
 
@@ -91,22 +83,6 @@ MUTAV vs. these protocols: more specific cash flow (rental fees are contractual 
 | Global investor access | No | No | Yes | **Yes** |
 | Programmatic default settlement | No | No | N/A | **Yes** |
 | Waterfall tranche architecture | Yes (insurance) | No | Yes (Maple) | **Yes** |
-
----
-
-## Positioning Maps
-
-### Brazilian Rental Guarantee Market
-
-**Axes:** X = Product/Service → Smart Contract Infrastructure | Y = Opaque → Verifiable
-
-No incumbent has any incentive to publish their payout records. Real auditability would require reserve transparency that no traditional player would choose voluntarily. MUTAV owns this space by design — onchain means auditable by construction, not by promise.
-
-### Stellar RWA Market (Investor Perspective)
-
-**Axes:** X = Generic → Brazil-Specific | Y = Institutional → Accessible
-
-Most RWA projects start outside Brazil. The Brazilian rental guarantee market isn't obvious to anyone unfamiliar with local tenancy law. Using Brazil's payment rail requires an operational partner on the ground — a real barrier for projects without local presence. MUTAV is already there.
 
 ---
 

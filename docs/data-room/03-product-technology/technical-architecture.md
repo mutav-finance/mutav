@@ -1,124 +1,126 @@
 # Technical Architecture
 
-> Stellar/Soroban smart contract. Source: `mutav-stellar/contracts/contract-introduction.md`
+> Smart contract on Stellar/Soroban. Source: `mutav-stellar/contracts/contract-introduction.md`
 
 ---
 
-## System Overview
+## How the System Works
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  BRAZIL — MUTAV Soluções (Garantidora)                       │
-│  Collects monthly fees via imobiliárias                      │
-│  Retains 20% → Operational cost                              │
-│  Passes 80% → Fund wallet (BRL → USDC on-ramp)              │
+│  BRAZIL — MUTAV Soluções (Guarantor)                         │
+│  Collects monthly fees via real estate agencies              │
+│  Retains 20% → Operations                                    │
+│  Passes 80% → Fund wallet (BRL → USDC)                      │
 └─────────────────────────┬────────────────────────────────────┘
                           │
                           ▼
 ┌──────────────────────────────────────────────────────────────┐
-│  STELLAR / SOROBAN — Mutav Treasury Fund Contract            │
-│  ├── AUM tracking (USDC equivalent)                         │
-│  ├── Token supply (MUTAV, SEP-0041)                         │
-│  ├── NAV = AUM ÷ supply (onchain, per event)                │
-│  ├── Redemption queue (weekly, 2.5% cap)                    │
-│  ├── Default coverage (owner cold wallet only)              │
-│  ├── Treasury yield recording (operator)                    │
-│  └── Emergency pause (owner)                                │
+│  STELLAR BLOCKCHAIN — Mutav Treasury Fund Contract           │
+│  ├── Total assets tracked (in USDC equivalent)              │
+│  ├── Token supply (MUTAV tokens)                            │
+│  ├── Token price = Total Assets ÷ Tokens issued             │
+│  ├── Withdrawal queue (weekly, 2.5% cap)                    │
+│  ├── Default coverage (cold wallet only)                    │
+│  ├── Treasury yield recording                               │
+│  └── Emergency pause                                        │
 │                                                              │
-│  Reserve: TESOURO via Etherfuse (tokenized BR Treasury)     │
+│  Reserve: Tokenized Brazilian Treasury via Etherfuse        │
 └─────────────────────────┬────────────────────────────────────┘
                           │
                           ▼
 ┌──────────────────────────────────────────────────────────────┐
 │  INVESTORS (self-custodial wallets)                           │
-│  MTVH / MTVM / MTVL tokens appreciate as NAV rises          │
-│  Exit via on-chain redemption queue                          │
+│  MTVH / MTVM / MTVL tokens appreciate as price rises        │
+│  Exit via on-chain withdrawal queue                          │
 └──────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Access Control: Owner + Operator
+## Access Control
 
-| Role | Wallet | Permissions |
+Two separate roles prevent a single point of failure:
+
+| Role | Wallet type | What it can do |
 |---|---|---|
-| **Owner** | Cold wallet | Cover defaults, change operator, pause, transfer ownership |
-| **Operator** | Hot wallet | Record yield, receive payments, process redemption queue, charge management fee |
+| **Owner** | Offline (cold) wallet | Cover defaults, pause operations, transfer ownership |
+| **Operator** | Online (hot) wallet | Record yield, receive payments, process withdrawals, charge management fee |
 
-Separating these prevents a compromised hot wallet from covering fraudulent defaults or draining the fund.
+If the online wallet is compromised, it cannot cover fraudulent defaults or drain the fund — only the offline wallet can do that.
 
 ---
 
-## NAV Mechanics
+## How the Token Price (NAV) Works
 
 ```
-NAV = Total AUM ÷ Total Tokens in Circulation
+Token price = Total fund assets ÷ Total tokens in circulation
 ```
 
-| Event | AUM | Token Supply | NAV |
+| Event | Fund assets | Tokens issued | Token price |
 |---|---|---|---|
-| Investor deposit | ↑ | ↑ proportional | Unchanged |
-| Fee income recorded | ↑ | Unchanged | ↑ |
-| Treasury yield recorded | ↑ | Unchanged | ↑ |
+| Investor deposits | ↑ | ↑ proportional | Unchanged |
+| Fee income received | ↑ | Unchanged | ↑ |
+| Treasury yield credited | ↑ | Unchanged | ↑ |
 | Default covered | ↓ | Unchanged | ↓ (waterfall absorbs) |
-| Redemption processed | ↓ | ↓ proportional | Unchanged |
+| Withdrawal processed | ↓ | ↓ proportional | Unchanged |
 | Management fee charged | ↓ | Unchanged | ↓ |
 
-**Key invariant:** deposits and redemptions never affect other investors' NAV.
+**Key rule:** new deposits and withdrawals never affect other investors' token price.
 
 ---
 
-## Redemption Queue
+## Withdrawal Process
 
-1. Investor submits request → tokens locked immediately; exit price not calculated yet
-2. Operator processes weekly → 2.5% AUM cap, FIFO, NAV calculated on processing day, tokens burned, 0.25% fee deducted
+1. Investor submits request → tokens are locked immediately; final price not calculated yet
+2. Operator processes weekly → FIFO order, 2.5% of fund cap, price calculated on processing day, 0.25% fee deducted
 3. Operator retrieves USDC from Etherfuse → sends to investor wallet
-4. **Investor protection:** if operator misses the payment deadline, investor can reclaim tokens — never permanently locked out
+4. **Safety valve:** if operator misses the payment deadline, investor can reclaim their tokens — funds are never permanently locked
 
-Requests beyond the weekly cap remain in the visible queue and continue accumulating yield.
+Requests beyond the weekly cap stay in the queue and continue accumulating yield.
 
 ---
 
 ## Default Coverage Flow
 
 ```
-Imobiliária reports default via dashboard
+Agency reports default via dashboard
         ↓
-MUTAV verifies: contract active, fees current, amount within ceiling
+MUTAV verifies: contract active, fees current, amount within limit
         ↓
 Internal review (5 business day SLA)
         ↓
-Owner triggers cover_default() — AUM reduced, NAV drops
-        Waterfall: MTVH first → MTVM → MTVL
+Owner triggers coverage — fund assets reduced, token price drops
+        Loss absorbed in order: MTVH first → MTVM → MTVL
         ↓
-Fund sends USDC to MUTAV Soluções → Pix/TED to imobiliária/landlord
+Fund sends USDC to MUTAV Soluções → Pix/TED to agency/landlord
 ```
 
 ---
 
-## Security Model
+## Security Measures
 
-| Mechanism | Protection |
+| Mechanism | What it protects against |
 |---|---|
-| Owner/operator split | Compromised hot wallet cannot drain fund |
-| Two-step ownership transfer | Typo cannot lock fund control permanently |
-| Emergency pause | Operations halt; redemption cancellation always available |
-| Redemption safety valve | Investors reclaim tokens if operator fails to pay |
-| Per-call yield cap | Max 5% of AUM per call — prevents manipulation |
-| On-chain audit trail | Every state change permanently recorded |
+| Owner/operator separation | Online wallet breach cannot drain the fund |
+| Two-step ownership transfer | Typo cannot permanently lock fund control |
+| Emergency pause | All operations halt; withdrawal cancellation always available |
+| Withdrawal safety valve | Investors reclaim tokens if operator fails to pay |
+| Per-call yield cap (5% of assets) | Prevents manipulation of yield recording |
+| On-chain audit trail | Every change permanently and publicly recorded |
 
 ---
 
 ## Etherfuse / Stellar Integration
 
-TESOURO is a Stellar-native tokenized Brazilian Treasury bond. The fund reserve lives in TESOURO: SELIC-linked yield accruing daily, structured redemption (not instant DEX exit), BRL-denominated.
+The fund reserve is held in tokenized Brazilian Treasury bonds (TESOURO) via Etherfuse on the Stellar blockchain. Yield accrues daily at SELIC-linked rates. Redemption is structured (not instant) — which is why the weekly withdrawal cap exists.
 
-**Pending confirmations pre-mainnet:**
+MUTAV tokens follow the Stellar token standard — compatible with Stellar's decentralized exchange and lending protocols without custom integrations.
+
+**Confirmations needed before mainnet:**
 1. Offshore fund entity eligibility as TESOURO holders (ET1)
-2. B2B settlement extension — BRL → TESOURO via imobiliária fee collections (ET4)
-3. Multisig custody model for the fund's Stellar signing keys (ET2)
-
-MUTAV tokens follow **Stellar SEP-0041** — standard transfer, approve spending allowances, query balance. Compatible with Stellar DEX and lending protocols without custom bridging.
+2. Settlement extension for fee collections via real estate agencies (ET4)
+3. Multi-signature custody model for the fund's Stellar keys (ET2)
 
 ---
 
@@ -126,11 +128,11 @@ MUTAV tokens follow **Stellar SEP-0041** — standard transfer, approve spending
 
 | Item | Status |
 |---|---|
-| Soroban contract design | Complete |
+| Smart contract design | Complete |
 | Contract documentation | Complete |
 | Testnet deployment | In progress |
 | Etherfuse confirmations (ET1, ET4) | Pending |
-| KYC/AML vendor integration | Evaluating |
-| Smart contract audit | Planned |
-| Multisig owner wallet | Planned |
-| Admin UI for operator | ~8-10 weeks |
+| Identity verification (KYC) vendor integration | Evaluating |
+| Smart contract security audit | Planned |
+| Multi-signature owner wallet | Planned |
+| Admin dashboard for operator | ~8–10 weeks |
