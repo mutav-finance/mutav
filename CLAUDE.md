@@ -5,10 +5,13 @@ MUTAV — tokenização de garantia de aluguel. Strategy, brand, docs, and share
 Part of the [mutav-finance](https://github.com/mutav-finance) org.
 
 ## Sibling repos
+
+Per [`mutav-stellar#57`](https://github.com/mutav-finance/mutav-stellar/issues/57) (2026-05-30) the **Stellar protocol delivery** is two repos: `mutav-stellar` (contracts + SDK) and `mutav-app` (Turborepo monorepo holding all persona apps + the Mutav API on Convex). The Solana implementation is its own repo. `mutav-fund` is soft-deprecating into `mutav-app/apps/fund/` (see [`mutav-fund#11`](https://github.com/mutav-finance/mutav-fund/issues/11)).
+
 - `brand` — canonical brand artifacts; vendored into each consumer's `.design/branding/mutav/`
 - `mutav-solana` — Solana/Anchor smart contracts (Colosseum Frontier hackathon)
-- `mutav-stellar` — Stellar/Soroban smart contracts (NearX acceleration)
-- `mutav-app` — Next.js dashboard for managing rental guarantees
+- `mutav-stellar` — Stellar/Soroban Fund contract + TS SDK (NearX acceleration). Canonical architecture map: [`mutav-stellar/docs/architecture/`](https://github.com/mutav-finance/mutav-stellar/tree/main/docs/architecture)
+- `mutav-app` — Turborepo monorepo: persona apps (agency / fund / admin / etc.) + the **Mutav API** (Convex backend). Replaces the standalone `mutav-fund` repo over time.
 
 ## Resources
 - **Colosseum Dev Resources:** https://colosseum.com/frontier/resources
