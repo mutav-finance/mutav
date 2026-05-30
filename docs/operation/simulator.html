@@ -306,14 +306,14 @@
       <input type="range" id="treasuryAPY" min="1" max="25" step="0.1" value="7.89">
     </div>
 
-    <div class="section">Protocolo MTVH</div>
+    <div class="section">Reinvestimento Protocolo</div>
 
     <div class="field">
       <div class="field-label">Reinvestimento protocolo (%) <strong id="v-mtvhPct">50%</strong></div>
       <input type="range" id="mtvhPct" min="0" max="100" step="5" value="50">
     </div>
     <div class="field">
-      <div class="field-label">Duração MTVH (meses) <strong id="v-mtvhMonths">12</strong></div>
+      <div class="field-label">Duração reinvest. (meses) <strong id="v-mtvhMonths">12</strong></div>
       <input type="range" id="mtvhMonths" min="0" max="36" step="1" value="12">
     </div>
 
@@ -330,6 +330,17 @@
     <div class="field">
       <div class="field-label">Cobertura mínima (meses) <strong id="v-covMin">3</strong></div>
       <input type="range" id="covMin" min="1" max="6" step="1" value="3">
+    </div>
+
+    <div class="section">Proteção & Custos</div>
+
+    <div class="field">
+      <div class="field-label">Taxa gestão (% a.a.) <strong id="v-mgmtFeeRate">1.0% a.a.</strong></div>
+      <input type="range" id="mgmtFeeRate" min="0" max="3" step="0.1" value="1">
+    </div>
+    <div class="field">
+      <div class="field-label">Gate loss ratio (%) <strong id="v-lossGate">60%</strong></div>
+      <input type="range" id="lossGate" min="30" max="100" step="5" value="60">
     </div>
 
   </div>
@@ -359,7 +370,7 @@
       <span><span class="dot" style="background:var(--purple)"></span>locked</span>
       <span><span class="dot" style="background:var(--green)"></span>100% dist.</span>
       <span><span class="dot" style="background:var(--yellow)"></span>50% dist.</span>
-      <span><span class="dot" style="background:var(--red)"></span>0% dist.</span>
+      <span><span class="dot" style="background:var(--red)"></span>0% dist. / gate</span>
     </div>
 
     <div class="table-wrap">
@@ -370,10 +381,12 @@
             <th>Evento</th>
             <th>Contratos</th>
             <th>Fee Fundo</th>
-            <th>MTVH ▼</th>
+            <th>Reinvest.</th>
             <th>Protocolo (20%)</th>
             <th>Defaults</th>
+            <th>L.Ratio</th>
             <th>Treasury</th>
+            <th>Mgmt Fee</th>
             <th>Net</th>
             <th>AUM</th>
             <th>AUM Mín</th>
@@ -401,6 +414,7 @@ const P = {
   defaultRate: 3.5, treasuryAPY: 7.89,
   mtvhPct: 50, mtvhMonths: 12,
   l1Floor: 20, covTarget: 6, covMin: 3,
+  mgmtFeeRate: 1, lossGate: 60,
 };
 
 // ── Formatters ─────────────────────────────────────────────────────────────
@@ -436,6 +450,8 @@ const labels = {
   l1Floor:        v => `${v}%`,
   covTarget:      v => `${v}`,
   covMin:         v => `${v}`,
+  mgmtFeeRate:    v => `${(+v).toFixed(1)}% a.a.`,
+  lossGate:       v => `${v}%`,
 };
 
 // ── Wire controls ──────────────────────────────────────────────────────────
@@ -515,7 +531,10 @@ function simulate() {
     const protocolKept  = protocolGross - mtvh;
     const defaults = ctr * defaultPerCtr;
     const treasury = aum * tMonthly;
-    const net      = fee + mtvh - defaults + treasury;
+    const mgmtFee  = aum * (P.mgmtFeeRate / 100 / 12);
+    const net      = fee + mtvh - defaults + treasury - mgmtFee;
+    const lossRatio  = fee > 0 ? defaults / fee : (defaults > 0 ? 1 : 0);
+    const gateActive = lossRatio > (P.lossGate / 100);
 
     aum += net;
 
@@ -525,8 +544,9 @@ function simulate() {
     const gap      = minAUM > 0 ? aum - minAUM : null;
 
     let dist;
-    if (m === 0)          dist = '—';
-    else if (locked)      dist = 'locked';
+    if (m === 0)           dist = '—';
+    else if (locked)       dist = 'locked';
+    else if (gateActive)   dist = '0% (gate)';
     else if (cov === null) dist = '—';
     else if (cov >= P.covTarget) dist = '100%';
     else if (cov >= P.covMin)    dist = '50%';
@@ -536,7 +556,7 @@ function simulate() {
     const monthlyRate = aumBefore > 0 ? net / aumBefore : 0;
     const apy = (Math.pow(1 + monthlyRate, 12) - 1) * 100;
 
-    rows.push({ m, event, ctr, fee, mtvh, protocolGross, protocolKept, defaults, treasury, net, aum, minAUM, gap, cov, dist, isPilot, isPhase2, injected, apy });
+    rows.push({ m, event, ctr, fee, mtvh, protocolGross, protocolKept, defaults, treasury, mgmtFee, net, aum, minAUM, gap, cov, dist, isPilot, isPhase2, injected, apy, lossRatio, gateActive });
   }
 
   return rows;
@@ -743,7 +763,7 @@ function renderTable(rows) {
       : r.cov >= P.covMin    ? 'cov-ok'
       : 'cov-bad';
 
-    const distCls = { 'locked': 'dist-locked', '100%': 'dist-100', '50%': 'dist-50', '0%': 'dist-0', '—': 'dist-dash' }[r.dist] || '';
+    const distCls = { 'locked': 'dist-locked', '100%': 'dist-100', '50%': 'dist-50', '0%': 'dist-0', '0% (gate)': 'dist-0', '—': 'dist-dash' }[r.dist] || '';
 
     const gapHtml = r.gap === null ? '<span class="gap-dash">—</span>'
       : r.gap >= 0 ? `<span class="gap-pos">+${fK(r.gap)}</span>`
@@ -757,7 +777,9 @@ function renderTable(rows) {
       <td style="color:var(--purple)">${r.mtvh > 0 ? fK(r.mtvh) : '—'}</td>
       <td style="color:var(--blue)">${r.protocolKept > 0 ? fK(r.protocolKept) : r.protocolGross > 0 ? fK(r.protocolGross) : '—'}</td>
       <td>${r.defaults > 0 ? fK(r.defaults) : '—'}</td>
+      <td style="color:${r.gateActive ? 'var(--red)' : r.lossRatio > (P.lossGate / 100 * 0.75) ? 'var(--yellow)' : 'var(--muted)'}">${r.m > 0 && r.ctr > 0 ? fPct(r.lossRatio * 100) : '—'}</td>
       <td>${fK(r.treasury)}</td>
+      <td style="color:var(--muted)">${r.mgmtFee > 0 ? '-'+fK(r.mgmtFee) : '—'}</td>
       <td>${fK(r.net)}</td>
       <td>${fK(r.aum)}</td>
       <td>${r.minAUM > 0 ? fK(r.minAUM) : '—'}</td>
