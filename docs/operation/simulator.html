@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUTAV — Fund Simulator</title>
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #111;
+    --surface2: #181818;
+    --border: #242424;
+    --text: #e2e2e2;
+    --muted: #666;
+    --muted2: #444;
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  header h1 { font-size: 15px; font-weight: 600; letter-spacing: .04em; }
+  header p { color: var(--muted); font-size: 12px; }
+
+  /* ── Layout ── */
+  .layout {
+    display: grid;
+    grid-template-columns: 272px 1fr;
+    height: calc(100vh - 53px);
+    overflow: hidden;
+  }
+
+  /* ── Controls ── */
+  .controls {
+    border-right: 1px solid var(--border);
+    padding: 20px 18px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .section {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted2);
+    margin-top: 16px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:first-child { margin-top: 0; }
+
+  .field { margin-bottom: 10px; }
+  .field-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .field-label strong {
+    color: var(--text);
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 11px;
+  }
+  input[type=range] {
+    width: 100%;
+    height: 3px;
+    accent-color: var(--purple);
+    cursor: pointer;
+  }
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  input[type=checkbox] { accent-color: var(--purple); cursor: pointer; width: 14px; height: 14px; }
+
+  /* ── Results ── */
+  .results {
+    overflow-y: auto;
+    padding: 20px 28px;
+  }
+
+  /* ── Cards ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .card-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 5px; }
+  .card-value { font-size: 18px; font-weight: 600; font-family: var(--mono); line-height: 1.2; }
+  .card-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .green { color: var(--green); }
+  .yellow { color: var(--yellow); }
+  .red { color: var(--red); }
+  .purple { color: var(--purple); }
+  .blue { color: var(--blue); }
+
+  /* ── Chart ── */
+  .chart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .chart-legend span { display: flex; align-items: center; gap: 5px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  canvas { display: block; width: 100%; }
+
+  /* ── Table ── */
+  .table-legend {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .table-legend span { display: flex; align-items: center; gap: 5px; }
+
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    font-family: var(--mono);
+    white-space: nowrap;
+  }
+  thead th {
+    text-align: right;
+    padding: 7px 10px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+  }
+  thead th:first-child,
+  thead th:nth-child(2) { text-align: left; }
+
+  td {
+    text-align: right;
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  td:first-child { text-align: left; color: var(--muted); }
+  td:nth-child(2) { text-align: left; font-size: 10.5px; max-width: 150px; }
+
+  tr.row-pilot { background: rgba(167,139,250,.025); }
+  tr.row-phase1 { background: rgba(96,165,250,.02); }
+  tr.row-phase2 { background: rgba(74,222,128,.015); }
+  tr.row-milestone { background: rgba(251,191,36,.04); }
+  tr.row-genesis { background: rgba(74,222,128,.025); }
+
+  .dist-locked { color: var(--purple); font-weight: 700; }
+  .dist-100 { color: var(--green); font-weight: 700; }
+  .dist-50 { color: var(--yellow); font-weight: 700; }
+  .dist-0 { color: var(--red); }
+  .dist-dash { color: var(--muted2); }
+
+  .cov-good { color: var(--green); }
+  .cov-ok { color: var(--yellow); }
+  .cov-bad { color: var(--red); }
+  .cov-dash { color: var(--muted2); }
+
+  .gap-pos { color: var(--green); }
+  .gap-neg { color: var(--red); }
+  .gap-dash { color: var(--muted2); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MUTAV Fund Simulator</h1>
+  <p>Ajuste as variáveis à esquerda — tabela atualiza em tempo real</p>
+</header>
+
+<div class="layout">
+
+  <!-- ── CONTROLS ── -->
+  <div class="controls">
+
+    <div class="section">Capital</div>
+
+    <div class="field">
+      <div class="field-label">AUM inicial (seed) <strong id="v-seed">$100K</strong></div>
+      <input type="range" id="seed" min="10000" max="500000" step="5000" value="100000">
+    </div>
+    <div class="field">
+      <div class="field-label">Injeção externa <strong id="v-inject">$80K</strong></div>
+      <input type="range" id="inject" min="0" max="20000000" step="10000" value="80000">
+    </div>
+    <div class="field">
+      <div class="field-label">Mês da injeção <strong id="v-injectMonth">M5</strong></div>
+      <input type="range" id="injectMonth" min="0" max="36" step="1" value="5">
+    </div>
+
+    <div class="section">Piloto</div>
+
+    <div class="field">
+      <div class="field-label">Duração piloto (meses) <strong id="v-pilotMonths">6</strong></div>
+      <input type="range" id="pilotMonths" min="3" max="12" step="1" value="6">
+    </div>
+    <div class="field">
+      <div class="field-label">Contratos alvo piloto <strong id="v-pilotContracts">600</strong></div>
+      <input type="range" id="pilotContracts" min="100" max="10000" step="50" value="600">
+    </div>
+    <label class="toggle-row">
+      <input type="checkbox" id="pilotLocked" checked>
+      Piloto travado (sem distribuição)
+    </label>
+
+    <div class="section">Phase 1</div>
+
+    <div class="field">
+      <div class="field-label">Duração Phase 1 (meses) <strong id="v-phase1Months">12</strong></div>
+      <input type="range" id="phase1Months" min="6" max="36" step="1" value="12">
+    </div>
+    <div class="field">
+      <div class="field-label">Contratos alvo Phase 1 <strong id="v-phase1Contracts">5000</strong></div>
+      <input type="range" id="phase1Contracts" min="500" max="10000" step="100" value="5000">
+    </div>
+
+    <div class="section">Phase 2</div>
+
+    <div class="field">
+      <div class="field-label">Duração Phase 2 (meses) <strong id="v-phase2Months">30</strong></div>
+      <input type="range" id="phase2Months" min="6" max="60" step="1" value="30">
+    </div>
+    <div class="field">
+      <div class="field-label">Contratos alvo Phase 2 <strong id="v-phase2Contracts">15000</strong></div>
+      <input type="range" id="phase2Contracts" min="1000" max="50000" step="500" value="15000">
+    </div>
+
+    <div class="section">Econômico</div>
+
+    <div class="field">
+      <div class="field-label">Aluguel médio (BRL) <strong id="v-rent">R$2.000</strong></div>
+      <input type="range" id="rent" min="500" max="8000" step="100" value="2000">
+    </div>
+    <div class="field">
+      <div class="field-label">Câmbio BRL/USD <strong id="v-fx">5,0</strong></div>
+      <input type="range" id="fx" min="3" max="10" step="0.1" value="5.0">
+    </div>
+    <div class="field">
+      <div class="field-label">Fee s/ aluguel (%) <strong id="v-feeRate">10%</strong></div>
+      <input type="range" id="feeRate" min="5" max="25" step="0.5" value="10">
+    </div>
+    <div class="field">
+      <div class="field-label">Split fundo (%) <strong id="v-fundShare">80%</strong></div>
+      <input type="range" id="fundShare" min="50" max="100" step="5" value="80">
+    </div>
+    <div class="field">
+      <div class="field-label">Inadimplência mensal (%) <strong id="v-defaultRate">3,5%</strong></div>
+      <input type="range" id="defaultRate" min="0.5" max="12" step="0.1" value="3.5">
+    </div>
+    <div class="field">
+      <div class="field-label">Treasury APY líq. USD (%) <strong id="v-treasuryAPY">7,89%</strong></div>
+      <input type="range" id="treasuryAPY" min="1" max="25" step="0.1" value="7.89">
+    </div>
+
+    <div class="section">Reinvestimento Protocolo</div>
+
+    <div class="field">
+      <div class="field-label">Reinvestimento protocolo (%) <strong id="v-mtvhPct">50%</strong></div>
+      <input type="range" id="mtvhPct" min="0" max="100" step="5" value="50">
+    </div>
+    <div class="field">
+      <div class="field-label">Duração reinvest. (meses) <strong id="v-mtvhMonths">12</strong></div>
+      <input type="range" id="mtvhMonths" min="0" max="36" step="1" value="12">
+    </div>
+
+    <div class="section">Reserva (Layer rules)</div>
+
+    <div class="field">
+      <div class="field-label">Floor L1 (% AUM) <strong id="v-l1Floor">20%</strong></div>
+      <input type="range" id="l1Floor" min="5" max="50" step="5" value="20">
+    </div>
+    <div class="field">
+      <div class="field-label">Cobertura alvo (meses) <strong id="v-covTarget">6</strong></div>
+      <input type="range" id="covTarget" min="2" max="12" step="1" value="6">
+    </div>
+    <div class="field">
+      <div class="field-label">Cobertura mínima (meses) <strong id="v-covMin">3</strong></div>
+      <input type="range" id="covMin" min="1" max="6" step="1" value="3">
+    </div>
+
+    <div class="section">Proteção & Custos</div>
+
+    <div class="field">
+      <div class="field-label">Taxa gestão (% a.a.) <strong id="v-mgmtFeeRate">1.0% a.a.</strong></div>
+      <input type="range" id="mgmtFeeRate" min="0" max="3" step="0.1" value="1">
+    </div>
+    <div class="field">
+      <div class="field-label">Gate loss ratio (%) <strong id="v-lossGate">60%</strong></div>
+      <input type="range" id="lossGate" min="30" max="100" step="5" value="60">
+    </div>
+
+  </div>
+
+  <!-- ── RESULTS ── -->
+  <div class="results">
+
+    <!-- Cards -->
+    <div class="cards" id="cards"></div>
+
+    <!-- Chart -->
+    <div class="chart-wrap">
+      <div class="chart-legend">
+        <span><span class="dot" style="background:var(--purple)"></span>AUM real</span>
+        <span><span class="dot" style="background:var(--red);opacity:.7"></span>AUM mínimo (L2)</span>
+        <span style="border-left:1px solid var(--border);padding-left:12px">
+          <span class="dot" style="background:var(--purple);opacity:.4"></span>Piloto
+        </span>
+        <span><span class="dot" style="background:var(--blue);opacity:.4"></span>Phase 1</span>
+        <span><span class="dot" style="background:var(--green);opacity:.5"></span>Phase 2</span>
+      </div>
+      <canvas id="chart" height="160"></canvas>
+    </div>
+
+    <!-- Table -->
+    <div class="table-legend">
+      <span><span class="dot" style="background:var(--purple)"></span>locked</span>
+      <span><span class="dot" style="background:var(--green)"></span>100% dist.</span>
+      <span><span class="dot" style="background:var(--yellow)"></span>50% dist.</span>
+      <span><span class="dot" style="background:var(--red)"></span>0% dist. / gate</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Mês</th>
+            <th>Evento</th>
+            <th>Contratos</th>
+            <th>Fee Fundo</th>
+            <th>Reinvest.</th>
+            <th>Protocolo (20%)</th>
+            <th>Defaults</th>
+            <th>L.Ratio</th>
+            <th>Treasury</th>
+            <th>Mgmt Fee</th>
+            <th>Net</th>
+            <th>AUM</th>
+            <th>AUM Mín</th>
+            <th>Gap</th>
+            <th>Cobertura</th>
+            <th>APY</th>
+            <th>Dist.</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+const P = {
+  seed: 100000, inject: 80000, injectMonth: 5,
+  pilotMonths: 6, pilotContracts: 600, pilotLocked: true,
+  phase1Months: 12, phase1Contracts: 5000,
+  phase2Months: 30, phase2Contracts: 15000,
+  rent: 2000, fx: 5.0, feeRate: 10, fundShare: 80,
+  defaultRate: 3.5, treasuryAPY: 7.89,
+  mtvhPct: 50, mtvhMonths: 12,
+  l1Floor: 20, covTarget: 6, covMin: 3,
+  mgmtFeeRate: 1, lossGate: 60,
+};
+
+// ── Formatters ─────────────────────────────────────────────────────────────
+const fK = v => {
+  const abs = Math.abs(v);
+  const sign = v < 0 ? '-' : '';
+  if (abs >= 1e6) return `${sign}$${(abs/1e6).toFixed(2)}M`;
+  if (abs >= 1e3) return `${sign}$${(abs/1e3).toFixed(1)}K`;
+  return `${sign}$${abs.toFixed(0)}`;
+};
+const fPct = v => `${(+v).toFixed(1)}%`;
+const fNum = v => (+v).toLocaleString('pt-BR');
+
+// ── Label formatters per control ───────────────────────────────────────────
+const labels = {
+  seed:           v => fK(+v),
+  inject:         v => fK(+v),
+  injectMonth:    v => `M${v}`,
+  pilotMonths:    v => `${v}`,
+  pilotContracts: v => fNum(v),
+  phase1Months:   v => `${v}`,
+  phase1Contracts:v => fNum(v),
+  phase2Months:   v => `${v}`,
+  phase2Contracts:v => fNum(v),
+  rent:           v => `R$${fNum(v)}`,
+  fx:             v => `${(+v).toFixed(1)}`,
+  feeRate:        v => `${v}%`,
+  fundShare:      v => `${v}%`,
+  defaultRate:    v => `${(+v).toFixed(1)}%`,
+  treasuryAPY:    v => `${(+v).toFixed(2)}%`,
+  mtvhPct:        v => `${v}%`,
+  mtvhMonths:     v => `${v}`,
+  l1Floor:        v => `${v}%`,
+  covTarget:      v => `${v}`,
+  covMin:         v => `${v}`,
+  mgmtFeeRate:    v => `${(+v).toFixed(1)}% a.a.`,
+  lossGate:       v => `${v}%`,
+};
+
+// ── Wire controls ──────────────────────────────────────────────────────────
+document.querySelectorAll('input[type=range]').forEach(el => {
+  el.addEventListener('input', () => {
+    P[el.id] = parseFloat(el.value);
+    const lbl = document.getElementById(`v-${el.id}`);
+    if (lbl && labels[el.id]) lbl.textContent = labels[el.id](el.value);
+    run();
+  });
+});
+document.getElementById('pilotLocked').addEventListener('change', e => {
+  P.pilotLocked = e.target.checked;
+  run();
+});
+
+// ── Simulation ─────────────────────────────────────────────────────────────
+function getContracts(m) {
+  if (m === 0) return 0;
+  if (m <= P.pilotMonths) {
+    return Math.round((m / P.pilotMonths) * P.pilotContracts);
+  }
+  const ph1 = m - P.pilotMonths;
+  if (ph1 <= P.phase1Months) {
+    const ramp = (P.phase1Contracts - P.pilotContracts) / P.phase1Months;
+    return Math.round(P.pilotContracts + ph1 * ramp);
+  }
+  const ph2 = ph1 - P.phase1Months;
+  const ramp2 = (P.phase2Contracts - P.phase1Contracts) / P.phase2Months;
+  return Math.min(P.phase2Contracts, Math.round(P.phase1Contracts + ph2 * ramp2));
+}
+
+function simulate() {
+  const total = P.pilotMonths + P.phase1Months + P.phase2Months;
+  const rentUSD        = P.rent / P.fx;
+  const totalFeeUSD    = rentUSD * (P.feeRate / 100);
+  const feeToFund      = totalFeeUSD * (P.fundShare / 100);
+  const protocolFee    = totalFeeUSD * (1 - P.fundShare / 100);
+  const mtvhPerCtr     = protocolFee * (P.mtvhPct / 100);
+  const defaultPerCtr  = rentUSD * (P.defaultRate / 100);
+  const tMonthly       = P.treasuryAPY / 100 / 12;
+  const l1             = P.l1Floor / 100;
+
+  let aum = P.seed;
+  const rows = [];
+
+  for (let m = 0; m <= total; m++) {
+    const ctr = getContracts(m);
+    const isPilot  = m <= P.pilotMonths;
+    const isPhase2 = m > P.pilotMonths + P.phase1Months;
+    const locked   = P.pilotLocked && isPilot;
+
+    // Injection (happens at start of month, before calculations)
+    let injected = 0;
+    if (m === P.injectMonth && P.inject > 0) {
+      aum += P.inject;
+      injected = P.inject;
+    }
+
+    // Event label
+    let event = [];
+    if (m === 0)                     event.push(`Genesis ${fK(P.seed)}`);
+    if (injected > 0)                event.push(`+${fK(injected)} injeção`);
+    if (m === P.pilotMonths && m>0)              event.push('Fim piloto');
+    if (m === P.pilotMonths + 1)                 event.push('Phase 1 ▶');
+    if (m === P.pilotMonths + P.phase1Months)    event.push('Fim Phase 1');
+    if (m === P.pilotMonths + P.phase1Months + 1) event.push('Phase 2 ▶');
+    if (m === P.mtvhMonths + 1 && P.mtvhPct > 0) event.push('MTVH encerra');
+    if (m === total)                             event.push(`${fNum(ctr)} ctr ✓`);
+    event = event.join(' · ');
+
+    const hasMTVH = m >= 1 && m <= P.mtvhMonths && P.mtvhPct > 0;
+
+    const fee          = ctr * feeToFund;
+    const mtvh         = hasMTVH ? ctr * mtvhPerCtr : 0;
+    const protocolGross = ctr * protocolFee;
+    const protocolKept  = protocolGross - mtvh;
+    const defaults = ctr * defaultPerCtr;
+    const treasury = aum * tMonthly;
+    const mgmtFee  = aum * (P.mgmtFeeRate / 100 / 12);
+    const net      = fee + mtvh - defaults + treasury - mgmtFee;
+    const lossRatio  = fee > 0 ? defaults / fee : (defaults > 0 ? 1 : 0);
+    const gateActive = lossRatio > (P.lossGate / 100);
+
+    aum += net;
+
+    const reserve  = aum * l1;
+    const cov      = defaults > 0 ? reserve / defaults : null;
+    const minAUM   = ctr > 0 ? (ctr * defaultPerCtr * P.covTarget) / l1 : 0;
+    const gap      = minAUM > 0 ? aum - minAUM : null;
+
+    let dist;
+    if (m === 0)           dist = '—';
+    else if (locked)       dist = 'locked';
+    else if (gateActive)   dist = '0% (gate)';
+    else if (cov === null) dist = '—';
+    else if (cov >= P.covTarget) dist = '100%';
+    else if (cov >= P.covMin)    dist = '50%';
+    else                         dist = '0%';
+
+    const aumBefore = aum - net;
+    const monthlyRate = aumBefore > 0 ? net / aumBefore : 0;
+    const apy = (Math.pow(1 + monthlyRate, 12) - 1) * 100;
+
+    rows.push({ m, event, ctr, fee, mtvh, protocolGross, protocolKept, defaults, treasury, mgmtFee, net, aum, minAUM, gap, cov, dist, isPilot, isPhase2, injected, apy, lossRatio, gateActive });
+  }
+
+  return rows;
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function renderCards(rows) {
+  const last      = rows[rows.length - 1];
+  const pilotEnd  = rows[P.pilotMonths];
+  const m100      = rows.filter(r => r.dist === '100%').length;
+  const m50       = rows.filter(r => r.dist === '50%').length;
+  const m0        = rows.filter(r => r.dist === '0%').length;
+  const mLocked   = rows.filter(r => r.dist === 'locked').length;
+  const totalMTVH        = rows.reduce((s, r) => s + r.mtvh, 0);
+  const totalProtoGross  = rows.reduce((s, r) => s + r.protocolGross, 0);
+  const totalProtoKept   = rows.reduce((s, r) => s + r.protocolKept, 0);
+  const totalIn   = P.seed + P.inject;
+  const navSeed   = last.aum / P.seed;
+
+  document.getElementById('cards').innerHTML = `
+    <div class="card">
+      <div class="card-label">AUM fim piloto</div>
+      <div class="card-value blue">${fK(pilotEnd.aum)}</div>
+      <div class="card-sub">M${P.pilotMonths}</div>
+    </div>
+    <div class="card">
+      <div class="card-label">AUM fim Phase 2</div>
+      <div class="card-value blue">${fK(last.aum)}</div>
+      <div class="card-sub">M${P.pilotMonths + P.phase1Months + P.phase2Months}</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Gap AUM mín.</div>
+      <div class="card-value ${last.gap >= 0 ? 'green' : 'red'}">${last.gap !== null ? fK(last.gap) : '—'}</div>
+      <div class="card-sub">vs ${fK(last.minAUM)} necessário</div>
+    </div>
+    <div class="card">
+      <div class="card-label">NAV seed (aprox.)</div>
+      <div class="card-value green">$${navSeed.toFixed(3)}</div>
+      <div class="card-sub">genesis $1.000</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Meses locked</div>
+      <div class="card-value purple">${mLocked}m</div>
+      <div class="card-sub">piloto travado</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Meses 100%</div>
+      <div class="card-value green">${m100}m</div>
+      <div class="card-sub">yield total</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Meses 50%</div>
+      <div class="card-value yellow">${m50}m</div>
+      <div class="card-sub">yield parcial</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Meses 0%</div>
+      <div class="card-value red">${m0}m</div>
+      <div class="card-sub">sem yield</div>
+    </div>
+    <div class="card">
+      <div class="card-label">MTVH acumulado</div>
+      <div class="card-value purple">${fK(totalMTVH)}</div>
+      <div class="card-sub">${P.mtvhMonths}m de reinvestimento</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Receita protocolo (bruta)</div>
+      <div class="card-value blue">${fK(totalProtoGross)}</div>
+      <div class="card-sub">20% de todas as taxas</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Receita protocolo (líquida)</div>
+      <div class="card-value blue">${fK(totalProtoKept)}</div>
+      <div class="card-sub">após reinvestimento MTVH</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Capital externo</div>
+      <div class="card-value">${fK(totalIn)}</div>
+      <div class="card-sub">seed + injeção</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Cobertura final</div>
+      <div class="card-value ${(last.cov||0) >= P.covTarget ? 'green' : (last.cov||0) >= P.covMin ? 'yellow' : 'red'}">${last.cov ? last.cov.toFixed(1)+'m' : '—'}</div>
+      <div class="card-sub">reserva vs defaults</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Contratos finais</div>
+      <div class="card-value">${fNum(last.ctr)}</div>
+      <div class="card-sub">M${P.pilotMonths + P.phase1Months + P.phase2Months}</div>
+    </div>
+  `;
+}
+
+function renderChart(rows) {
+  const canvas = document.getElementById('chart');
+  const W = canvas.parentElement.clientWidth - 32;
+  const H = 160;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const pad = { t: 12, r: 16, b: 28, l: 56 };
+  const cw = W - pad.l - pad.r;
+  const ch = H - pad.t - pad.b;
+
+  const aums    = rows.map(r => r.aum);
+  const minAUMs = rows.map(r => r.minAUM);
+  const maxVal  = Math.max(...aums, ...minAUMs) * 1.05 || 1;
+  const months  = rows.length - 1;
+
+  const xS = m => pad.l + (m / months) * cw;
+  const yS = v => pad.t + ch - (v / maxVal) * ch;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid
+  for (let i = 0; i <= 4; i++) {
+    const y = pad.t + (i / 4) * ch;
+    ctx.strokeStyle = '#1e1e1e';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(pad.l + cw, y); ctx.stroke();
+    ctx.fillStyle = '#555';
+    ctx.font = `10px ${getComputedStyle(document.body).fontFamily}`;
+    ctx.textAlign = 'right';
+    ctx.fillText(fK(maxVal * (1 - i / 4)), pad.l - 5, y + 3);
+  }
+
+  // Pilot/Phase1 separator
+  const sepX = xS(P.pilotMonths);
+  ctx.strokeStyle = '#333';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([3, 5]);
+  ctx.beginPath(); ctx.moveTo(sepX, pad.t); ctx.lineTo(sepX, pad.t + ch); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#444';
+  ctx.textAlign = 'center';
+  ctx.font = '9px sans-serif';
+  ctx.fillText('piloto', (pad.l + sepX) / 2, pad.t + 10);
+  ctx.fillText('phase 1', (sepX + pad.l + cw) / 2, pad.t + 10);
+
+  // Min AUM line
+  ctx.strokeStyle = 'rgba(248,113,113,0.5)';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([3, 5]);
+  ctx.beginPath();
+  rows.forEach((r, i) => {
+    const x = xS(r.m), y = yS(r.minAUM);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // AUM area fill
+  const grad = ctx.createLinearGradient(0, pad.t, 0, pad.t + ch);
+  grad.addColorStop(0, 'rgba(167,139,250,0.15)');
+  grad.addColorStop(1, 'rgba(167,139,250,0)');
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  rows.forEach((r, i) => {
+    const x = xS(r.m), y = yS(r.aum);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.lineTo(xS(months), pad.t + ch);
+  ctx.lineTo(xS(0), pad.t + ch);
+  ctx.closePath();
+  ctx.fill();
+
+  // AUM line
+  ctx.strokeStyle = '#a78bfa';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  rows.forEach((r, i) => {
+    const x = xS(r.m), y = yS(r.aum);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Month labels
+  ctx.fillStyle = '#444';
+  ctx.font = '10px monospace';
+  ctx.textAlign = 'center';
+  rows.forEach(r => {
+    if (r.m % 3 === 0 || r.m === P.pilotMonths) {
+      ctx.fillText(`M${r.m}`, xS(r.m), pad.t + ch + 16);
+    }
+  });
+}
+
+function renderTable(rows) {
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = '';
+
+  rows.forEach(r => {
+    const ph2Start = P.pilotMonths + P.phase1Months;
+    const isMilestone = r.m === P.pilotMonths || r.m === P.pilotMonths + 1 || r.m === ph2Start || r.m === ph2Start + 1 || r.injected > 0 || r.m === 0 || r.m === rows.length - 1;
+    const rowClass = isMilestone ? 'row-milestone' : r.isPilot ? 'row-pilot' : r.isPhase2 ? 'row-phase2' : 'row-phase1';
+
+    const covCls = r.cov === null ? 'cov-dash'
+      : r.cov >= P.covTarget ? 'cov-good'
+      : r.cov >= P.covMin    ? 'cov-ok'
+      : 'cov-bad';
+
+    const distCls = { 'locked': 'dist-locked', '100%': 'dist-100', '50%': 'dist-50', '0%': 'dist-0', '0% (gate)': 'dist-0', '—': 'dist-dash' }[r.dist] || '';
+
+    const gapHtml = r.gap === null ? '<span class="gap-dash">—</span>'
+      : r.gap >= 0 ? `<span class="gap-pos">+${fK(r.gap)}</span>`
+      : `<span class="gap-neg">${fK(r.gap)}</span>`;
+
+    tbody.innerHTML += `<tr class="${rowClass}">
+      <td>M${r.m}</td>
+      <td>${r.event || '—'}</td>
+      <td>${r.ctr > 0 ? fNum(r.ctr) : '—'}</td>
+      <td>${r.fee > 0 ? fK(r.fee) : '—'}</td>
+      <td style="color:var(--purple)">${r.mtvh > 0 ? fK(r.mtvh) : '—'}</td>
+      <td style="color:var(--blue)">${r.protocolKept > 0 ? fK(r.protocolKept) : r.protocolGross > 0 ? fK(r.protocolGross) : '—'}</td>
+      <td>${r.defaults > 0 ? fK(r.defaults) : '—'}</td>
+      <td style="color:${r.gateActive ? 'var(--red)' : r.lossRatio > (P.lossGate / 100 * 0.75) ? 'var(--yellow)' : 'var(--muted)'}">${r.m > 0 && r.ctr > 0 ? fPct(r.lossRatio * 100) : '—'}</td>
+      <td>${fK(r.treasury)}</td>
+      <td style="color:var(--muted)">${r.mgmtFee > 0 ? '-'+fK(r.mgmtFee) : '—'}</td>
+      <td>${fK(r.net)}</td>
+      <td>${fK(r.aum)}</td>
+      <td>${r.minAUM > 0 ? fK(r.minAUM) : '—'}</td>
+      <td>${gapHtml}</td>
+      <td class="${covCls}">${r.cov !== null ? r.cov.toFixed(1)+'m' : '—'}</td>
+      <td style="color:${r.apy > 50 ? 'var(--green)' : r.apy > 20 ? 'var(--yellow)' : r.apy > 0 ? 'var(--text)' : 'var(--red)'}">${r.m > 0 && r.ctr > 0 ? r.apy.toFixed(1)+'%' : '—'}</td>
+      <td class="${distCls}">${r.dist}</td>
+    </tr>`;
+  });
+}
+
+function run() {
+  const rows = simulate();
+  renderCards(rows);
+  renderChart(rows);
+  renderTable(rows);
+}
+
+window.addEventListener('resize', () => {
+  const rows = simulate();
+  renderChart(rows);
+});
+
+run();
+</script>
+</body>
+</html>
