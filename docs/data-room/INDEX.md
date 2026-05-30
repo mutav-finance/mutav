@@ -20,8 +20,7 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 
 | Document | Description |
 |---|---|
-| [Founder Vision & North Star](01-overview/founder-vision-northstar.md) | Narrative document — how the founder discovered the problem, the long-term bet, and what MUTAV looks like at scale |
-| [Operational Memo](01-overview/operational-memo.md) | Comprehensive business overview: problem, solution, model, team, current status, and the ask |
+| [Operational Memo](01-overview/operational-memo.md) | Business overview: the insight behind MUTAV, the problem, solution, model, team, and the ask |
 
 > **Investor deck and prototype video** available upon request. Contact: draauarts@gmail.com
 
@@ -31,7 +30,7 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 
 | Document | Description |
 |---|---|
-| [Financial Model — Year 1 Projections](02-financials/financial-model.md) | Fund simulation: AUM growth, NAV trajectory, default stress scenarios, and investor return modeling across 12 months |
+| [Financial Model — Year 1 Projections](02-financials/financial-model.md) | Fund simulation: AUM growth, token price trajectory, default stress scenarios, and investor return modeling across 12 months |
 
 ---
 
@@ -39,8 +38,8 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 
 | Document | Description |
 |---|---|
-| [Technical Architecture](03-product-technology/technical-architecture.md) | Smart contract design, NAV mechanics, redemption queue, owner/operator security model, and Stellar/Etherfuse integration |
-| [Product Roadmap — 18 Months](03-product-technology/product-roadmap.md) | Phase-by-phase plan from constitution through pilot launch, mainnet, and institutional scale |
+| [Technical Architecture](03-product-technology/technical-architecture.md) | Smart contract design, token price mechanics, withdrawal queue, owner/operator security model, and Stellar/Etherfuse integration |
+| [Product Roadmap — 18 Months](03-product-technology/product-roadmap.md) | Phase-by-phase plan from entity constitution through pilot launch, mainnet, and institutional scale |
 
 ---
 
@@ -49,7 +48,7 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 | Document | Description |
 |---|---|
 | [Market Opportunity](04-market-competition/market-opportunity.md) | Brazil's rental guarantee market: TAM/SAM/SOM, growth drivers, structural shift, and the macro tailwinds accelerating it |
-| [Competitive Landscape](04-market-competition/competitive-landscape.md) | Traditional incumbents, new entrants, global RWA protocols, and MUTAV's structural differentiation |
+| [Competitive Landscape](04-market-competition/competitive-landscape.md) | Traditional incumbents, new entrants, global onchain credit protocols, and MUTAV's structural differentiation |
 
 ---
 
@@ -58,7 +57,7 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 | Document | Description |
 |---|---|
 | [Legal Structure](05-company-docs/legal-structure.md) | Entity architecture, regulatory framework, jurisdiction options, open questions by priority, and pending legal agreements |
-| [Team & Advisors](05-company-docs/team-bios.md) | Full bios for founders and advisors, including the 30-year real estate network that enables the pilot |
+| [Team & Advisors](05-company-docs/team-bios.md) | Full bios for founders and advisors, including the 30-year real estate network that enables the pilot, and reference contacts |
 
 ---
 
@@ -67,7 +66,6 @@ Start with **Section 01 (Overview)** for the thesis and narrative context. Proce
 | Document | Description |
 |---|---|
 | [Fundraise Terms](06-fundraise/fundraise-terms.md) | Round structure, target amount, use of proceeds, and investment mechanics |
-| [Reference Sheet](06-fundraise/reference-sheet.md) | Vetted references for founder due diligence |
 
 ---
 

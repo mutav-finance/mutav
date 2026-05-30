@@ -1,7 +1,6 @@
 # Financial Model — Year 1 Projections
 
 > Model built May 2026. This is a simulation for illustration purposes, not a financial guarantee.
-> Reserve and distribution gate rules: [Fund Rules](../../operation/fund-rules.md).
 
 ---
 
@@ -48,13 +47,25 @@ When a new investor enters, they buy at the **current price** — not the launch
 
 **Why the annual return (APY) compresses as the fund grows:** Fee income from contracts is roughly fixed per contract count, regardless of how much capital is in the fund. When new capital enters faster than new contracts are added, that fixed income is shared across a larger base — the return per dollar compresses. Target ratio: **1 contract per $1,000 of assets under management**.
 
-| Assets under management | Fee income/month | Treasury yield/month | Total net/month | Annual return (approx.) |
-|---|---|---|---|---|
-| $5M / 5,000 contracts | $90,000 | $31,800 | $121,800 | **~43%** |
-| $6M / 5,000 contracts | $90,000 | $38,160 | $128,160 | **~37%** |
-| $10M / 5,000 contracts | $90,000 | $63,600 | $153,600 | **~26%** |
+The table below uses Phase 1 base parameters: **2,500 active contracts**, ops net (fee minus defaults) = **$45,000/month**. The 20% reserve floor is excluded from the distributable base.
 
-> The annual return shown is a snapshot of current conditions — not a forward guarantee. Entry timing affects forward returns, but all investors enter at a fair price and prior gains are always preserved.
+| Total assets | Reserve (20%) | Distributable base | Ops net/month | Treasury yield/month | Annual return (approx.) |
+|---|---|---|---|---|---|
+| $1,050,000 | $210,000 | $840,000 | $45,000 | $6,678 | **~104%** |
+| $1,500,000 | $300,000 | $1,200,000 | $45,000 | $9,540 | **~70%** |
+| $2,500,000 | $500,000 | $2,000,000 | $45,000 | $15,900 | **~43%** |
+| $4,000,000 | $800,000 | $3,200,000 | $45,000 | $25,440 | **~30%** |
+| $7,650,000 | $1,530,000 | $6,120,000 | $45,000 | $48,654 | **~20%** |
+
+> The annual return shown is a snapshot of Phase 1 conditions — not a forward guarantee. As contracts grow toward 5,000 (Year 1 target), ops net doubles and APY at each AUM level rises proportionally. Entry timing affects forward returns, but all investors enter at a fair price and prior gains are always preserved.
+
+**Minimum AUM to scale contracts safely** (20% reserve floor + 6-month default coverage):
+
+| Phase milestone | Contracts | Minimum AUM |
+|---|---|---|
+| Pre-seed launch | 600 | $252,000 |
+| Phase 1 base | 2,500 | $1,050,000 |
+| Year 1 target | 5,000 | $2,100,000 |
 
 ---
 

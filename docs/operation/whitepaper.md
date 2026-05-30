@@ -1,272 +1,244 @@
-# Whitepaper — MUTAV 
+# Whitepaper — MUTAV
 
-# MUTAV - Tokenização de Garantia de Aluguel 
+# MUTAV — Tokenization of Rental Guarantees
 
-## 1. Visão Geral
+## 1. Overview
 
-O mercado locação de imóveis no Brasil movimenta bilhões anualmente, sustentado por um ecossistema imobiliário amplo, com milhões de contratos ativos e crescente demanda por soluções que substituam o fiador tradicional. Apesar da relevância, esse mercado ainda opera com baixa eficiência, processos manuais e concentração de capital em poucos players, limitando acesso, transparência e inovação.
+Brazil's rental market moves billions annually, sustained by a broad real estate ecosystem with millions of active contracts and growing demand for alternatives to the traditional personal guarantor. Despite its scale, this market still operates with low efficiency, manual processes, and capital concentrated in a few players — limiting access, transparency, and innovation.
 
-A MUTAV surge como resposta a esse cenário, aplicando infraestrutura blockchain para transformar a forma como garantias são estruturadas, financiadas e executadas. Ao conectar infraestrutura onchain a um mercado local pouco explorado do ponto de vista financeiro, o modelo reduz fricções operacionais, melhora a gestão de risco e cria uma nova classe de ativo baseada em fluxo real da economia.
+MUTAV addresses this by applying blockchain infrastructure to transform how rental guarantees are structured, financed, and executed. By connecting onchain infrastructure to an underexplored local market, the model reduces operational friction, improves risk management, and creates a new asset class based on real economic cash flows.
 
-A MUTAV funciona como uma **infraestrutura onchain de garantia locatícia**, abrindo acesso a um mercado bilionário hoje concentrado em poucos participantes e criando as bases para uma camada financeira mais eficiente, transparente e escalável.
+MUTAV operates as **onchain rental guarantee infrastructure**, opening access to a billion-dollar market today concentrated in a few participants and building the foundation for a more efficient, transparent, and scalable financial layer.
 
-O mercado de garantias locatícias pagas movimenta **$1.1B/ano (TAM)**, com um mercado digital endereçável de **$700M/ano (SAM)**. São **17.8 milhões de domicílios alugados no Brasil em 2024**, crescimento de 44,7% desde 2016. As garantias pagas saltaram de 18% para **49% de todos os contratos** entre 2020 e 2024 (+254%), ultrapassando o fiador como modalidade dominante.
+The paid rental guarantee market generates **$1.1B/year (TAM)**, with an addressable digital segment of **$700M/year (SAM)**. Brazil has **17.8 million rented households in 2024**, growing 44.7% since 2016. Paid guarantees jumped from 18% to **49% of all contracts** between 2020 and 2024 (+254%), surpassing the personal guarantor as the dominant modality.
 
-Alguns dados ilustram a dimensão e potencial desse mercado:
+Key market data:
 
-- Ecosistema imobiliário (COFECI): O segmento de imobiliárias no Brasil movimenta anualmente **R$ 110 bilhões ($22B)** [[FONTE]](https://imobireport.com.br/aluguel/credaluga-e-kanastra-lancam-primeiro-fundo-que-substitui-titulo-de-capitalizacao-como-garantia-de-aluguel/)
-
-- Jan–Nov 2024 (CQCS): O segmento de seguro fiança locatícia arrecadou **R$ 1,29 bilhão em prêmios** emitidos entre janeiro e novembro de 2024. [[FONTE]](https://www.ideeseguros.com.br/seguro-fianca-cresce-em-2024)
-
-- Número de brasileiros vivendo de aluguel chegou a **46,5 milhões em 2024**, novo recorde histórico. [[FONTE]](https://agenciabrasil.ebc.com.br/geral/noticia/2025-08/parcela-de-familias-quem-pagam-aluguel-sobe-25-em-8-anos-mostra-ibge)
-
-- O mercado de garantias locatícias digitais movimenta cerca de **R$ 300 milhões por ano (~$60M) (2025)**, refletindo um setor ainda em estágio inicial, mas em expansão frente à crescente inadimplência e consolidação do segmento. [[FONTE]](https://portas.com.br/noticias/inadimplencia-crescente-acelera-consolidacao-no-mercado-de-garantias-locaticias/)
-
-- Loft / CredPago — os dados da aquisição bilionária: Na data da aquisição pela Loft (julho 2021), a CredPago tinha mais de 123 mil contratos, resultando em cerca de **R$ 40 bilhões ($8B) em ativos sob gestão**, 16 mil imobiliárias parceiras e 145 mil clientes finais. A empresa havia crescido 10 vezes nos últimos 3 anos. A transação representou um **ganho de R$ 1,4 bilhão (~$280M) para o BTG Pactual** — que havia comprado 20% da CredPago em 2020 e depois ampliado para 49%. O BTG entrou por um valor muito menor e saiu bilionário em menos de **2 anos de investimento**. [[FONTE]](https://braziljournal.com/loft-compra-credpago-em-dinheiro-e-acoes/)
-
-- Loft registra 1,2 milhão de transações em 2025 e amplia atuação em fintech. Empresa cresceu 35% no ano e **prevê investir R$ 100 milhões ($20M) em tecnologia em 2026,** com foco em crédito imobiliário, **garantia locatícia** e SaaS. [[FONTE]](https://portas.com.br/mercado-imobiliario/loft-registra-12-milhao-de-transacoes-em-2025/#:~:text=Empresa%20cresceu%2035%25%20no%20ano%20e%20prev%C3%AA,R$%20100%20milh%C3%B5es%20em%20tecnologia%20em%202026.)
+- Real estate ecosystem (COFECI): Brazil's agency segment moves **R$110 billion ($22B) annually**
+- Jan–Nov 2024 (CQCS): Surety insurance collected **R$1.29 billion in premiums** in the first 11 months of 2024
+- Brazilians paying rent reached **46.5 million in 2024**, a historic record
+- The digital rental guarantee market moves approximately **R$300 million/year (~$60M)**, still early-stage but expanding amid rising defaults
+- Loft/CredPago acquisition data: at the time of acquisition (July 2021), CredPago had 123,000+ contracts, **R$40 billion ($8B) in assets under guarantee**, 16,000 agency partners, and 145,000 end clients. The company had grown 10x in three years. BTG Pactual's investment returned **R$1.4 billion (~$280M) in under two years**
+- Loft recorded 1.2 million transactions in 2025, grew 35%, and **plans to invest R$100 million ($20M) in technology in 2026**, with focus on mortgage credit, **rental guarantees**, and SaaS
 
 ---
 
-## 2. Problema
+## 2. The Problem
 
-O capital que sustenta as garantias locatícias atualmente é altamente **concentrado**. Garantidoras operam com capital próprio e incentivos institucionais, precificam risco de forma assimétrica e capturam integralmente o retorno, sem transparência, sem participação externa e com baixa competição estrutural.
+The capital backing rental guarantees today is highly **concentrated**. Guarantors operate with their own capital, price risk asymmetrically, and capture the entire return — with no transparency, no external participation, and limited structural competition.
 
-Isso gera quatro distorções principais:
+This creates four distortions:
 
-- **Para o mercado:** concentração de risco em poucos players. Quando um deles falha, como observado em 2025, quando a QuintoCred — uma das maiores garantidoras do Brasil — encerrou as operações de um dia para o outro, cancelando **45.000 contratos** e deixando **3.000 imobiliárias** sem cobertura, não há mecanismo eficiente de absorção coletiva.
-- **Para inquilinos:** estrutura oligopolista com custos elevados (10–15%)
-- **Para proprietários:** liquidação lenta de inadimplência (até 90 dias).
-- **Para investidores:** um mercado de mais bilhionario em prêmios anuais permanece inacessível a pessoas físicas e ao ecossistema cripto.
+- **For the market:** risk concentration in a few players. When one fails — as seen in 2025 when QuintoCred (one of Brazil's largest guarantors) shut down overnight, canceling **45,000 contracts** and leaving **3,000 agencies** without coverage — there is no efficient collective absorption mechanism
+- **For tenants:** oligopoly pricing with high costs (10–15% of rent)
+- **For landlords:** slow default settlement (up to 90 days)
+- **For investors:** a multi-billion market in annual fees remains inaccessible to individuals and the crypto ecosystem
 
-A imobiliária é o centro operacional de cada contrato — e as garantidoras tradicionais nunca as trataram como parceiras. A MUTAV faz diferente: o protocolo é construído em torno de como as imobiliárias realmente operam, não ao redor delas.
-
-A MUTAV resolve esses pontos simultaneamente.
+The real estate agency is the operational center of each contract — and traditional guarantors have never treated them as partners. MUTAV is different: the protocol is built around how agencies actually operate, not around them.
 
 ---
 
-## 3. Solução Proposta
+## 3. The Solution
 
-A MUTAV propõe a abertura do mercado de garantias locatícias, permitindo que qualquer pessoa participe de um setor historicamente restrito a poucos players. Por meio da tokenização, o capital que sustenta essas garantias deixa de ser concentrado e passa a ser distribuído entre investidores, criando um modelo mais transparente, acessível e eficiente, onde o público pode obter exposição direta a um mercado bilionário antes inacessível.
+MUTAV proposes opening the rental guarantee market so that any investor can participate in a sector historically restricted to a few players. Through tokenization, the capital backing these guarantees moves from concentrated to distributed — creating a more transparent, accessible, and efficient model where anyone can gain direct exposure to a billion-dollar market that was previously inaccessible.
 
-A MUTAV é estruturada em três entidades distintas: **MUTAV Soluções** (Garantidora brasileira, operacional), **Mutav Treasury Fund** (fundo offshore, veículo de investimento) e **Mutav Treasury Management** (gestora offshore do fundo).
+MUTAV is structured as three distinct entities: **MUTAV Soluções** (Brazilian guarantor, operational), **Mutav Treasury Fund** (offshore fund, investment vehicle), and **Mutav Treasury Management** (offshore fund administrator).
 
-A MUTAV Soluções atua como fiadora institucional nos contratos de locação, retendo 20% das taxas coletadas e repassando 80% ao Mutav Treasury Fund. O fundo emite três classes de cotas — **MTVH** (subordinada, first-loss), **MTVM** (mezzanine) e **MTVL** (sênior) — cujo patrimônio é alocado em Tesouro brasileiro tokenizado via Etherfuse (Stellar). O investidor recebe tokens da classe escolhida proporcionais ao NAV vigente, mantidos em sua própria wallet (self-custodial).
+MUTAV Soluções acts as institutional guarantor in rental contracts, retaining 20% of collected fees and passing 80% to the Mutav Treasury Fund. The fund issues three token classes — **MTVH** (subordinated, first-loss), **MTVM** (mezzanine), and **MTVL** (senior) — with reserves allocated in tokenized Brazilian Treasury bonds via Etherfuse (Stellar). Investors receive tokens of their chosen class proportional to the current token price, held in their own wallet (self-custodial).
 
-O modelo é baseado em um **NAV apreciável**, no qual o retorno não é distribuído, mas incorporado ao próprio fundo. As receitas geradas pelas taxas de garantia e pelo rendimento do capital aumentam o valor total sob gestão, refletindo diretamente na valorização de cada token ao longo do tempo. Dessa forma, o investidor captura o crescimento do mercado por meio da apreciação do ativo, em um modelo simples, eficiente e alinhado à lógica de fundos tradicionais, porém com transparência e execução on-chain.
+The model is based on an **appreciating token price (NAV)**, where returns are not distributed as cash but incorporated into the fund. Revenue from guarantee fees and capital yield increases the total assets under management, reflected directly in each token's appreciation over time.
 
-### Mecanismo Central
+### Core Mechanism
 
-O funcionamento da MUTAV segue um modelo estruturado baseado em mecanismos já consolidados em protocolos on-chain, como no mercado de reinsurance, validando sua robustez.
+MUTAV's operation follows a structured model based on mechanisms already consolidated in onchain protocols. The flow divides into three main stages: capital entry, yield generation, and exit.
 
-Essa estrutura é sustentada por uma infraestrutura que garante transparência, execução automatizada com verificação por IA e confiabilidade operacional. Isso permite que todos os contratos de garantia sejam registrados on-chain por meio da dashboard da imobiliária, tornando o lastro do fundo verificável em tempo real. A execução de inadimplências é assistida por IA, combinando verificação automatizada com execução onchain para processar acionamentos com maior velocidade e precisão, com supervisão da equipe MUTAV em cada acionamento antes da liquidação final.
+**Entry (Mint):**
 
-A partir dessa base, o fluxo operacional se divide em três etapas principais: entrada de capital, geração de rendimento e saída.
+The investor deposits stablecoins into the protocol, which automatically calculates the current token price and issues the proportional number of tokens. Capital is then directed to the segregated account and begins backing the rental guarantee portfolio.
 
-**Entrada (Mint):**
+**Yield Generation:**
 
-O investidor deposita stablecoin no protocolo, que calcula automaticamente o NAV atual da MUTAV SA e emite a quantidade proporcional de tokens MUTAV. O capital é então direcionado para a conta segregada, passando a compor o fundo que sustenta as garantias locatícias.
+The fund's total yield comes from two sources: **fees paid by tenants** on active guarantee contracts (80% of fees passed by the Guarantor), and **yield from tokenized Brazilian Treasury bonds** via Etherfuse (Stellar), where fund reserves are allocated. This combined flow is continuously reintegrated into the fund, raising total assets and reflecting directly in token price appreciation over time.
 
-**Geração de rendimento (Yield):**
+Fund capital is structured in two layers:
 
-O rendimento total do fundo é sustentado por **taxas pagas pelos inquilinos**, associadas aos contratos de garantia ativos (80% das taxas repassadas pela Garantidora), e pelo **yield do Tesouro brasileiro tokenizado** via Etherfuse (Stellar), onde o patrimônio do fundo permanece alocado. Esse fluxo combinado é continuamente reintegrado ao fundo, elevando o valor total sob gestão e refletindo diretamente na apreciação do NAV ao longo do tempo.
+- **Active layer:** allocated in tokenized Treasury (Etherfuse/Stellar), committed to backing active guarantee contracts and generating daily yield while not called upon
+- **Liquidity layer:** portion available for redemptions within the weekly cap, also maintained in tokenized Treasury with programmable liquidation
 
-O capital do Mutav Treasury Fund é estruturado em duas camadas:
+**Exit (Redeem):**
 
-- **Camada ativa:** alocada em Tesouro tokenizado (Etherfuse/Stellar), comprometida com a cobertura dos contratos de garantia vigentes e gerando yield diário enquanto não acionada.
-- **Camada de liquidez:** parcela disponível para resgates imediatos dentro do cap semanal, também mantida em Tesouro tokenizado com liquidação programável.
+To redeem, the investor deposits MUTAV tokens into the contract and enters an onchain queue. Execution occurs at the token price at the time of processing. The investor receives the corresponding amount in stablecoins, debited from the fund and reducing the token price proportionally for all participants.
 
-**Saída (Redeem):**
-
-Para realizar o resgate, o investidor deposita seus tokens MUTAV no contrato e entra em uma fila on-chain. A execução ocorre com base no NAV vigente no momento do processamento, e o investidor recebe o valor correspondente em stablecoin. O valor é debitado do fundo, reduzindo proporcionalmente o NAV, com o custo distribuído entre todos os participantes.
-
-O modelo não prevê liquidez imediata por design, uma vez que parte do capital está comprometida em contratos de longo prazo (12–24 meses). A reserva de liquidez existente permite absorver saídas de forma gradual, sem comprometer a integridade do fundo.
-
-O fundo mantém uma reserva de liquidez dedicada para atender solicitações de resgate, permitindo que saídas ocorram de forma controlada e sem comprometer a operação. A execução dos resgates segue um limite operacional ao longo do tempo, garantindo previsibilidade e preservando a estabilidade do fundo.
-
-Pedidos que excedam a liquidez disponível permanecem em uma fila on-chain, com total transparência de posição e continuidade de rendimento até sua execução.
-
-Além disso, é aplicada uma taxa de resgate sobre o valor retirado.
+Immediate liquidity is not by design, as part of the capital is committed to long-term contracts (12–24 months). The existing liquidity reserve allows gradual exits without compromising fund integrity.
 
 ---
 
-### Infraestrutura Técnica
+### Technical Infrastructure
 
-#### Cálculo e Atualização do NAV
+#### Token Price (NAV) Calculation and Update
 
-O Net Asset Value do Mutav Treasury Fund é calculado puramente onchain, executado diretamente no smart contract sem dependência de serviços externos ou feeds de dados offchain. Qualquer participante pode verificar e reproduzir o cálculo de forma independente. O NAV é atualizado **por evento** — entrada de taxas de garantia, pagamentos de default processados, resgates executados e rendimento do Tesouro tokenizado — garantindo que cada operação reflita imediatamente no valor das cotas.
+The Mutav Treasury Fund's Net Asset Value is calculated purely onchain, executed directly in the smart contract without dependency on external services or offchain data feeds. Any participant can independently verify and reproduce the calculation. The token price updates **per event** — fee income, processed default payments, executed redemptions, and Treasury yield — ensuring each operation is immediately reflected in token value.
 
-O valor de cada token MUTAV é determinado pela razão entre o total de ativos sob gestão e a quantidade de tokens em circulação:
+Each MUTAV token's value is determined by the ratio between total assets under management and tokens in circulation:
 
 ```
-NAV = total_assets / tokens_emitidos
+Token price = total_assets / tokens_issued
 ```
 
-**Depósito de novo investidor:** quando um investidor deposita stablecoins, o protocolo calcula o NAV vigente e emite a quantidade proporcional de tokens MUTAV. O aporte aumenta simultaneamente o total de ativos e o número de tokens na mesma proporção — o NAV permanece inalterado. Um novo investidor não financia a saída de outros nem dilui quem já está no fundo: ele entra ao preço justo e passa a ter participação proporcional ao valor depositado.
+**New investor deposit:** when an investor deposits stablecoins, the protocol calculates the current token price and issues the proportional number of MUTAV tokens. The deposit simultaneously increases total assets and token count in the same proportion — the token price remains unchanged. A new investor does not subsidize others' exits or dilute existing holders: they enter at the fair price.
 
-**Entrada de fees e yield:** as taxas pagas pelos inquilinos e o rendimento do colateral em stablecoins entram no fundo sem a criação de novos tokens. O total de ativos cresce enquanto o número de tokens permanece o mesmo — o NAV sobe. O retorno é distribuído automaticamente entre todos os holders proporcionalmente à sua posição, sem nenhuma ação necessária da parte deles.
+**Fee and yield income:** tenant fees and Treasury yield enter the fund without creating new tokens. Total assets grow while token count stays the same — the token price rises. Returns are automatically distributed among all holders proportionally to their position.
 
-**Inadimplência:** quando o protocolo executa uma garantia, Tesouro tokenizado é liquidado no valor do default sem que nenhum token seja criado ou destruído. O impacto segue a cascata de absorção: o NAV da cota **MTVH** (subordinada) recua primeiro; somente se MTVH zerar o impacto migra para **MTVM** (mezzanine) e, por último, para **MTVL** (sênior). Esse waterfall protege as classes de menor risco e concentra a exposição nos holders de maior retorno potencial.
+**Default:** when the protocol executes a guarantee, tokenized Treasury is liquidated at the default value without creating or destroying tokens. The impact follows the absorption cascade: **MTVH** (subordinated) token price falls first; only if MTVH is exhausted does the impact migrate to **MTVM** (mezzanine) and then **MTVL** (senior). This waterfall protects the lower-risk classes and concentrates exposure in higher-yield holders.
 
-**Resgate de investidor:** para sair, o investidor deposita seus tokens MUTAV no contrato. O protocolo queima exatamente a quantidade de tokens correspondente ao valor resgatado ao NAV vigente e devolve o equivalente em stablecoins. Ativos e tokens saem na mesma proporção — o NAV dos demais holders não é afetado. É aplicada uma taxa de resgate de 0,25% sobre o valor retirado.
+**Investor redemption:** to exit, the investor deposits MUTAV tokens into the contract. The protocol burns exactly the token quantity corresponding to the value redeemed at the current token price and returns the equivalent in stablecoins. Assets and tokens exit in the same proportion — other holders' token price is not affected. A 0.25% redemption fee applies.
 
-**Risco para o investidor:** o risco varia por classe de cota. Holders de MTVH assumem o first-loss em troca de maior yield; holders de MTVL têm menor exposição a defaults e menor retorno. Em qualquer cenário, não existe vantagem estrutural de entrada ou saída entre investidores da mesma classe. Se a taxa de inadimplência superar cronicamente a receita de fees, o NAV da classe afetada pode recuar abaixo do preço de entrada, resultando em perda de capital. O cap semanal de 2,5% do AUM e a camada de liquidez em Tesouro tokenizado existem para dar tempo ao fundo de absorver choques sem comprometer a operação. Fora esse cenário extremo, o único risco operacional para o investidor é aguardar a fila de resgate — período durante o qual ele continua acumulando rendimento sobre sua posição.
+**Investor risk:** risk varies by token class. MTVH holders take first-loss in exchange for higher yield; MTVL holders have lower default exposure and lower return. In any scenario, there is no structural entry or exit advantage between investors of the same class. If the default rate chronically exceeds fee revenue, the affected class's token price may fall below the entry price, resulting in capital loss. The 2.5% weekly AUM cap and the tokenized Treasury liquidity layer exist to give the fund time to absorb shocks without compromising operations.
 
-#### Mecanismo de Resgate
+#### Redemption Mechanism
 
-O resgate de tokens MUTAV segue um modelo estruturado para preservar a integridade do fundo:
+MUTAV token redemption follows a structured model to preserve fund integrity:
 
-- **KYC obrigatório:** o resgate exige verificação de identidade. Não há período mínimo de lockup — qualquer investidor com KYC aprovado pode solicitar resgate a qualquer momento.
-- **Cap semanal de 2,5% do NAV:** o protocolo limita saídas a 2,5% do valor total do fundo por semana. Pedidos que excedam esse limite entram em fila onchain e são processados na semana seguinte, em ordem de submissão.
-- **Taxa de resgate de 0,25%:** cobrada sobre o valor retirado no momento da execução.
-- **Preço de execução:** o NAV aplicado é o vigente no momento em que o pedido é processado pela fila, não o do momento da submissão.
+- **KYC required:** redemption requires identity verification. No minimum lock-up period — any KYC-approved investor may request redemption at any time
+- **2.5% weekly cap:** the protocol limits exits to 2.5% of total fund value per week. Requests exceeding this limit enter an onchain queue and are processed in the following week, in submission order
+- **0.25% redemption fee:** charged on the withdrawn amount at time of execution
+- **Execution price:** the token price applied is the one at the time the request is processed by the queue, not at the time of submission
 
-Pedidos em fila continuam acumulando rendimento proporcional à posição enquanto aguardam execução.
+Queued requests continue accumulating yield proportional to their position while waiting.
 
-#### Liquidação Programável — Fluxo de Inadimplência
+#### Programmable Liquidation — Default Flow
 
-O acionamento de garantia em caso de inadimplência segue um processo híbrido, com detecção pela imobiliária e execução onchain:
+Guarantee execution in case of default follows a hybrid process, with detection by the agency and onchain execution:
 
-1. A imobiliária identifica a inadimplência e notifica o protocolo via dashboard, fornecendo os dados necessários para validação.
-2. O backend aciona o smart contract, que verifica automaticamente as condições do contrato — prazo, valores, histórico de pagamentos.
-3. O contrato retorna pré-aprovação ou recusa. Em caso de recusa, a imobiliária recebe orientações sobre o que regularizar.
-4. Pedidos pré-aprovados passam por auditoria interna da equipe MUTAV para validação final.
-5. Após aprovação, a liquidação é executada onchain e o repasse é direcionado à imobiliária para transferência ao proprietário.
+1. The agency identifies the default and notifies the protocol via dashboard, providing validation data
+2. The backend triggers the smart contract, which automatically verifies contract conditions — term, amounts, payment history
+3. The contract returns pre-approval or rejection. If rejected, the agency receives guidance on what to correct
+4. Pre-approved requests go through internal MUTAV team audit for final validation
+5. After approval, liquidation is executed onchain and funds are directed to the agency for transfer to the landlord
 
-#### Custódia
+#### Custody
 
-O capital dos investidores é custodiado de forma **non-custodial** — os fundos ficam nos smart contracts onchain, sem intermediário com acesso aos ativos. Operações administrativas críticas são protegidas por **multisig**, com signatários a serem definidos antes do lançamento.
+Investor capital is held in **non-custodial** fashion — funds stay in onchain smart contracts, with no intermediary having access to assets. Critical administrative operations are protected by **multisig**, with signatories to be defined before launch.
 
-#### Mercado Secundário
+#### Secondary Market
 
-O mercado secundário para o token MUTAV — pool de liquidez em DEX para saída fora da fila de resgate — é uma feature planejada para fase posterior ao lançamento inicial. No MVP, a única via de saída é o resgate via fila onchain.
+The secondary market for MUTAV tokens — a liquidity pool on a decentralized exchange for exits outside the redemption queue — is a feature planned for a phase after the initial launch. In MVP, the only exit path is redemption via the onchain queue.
 
 ---
 
-### Estrutura de Cotas e Waterfall
+### Token Class Structure and Waterfall
 
-A gestão de risco do Mutav Treasury Fund é operacionalizada por meio de três classes de cotas com absorção sequencial de perdas (waterfall).
+Risk management at the Mutav Treasury Fund is operationalized through three token classes with sequential loss absorption (waterfall).
 
-**Nível 1 — Scoring individual por contrato:**
-Cada contrato de garantia registrado recebe uma pontuação de risco calculada com base em dados do inquilino, histórico de pagamentos e perfil do imóvel. Esse score determina o fee cobrada do inquilino.
+**Level 1 — Individual contract scoring:**
+Each registered guarantee contract receives a risk score calculated based on tenant data, payment history, and property profile. This score determines the fee charged to the tenant.
 
-**Nível 2 — Classes de cotas:**
-O fundo emite três classes com perfis distintos de risco e retorno:
+**Level 2 — Token classes:**
+The fund issues three classes with distinct risk and return profiles:
 
-| Cota | Perfil | Absorção de defaults | Yield |
+| Class | Profile | Default absorption | Yield |
 |---|---|---|---|
-| **MTVH** (Subordinada) | First-loss — absorve todos os defaults primeiro | Primeiro | Maior |
-| **MTVM** (Mezzanine) | Absorve somente se MTVH zerar | Segundo | Médio |
-| **MTVL** (Sênior) | Absorve por último | Terceiro | Menor, mais estável |
+| **MTVH** (Subordinated) | First-loss — absorbs all defaults first | First | Highest |
+| **MTVM** (Mezzanine) | Absorbs only if MTVH is exhausted | Second | Mid |
+| **MTVL** (Senior) | Absorbs last | Third | Lowest, most stable |
 
-A MUTAV Soluções (Garantidora) é cotista obrigatória de MTVH, alinhando os incentivos do grupo com a qualidade da carteira — a Garantidora perde primeiro em qualquer default.
+MUTAV Soluções (the Guarantor) is a mandatory MTVH holder, aligning the group's incentives with portfolio quality — the Guarantor loses first on any default.
 
-**Alocação pelo investidor:**
-O investidor acessa o dashboard, visualiza as classes disponíveis e aloca conforme sua preferência de risco. A relação é direta: MTVH oferece maior retorno potencial com maior exposição; MTVL oferece retorno estável com proteção estrutural.
-
-Esse mecanismo resolve uma limitação crítica dos modelos de garantia tradicional: a ausência de granularidade no risco. Em vez de expor todos os investidores ao mesmo pool indistinto, a MUTAV cria camadas de risco verificáveis e selecionáveis, estruturadas em contrato e executadas onchain.
+**Investor allocation:**
+The investor accesses the dashboard, views available classes, and allocates according to their risk preference. MTVH offers higher potential return with higher exposure; MTVL offers stable return with structural protection.
 
 ---
 
-### Gestão de Risco
+### Risk Management
 
-A gestão de risco da MUTAV opera em dois planos complementares: no nível do contrato, via scoring individual que determina o fee e a exposição ao risco; e no nível do fundo, via estrutura de três classes de cotas com waterfall (MTVH → MTVM → MTVL), cap semanal de resgate e mecanismo de liquidação programável. A combinação desses elementos permite que o protocolo absorva choques de inadimplência sem comprometer a integridade do fundo ou a posição dos demais investidores.
-
----
-
-### Benefícios aos envolvidos
-
-O modelo é estruturado para alinhar interesses entre todos os agentes do ecossistema de aluguel, distribuindo benefícios de forma clara:
-
-- **Investidor cripto-nativo** acessa o mercado de garantias locatícias por meio da valorização do NAV, com exposição a um ativo imobiliário, retorno descorrelacionado da volatilidade cripto, auto-custódia dos tokens via wallet própria e possibilidade de integração com o ecossistema DeFi.
-- **Investidor institucional** passa a ter acesso a um RWA estruturado, com transparência e capacidade de auditoria on-chain.
-- **Imobiliárias** ganham eficiência operacional e novas fontes de receita ao integrar o modelo de garantia tokenizada.
-- **Proprietários** se beneficiam de maior segurança e processos mais rápidos de liquidação em casos de inadimplência.
-- **Inquilinos** têm acesso facilitado ao aluguel, sem necessidade de garantias tradicionais mais restritivas, com seguro de perda de renda incluso no contrato de garantia.
-
-O sistema cria um ciclo onde capital, eficiência e acesso são distribuídos de forma mais equilibrada entre todos os participantes.
+MUTAV's risk management operates on two complementary levels: at the contract level, via individual scoring that determines the fee and risk exposure; and at the fund level, via the three-class waterfall (MTVH → MTVM → MTVL), weekly redemption cap, and programmable liquidation mechanism. This combination allows the protocol to absorb default shocks without compromising fund integrity or other investors' positions.
 
 ---
 
-## 4. Modelo de Negócio
+### Benefits to Participants
 
-A MUTAV opera como uma **infraestrutura híbrida B2B + B2C** para o mercado de garantias locatícias. No lado B2B, o protocolo se integra a imobiliárias e operadores do setor, que são responsáveis pela originação dos contratos, onboarding de inquilinos e registro das garantias. No lado B2C, investidores acessam diretamente o sistema ao aportar capital em stablecoins e receber tokens MUTAV, passando a financiar as garantias.
+The model aligns interests among all agents in the rental ecosystem:
 
-O objetivo central é transformar um mercado fechado em um sistema **aberto e mais eficiente**, onde o risco é distribuído e o capital é alocado de forma programável. A implementação ocorre com imobiliárias utilizando a infraestrutura para registrar contratos e acionar garantias, enquanto o fundo on-chain fornece liquidez e cobertura para essas operações.
-
-O fluxo econômico é sustentado por receitas reais do sistema: as **taxas pagas pelos inquilinos** nos contratos de garantia e o **rendimento do colateral em stablecoins**. Esses retornos são incorporados ao fundo, gerando valorização da MUTAV.
-
-A captura de valor pelo protocolo ocorre através de quatro mecanismos:
-
-- **Split de fees:** 20% das taxas coletadas dos inquilinos ficam com a MUTAV Soluções (Garantidora); 80% são repassados ao Mutav Treasury Fund
-- **Taxa de gestão de 1% a.a.** sobre o AUM do Mutav Treasury Fund, cobrada pela Mutav Treasury Management
-- **Taxa de resgate de 0,25%** cobrada sobre o valor retirado no momento do resgate
-- **Retorno refletido no NAV** — apreciação contínua via fees e yield do Tesouro tokenizado
-
-Esse modelo garante sustentabilidade financeira ao mesmo tempo em que preserva competitividade e eficiência para os participantes do sistema. A integração com o ecossistema DeFi amplia a utilidade da MUTAV como colateral, aumentando a demanda e criando um ciclo de crescimento baseado em uso, liquidez e valorização do ativo.
+- **Crypto-native investor** accesses the rental guarantee market via token price appreciation, with real estate exposure, crypto-uncorrelated returns, self-custody via their own wallet, and potential DeFi integrations
+- **Institutional investor** gains access to a structured real-world asset (RWA) with full onchain transparency and auditability
+- **Real estate agencies** gain operational efficiency and new revenue sources by integrating the tokenized guarantee model
+- **Landlords** benefit from greater security and faster default settlement
+- **Tenants** have easier access to rentals without restrictive traditional guarantees
 
 ---
 
-## 5. Go to Market
+## 4. Business Model
 
-### Fase 1 — Piloto
+MUTAV operates as **hybrid B2B + B2C infrastructure** for the rental guarantee market. On the B2B side, the protocol integrates with agencies and sector operators responsible for contract origination, tenant onboarding, and guarantee registration. On the B2C side, investors access the system directly by depositing stablecoins and receiving MUTAV tokens.
 
-**Imobiliárias — entrada via rede existente**
+The economic flow is sustained by real system revenue: **tenant fees** on guarantee contracts and **capital yield** from the tokenized Treasury. These returns are incorporated into the fund, generating token price appreciation.
 
-- Alvo: **20–30 imobiliárias** — litoral norte do RS e SC
-- Acesso via rede com **30+ anos de experiência** no mercado de locações do Sul do Brasil — região com o menor índice de inadimplência do país (**2,41%**), ideal para o piloto
-- Pitch: automação operacional + **fee de 2%** nos contratos e melhores condições para inquilinos e proprietários
-- Proprietários e inquilinos captados via imobiliárias parceiras
+Value capture by the protocol occurs through four mechanisms:
 
-**Investidores — cripto-nativos, em paralelo ao piloto**
-
-- Ticket: **$1K–$10K** retail cripto-nativo
-- Capital semente: prêmios de hackathon + investimento CMJ + rede dos fundadores
-- Canal principal: **X (Twitter)** — alcance orgânico + rede estratégica
-- Narrativa: o único protocolo onchain com exposição direta ao mercado de garantias locatícias brasileiro
-
-### Fase 2 — Expansão
-
-**Critérios de transição:** contratos ativos + threshold de AUM + operação sustentada
-
-**Imobiliárias**
-- Cold outreach para novos mercados além da região piloto
-- Track record do piloto como prova de adoção para novas imobiliárias
-- Menos burocracia, mais previsibilidade, fonte adicional de receita
-
-**Investidores**
-- MUTAV como colateral em protocolos DeFi (integração)
-- Abertura para investidores institucionais com KYC
-- Narrativa de escala: o Brasil possui mais de **74.000 imobiliárias ativas** e **650.000 corretores de imóveis registrados**, formando uma das maiores redes de distribuição imobiliária do mundo — com potencial massivo e ainda inexplorado para crescimento escalável e penetração de mercado.
+- **Fee split:** 20% of tenant fees stay with MUTAV Soluções; 80% pass to Mutav Treasury Fund
+- **1% p.a. management fee** on Mutav Treasury Fund AUM, charged by Mutav Treasury Management
+- **0.25% redemption fee** on the withdrawn amount at time of redemption
+- **Return reflected in token price** — continuous appreciation via fees and tokenized Treasury yield
 
 ---
 
-## 6. Equipe
+## 5. Go-to-Market
 
-O projeto é liderado por Matheus "Draau" de Pauli, Project Manager e Web3 builder com mais de 5 anos de experiência na construção e gestão de produtos que conectam tecnologia, marca e mercado. Atua na coordenação de equipes multidisciplinares e no desenvolvimento de soluções em blockchain, com base criativa aplicada à estratégia e execução. Além disso, é cofundador da comunidade No Bloco, iniciativa voltada à inserção de profissionais criativos no ecossistema Web3.
+### Phase 1 — Pilot (Months 0–6)
 
-A equipe conta também com Julia Hoffmann Buratto, design engineer, arquiteta e urbanista (UFSC), com MBA em Cidades Responsivas e fundadora da jubs.studio. Em 2023, lançou a Chainless, levando o produto de zero a 30.000 usuários, ainda em operação. Atua na interseção entre arquitetura de sistemas, UX e infraestrutura onchain, com experiência em produtos fintech e Web3 voltados à tokenização, crédito e automação de fluxos financeiros.
+**Real estate agencies — entry via existing network**
 
-**Advisors**
+- Target: **20–30 agencies** — Litoral Norte (RS/SC)
+- Access via network with **30+ years of experience** in the Sul rental market — the region with the lowest default rate in Brazil (**2.41%**), ideal for the pilot
+- Pitch: operational automation + competitive fee structure for tenants and landlords
+- Landlords and tenants acquired via partner agencies
 
-Lucas Oliveira atua como Advisor Técnico. Engenheiro blockchain sênior com mais de 5 anos em desenvolvimento de produtos blockchain — design, arquitetura, auditoria de segurança e deploy em mainnet. Ex-Blockchain Engineer na Clearsale, Head de Educação na Nearx, formação em Matemática e certificação Berkeley Blockchain. Embaixador ativo do ecossistema Stellar.
+**Investors — crypto-native, in parallel with pilot**
 
-Cinara Bigóis atua como Advisor de Mercado Imobiliário. Com 30 anos de experiência no mercado de locações no Sul do Brasil, corretora ativa com relacionamentos consolidados junto a imobiliárias e operadores regionais — viabilizando validação direta com o mercado e acesso aos primeiros parceiros do piloto.
+- Ticket: **$1K–$10K** retail crypto-native
+- Seed capital: hackathon prizes + CMJ investment + founders' network
+- Primary channel: **X (Twitter)** — organic reach + strategic network
+- Narrative: the only onchain protocol with direct exposure to the Brazilian rental guarantee market
+
+### Phase 2 — Scale (Months 6–18)
+
+**Agencies**
+- Cold outreach to new markets beyond the pilot region
+- Pilot track record as proof of adoption for new agencies
+- Less friction, more predictability, additional revenue source
+
+**Investors**
+- MUTAV as collateral in DeFi protocols (integration)
+- Opening for institutional investors with KYC
+- Scale narrative: Brazil has **74,000+ active agencies** and **650,000 registered brokers** — one of the largest real estate distribution networks in the world
+
+---
+
+## 6. Team
+
+**Matheus "Draau" de Pauli** — Co-founder. Project Manager and Web3 builder with 5+ years of experience building and managing products at the intersection of technology, brand, and market. Coordinates multidisciplinary teams and develops blockchain solutions. Co-founder of **No Bloco**, an initiative inserting creative professionals into the Web3 ecosystem.
+
+**Julia Hoffmann Buratto** — Co-founder, Design Engineer. Architect and urban planner (UFSC), MBA in Responsive Cities, founder of **jubs.studio**. Launched **Chainless** in 2023 — from zero to 30,000 users, still running. Works at the intersection of systems architecture, UX, and onchain infrastructure.
+
+**Advisor**
+
+**Cinara Bigóis** — Real Estate Market Advisor. 30 years of experience in the Sul rental market, active licensed broker with consolidated relationships across the RS/SC agency ecosystem. Enables direct market validation and access to the pilot's first partners.
 
 ---
 
 ## 7. Roadmap
 
-| Fase | Período | Milestones |
+| Phase | Period | Key milestones |
 |---|---|---|
-| **Phase 0 — Piloto** | Meses 0–6 | Mainnet live · 8–10 imobiliárias onboarded · 600 contratos ativos · $100K genesis AUM · Primeiro ciclo de fees fechado · Investidores early entram ao genesis NAV |
-| **Phase 1 — Escala** | Meses 6–18 | 20–30 imobiliárias · 2.500 contratos ativos · Abertura do fundo público · Integração DeFi como ativo RWA |
-| **Phase 2 — Expansão** | Meses 18–36 | 50 imobiliárias · 12.000 contratos ativos · $5M AUM · Seed Round ($5–6M) |
+| **Phase 0 — Foundation** | Months 0–2 | Entity constitution · Smart contract testnet · Legal & KYC setup |
+| **Phase 1 — Pilot Launch** | Months 2–6 | Mainnet live · 20–30 agencies onboarded · 500–1,000 active contracts · $500K genesis AUM · First fee cycle closed |
+| **Phase 2 — Scale** | Months 6–18 | 10,000+ contracts · $3M+ AUM · National expansion · Institutional investors · MTVM/MTVL deployed |
+| **Phase 3 — Expansion** | Months 18–36 | 50,000+ contracts · $10M+ AUM · Seed round ($3–5M) |
 
 ---
 
-## 8. Conclusão
+## 8. Conclusion
 
-A MUTAV propõe uma nova infraestrutura para o mercado de garantias locatícias, tornando-o mais aberto, eficiente e transparente por meio da tokenização e da utilização de blockchain. Ao conectar capital de investidores com demandas reais do setor imobiliário, o modelo cria um sistema sustentável, baseado em rendimento real e gestão de risco estruturada.
+MUTAV proposes new infrastructure for the rental guarantee market, making it more open, efficient, and transparent through tokenization and blockchain. By connecting investor capital with real real estate sector demand, the model creates a sustainable system based on real yield and structured risk management.
 
-Com uma arquitetura que combina integração com players do mercado, liquidez programável, Risk Engine para segmentação por perfil de risco e expansão via DeFi, a MUTAV estabelece as bases para um novo padrão de garantias — mais acessível, escalável e alinhado aos avanços da economia digital.
+With an architecture that combines agency integration, programmable liquidity, a risk engine for credit segmentation, and DeFi expansion, MUTAV establishes the foundation for a new standard in guarantees — more accessible, scalable, and aligned with the advances of the digital economy.

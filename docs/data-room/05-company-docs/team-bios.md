@@ -52,3 +52,16 @@ Her role is functional: the 20-30 imobiliárias in the Litoral Norte that form t
 | Pilot distribution (imobiliárias) | Cinara (advisor) |
 
 **Post-raise additions:** full-time Soroban/Stellar engineer, Brazilian legal counsel (fintech + real estate), offshore legal agent.
+
+---
+
+## References
+
+Investors conducting due diligence on the founding team are welcome to speak directly with our advisors. Contact Matheus first so references can be notified: draauarts@gmail.com
+
+| Reference | Role | Can speak to |
+|---|---|---|
+| Lucas Oliveira | Technical Advisor | Smart contract architecture, Stellar ecosystem, security audit approach |
+| Cinara Bigóis | Real Estate Advisor | 30-year Sul/SC rental market network; agency operator perspective; pilot distribution |
+
+Additional professional and ecosystem references available upon request. Each reference should be briefed on current materials before the call — they may know the founders from earlier-stage work.

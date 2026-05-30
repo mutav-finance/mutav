@@ -1,767 +1,766 @@
 # MUTAV — Compliance Structure
 
-> Documento consolidado gerado em 2026-05-19. Cobre fluxos operacionais, processo de compliance e decisões abertas.
-> Documento complementar — estrutura jurídica, entidades e acordos pendentes: [`docs/data-room/05-company-docs/legal-structure.md`](../data-room/05-company-docs/legal-structure.md).
-> Decisões de política de treasury do app: [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
+> Consolidated document generated 2026-05-19. Covers operational flows, compliance processes, and open decisions.
+> Companion document — legal structure, entities, and pending agreements: [`docs/data-room/05-company-docs/legal-structure.md`](../data-room/05-company-docs/legal-structure.md).
+> Treasury policy decisions for the app: [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
 
 ---
 
-## Índice
+## Index
 
-1. [Visão Geral](#visão-geral)
-2. [Front 1 — MUTAV Soluções (Garantidora BR)](#front-1--mutav-soluções-garantidora-br)
+1. [Overview](#overview)
+2. [Front 1 — MUTAV Soluções (BR Guarantor)](#front-1--mutav-soluções-br-guarantor)
 3. [Front 2 — Mutav Treasury Fund (Offshore)](#front-2--mutav-treasury-fund-offshore)
-4. [Mutav Treasury Management (Gestora)](#mutav-treasury-management-gestora)
-5. [Cascata de Defaults (Waterfall)](#cascata-de-defaults-waterfall)
-6. [Mapa de Entidades e Reguladores](#mapa-de-entidades-e-reguladores)
-7. [Onboarding de Imobiliária](#1-onboarding-de-imobiliária)
-8. [Contrato de Garantia com Inquilino](#2-contrato-de-garantia-com-inquilino)
-9. [Onboarding de Investidor](#3-onboarding-de-investidor)
-10. [Fluxo Mensal de Fee](#4-fluxo-mensal-de-fee)
-11. [Evento de Default](#5-evento-de-default)
-12. [Liquidação e Cobertura pelo Fundo](#6-liquidação-e-cobertura-pelo-fundo)
-13. [Recuperação de Crédito](#7-recuperação-de-crédito)
-14. [Resgate de Investidor](#8-resgate-de-investidor)
-15. [Obrigações Contínuas](#9-obrigações-contínuas)
-16. [Decisões em Aberto](#decisões-em-aberto)
+4. [Mutav Treasury Management](#mutav-treasury-management)
+5. [Default Waterfall](#default-waterfall)
+6. [Entity and Regulator Map](#entity-and-regulator-map)
+7. [Agency Onboarding](#1-agency-onboarding)
+8. [Tenant Guarantee Contract](#2-tenant-guarantee-contract)
+9. [Investor Onboarding](#3-investor-onboarding)
+10. [Monthly Fee Flow](#4-monthly-fee-flow)
+11. [Default Event](#5-default-event)
+12. [Liquidation and Fund Coverage](#6-liquidation-and-fund-coverage)
+13. [Credit Recovery](#7-credit-recovery)
+14. [Investor Redemption](#8-investor-redemption)
+15. [Ongoing Obligations](#9-ongoing-obligations)
+16. [Open Decisions](#open-decisions)
 
 ---
 
-## Visão Geral
+## Overview
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│  BRASIL                             OFFSHORE (jurisdição a definir)  │
+│  BRAZIL                             OFFSHORE (jurisdiction TBD)      │
 │                                                                       │
 │  MUTAV Soluções        ──80%──►  Mutav Treasury Fund                │
-│  (Garantidora)                      (Front 2)                        │
+│  (Guarantor)                        (Front 2)                        │
 │                                                                       │
-│  Mutav Treasury Management  ◄── taxas ──── administra o fundo       │
+│  Mutav Treasury Management  ◄── fees ──── manages the fund          │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-**Convenção de referência neste documento:**
-- "a Garantidora" → MUTAV Soluções
-- "o Fundo" → Mutav Treasury Fund
-- "a Gestora" → Mutav Treasury Management
+**Reference convention in this document:**
+- "the Guarantor" → MUTAV Soluções
+- "the Fund" → Mutav Treasury Fund
+- "the Manager" → Mutav Treasury Management
 
 ---
 
-## Front 1 — MUTAV Soluções (Garantidora BR)
+## Front 1 — MUTAV Soluções (BR Guarantor)
 
-**O que é:** empresa operacional brasileira, atua como fiadora institucional nos contratos de locação.
+**What it is:** Brazilian operational company, acts as institutional guarantor in rental contracts.
 
-**Base legal (produto/serviço):** Art. 37, inciso I da Lei do Inquilinato (fiança) — enquadramento do produto, não do compliance estrutural. **Enquadramento regulatório:** TBD — pendente counsel (L1). Opções em avaliação: BACEN, SUSEP, CVM, ou nenhum (isento sob fiança). Não há posicionamento pré-definido.
+**Legal basis (product/service):** Art. 37, inciso I, Lei do Inquilinato (fiança) — product framing, not the regulatory structure. **Regulatory classification:** TBD — pending counsel (L1). Options under evaluation: BACEN, SUSEP, CVM, or none (exempt under fiança). No pre-defined regulatory position.
 
-**Fluxo de receita:**
+**Revenue flow:**
 
 ```
-Inquilino paga fee junto do aluguel
-        │ (1 boleto)
+Tenant pays fee with rent
+        │ (single invoice)
         ▼
-Imobiliária coleta e repassa à Garantidora
+Agency collects and transfers to Guarantor
         │
-        ├─ 20% → caixa operacional da Garantidora (deságio retido)
-        └─ 80% → Mutav Treasury Fund (cessão de recebíveis)
+        ├─ 20% → Guarantor operational account
+        └─ 80% → Mutav Treasury Fund
 ```
 
-**Cobertura de defaults:**
+**Default coverage:**
 
 ```
-Inadimplência detectada
+Default detected
         │
         ▼
-Garantidora aciona o Fundo
+Guarantor triggers the Fund
         │
-        └─ MTVH absorve primeiro (Garantidora é cotista MTVH)
+        └─ MTVH absorbs first (Guarantor is mandatory MTVH holder)
 ```
 
-**Skin-in-the-game:** Garantidora retém cotas MTVH — perde primeiro em qualquer default.
+**Skin-in-the-game:** Guarantor holds MTVH tokens — loses first on any default.
 
 ---
 
 ## Front 2 — Mutav Treasury Fund (Offshore)
 
-### Jurisdição
+### Jurisdiction
 
-A definir — opções em avaliação:
+TBD — options under evaluation:
 
-| Jurisdição | Perfil |
+| Jurisdiction | Profile |
 |---|---|
-| Cayman Islands | Padrão institucional, mais caro, mais estável |
-| BVI | Custo médio, bem estabelecido |
-| Bermuda | Usado por OnRe, forte para reinsurance/RWA |
-| Marshall Islands | Barato, DAOs com personalidade jurídica |
-| UAE / ADGM | Crescendo em Web3, regulação moderna |
-| Próspera (Honduras) | Cripto-nativo, mas status jurídico incerto (ZEDE em disputa) |
+| Cayman Islands | Institutional standard, higher cost, most stable |
+| BVI | Mid cost, well established |
+| Bermuda | Used by OnRe, strong for reinsurance/RWA |
+| Marshall Islands | Low cost, DAOs with legal personhood |
+| UAE / ADGM | Growing in Web3, modern regulation |
 
-### Estrutura de cotas
+### Token class structure
 
-1 fundo com 3 classes de cotas:
+1 fund with 3 token classes:
 
 ```
 Mutav Treasury Fund
 │
-├─ Cota MTVH (Subordinada)
-│   Investidores: MUTAV Soluções (cotista obrigatória) + investidores qualificados/profissionais
-│   Nota: classificação CVM Res. 175 Arts. 4/11 aplicável a investidores BR residentes;
-│         fundo offshore sujeito à regulação da jurisdição de domicílio — pendente counsel
-│   Risco: absorve todos os defaults primeiro
-│   Yield: maior
+├─ MTVH Token (Subordinated)
+│   Investors: MUTAV Soluções (mandatory holder) + qualified/professional investors
+│   Note: CVM Res. 175 Arts. 4/11 classification applicable to BR resident investors;
+│         offshore fund subject to domicile jurisdiction regulation — pending counsel
+│   Risk: absorbs all defaults first
+│   Yield: highest
 │
-├─ Cota MTVM (Mezzanine)
-│   Investidores: qualquer investidor (KYC)
-│   Risco: absorve se MTVH zerar
-│   Yield: médio
+├─ MTVM Token (Mezzanine)
+│   Investors: any investor (KYC)
+│   Risk: absorbs if MTVH is exhausted
+│   Yield: mid
 │
-└─ Cota MTVL (Sênior)
-    Investidores: qualquer investidor (KYC)
-    Risco: absorve por último
-    Yield: menor, mais seguro
+└─ MTVL Token (Senior)
+    Investors: any investor (KYC)
+    Risk: absorbs last
+    Yield: lowest, most stable
 ```
 
-### Patrimônio
+### Fund reserves
 
-Working hypothesis: patrimônio alocado em Tesouro tokenizado via Etherfuse (Stellar) — pendente confirmação com Etherfuse sobre:
-1. Elegibilidade de titulares offshore (restrições de residência/KYB)
-2. Modelo de custódia e segregação de chaves (requisito padrão de jurisdições offshore)
-3. Fluxo de resgate em BRL — Etherfuse liquida em BRL para conta BR, não em cripto; caminho de câmbio para fundo offshore a definir
+Working hypothesis: reserves allocated in tokenized Treasury via Etherfuse (Stellar) — pending confirmation with Etherfuse on:
+1. Offshore holder eligibility (residency/KYB restrictions)
+2. Custody and key segregation model (standard offshore jurisdiction requirement)
+3. BRL redemption flow — Etherfuse liquidates in BRL to a BR account, not in crypto; FX path for offshore fund TBD
 
-Assumindo confirmação:
-- NAV aprecia diariamente
-- Default = liquidação parcial da posição de Tesouro
-- Cascata de perda: MTVH → MTVM → MTVL
+Assuming confirmation:
+- Token price appreciates daily
+- Default = partial liquidation of Treasury position
+- Loss cascade: MTVH → MTVM → MTVL
 
-### Fluxo do investidor
+### Investor flow
 
 ```
-Investidor
-  └─ KYC na plataforma MUTAV
-  └─ deposita cripto
-  └─ recebe token MTVH / MTVM / MTVL
-  └─ self-custodial (wallet própria)
-  └─ resgate: devolve token → recebe cripto (- taxa de saque)
+Investor
+  └─ KYC on MUTAV platform
+  └─ deposits crypto
+  └─ receives MTVH / MTVM / MTVL tokens
+  └─ self-custodial (own wallet)
+  └─ redemption: returns tokens → receives crypto (- withdrawal fee)
 ```
 
 ---
 
-## Mutav Treasury Management (Gestora)
+## Mutav Treasury Management
 
-**O que é:** entidade que administra o Mutav Treasury Fund, registrada na jurisdição do fundo.
+**What it is:** entity that administers the Mutav Treasury Fund, registered in the fund's jurisdiction.
 
-**Receita:**
-- Taxa de gestão (% a.a. sobre AUM do fundo)
-- Taxa de saque (% sobre resgates dos investidores)
+**Revenue:**
+- Management fee (% p.a. on fund AUM)
+- Withdrawal fee (% on investor redemptions)
 
-**Relação com o grupo:** mesmos fundadores, entidade separada da Garantidora.
+**Group relationship:** same founders, separate legal entity from the Guarantor.
 
 ---
 
-## Cascata de Defaults (Waterfall)
+## Default Waterfall
 
 ```
-Default acontece na carteira
+Default occurs in portfolio
         │
         ▼
-[1] MTVH absorve → NAV do MTVH cai
-        │ (se MTVH zerar)
+[1] MTVH absorbs → MTVH token price falls
+        │ (if MTVH exhausted)
         ▼
-[2] MTVM absorve → NAV do MTVM cai
-        │ (se MTVM zerar)
+[2] MTVM absorbs → MTVM token price falls
+        │ (if MTVM exhausted)
         ▼
-[3] MTVL absorve → NAV do MTVL cai
+[3] MTVL absorbs → MTVL token price falls
 ```
 
 ---
 
-## Mapa de Entidades e Reguladores
+## Entity and Regulator Map
 
-> Nomes canônicos das entidades do grupo. Sufixo societário (LTDA / SA) a definir com counsel antes da constituição.
+> Canonical entity names for the group. Legal suffix (LTDA / SA) TBD with counsel before incorporation.
 
-| Entidade | País | Regulador | Receita |
+| Entity | Country | Regulator | Revenue |
 |---|---|---|---|
-| MUTAV Soluções | Brasil | TBD — pendente counsel (L1) | 20% do split de fees |
-| Mutav Treasury Fund | Offshore (TBD) | Regulador local (TBD) | — |
-| Mutav Treasury Management | Offshore (TBD) | Regulador local (TBD) | Taxa de gestão + saque |
+| MUTAV Soluções | Brazil | TBD — pending counsel (L1) | 20% of fee split |
+| Mutav Treasury Fund | Offshore (TBD) | Local regulator (TBD) | — |
+| Mutav Treasury Management | Offshore (TBD) | Local regulator (TBD) | Management fee + withdrawal fee |
 
 ---
 
-## 1. Onboarding de Imobiliária
+## 1. Agency Onboarding
 
-**Atores:** Imobiliária, Garantidora
+**Actors:** Agency, Guarantor
 
-**O que acontece:** imobiliária se cadastra na plataforma e passa a oferecer a garantia MUTAV para seus contratos de locação.
+**What happens:** agency registers on the platform and begins offering the MUTAV guarantee to its rental contracts.
 
-### Documentos necessários
+### Required documents
 
-| Documento | Finalidade |
+| Document | Purpose |
 |---|---|
-| Contrato de Parceria MUTAV | Formaliza a imobiliária como canal de distribuição e agente de cobrança do fee |
-| Comprovante de CNPJ ativo | Verificação de pessoa jurídica |
-| Comprovante de CRECI | Habilitação legal para intermediação imobiliária |
-| Dados bancários | Conta de onde sai o repasse do fee para a Garantidora |
-| Identificação do responsável legal | KYC da pessoa física que representa a imobiliária |
+| MUTAV Partnership Contract | Formalizes agency as distribution channel and fee collection agent |
+| Active CNPJ certificate | Business entity verification |
+| CRECI license certificate | Legal authorization for real estate intermediation |
+| Bank details | Account for fee transfers to the Guarantor |
+| Legal representative ID | KYC of the individual representing the agency |
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **AML/KYC:** coletar e verificar dados da imobiliária e do responsável legal antes de ativar o acesso
-- **Contrato de agente de cobrança:** formalizar em contrato que a imobiliária coleta o fee do inquilino em nome da Garantidora e repassa integralmente
-- **Política de privacidade / LGPD:** imobiliária deve aceitar os termos de tratamento de dados dos inquilinos
+- **AML/KYC:** collect and verify agency and legal representative data before activating access
+- **Collection agent contract:** formalize in contract that the agency collects the tenant fee on behalf of the Guarantor and transfers in full
+- **Privacy policy / LGPD:** agency must accept the terms for processing tenant data
 
 ---
 
-## 2. Contrato de Garantia com Inquilino
+## 2. Tenant Guarantee Contract
 
-**Atores:** Imobiliária, Inquilino, Garantidora
+**Actors:** Agency, Tenant, Guarantor
 
-**O que acontece:** imobiliária inicia a análise na plataforma MUTAV antes de qualquer interação com o inquilino. Só após aprovação o inquilino é envolvido para assinar.
+**What happens:** agency initiates the analysis on the MUTAV platform before any interaction with the tenant. Only after approval is the tenant involved to sign.
 
-**Base legal:** Art. 37, inciso I da Lei do Inquilinato (Lei 8.245/91) — fiança.
+**Legal basis:** Art. 37, inciso I, Lei do Inquilinato (Lei 8.245/91) — fiança.
 
-### Fluxo de ativação
+### Activation flow
 
 ```
-Imobiliária acessa o dashboard MUTAV
+Agency accesses MUTAV dashboard
         │
         ▼
-Imobiliária insere dados do inquilino + imóvel + documentos
+Agency enters tenant + property + documents
         │
         ▼
-Plataforma MUTAV analisa automaticamente:
-  — Score do inquilino (histórico de pagamentos e ações judiciais)
-  — Reputação da imobiliária (histórico de contratos gerenciados)
-  — Capacidade do fundo (cobertura disponível no momento)
-  — Condições do contrato (valor do aluguel, prazo, imóvel)
+MUTAV platform analyzes automatically:
+  — Tenant score (payment history and legal actions)
+  — Agency reputation (contract management history)
+  — Fund capacity (available coverage)
+  — Contract conditions (rent amount, term, property)
         │
-        ├─ Reprovado → imobiliária notificada, inquilino não é acionado
+        ├─ Rejected → agency notified, tenant not contacted
         │
-        └─ Aprovado → score define a faixa de risco e o fee:
-                        Baixo risco  → fee menor
-                        Médio risco  → fee intermediário
-                        Alto risco   → fee maior
+        └─ Approved → score defines risk tier and fee:
+                        Low risk  → lower fee
+                        Mid risk  → mid fee
+                        High risk → higher fee
                               │
                               ▼
-                 Imobiliária informa o inquilino da aprovação e do fee
+                 Agency informs tenant of approval and fee
                               │
                               ▼
-                 Inquilino assina o Termo de Adesão MUTAV
+                 Tenant signs MUTAV Acceptance Term
                               │
                               ▼
-                 Cláusula de fiança entra no contrato de locação
+                 Guarantee clause enters the rental contract
                               │
                               ▼
-                 Contrato ativado na plataforma vinculado à imobiliária
+                 Contract activated on platform linked to agency
                               │
                               ▼
-                 Boleto mensal começa (aluguel + fee MUTAV)
+                 Monthly invoice begins (rent + MUTAV fee)
 ```
 
-### Documentos necessários
+### Required documents
 
-| Documento | Momento | Finalidade |
+| Document | When | Purpose |
 |---|---|---|
-| Dados do inquilino + imóvel | Antes da análise — fornecido pela imobiliária | Base para o score |
-| Resultado da análise de risco | Gerado pela plataforma | Registro da aprovação e faixa de fee |
-| Termo de Adesão MUTAV | Assinado pelo inquilino após aprovação | Aceite das condições e autorização de cobrança |
-| Cláusula de fiança | Inserida no contrato de locação | Formaliza MUTAV como fiadora |
+| Tenant + property data | Before analysis — provided by agency | Basis for score |
+| Risk analysis result | Generated by platform | Record of approval and fee tier |
+| MUTAV Acceptance Term | Signed by tenant after approval | Acceptance of terms and billing authorization |
+| Guarantee clause | Inserted in rental contract | Formalizes MUTAV as guarantor |
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **LGPD:** imobiliária coleta dados do inquilino — deve ter base legal (execução de contrato) e política de privacidade clara
-- **Lei do Inquilinato:** cláusula de fiança deve identificar a MUTAV como fiadora, o alcance e o limite máximo coberto
-- **Proibição de dupla garantia:** o contrato não pode exigir outra modalidade além da MUTAV (Art. 37, parágrafo único)
-- **Fee:** valor mensal expresso no Termo de Adesão — não pode ser caracterizado como prêmio de seguro
+- **LGPD:** agency collects tenant data — must have legal basis (contract execution) and clear privacy policy
+- **Lei do Inquilinato:** guarantee clause must identify MUTAV as guarantor, scope, and maximum coverage ceiling
+- **No double guarantee:** contract cannot require another modality alongside MUTAV (Art. 37, sole paragraph)
+- **Fee:** monthly amount expressed in Acceptance Term — must not be characterized as an insurance premium
 
 ---
 
-## 3. Onboarding de Investidor
+## 3. Investor Onboarding
 
-**Atores:** Investidor, Fundo (offshore), Gestora
+**Actors:** Investor, Fund (offshore), Manager
 
-**O que acontece:** investidor se cadastra na plataforma, passa por KYC, deposita cripto e recebe tokens MTVH / MTVM / MTVL em sua wallet.
+**What happens:** investor registers on the platform, passes KYC, deposits crypto, and receives MTVH / MTVM / MTVL tokens in their wallet.
 
-> **Escopo:** fluxo direcionado a investidores internacionais. Plataforma em inglês, público cripto-nativo, acesso self-directed.
-> Acesso de investidores brasileiros residentes sujeito a análise jurídica pendente — dual regime CVM 175 + BACEN a ser documentado quando counsel confirmar viabilidade.
+> **Scope:** flow directed at international investors. English-language platform, crypto-native audience, self-directed access.
+> Access for Brazilian resident investors subject to pending legal opinion — dual regime CVM 175 + BACEN to be documented when counsel confirms feasibility.
 
-### Fluxo
+### Flow
 
 ```
-Investidor acessa a plataforma
+Investor accesses the platform
         │
         ▼
-KYC na plataforma MUTAV
-  — documento de identidade
-  — comprovante de residência
-  — declaração de origem dos fundos (AML)
+KYC on MUTAV platform
+  — identity document
+  — proof of address
+  — source of funds declaration (AML)
   — sanctions screening
         │
-        ├─ Reprovado → acesso negado
+        ├─ Rejected → access denied
         │
-        └─ Aprovado
+        └─ Approved
                 │
                 ▼
-        Investidor assina Subscription Agreement
-        (termos do fundo, riscos, classes de cota, taxas)
+        Investor signs Subscription Agreement
+        (fund terms, risks, token classes, fees)
                 │
                 ▼
-        Investidor escolhe a classe (MTVH / MTVM / MTVL)
-        e o valor a aportar
+        Investor chooses class (MTVH / MTVM / MTVL)
+        and investment amount
                 │
                 ▼
-        Deposita cripto no endereço do fundo
+        Deposits crypto to fund address
                 │
                 ▼
-        Smart contract emite tokens proporcionais ao NAV atual
-        Tokens vão direto para a wallet do investidor (self-custodial)
+        Smart contract issues tokens proportional to current token price
+        Tokens go directly to investor's wallet (self-custodial)
 ```
 
-### Documentos necessários
+### Required documents
 
-| Documento | Finalidade |
+| Document | Purpose |
 |---|---|
-| Documento de identidade (passaporte ou RG+CPF) | KYC — identificação |
-| Comprovante de residência | KYC — endereço |
-| Declaração de origem dos fundos | AML — para aportes acima de threshold (TBD) |
-| Subscription Agreement | Contrato de adesão ao fundo offshore — aceite dos termos, riscos e classes de cotas |
+| Identity document (passport or national ID) | KYC — identification |
+| Proof of address | KYC — address |
+| Source of funds declaration | AML — for deposits above threshold (TBD) |
+| Subscription Agreement | Offshore fund participation contract — acceptance of terms, risks, and token classes |
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **FATF / AML:** KYC obrigatório por padrão internacional independentemente da jurisdição do fundo — identidade, endereço, origem dos recursos
-- **Sanctions screening:** verificar investidor contra listas de sanções (OFAC, ONU, UE) antes de ativar
-- **Subscription Agreement:** documento legal que formaliza a participação do investidor no fundo offshore — deve conter riscos, classe de cota, mecânica de default waterfall, taxa de gestão e taxa de saque
-- **Self-custodial:** o token vai para a wallet do investidor — o fundo não guarda ativos do investidor, o investidor é responsável pela segurança da sua wallet
+- **FATF / AML:** KYC mandatory by international standard regardless of fund jurisdiction — identity, address, source of funds
+- **Sanctions screening:** verify investor against sanctions lists (OFAC, UN, EU) before activation
+- **Subscription Agreement:** legal document formalizing investor participation in the offshore fund — must contain risks, token class, default waterfall mechanics, management fee, and withdrawal fee
+- **Self-custodial:** token goes to investor's wallet — fund does not hold investor assets; investor is responsible for wallet security
 
 ---
 
-## 4. Fluxo Mensal de Fee
+## 4. Monthly Fee Flow
 
-**Atores:** Inquilino, Imobiliária, Garantidora, Fundo
+**Actors:** Tenant, Agency, Guarantor, Fund
 
-**O que acontece:** todo mês o inquilino paga aluguel + fee em um único boleto. A imobiliária coleta e repassa à Garantidora, que faz o split.
+**What happens:** every month the tenant pays rent + fee in a single invoice. The agency collects and transfers to the Guarantor, which splits the amount.
 
-### Fluxo
+### Flow
 
 ```
-Inquilinos pagam boleto mensal (aluguel + fee MUTAV) individualmente
+Tenants pay monthly invoice (rent + MUTAV fee) individually
         │
         ▼
-Imobiliária acumula os fees de todos os contratos ativos no mês
+Agency accumulates fees from all active contracts in the month
         │
         ▼
-1 cobrança mensal consolidada: imobiliária repassa
-o total de fees do mês à Garantidora
+1 consolidated monthly charge: agency transfers
+total month fees to the Guarantor
         │
         ▼
-Garantidora faz o split sobre o total recebido:
-  ├─ 20% → conta operacional da Garantidora
-  └─ 80% → transferência para o Fundo
+Guarantor splits total received:
+  ├─ 20% → Guarantor operational account
+  └─ 80% → transfer to the Fund
                │
                ▼
-           Smart contract registra o aporte
-           NAV das cotas é atualizado
+           Smart contract records the deposit
+           Token price updated
 ```
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **Contrato de agente de cobrança:** o repasse da imobiliária para a Garantidora precisa ter prazo e forma definidos em contrato
-- **Nota fiscal:** a Garantidora deve emitir nota fiscal de serviço para a imobiliária pelo serviço de garantia prestado (ISS municipal)
-- **Segregação contábil:** os 20% da Garantidora e os 80% do fundo devem ser contabilizados separadamente desde o recebimento
-- **Registro da cessão:** o repasse dos 80% para o fundo deve ser registrado como cessão de recebíveis — cada transferência é uma cessão documentada
-- **Tributação offshore:** a transferência de BRL → cripto → fundo offshore pode gerar obrigações de câmbio (BACEN) e imposto de renda sobre variação cambial — necessário parecer fiscal específico
+- **Collection agent contract:** agency transfer to Guarantor must have defined deadline and form in contract
+- **Service invoice:** Guarantor must issue service invoices to agencies for the guarantee service rendered (municipal ISS tax)
+- **Accounting segregation:** Guarantor's 20% and fund's 80% must be accounted for separately from receipt
+- **Assignment registration:** the 80% transfer to the fund must be registered as a receivables assignment — each transfer is a documented assignment
+- **Offshore tax:** BRL → crypto → offshore fund transfer may generate FX obligations (BACEN) and income tax on currency variation — specific tax opinion required
 
 ---
 
-## 5. Evento de Default
+## 5. Default Event
 
-**Atores:** Inquilino (inadimplente), Imobiliária, Garantidora
+**Actors:** Tenant (defaulting), Agency, Guarantor
 
-**O que acontece:** inquilino atrasa o pagamento do aluguel. A imobiliária detecta e notifica a MUTAV para acionar a cobertura.
+**What happens:** tenant misses rent payment. Agency detects and notifies MUTAV to trigger coverage.
 
-### Fluxo de acionamento
+### Triggering flow
 
 ```
-Inquilino não paga no vencimento
+Tenant does not pay on due date
         │
         ▼
-Imobiliária aguarda X dias (prazo de tolerância — TBD)
+Agency waits X days (grace period — TBD)
         │
         ▼
-Imobiliária notifica MUTAV via plataforma
-  — número do contrato
-  — valor em atraso
-  — data de vencimento original
+Agency notifies MUTAV via platform
+  — contract number
+  — amount overdue
+  — original due date
         │
         ▼
-MUTAV verifica a notificação:
-  — contrato está ativo?
-  — fee estava sendo pago?
-  — valor solicitado está dentro do teto da fiança?
+MUTAV verifies notification:
+  — contract active?
+  — fee was being paid?
+  — amount requested within guarantee ceiling?
         │
-        ├─ Verificação OK → aciona cobertura (ver seção 6)
+        ├─ Verification OK → triggers coverage (see section 6)
         │
-        └─ Inconsistência → MUTAV solicita documentação adicional à imobiliária
+        └─ Inconsistency → MUTAV requests additional documentation from agency
 ```
 
-### Documentos necessários
+### Required documents
 
-| Documento | Finalidade |
+| Document | Purpose |
 |---|---|
-| Notificação formal de inadimplência | Registro do acionamento — gerado pela plataforma |
-| Comprovante do boleto não pago | Evidência do default |
-| Contrato de locação vigente | Confirmar que a garantia está ativa |
+| Formal default notification | Triggering record — generated by platform |
+| Unpaid invoice proof | Default evidence |
+| Active rental contract | Confirm guarantee is active |
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **Registro do evento:** todo acionamento deve ser registrado com timestamp, valor e contrato — auditabilidade
-- **Prazo de resposta:** a Garantidora deve definir e cumprir um SLA de resposta à imobiliária após notificação
-- **Limite de cobertura:** a fiança cobre até o teto contratual — MUTAV não pode ser acionada por valores além do acordado no Termo de Adesão
-
----
-
-## 6. Liquidação e Cobertura pelo Fundo
-
-**Atores:** Garantidora, Fundo, Gestora, Imobiliária / Proprietário
-
-**O que acontece:** Garantidora autoriza o fundo a liquidar posição de Tesouro tokenizado e pagar o valor em atraso.
-
-### Fluxo
-
-```
-Garantidora aprova o acionamento
-        │
-        ▼
-Gestora instrui o Fundo a liquidar posição
-        │
-        ▼
-Smart contract no Fundo:
-  1. Liquida Tesouro tokenizado (Etherfuse/Stellar) no valor do default
-  2. Converte para cripto / stablecoin
-  3. Transfere para conta de pagamento da Garantidora
-        │
-        ▼
-Garantidora paga a imobiliária / proprietário
-  (em BRL via TED ou stablecoin — TBD)
-        │
-        ▼
-Ajuste de NAV:
-  — NAV do MTVH é reduzido primeiro
-  — Se MTVH insuficiente → MTVM → MTVL
-        │
-        ▼
-Registro do evento de liquidação na plataforma
-```
-
-### Obrigações regulatórias
-
-- **Autorização formal:** toda liquidação precisa de instrução documentada da Gestora — não pode ser automática sem registro
-- **Ajuste de NAV:** o impacto no NAV de cada classe de cota deve ser calculado e publicado para investidores em até X horas (TBD)
-- **Registro onchain:** a liquidação fica registrada no blockchain — imutável e auditável
-- **Câmbio:** conversão cripto → BRL pode ter obrigações de câmbio no Brasil (BACEN) — necessário parecer fiscal
+- **Event logging:** every triggering must be recorded with timestamp, amount, and contract — auditability
+- **Response deadline:** Guarantor must define and comply with an SLA to respond to agency after notification
+- **Coverage ceiling:** guarantee covers up to contractual maximum — MUTAV cannot be triggered for amounts beyond what was agreed in the Acceptance Term
 
 ---
 
-## 7. Recuperação de Crédito
+## 6. Liquidation and Fund Coverage
 
-**Atores:** Garantidora, Inquilino inadimplente
+**Actors:** Guarantor, Fund, Manager, Agency / Landlord
 
-**O que acontece:** após cobrir o default, MUTAV assume a posição de credora e tenta recuperar o valor pago do inquilino.
+**What happens:** Guarantor authorizes the fund to liquidate tokenized Treasury position and pay the overdue amount.
 
-### Fluxo
+### Flow
 
 ```
-Garantidora paga a imobiliária
+Guarantor approves the triggering
         │
         ▼
-MUTAV assume o crédito do inquilino
-  (sub-rogação — MUTAV ocupa o lugar do credor original)
+Manager instructs the Fund to liquidate position
         │
         ▼
-Notificação extrajudicial ao inquilino
-  — valor devido
-  — prazo para quitação
-  — consequências em caso de não pagamento
+Smart contract in the Fund:
+  1. Liquidates tokenized Treasury (Etherfuse/Stellar) at default value
+  2. Converts to crypto / stablecoin
+  3. Transfers to Guarantor payment account
         │
-        ├─ Inquilino paga → valor é revertido ao fundo (aumenta NAV)
+        ▼
+Guarantor pays agency / landlord
+  (in BRL via Pix/TED or stablecoin — TBD)
         │
-        └─ Inquilino não paga → ação judicial de cobrança
-                                ou venda do crédito para empresa de cobrança
+        ▼
+Token price adjustment:
+  — MTVH token price reduced first
+  — If MTVH exhausted → MTVM → MTVL
+        │
+        ▼
+Liquidation event recorded on platform
 ```
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **Sub-rogação:** ao pagar o débito do inquilino, a Garantidora se torna credora por sub-rogação legal (Art. 831 do Código Civil) — sem necessidade de cessão formal
-- **Notificação formal:** a cobrança extrajudicial deve seguir o Código de Defesa do Consumidor — sem constrangimento, sem contato em horários proibidos, sem exposição pública
-- **Negativação:** MUTAV pode negativar o inquilino nos órgãos de proteção ao crédito (Serasa, SPC) após notificação e prazo para pagamento
-- **Ação judicial:** se necessário, a Garantidora entra com ação de cobrança — título executivo é o contrato de locação + comprovante do pagamento feito
+- **Formal authorization:** every liquidation requires documented instruction from the Manager — cannot be automatic without record
+- **Token price adjustment:** impact on each token class must be calculated and published to investors within X hours (TBD)
+- **Onchain record:** liquidation is recorded on blockchain — immutable and auditable
+- **FX:** crypto → BRL conversion may have FX obligations in Brazil (BACEN) — tax opinion required
 
 ---
 
-## 8. Resgate de Investidor
+## 7. Credit Recovery
 
-**Atores:** Investidor, Fundo, Gestora
+**Actors:** Guarantor, Defaulting Tenant
 
-**O que acontece:** investidor decide resgatar sua posição, devolve tokens e recebe cripto.
+**What happens:** after covering the default, MUTAV becomes the creditor and attempts to recover the paid amount from the tenant.
 
-### Fluxo
+### Flow
 
 ```
-Investidor inicia resgate na plataforma
-  — informa valor ou quantidade de tokens a resgatar
+Guarantor pays the agency
         │
         ▼
-Plataforma verifica:
-  — período de lock-up cumprido?
-  — liquidez disponível no fundo?
+MUTAV assumes the tenant's debt
+  (legal subrogation — MUTAV takes the place of the original creditor)
         │
         ▼
-Investidor entra na fila de resgate onchain
-(posição na fila visível e transparente)
+Extrajudicial notification to tenant
+  — amount owed
+  — deadline for payment
+  — consequences if unpaid
+        │
+        ├─ Tenant pays → amount reversed to fund (increases token price)
+        │
+        └─ Tenant does not pay → judicial collection action
+                                or sale of debt to collection company
+```
+
+### Regulatory obligations
+
+- **Subrogation:** by paying the tenant's debt, the Guarantor becomes creditor by legal subrogation (Art. 831, Civil Code) — no formal assignment required
+- **Formal notification:** extrajudicial collection must comply with the Consumer Protection Code — no harassment, no contact during prohibited hours, no public exposure
+- **Credit bureau:** MUTAV may report the tenant to credit bureaus (Serasa, SPC) after notification and payment deadline
+- **Legal action:** if necessary, the Guarantor files a collection lawsuit — executive instrument is the rental contract + proof of payment made
+
+---
+
+## 8. Investor Redemption
+
+**Actors:** Investor, Fund, Manager
+
+**What happens:** investor decides to redeem their position, returns tokens, and receives crypto.
+
+### Flow
+
+```
+Investor initiates redemption on the platform
+  — specifies amount or quantity of tokens to redeem
         │
         ▼
-Investidor aprova transação na wallet (self-custodial)
+Platform verifies:
+  — lock-up period completed?
+  — liquidity available in fund?
+        │
+        ▼
+Investor enters onchain redemption queue
+(queue position visible and transparent)
+        │
+        ▼
+Investor approves transaction in wallet (self-custodial)
         │
         ▼
 Smart contract:
-  1. Recebe os tokens do investidor
-  2. Calcula o valor em cripto baseado no NAV atual
-  3. Aplica taxa de saque
-  4. Queima os tokens
-  5. Transfere cripto para a wallet do investidor
+  1. Receives investor's tokens
+  2. Calculates crypto value based on current token price
+  3. Applies withdrawal fee
+  4. Burns tokens
+  5. Transfers crypto to investor's wallet
         │
         ▼
-Fundo liquida posição de Tesouro se necessário
-  (proporcional ao resgate)
+Fund liquidates Treasury position if necessary
+  (proportional to redemption)
         │
         ▼
-NAV é atualizado para os demais investidores
+Token price updated for remaining investors
 ```
 
-### Obrigações regulatórias
+### Regulatory obligations
 
-- **NAV justo:** valor de resgate calculado pelo NAV do momento da execução — não do momento da solicitação
-- **Taxa de saque:** deve estar prevista no Subscription Agreement — não pode ser cobrada sem consentimento prévio
-- **Fila onchain:** transparência total de posição — investidor sabe exatamente quando será atendido
-- **Registro auditável:** toda operação de resgate registrada com timestamp, NAV aplicado e taxa cobrada
-- **Relatório fiscal:** MUTAV emite extrato de movimentação para suporte à declaração de IR do investidor
-
----
-
-## 9. Obrigações Contínuas
-
-### Diárias
-- Atualização do NAV das 3 classes de cotas com base no rendimento do Tesouro tokenizado
-- Monitoramento de eventos de inadimplência notificados pelas imobiliárias
-
-### Mensais
-- Conciliação contábil: fees recebidos × repasses ao fundo × defaults cobertos
-- Relatório de movimentação para investidores (aportes, resgates, NAV)
-- Emissão de notas fiscais de serviço (Garantidora → imobiliárias)
-- Declaração de câmbio ao BACEN se aplicável (remessas ao fundo offshore)
-
-### Anuais
-- Auditoria independente do fundo (exigência padrão da jurisdição offshore)
-- Relatório anual para investidores (rendimento, defaults, NAV por classe)
-- Renovação de KYC para investidores com posições ativas (AML contínuo)
-- Atualização do regulamento do fundo se houver mudanças estruturais
-
-### AML contínuo
-- Screening de investidores ativos contra listas de sanções atualizadas
-- Monitoramento de transações atípicas (aportes ou resgates fora do padrão)
-- Diligência reforçada para investidores PEP (Pessoa Politicamente Exposta)
+- **Fair token price:** redemption value calculated at token price at time of execution — not at time of request
+- **Withdrawal fee:** must be stated in Subscription Agreement — cannot be charged without prior consent
+- **Onchain queue:** full position transparency — investor knows exactly when they will be served
+- **Auditable record:** every redemption operation recorded with timestamp, token price applied, and fee charged
+- **Tax report:** MUTAV issues transaction statement for investor's income tax declaration support
 
 ---
 
-## Decisões em Aberto
+## 9. Ongoing Obligations
 
-> Master index de todas as questões abertas — estruturais, jurídicas, operacionais, vendors e engenharia.
-> **Convenções:** Owner = quem responde | Bloqueia = o que depende da resposta.
-> Quando uma decisão for resolvida, mova para a seção **Resolvidas** no mesmo PR. O próximo editor apaga o que estiver em Resolvidas antes de adicionar novas.
+### Daily
+- Update token price for all 3 classes based on tokenized Treasury yield
+- Monitor default events notified by agencies
+
+### Monthly
+- Accounting reconciliation: fees received × transfers to fund × defaults covered
+- Movement report for investors (deposits, redemptions, token price)
+- Service invoices issuance (Guarantor → agencies)
+- FX declaration to BACEN if applicable (remittances to offshore fund)
+
+### Annual
+- Independent fund audit (standard offshore jurisdiction requirement)
+- Annual report for investors (yield, defaults, token price by class)
+- KYC renewal for investors with active positions (ongoing AML)
+- Fund regulations update if structural changes occur
+
+### Ongoing AML
+- Screen active investors against updated sanctions lists
+- Monitor atypical transactions (deposits or redemptions outside normal pattern)
+- Enhanced due diligence for PEP (Politically Exposed Person) investors
+
+---
+
+## Open Decisions
+
+> Master index of all open questions — structural, legal, operational, vendors, and engineering.
+> **Conventions:** Owner = who is responsible | Blocks = what depends on the answer.
+> When a decision is resolved, move to the **Resolved** section in the same PR. The next editor deletes resolved items before adding new ones.
 >
-> Decisões de política de treasury do app (NAV epoch, deposit pricing, Pix quarantine): [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
+> Treasury policy decisions for the app (NAV epoch, deposit pricing, Pix quarantine): [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
 
 ---
 
-### ✅ Resolvidas
+### ✅ Resolved
 
-| # | Decisão | Resolução | Data |
+| # | Decision | Resolution | Date |
 |---|---|---|---|
-| R1 | Naming das entidades do grupo | MUTAV Soluções (Garantidora BR), Mutav Treasury Fund (fundo offshore), Mutav Treasury Management (gestora offshore), MUTAV (brand/plataforma) — sufixo societário pendente counsel | 2026-05-19 |
-| R2 | Framing regulatório da Garantidora | "Zona cinza" tratada como working hypothesis pending counsel — não como fato estabelecido | 2026-05-19 |
-| R3 | Foco de mercado do fundo | Plataforma direcionada a investidores internacionais (inglês, cripto-nativos, self-directed); acesso de brasileiros residentes pendente opinião jurídica | 2026-05-19 |
-| T1a | NAV update trigger | Por evento (não por epoch fixo). Observação: verificar capacidade operacional antes de implementar. | 2026-05-19 |
-| T1b | Cap de variação de NAV por epoch | ±1.0% com dois tipos de update: Tesouro yield (automático, sem aprovação) e taxa de inquilino/default (manual, requer aprovação) | 2026-05-19 |
-| T1c | Circuit breaker tolerance | ±0.5% — se variação superar esse threshold, aciona pausa | 2026-05-19 |
-| T1d | Política durante pausa do NAV | Refund mints + hold redeems (investidor novo recebe de volta; resgates ficam em fila até NAV voltar ao range) | 2026-05-19 |
-| F1 | Taxa de gestão | 1% a.a. sobre AUM | 2026-05-19 |
-| F2 | Taxa de saque | 0.25% sobre o valor resgatado | 2026-05-19 |
-| O1 | Prazo de análise e aprovação da imobiliária | 48h úteis | 2026-05-19 |
-| O2 | Critério mínimo de carteira da imobiliária | Sem mínimo na v1 | 2026-05-19 |
-| O3 | Prazo de repasse imobiliária → Garantidora | Data fixa no mês (dia a definir no contrato de parceria) | 2026-05-19 |
-| O4 | Prazo de repasse Garantidora → Fundo | 2 dias úteis após recebimento da imobiliária | 2026-05-19 |
-| O7 | Prazo de tolerância para default | 15 dias corridos após o vencimento do aluguel antes de acionar a MUTAV | 2026-05-19 |
-| O8 | SLA de resposta + cobertura da MUTAV após notificação | 5 dias úteis para verificar o acionamento e liberar o pagamento ao proprietário/imobiliária | 2026-05-19 |
-| O9 | Prazo máximo para liquidação após aprovação da Garantidora | 2 dias úteis — da aprovação até o pagamento na conta da imobiliária/proprietário | 2026-05-19 |
-| O10 | Moeda de pagamento para imobiliária/proprietário | BRL via Pix ou TED | 2026-05-19 |
-| O11 | Prazo para publicação do ajuste de NAV após default | Imediato onchain — ajuste visível assim que a transação confirma no Stellar. Observação: verificar capacidade da infraestrutura de indexação antes de comprometer o SLA | 2026-05-19 |
-| O15 | Prazo de carência antes de iniciar cobrança extrajudicial | 30 dias após MUTAV cobrir o default antes de acionar cobrança formal contra o inquilino | 2026-05-19 |
-| O16 | Política de parcelamento da dívida com o inquilino | Sim — parcelamento disponível. Detalhe do fluxo operacional a definir (número de parcelas, juros, plataforma) | 2026-05-19 |
-| O18 | Política de venda de carteira de créditos inadimplentes | Caso a caso — founders avaliam volume e perfil da carteira antes de alienar | 2026-05-19 |
-| O20 | Cap de resgate semanal | 2.5% do AUM por semana — sem limite diário, fila onchain processa em ordem de chegada dentro do cap semanal | 2026-05-19 |
+| R1 | Group entity naming | MUTAV Soluções (BR Guarantor), Mutav Treasury Fund (offshore fund), Mutav Treasury Management (offshore manager), MUTAV (brand/platform) — legal suffix pending counsel | 2026-05-19 |
+| R2 | Guarantor regulatory framing | "Gray area" treated as working hypothesis pending counsel — not as established fact | 2026-05-19 |
+| R3 | Fund market focus | Platform directed at international investors (English, crypto-native, self-directed); Brazilian resident access pending legal opinion | 2026-05-19 |
+| T1a | NAV update trigger | Per event (not fixed epoch). Note: verify operational capacity before implementing | 2026-05-19 |
+| T1b | NAV variation cap per epoch | ±1.0% with two update types: Treasury yield (automatic, no approval) and tenant fee/default (manual, requires approval) | 2026-05-19 |
+| T1c | Circuit breaker tolerance | ±0.5% — if variation exceeds this threshold, triggers pause | 2026-05-19 |
+| T1d | Policy during NAV pause | Refund mints + hold redeems (new investor gets refund; redemptions wait in queue until NAV returns to range) | 2026-05-19 |
+| F1 | Management fee | 1% p.a. on AUM | 2026-05-19 |
+| F2 | Withdrawal fee | 0.25% on redeemed amount | 2026-05-19 |
+| O1 | Agency analysis and approval deadline | 48 business hours | 2026-05-19 |
+| O2 | Agency minimum portfolio requirement | No minimum in v1 | 2026-05-19 |
+| O3 | Agency → Guarantor transfer deadline | Fixed date in month (date defined in partnership contract) | 2026-05-19 |
+| O4 | Guarantor → Fund transfer deadline | 2 business days after receipt from agency | 2026-05-19 |
+| O7 | Default grace period | 15 calendar days after rent due date before triggering MUTAV | 2026-05-19 |
+| O8 | MUTAV response + coverage SLA after notification | 5 business days to verify triggering and release payment to landlord/agency | 2026-05-19 |
+| O9 | Maximum liquidation deadline after Guarantor approval | 2 business days — from approval to payment in agency/landlord account | 2026-05-19 |
+| O10 | Payment currency for agency/landlord | BRL via Pix or TED | 2026-05-19 |
+| O11 | Token price adjustment publication deadline after default | Immediate onchain — adjustment visible once transaction confirms on Stellar. Note: verify indexing infrastructure capacity before committing to SLA | 2026-05-19 |
+| O15 | Grace period before starting extrajudicial collection | 30 days after MUTAV covers default before triggering formal collection against tenant | 2026-05-19 |
+| O16 | Tenant debt installment policy | Yes — installments available. Operational flow detail TBD (number of installments, interest, platform) | 2026-05-19 |
+| O18 | Policy for selling delinquent credit portfolio | Case by case — founders evaluate volume and portfolio profile before selling | 2026-05-19 |
+| O20 | Weekly redemption cap | 2.5% of AUM per week — no daily limit, onchain queue processes in arrival order within weekly cap | 2026-05-19 |
 
 ---
 
-### Estrutura do Fundo — pendente founders
+### Fund Structure — pending founders
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| J1 | Jurisdição do fundo offshore | Founders | Regulador, obrigações de reporting, custo de constituição, L1, L3 |
+| J1 | Offshore fund jurisdiction | Founders | Regulator, reporting obligations, constitution cost, L1, L3 |
 
-**Opções em avaliação:**
+**Options under evaluation:**
 
-| | Cayman Islands | BVI | Bermuda | Marshall Islands | UAE / ADGM | Próspera (Honduras) |
-|---|---|---|---|---|---|---|
-| **Custo setup** | $20–40k | $5–15k | $15–30k | $1–3k | $10–25k | ~$1k |
-| **Custo anual** | $10–20k | $5–10k | $8–15k | $1–2k | $8–15k | Muito baixo (1% revenue tax) |
-| **Tempo de setup** | 4–8 semanas | 2–4 semanas | 4–8 semanas | 1–2 semanas | 4–8 semanas | Rápido |
-| **Reconhecimento institucional** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐ |
-| **Crypto-friendly** | ✓ | ✓ | ✓ | ✓ (DAOs) | ✓ | ✓✓ (Bitcoin legal tender, DAOs, smart contracts) |
-| **Certeza jurídica** | Máxima | Alta | Alta | Baixa | Média | Crítica |
-| **Status atual** | Estável | Estável | Estável | Estável | Estável | ⚠️ Framework ZEDE declarado inconstitucional retroativamente pelo Supremo de Honduras (2024); Próspera contesta via arbitragem ICSID ($10.7B); operando via brechas |
+| | Cayman Islands | BVI | Bermuda | Marshall Islands | UAE / ADGM |
+|---|---|---|---|---|---|
+| **Setup cost** | $20–40k | $5–15k | $15–30k | $1–3k | $10–25k |
+| **Annual cost** | $10–20k | $5–10k | $8–15k | $1–2k | $8–15k |
+| **Setup time** | 4–8 weeks | 2–4 weeks | 4–8 weeks | 1–2 weeks | 4–8 weeks |
+| **Institutional recognition** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+| **Crypto-friendly** | ✓ | ✓ | ✓ | ✓ (DAOs) | ✓ |
+| **Legal certainty** | Highest | High | High | Low | Medium |
 
 ---
 
-### Regulatórias / Jurídicas — pendente counsel
+### Regulatory / Legal — pending counsel
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| L1 | Enquadramento legal da Garantidora: VASP (BCB Res 519–521), payment institution (BCB Res 494–497), FIDC, FIF ou nenhum? | Counsel | Cadência do audit log, reporting regulatório, se BCB Res 521/2025 (já em vigor desde mai/2026) se aplica diretamente à MUTAV |
-| L2 | CVM 175 fund-of-funds: a estrutura em duas camadas (investidor → MUTAV token → TESOURO → Tesouro Direto) aciona o Anexo II da CVM 175? | Counsel | UI de disclosure para investidores, template de filing CVM |
-| L3 | Autorizações Etherfuse: as autorizações CVM/BCB existentes da Etherfuse cobrem o caso de uso da MUTAV (treasury de garantia + on-ramp de investidor)? Se não, MUTAV precisa de autorização própria antes de out/2026 | Counsel + Etherfuse legal | Escopo do track de autorização; relacionado a L1 |
-| L4 | Tratamento tributário dos holders de MUTAV token: IRRF e IOF equivalentes, piores ou melhores do que holders diretos de Tesouro Direto? | Counsel + tax advisor | UI de disclosure fiscal, tooling de relatório anual |
-| L5 | Tipo societário da Garantidora no Brasil (LTDA vs. SA) | Counsel + founders | Governança, emissão de cotas, custo de constituição |
-| L6 | Validação jurídica do nome "MUTAV Soluções" — risco de enquadramento regulatório pelo nome | Counsel | Nome legal definitivo antes do registro |
-| L7 | CVM 175: classificação de acesso ao MTVH — qualificado (Art. 4, R$1M+) ou profissional (Art. 11, R$10M+)? | Counsel | KYC depth, marketing rules, Subscription Agreement |
-| L8 | Investidor BR: viabilidade do dual regime CVM 175 + BACEN para acesso via plataforma | Counsel | Se e como brasileiros residentes podem investir; expansão do §3 deste doc |
+| L1 | Legal classification of Guarantor: VASP (BCB Res 519–521), payment institution (BCB Res 494–497), FIDC, FIF, or none? | Counsel | Audit log cadence, regulatory reporting, whether BCB Res 521/2025 (in force since May 2026) applies directly to MUTAV |
+| L2 | CVM 175 fund-of-funds: does the two-layer structure (investor → MUTAV token → Treasury → Tesouro Direto) trigger CVM 175 Annex II? | Counsel | Investor disclosure UI, CVM filing template |
+| L3 | Etherfuse authorizations: do Etherfuse's existing CVM/BCB authorizations cover MUTAV's use case (guarantee treasury + investor on-ramp)? If not, MUTAV needs its own authorization before Oct/2026 | Counsel + Etherfuse legal | Authorization track scope; related to L1 |
+| L4 | Tax treatment of MUTAV token holders: IRRF and IOF equivalent, worse, or better than direct Tesouro Direto holders? | Counsel + tax advisor | Fiscal disclosure UI, annual reporting tooling |
+| L5 | Legal type for Guarantor in Brazil (LTDA vs. SA) | Counsel + founders | Governance, share issuance, constitution cost |
+| L6 | Legal name validation "MUTAV Soluções" — risk of regulatory classification by name | Counsel | Final legal name before registration |
+| L7 | CVM 175: MTVH access classification — qualified (Art. 4, R$1M+) or professional (Art. 11, R$10M+)? | Counsel | KYC depth, marketing rules, Subscription Agreement |
+| L8 | BR investor: feasibility of dual regime CVM 175 + BACEN for platform access | Counsel | Whether and how Brazilian residents can invest; expansion of section 3 of this doc |
 
 ---
 
-### Etherfuse / Arquitetura de Treasury
+### Etherfuse / Treasury Architecture
 
-| # | Questão | Owner | Bloqueia |
+| # | Question | Owner | Blocks |
 |---|---|---|---|
-| ET1 | Elegibilidade de titulares offshore: Etherfuse impõe restrição de residência/KYB para quem pode segurar TESOURO? | Business (Etherfuse account manager) | Valida ou reformula a estrutura do fundo offshore |
-| ET2 | Modelo de custódia: quem detém as signing keys da posição de Tesouro no Stellar? Multisig? Segregação exigida pela jurisdição do fundo? | Eng + counsel | Governança do fundo, requisitos de auditoria |
-| ET3 | Fluxo de resgate em default: Etherfuse liquida em BRL para conta BR — qual o caminho de câmbio para o fundo offshore receber esses recursos? | Business + counsel | §6 deste doc (Liquidação e Cobertura), O13, O14 |
-| ET4 | Etherfuse B2B settlement extension: pode estender integração atual para cobrir settlement B2B do lado agência (fee Pix collection → TESOURO mint)? | Business (Etherfuse account manager) | Design do rail de settlement; fallback para V3 se não viável |
+| ET1 | Offshore holder eligibility: does Etherfuse impose residency/KYB restrictions on who can hold TESOURO? | Business (Etherfuse account manager) | Validates or reformulates the offshore fund structure |
+| ET2 | Custody model: who holds the signing keys for the Treasury position on Stellar? Multisig? Segregation required by fund jurisdiction? | Eng + counsel | Fund governance, audit requirements |
+| ET3 | Default redemption flow: Etherfuse liquidates in BRL to a BR account — what is the FX path for the offshore fund to receive these funds? | Business + counsel | Section 6 (Liquidation and Coverage), O13, O14 |
+| ET4 | Etherfuse B2B settlement extension: can existing integration be extended to cover B2B settlement on the agency side (Pix fee collection → TESOURO mint)? | Business (Etherfuse account manager) | Settlement rail design; fallback for V3 if not feasible |
 
 ---
 
 ### Vendors
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| V1 | KYC provider: confirmar Sumsub ou alternativa. Sub-questões abertas: biometric liveness (ISO/IEC 30107-3 PAD Level 2+), integração SERPRO/Datavalid, LGPD DPA com ANPD SCCs | Eng + business | Fluxo de onboarding de investidor — bloqueante para v1 retail |
-| V2 | BaaS hedge: escolher um entre Transfero / Bitso / Foxbit como rail de fallback para Etherfuse. Sub-questões por vendor: Transfero (Stellar-native USDC?), Bitso (webhook + correlation-id), Foxbit (pricing por volume) | Eng + business | Failover playbook; não bloqueante para v1 se Etherfuse saudável |
+| V1 | KYC provider: confirm Sumsub or alternative. Sub-questions: biometric liveness (ISO/IEC 30107-3 PAD Level 2+), SERPRO/Datavalid integration, LGPD DPA with ANPD SCCs | Eng + business | Investor onboarding flow — blocker for v1 retail |
+| V2 | BaaS hedge: choose one of Transfero / Bitso / Foxbit as fallback rail for Etherfuse. Sub-questions by vendor: Transfero (Stellar-native USDC?), Bitso (webhook + correlation-id), Foxbit (volume pricing) | Eng + business | Failover playbook; not blocking for v1 if Etherfuse is healthy |
 
 ---
 
-### Treasury Policy — pendente Draau
+### Treasury Policy — pending Draau
 
-Três decisões de política de treasury detalhadas com tabelas de trade-off e recomendações de ponto de partida em [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
+Three detailed treasury policy decisions with trade-off tables and starting point recommendations in [`mutav-app/docs/architecture/pending-treasury-decisions.md`](../../../mutav-app/docs/architecture/pending-treasury-decisions.md).
 
-| # | Decisão | Bloqueia |
+| # | Decision | Blocks |
 |---|---|---|
-| T2 | Deposit pricing approach: single BRL NAV / dual share class (USD + BRL) / USD NAV com TESOURO underlying | UI de portfolio do investidor, schema de moeda, disclosure CVM |
-| T3 | Pix quarantine window: 7 / 30 / 80 dias — trade-off entre exposição a MED reversals e capital de float | Sizing do float de TESOURO, UI de quarantine, reconciliação |
+| T2 | Deposit pricing approach: single BRL NAV / dual share class (USD + BRL) / USD NAV with TESOURO underlying | Investor portfolio UI, currency schema, CVM disclosure |
+| T3 | Pix quarantine window: 7 / 30 / 80 days — trade-off between MED reversal exposure and float capital | TESOURO float sizing, quarantine UI, reconciliation |
 
 ---
 
-### Financeiras / Comerciais
+### Financial / Commercial
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| F3 | Proporção mínima de MTVH que a Garantidora deve reter (skin-in-the-game) | Founders + counsel | Colchão mínimo de first-loss, política de risco |
-| F4 | Threshold de aporte para exigir declaração de origem dos recursos (AML) | Counsel | KYC reforçado, operacional do §3 |
-| F5 | Jurisdições bloqueadas para investidores (ex: EUA, países sancionados) | Counsel + business | Política de acesso geográfico, sanctions screening |
+| F3 | Minimum MTVH proportion Guarantor must retain (skin-in-the-game floor) | Founders + counsel | Minimum first-loss buffer, risk policy |
+| F4 | Deposit threshold requiring source-of-funds declaration (AML) | Counsel | Enhanced KYC, section 3 operations |
+| F5 | Blocked investor jurisdictions (e.g., US persons, sanctioned countries) | Counsel + business | Geographic access policy, sanctions screening |
 
 ---
 
-### Operacionais — Imobiliária e Contrato
+### Operational — Agency and Contract
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| O5 | Valor máximo coberto por contrato (teto da fiança) | Founders + counsel | Exposição máxima por inquilino, Termo de Adesão |
-| O6 | Prazo de carência antes da garantia entrar em vigor | Business + counsel | Proteção contra fraude no onboarding |
+| O5 | Maximum coverage amount per contract (guarantee ceiling) | Founders + counsel | Maximum exposure per tenant, Acceptance Term |
+| O6 | Grace period before guarantee takes effect | Business + counsel | Protection against onboarding fraud |
 
 ---
 
-### Operacionais — Default e Liquidação
+### Operational — Default and Liquidation
 
-> **Fluxo de recebimento duplo (plataforma — a trackear):**
-> Se a MUTAV já cobriu o default e o inquilino pagar depois, a imobiliária recebe em duplicidade.
-> A plataforma deve detectar esse evento e acionar o fluxo de reembolso: imobiliária devolve o valor à MUTAV → MUTAV repõe o NAV do fundo.
-> Esse fluxo precisa ser desenhado e implementado na plataforma antes de v1 em produção.
+> **Double receipt flow (platform — to track):**
+> If MUTAV has already covered the default and the tenant pays afterward, the agency receives twice.
+> The platform must detect this event and trigger the refund flow: agency returns amount to MUTAV → MUTAV restores fund token price.
+> This flow must be designed and implemented in the platform before v1 in production.
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| O12 | Limite mínimo de MTVH que a Garantidora deve manter (colchão mínimo) | Founders | Evita zerar o colchão de first-loss |
-| O13 | Moeda de transferência para o Fundo (BRL → stablecoin → Tesouro tokenizado) | Business + eng | Arquitetura do fluxo financeiro, ET3 |
+| O12 | Minimum MTVH balance Guarantor must maintain (minimum buffer) | Founders | Prevents exhausting the first-loss buffer |
+| O13 | Transfer currency to Fund (BRL → stablecoin → tokenized Treasury) | Business + eng | Financial flow architecture, ET3 |
 
-**Opções em avaliação:**
+**Options under evaluation:**
 
-| Caminho | Como funciona | Pro | Contra |
+| Path | How it works | Pro | Con |
 |---|---|---|---|
-| BRL → Etherfuse → TESOURO | Garantidora faz Pix para Etherfuse, Etherfuse minta TESOURO direto na wallet Stellar do Fundo | Menos etapas, menor custo | Bloqueado por ET1 (eligibilidade offshore) e ET4 (B2B settlement extension) |
-| BRL → USDC → TESOURO | Garantidora converte BRL em USDC via exchange, usa USDC para comprar TESOURO | Não depende de Etherfuse aceitar BRL offshore | Mais passos, custo de câmbio BRL/USD, FX exposure |
-| BRL → BRZ (stablecoin BR) → TESOURO | Via BRZ na Stellar como intermediário | Mantém exposição em BRL | BRZ com menor liquidez, dependência de mais um vendor |
+| BRL → Etherfuse → TESOURO | Guarantor sends Pix to Etherfuse; Etherfuse mints TESOURO directly to Fund's Stellar wallet | Fewer steps, lower cost | Blocked by ET1 (offshore eligibility) and ET4 (B2B settlement extension) |
+| BRL → USDC → TESOURO | Guarantor converts BRL to USDC via exchange, uses USDC to buy TESOURO | Does not depend on Etherfuse accepting BRL offshore | More steps, BRL/USD FX cost, FX exposure |
+| BRL → BRZ (BR stablecoin) → TESOURO | Via BRZ on Stellar as intermediary | Maintains BRL exposure | BRZ has lower liquidity, dependency on additional vendor |
 
-> Decisão bloqueada por ET1 e ET4 — working hypothesis: BRL → Etherfuse → TESOURO (caminho 1) pendente confirmação Etherfuse.
-| O14 | Tratamento fiscal da conversão BRL → cripto | Counsel + tax advisor | Parecer fiscal, obrigações BACEN |
+> Decision blocked by ET1 and ET4 — working hypothesis: BRL → Etherfuse → TESOURO (path 1) pending Etherfuse confirmation.
+
+| O14 | Tax treatment of BRL → crypto conversion | Counsel + tax advisor | Tax opinion, BACEN obligations |
 
 ---
 
-### Operacionais — Recuperação de Crédito
+### Operational — Credit Recovery
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| O17 | Parceiro de cobrança extrajudicial / jurídico | Business | Processo e custo de recuperação |
+| O17 | Extrajudicial / legal collection partner | Business | Recovery process and cost |
 
 ---
 
-### Operacionais — Investidor
+### Operational — Investor
 
-| # | Decisão | Owner | Bloqueia |
+| # | Decision | Owner | Blocks |
 |---|---|---|---|
-| O19 | Período de lock-up mínimo antes do primeiro resgate | Business + counsel | Liquidez do fundo, Subscription Agreement |
-| O21 | Prazo de liquidação após posição chegar ao topo da fila de resgate | Business + eng | SLA com o investidor |
+| O19 | Minimum lock-up period before first redemption | Business + counsel | Fund liquidity, Subscription Agreement |
+| O21 | Settlement deadline after position reaches top of redemption queue | Business + eng | SLA with investor |
 
 ---
 
-### Engineering Deferrals — pendente eng
+### Engineering Deferrals — pending eng
 
-Cada item tem forcing function definida; intencionalmente não construído agora.
+Each item has a defined forcing function; intentionally not built now.
 
-| # | Item | Forcing function | Contexto |
+| # | Item | Forcing function | Context |
 |---|---|---|---|
-| E1 | Hash-chained audit log (append-only, imutável) | Antes da autorização VASP (L1) — out/2026 no máximo; antes de capital real de investidores em produção | `mutav-app/docs/architecture/admin.md` linha 234 |
-| E2 | Square Books ledger (`ledger_accounts` + `journal_entries`, invariante sum=0) | Quando collection de pagamento sair dos anchors para in-house | PR #72 do pricing-module |
-| E3 | Daily on-chain ↔ Convex reconciliation job | Se L1 resolver como VASP: BCB Res 521/2025 já em vigor (mai/2026) — reconciliação diária é o substrato operacional | `architecture/reliability.md` § Reconciliation |
-| E4 | Stellar treasury proposal queue UI (XDR, coleta de assinaturas, Lobstr deep links) | Antes de qualquer operação real de treasury em produção (~1–2 semanas de trabalho) | `architecture/admin.md` §§ A3, A6 |
-| E5 | Money type system: branded `Cents`, campo `currency` por coluna, rounding policy, fast-check suite | Segundo tipo de moeda (Stroop/USDC) ou primeira emissão de NFS-e | PR #72 |
-| E6 | Conversion boundary module (`brlCentsToStroopsFloor`, etc.) | Quando code path de settlement onchain aterrissar | PR #72 |
-| E7 | Versioned rate cards em DB (`pricing_tables` com `effective_from/to`) | Primeira mudança de taxa com clientes reais, ou filing SUSEP | `src/lib/pricing/tiers.ts` |
-| E8 | `endToEndId` como chave de idempotência para webhooks Pix | Quando integração de webhooks Pix aprofundar | PR #72 |
-| E9 | Auth0 wiring (decidido 2026-05-16, não implementado) | Antes de contas reais de usuários | `docs/auth.md`, `convex/lib/auth.ts` |
-| E10 | Telemetry / alerting infrastructure para indexer e cron | Antes de impacto real em clientes | `architecture/onchain-integration.md` linha 353 |
-| E11 | Migration trigger thresholds para indexer (Convex → direct chain reads) | Degradação de UX observada em volume específico | `architecture/onchain-integration.md` linha 75 |
+| E1 | Hash-chained audit log (append-only, immutable) | Before VASP authorization (L1) — Oct/2026 at latest; before real investor capital in production | `mutav-app/docs/architecture/admin.md` line 234 |
+| E2 | Square Books ledger (`ledger_accounts` + `journal_entries`, sum=0 invariant) | When payment collection moves from anchors to in-house | PR #72 of pricing-module |
+| E3 | Daily onchain ↔ Convex reconciliation job | If L1 resolves as VASP: BCB Res 521/2025 already in force (May/2026) — daily reconciliation is the operational substrate | `architecture/reliability.md` § Reconciliation |
+| E4 | Stellar treasury proposal queue UI (XDR, signature collection, Lobstr deep links) | Before any real treasury operation in production (~1–2 weeks of work) | `architecture/admin.md` §§ A3, A6 |
+| E5 | Money type system: branded `Cents`, `currency` field per column, rounding policy, fast-check suite | Second currency type (Stroop/USDC) or first NFS-e issuance | PR #72 |
+| E6 | Conversion boundary module (`brlCentsToStroopsFloor`, etc.) | When onchain settlement code path lands | PR #72 |
+| E7 | Versioned rate cards in DB (`pricing_tables` with `effective_from/to`) | First fee change with real clients, or SUSEP filing | `src/lib/pricing/tiers.ts` |
+| E8 | `endToEndId` as idempotency key for Pix webhooks | When Pix webhook integration deepens | PR #72 |
+| E9 | Auth0 wiring (decided 2026-05-16, not implemented) | Before real user accounts | `docs/auth.md`, `convex/lib/auth.ts` |
+| E10 | Telemetry / alerting infrastructure for indexer and cron | Before real client impact | `architecture/onchain-integration.md` line 353 |
+| E11 | Migration trigger thresholds for indexer (Convex → direct chain reads) | UX degradation observed at specific volume | `architecture/onchain-integration.md` line 75 |
 
 ---
 
 ### Calendar Pins
 
-| Data | Evento | Afeta |
+| Date | Event | Affects |
 |---|---|---|
-| **mai/2026** (em vigor) | BCB Res 521/2025 — reporting mensal de stablecoins começa | L1: se MUTAV for VASP, aplica diretamente agora |
-| **mai/2026** (em curso) | BCB Res 494–497 — janela de autorização de IP | L1, L3, V1, V2 |
-| **out 30, 2026** | Cliff VASP do BCB — fim do período de transição de 270 dias (a partir de fev/2026) | Não pode transacionar com contrapartes não autorizadas após essa data; L1 define se a MUTAV está sujeita diretamente |
-| **dez/2026** | Conclusão estimada do audit OpenZeppelin para Stellar Smart Accounts | E4 pode usar esses contratos em vez de multisig nativo na v2 |
+| **May/2026** (in force) | BCB Res 521/2025 — monthly stablecoin reporting begins | L1: if MUTAV is VASP, applies directly now |
+| **May/2026** (ongoing) | BCB Res 494–497 — IP authorization window | L1, L3, V1, V2 |
+| **Oct 30, 2026** | BCB VASP cliff — end of 270-day transition period (from Feb/2026) | Cannot transact with unauthorized counterparties after this date; L1 defines whether MUTAV is directly subject |
+| **Dec/2026** | Estimated completion of OpenZeppelin audit for Stellar Smart Accounts | E4 may use these contracts instead of native multisig in v2 |
